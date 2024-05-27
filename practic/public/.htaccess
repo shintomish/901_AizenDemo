@@ -3,13 +3,6 @@
         Options -MultiViews -Indexes
     </IfModule>
 
-	<IfModule mod_headers.c>
-		# アクセスを許可する URL を指定
-		Header set Access-Control-Allow-Origin "http://localhost" # URL はご自身の環境によって変更すること
-		# 許可するリクエストヘッダの種類を指定
-		Header set Access-Control-Allow-Headers "Content-Type"
-	</IfModule>
-
     RewriteEngine On
 
     # Handle Authorization Header
