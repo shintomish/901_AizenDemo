@@ -16,14 +16,14 @@
         <!-- Tytle -->
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Scripts -->
-        {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-        <script src="{{ asset('js/jquery-3.6.0.min.js') }}" defer></script>
-
         <!-- Bootstrap core CSS -->
         {{-- <link href="{{ asset('css/back/bootstrap.min.css') }}" rel="stylesheet"> --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+        <!-- Scripts -->
+        {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+        {{-- <script src="{{ asset('js/jquery-3.6.0.min.js') }}" defer></script> --}}
 
         <!-- Fonts -->
         {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com"> --}}
@@ -32,18 +32,26 @@
         <!-- Custom styles for this template -->
         <link href="{{ asset('css/back/dashboard.css') }}" rel="stylesheet">
 
+        <!-- jQuery -->
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+        <!-- My js -->
+        <script src="{{asset('js/back/common.js')}}"></script>
+
+        {{-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> --}}
+
         <!-- flash_message -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
         {{-- プラグイン(pace.min.js center-atom.css) loading-bar.css center-circle.css--}}
         <script type="text/javascript" src="{{ asset('js/back/pace.min.js') }}"></script>
         <link href="{{ asset('css/back/center-circle_d.css') }}" rel="stylesheet">
 
         <!-- Place your kit's code here -->
-        <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script>
-        {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> --}}
+        {{-- <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script> --}}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
         <style>
             .bd-placeholder-img {
@@ -102,7 +110,7 @@
                                 if(check){
                                     document.getElementById('logout-form').submit();
                                 }
-                            }
+                        }
                     </script>
                 </li>
             </ul>
@@ -146,7 +154,6 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('ctluserindex')}}">
-                                    {{-- <span data-feather="users"></span> --}}
                                     <i class="fas fa-users"></i>
                                     複数法人
                                 </a>
@@ -157,6 +164,15 @@
                                     年度更新
                                 </a>
                             </li>
+
+                            {{-- 2022/10/24 --}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('chatin')}}">
+                                    <i class="fas fa-wifi"></i>
+                                    チャット
+                                </a>
+                            </li>
+
                             {{-- 2023/09/04 以下「顧客ログイン状態」追加--}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('operationindex')}}">
@@ -164,12 +180,38 @@
                                     顧客ログイン状態
                                 </a>
                             </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('linetrialuser.input')}}">
+                                    <i class="fas fa-edit"></i>
+                                    <span style="color:blue">体験者名簿・領収書作成</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('linetrialuserhistory.index')}}">
+                                    <i class="fas fa-edit"></i>
+                                    <span style="color:blue">体験者領収書一覧</span>
+                                </a>
+                            </li>
+
+                            {{-- 2023/09/04 1=shintomi.sh@gmail.com 9=dummy09@gmail.com --}}
+                            {{-- 2022/11/05 actlogindex --}}
+                            {{-- @if($userid == 1 || $userid == 9 )
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('actlogindex')}}">
+                                        <i class="fas fa-clipboard"></i>
+                                        操作履歴
+                                    </a>
+                                </li>
+                            @endif --}}
+
                         </ul>
 
                         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                             <span>業務管理</span>
                             <a class="link-secondary" href="#" aria-label="Add a new report">
-                              <span data-feather="plus-circle"></span>
+                                <span data-feather="plus-circle"></span>
                             </a>
                         </h6>
 
@@ -205,7 +247,7 @@
                                     会計未処理事業者
                                 </a>
                             </li>
-                            {{-- 2023/10/12 --}}
+                            {{-- 2023/10/12 復活 --}}
                             {{-- 顧問料金 2022/05/20不要 --}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('advisorsfee.input')}}">
@@ -278,6 +320,10 @@
                                 <h3>顧客管理</h3>
                                 <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('customerserch')}}" method="GET">
                                 @break;
+                            @case ('00_3')
+                                <!-- タイトル -->
+                                <!-- TOP -->
+                                @break;
                             @case ('00_4')
                                 <!-- タイトル -->
                                 <h3>複数法人</h3>
@@ -285,8 +331,7 @@
                                 @break;
                             @case ('01')
                                 <!-- layouts.upload 検索が日付でdatapickを使用-->
-                                <h3>アップロードユーザー</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('uploadserch_customer')}}" method="GET">
+                                {{-- <h3>アップロードユーザー一覧</h3> --}}
                                 @break;
                             @case ('02')
                                 <!-- layouts.costomer-->
@@ -308,17 +353,28 @@
                                 <h3>会計未処理事業者</h3>
                                 <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('notaccounth_custom')}}" method="GET">
                                 @break;
+                            {{-- 2023/10/12 --}}
                             @case ('06')
                                 <!-- タイトル -->
-                                <h3>顧問料金</h3>
+                                <h3>請求書作成・アップロード</h3>
                                 <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('advisorsfee_custom')}}" method="GET">
+                                @break;
+                            {{-- 2023/10/12 --}}
+                            @case ('06_2')
+                                <!-- タイトル -->
+                                <h3>請求書データ送信確認ページ</h3>
+                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('billdata_custom')}}" method="GET">
                                 @break;
                             @case ('07')
                                 <!-- タイトル -->
                                 <h3>税理士業務処理簿</h3>
                                 <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('wokprocbookserch')}}" method="GET">
                                 @break;
-
+                            @case ('07_2')
+                                <!-- タイトル -->
+                                <h3>税理士業務処理簿</h3>
+                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('wokprocbook_custom')}}" method="GET">
+                                @break;
                             @case ('08')
                                 <!-- タイトル -->
                                 <h3>業務名管理</h3>
@@ -328,7 +384,13 @@
                             @case ('09')
                                 <!-- タイトル -->
                                 <h3>進捗チェック</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('progrecheck_custom')}}" method="GET">
+                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('progreserch_custom')}}" method="GET">
+                                @break;
+
+                            @case ('09_1')
+                                <!-- タイトル input -->
+                                <h3>進捗チェック</h3>
+                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('progreserch_input')}}" method="GET">
                                 @break;
 
                             @case ('10')
@@ -340,9 +402,20 @@
                             @case ('11')
                                 <!-- タイトル -->
                                 <h3>会社申請・設立</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('applestablserch')}}" method="GET">
-                                @break;
 
+                                @break;
+                            @case ('linetrialuser')
+                                <!-- タイトル -->
+                                <h3>体験者名簿・領収書作成 </h3>
+                                <div class="col-2">
+                                    <a type="submit" class="btn btn-primary btn-sm" href="{{ route('linetrialuser.input')}}">更新</a>
+                                </div>
+                                @break;
+                            @case ('linetrialuserhistory')
+                                <!-- タイトル -->
+                                <h3>体験者領収書一覧</h3>
+
+                                @break;
                             @default:
                                 @break;
                         @endswitch
@@ -352,87 +425,149 @@
                             @method('get')
                             <div class='btn-toolbar' role="toolbar">
                                 <div class="input-group">
-                                    <!-- 年あり 顧客名あり -->
-                                    <!-- 納期特例 03 -->
-                                    <!-- 年末調整 04 -->
-                                    <!-- 顧問料金 06 -->
-                                    <!-- 業務名管理 08 -->
-                                    <!-- 進捗チェック 09 -->
-                                    <!-- スケジュール 10 -->
-                                    @if( $common_no == '03' || $common_no == '04'  || $common_no == '06' || $common_no == '08' || $common_no == '09'  || $common_no == '10' )
 
-                                        <select style="margin-right:5px;" class="custom-select" id="year" name="year">
-                                            @foreach ($loop_year_flg as $loop_year_flg2)
+                                    @if( $common_no == 'linetrialuser' || $common_no == 'linetrialuserhistory')
+                        {{-- <div class="btn-group me-2 mb-0">
+                            <a id="start2" style="margin-bottom:5px;" class="btn btn-success btn-sm mr-auto" href="">請求書作成</a>
+                        </div> --}}
+                                    @endif
+                                    <!-- 年あり 月あり 顧客名あり -->
+                                    <!-- 顧問料金 06 -->
+                                    @if( $common_no == '06')
+                        <div class="btn-group me-2 mb-0">
+                            <a id="start2" style="margin-bottom:5px;" class="btn btn-success btn-sm mr-auto" href="{{route('excelexp')}}">請求書作成</a>
+                        </div>
+                        <select style="margin-right:5px;" class="custom-select" id="year" name="year">
+                            @foreach ($loop_year_flg as $loop_year_flg2)
+                                @if ($loop_year_flg2['no']==0)
+                                    <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                @else
+                                    @if ($loop_year_flg2['no']==$nowyear)
+                                        <option selected value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                    @else
+                                        <option value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                    @endif
+                                @endif
+                            @endforeach
+                        </select>
+
+                                    <select style="margin-right:5px;" class="custom-select" id="month" name="month">
+                                        @foreach ($loop_month_flg as $loop_month_flg2)
+                                            @if ($loop_month_flg2['no']==0)
+                                                <option disabled value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                            @else
+                                                @if ($loop_month_flg2['no']==$nowmonth)
+                                                    <option selected value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                                @else
+                                        <option value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                    @endif
+                                    {{-- 進捗チェック・スケジュール --}}
+                                    <!-- 年あり 月あり 顧客名あり -->
+                                    <!-- 請求書データ送信確認ページ 06_2 -->
+                                    @if( $common_no == '06_2' )
+                        <div class="btn-group me-2 mb-0">
+                            <a style="" class="btn btn-primary btn-sm" href="{{ route('billdata_down') }}">
+                                <i class="fa fa-download" aria-hidden="true"></i>
+                                一括ダウンロード</a>
+                        </div>
+                                    <select style="margin-right:5px;" class="custom-select" id="year" name="year">
+                                        @foreach ($loop_year_flg as $loop_year_flg2)
+                                            @if ($loop_year_flg2['no']==0)
+                                                <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                            @else
                                                 @if ($loop_year_flg2['no']==$nowyear)
                                                     <option selected value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
                                                 @else
-                                                    {{-- <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option> --}}
                                                     <option value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
                                                 @endif
-                                            @endforeach
-                                        </select>
+                                            @endif
+                                        @endforeach
+                                    </select>
 
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword" class="form-control" placeholder="顧客名検索">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">検索</button>
-                                        </div>
+                                    <select style="margin-right:5px;" class="custom-select" id="month" name="month">
+                                        @foreach ($loop_month_flg as $loop_month_flg2)
+                                            @if ($loop_month_flg2['no']==0)
+                                                <option disabled value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                            @else
+                                                @if ($loop_month_flg2['no']==$nowmonth)
+                                                    <option selected value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                                @else
+                                                    <option value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                    @endif
+                                    {{-- 進捗チェック・スケジュール --}}
+                                    <!-- 年あり 顧客名あり -->
+                                    <!-- 納期特例 03 -->
+                                    <!-- 年末調整 04 -->
+                                    <!-- 請求書データ送信確認ページ 06_2 -->
+                                    <!-- 税理士業務処理簿 07 -->
+                                    <!-- 業務名管理 08 -->
+                                    <!-- 進捗チェック 09 -->
+                                    <!-- スケジュール 10 -->
+                                    @if( $common_no == '07'   ||
+                                         $common_no == '07_2' ||
+                                         $common_no == '03'   ||
+                                         $common_no == '04'
+                                        )
 
-                                    <!-- 年あり 顧客名なし -->
-                                    <!-- 会社申請・設立 11 -->
-                                    {{-- @elseif ($common_no == '11')
-                                        <style>
-                                            .exright{
-                                                text-align: right;
-                                            }
-                                        </style>
-                                        <div class="exright">
-                                            <select style="margin-right:5px;" class="custom-select" id="year" name="year">
-                                                @foreach ($loop_year_flg as $loop_year_flg2)
+                                    <select style="margin-right:5px;" class="custom-select" id="year" name="year">
+                                        @foreach ($loop_year_flg as $loop_year_flg2)
+                                            @if ($loop_year_flg2['no']==0)
+                                                <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                            @else
+                                                @if ($loop_year_flg2['no']==$nowyear)
+                                                    <option selected value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                                @else
+                                                    <option value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                    @endif
+
+                                    @if( $common_no == '09' || $common_no == '09_1' || $common_no == '10' || $common_no == '11')
+                                        <select style="margin-right:5px;" class="custom-select" id="year" name="year">
+                                            @foreach ($loop_year_flg as $loop_year_flg2)
+                                                @if ($loop_year_flg2['no']==0)
+                                                    <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                                @else
                                                     @if ($loop_year_flg2['no']==$nowyear)
                                                         <option selected value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
                                                     @else
                                                         <option value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
                                                     @endif
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                        <select style="margin-right:5px;" class="custom-select" id="sel_custom" name="sel_custom" >
+                                            @foreach ($customselects as $customselects2)
+                                                {{-- ALL(9999999) --}}
+                                                @if ($customselects2->custm_id==$int_custom)
+                                                    <option selected="selected" value={{$customselects2->custm_id}}>{{ $customselects2->business_name }}</option>
+                                                @else
+                                                    <option value={{$customselects2->custm_id}}>{{ $customselects2->business_name }}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                        <button type="submit" class="btn btn-secondary btn_sm">検索</button>
+                                    @else
+                                        @if( $common_no == '00_3' || $common_no == 'linetrialuser' || $common_no == 'linetrialuserhistory')
+                                        @else
+                                            <input type="text" value="{{$keyword2}}" name="keyword" class="form-control" placeholder="顧客名検索">
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-secondary btn_sm">検索</button>
+                                            </div>
+                                        @endif
 
-                                                @endforeach
-                                            </select>
-                                            <button type="submit" class="btn btn-secondary btn_sm">検索</button>
-                                        </div> --}}
-
-                                    <!-- 年なし 顧客名あり -->
-                                    <!-- 顧客管理 00_2 -->
-                                    <!-- アップロードユーザー 01 -->
-                                    <!-- 複数法人 00_4 -->
-                                    <!-- 税理士業務処理簿 07 -->
-                                    @elseif($common_no == '00_2')
-<input style="margin-right:5px;" type="text" value="{{$keyword}}" name="keyword" class="form-control" placeholder="顧客名検索">
-<input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword2" class="form-control" placeholder="代表者名検索">
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-secondary">検索</button>
-                                    </div>
-
-                                    @elseif($common_no == '01' || $common_no == '00_4' || $common_no == '07' )
-                                    {{-- @elseif($common_no != '00_1' && $common_no ='07' || $common_no ='00_4' ) --}}
-         <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword" class="form-control" placeholder="顧客名検索">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">検索</button>
-                                        </div>
-                                    <!-- 年なし 名前あり -->
-                                    <!-- 利用者管理 00_1 -->
-                                    @elseif($common_no == '00_ope')
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword}}" name="keyword" class="form-control" placeholder="名前検索">
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword2" class="form-control" placeholder="顧客名検索">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">検索</button>
-                                        </div>
-                                    <!-- 利用者管理 00_1 -->
-                                    @elseif($common_no == '00_1')
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword}}" name="keyword" class="form-control" placeholder="名前検索">
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword2" class="form-control" placeholder="顧客名検索">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">検索</button>
-                                        </div>
                                     @endif
+
                                 </div>
                             </div>
                         </form>

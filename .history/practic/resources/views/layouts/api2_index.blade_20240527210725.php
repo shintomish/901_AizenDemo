@@ -10,20 +10,23 @@
         <!-- favicon.ico -->
         <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}">
 
+        <!-- Saite Seal -->
+        {{-- <img alt="gif" src="{{ asset('css/back/RapidSSL-SEAL.gif') }}" width="90" height="50"> --}}
+
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Tytle -->
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Scripts -->
-        {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-        <script src="{{ asset('js/jquery-3.6.0.min.js') }}" defer></script>
-
         <!-- Bootstrap core CSS -->
         {{-- <link href="{{ asset('css/back/bootstrap.min.css') }}" rel="stylesheet"> --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+        <!-- Scripts -->
+        {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+        {{-- <script src="{{ asset('js/jquery-3.6.0.min.js') }}" defer></script> --}}
 
         <!-- Fonts -->
         {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com"> --}}
@@ -32,18 +35,28 @@
         <!-- Custom styles for this template -->
         <link href="{{ asset('css/back/dashboard.css') }}" rel="stylesheet">
 
+        <!-- jQuery -->
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+        <!-- My js -->
+        {{-- <script src="{{asset('js/back/common.js')}}"></script> --}}
+
+        {{-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> --}}
+
         <!-- flash_message -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
         {{-- プラグイン(pace.min.js center-atom.css) loading-bar.css center-circle.css--}}
-        <script type="text/javascript" src="{{ asset('js/back/pace.min.js') }}"></script>
-        <link href="{{ asset('css/back/center-circle_d.css') }}" rel="stylesheet">
+        {{-- <script type="text/javascript" src="{{ asset('js/back/pace.min.js') }}"></script> --}}
+        {{-- <link href="{{ asset('css/back/center-circle_d.css') }}" rel="stylesheet"> --}}
 
         <!-- Place your kit's code here -->
         <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script>
-        {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> --}}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+        {{-- <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script> --}}
 
         <style>
             .bd-placeholder-img {
@@ -63,6 +76,7 @@
     </head>
 
     <body>
+        <div id=’app’></div>
         <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="{{ route('top') }}">{{ config('app.name', 'Laravel') }}</a>
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,22 +84,8 @@
             </button>
             <div class="form-control bg-dark w-100" type="text" placeholder="" aria-label="Search"></div>
             <ul class="navbar-nav px-3">
-                {{-- 2021/11/19 変更 --}}
-                {{-- <li class="nav-item text-nowrap">
-                    <a class="nav-link" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">{{ __('Logout') }}
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </li> --}}
                 <li class="nav-item text-nowrap">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="return logout(event);">
-                        {{-- <span class="text-danger"> --}}
-                            {{-- <i class="fa fa-sign-out-alt"></i> ログアウト --}}
-                        {{-- </span> --}}
-                        {{-- 2022/10/17 --}}
                         <h5 >
                             <span class="text-danger">
                                 <i class="fa fa-sign-out-alt"></i> ログアウト
@@ -102,7 +102,7 @@
                                 if(check){
                                     document.getElementById('logout-form').submit();
                                 }
-                            }
+                        }
                     </script>
                 </li>
             </ul>
@@ -157,11 +157,11 @@
                                     年度更新
                                 </a>
                             </li>
-                            {{-- 2023/09/04 以下「顧客ログイン状態」追加--}}
+                            {{-- 2022/10/24 --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('operationindex')}}">
-                                    <i class="fas fa-clipboard"></i>
-                                    顧客ログイン状態
+                                <a class="nav-link" href="{{route('chatin')}}">
+                                    <i class="fas fa-wifi"></i>
+                                    チャット
                                 </a>
                             </li>
                         </ul>
@@ -169,7 +169,7 @@
                         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                             <span>業務管理</span>
                             <a class="link-secondary" href="#" aria-label="Add a new report">
-                              <span data-feather="plus-circle"></span>
+                                <span data-feather="plus-circle"></span>
                             </a>
                         </h6>
 
@@ -205,21 +205,14 @@
                                     会計未処理事業者
                                 </a>
                             </li>
-                            {{-- 2023/10/12 --}}
-                            {{-- 顧問料金 2022/05/20不要 --}}
-                            <li class="nav-item">
+                            {{-- 2022/05/20 --}}
+                            {{-- 顧問料金 不要 --}}
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="{{route('advisorsfee.input')}}">
-                                    <i class="fas fa-file-upload"></i>
-                                    請求書作成・アップロード
-                                </a>
-                            </li>
-                            {{-- 2023/10/12 --}}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('billdatahistory_in')}}">
                                     <i class="fas fa-wallet"></i>
-                                    請求書データ送信確認ページ
+                                    顧問料金
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('wokprocbook.input')}}">
                                     <i class="fas fa-address-book"></i>
@@ -245,6 +238,7 @@
                                     スケジュール
                                 </a>
                             </li>
+
                             {{-- 2022/05/20 --}}
                             {{-- 今月の申請・設立 不要 --}}
                             {{-- <li class="nav-item">
@@ -262,12 +256,6 @@
 
                         <!-- 検索エリア -->
                         @switch ($common_no)
-                            {{-- 2023/09/04 以下「顧客ログイン状態」追加--}}
-                            @case ('00_ope')
-                                <!-- タイトル -->
-                                <h3>顧客ログイン状態</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('operationserch')}}" method="GET">
-                                @break;
                             @case ('00_1')
                                 <!-- タイトル -->
                                 <h3>利用者管理</h3>
@@ -278,6 +266,10 @@
                                 <h3>顧客管理</h3>
                                 <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('customerserch')}}" method="GET">
                                 @break;
+                            @case ('00_3')
+                                <!-- タイトル -->
+                                <!-- TOP -->
+                                @break;
                             @case ('00_4')
                                 <!-- タイトル -->
                                 <h3>複数法人</h3>
@@ -285,8 +277,7 @@
                                 @break;
                             @case ('01')
                                 <!-- layouts.upload 検索が日付でdatapickを使用-->
-                                <h3>アップロードユーザー</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('uploadserch_customer')}}" method="GET">
+                                {{-- <h3>アップロードユーザー一覧</h3> --}}
                                 @break;
                             @case ('02')
                                 <!-- layouts.costomer-->
@@ -318,7 +309,11 @@
                                 <h3>税理士業務処理簿</h3>
                                 <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('wokprocbookserch')}}" method="GET">
                                 @break;
-
+                            @case ('07_2')
+                                <!-- タイトル -->
+                                <h3>税理士業務処理簿</h3>
+                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('wokprocbook_custom')}}" method="GET">
+                                @break;
                             @case ('08')
                                 <!-- タイトル -->
                                 <h3>業務名管理</h3>
@@ -328,7 +323,13 @@
                             @case ('09')
                                 <!-- タイトル -->
                                 <h3>進捗チェック</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('progrecheck_custom')}}" method="GET">
+                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('progreserch_custom')}}" method="GET">
+                                @break;
+
+                            @case ('09_1')
+                                <!-- タイトル input -->
+                                <h3>進捗チェック</h3>
+                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('progreserch_input')}}" method="GET">
                                 @break;
 
                             @case ('10')
@@ -337,10 +338,10 @@
                                 <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('schedule_custom')}}" method="GET">
                                 @break;
 
-                            @case ('11')
+                            @case ('00_7')
                                 <!-- タイトル -->
-                                <h3>会社申請・設立</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('applestablserch')}}" method="GET">
+                                {{-- <h3>会社申請・設立</h3> --}}
+
                                 @break;
 
                             @default:
@@ -352,87 +353,67 @@
                             @method('get')
                             <div class='btn-toolbar' role="toolbar">
                                 <div class="input-group">
+                                    {{-- 進捗チェック・スケジュール --}}
                                     <!-- 年あり 顧客名あり -->
                                     <!-- 納期特例 03 -->
                                     <!-- 年末調整 04 -->
                                     <!-- 顧問料金 06 -->
+                                    <!-- 税理士業務処理簿 07 -->
                                     <!-- 業務名管理 08 -->
                                     <!-- 進捗チェック 09 -->
                                     <!-- スケジュール 10 -->
-                                    @if( $common_no == '03' || $common_no == '04'  || $common_no == '06' || $common_no == '08' || $common_no == '09'  || $common_no == '10' )
+                                    @if( $common_no == '07' || $common_no == '07_2' || $common_no == '03' || $common_no == '04'  || $common_no == '06')
 
-                                        <select style="margin-right:5px;" class="custom-select" id="year" name="year">
-                                            @foreach ($loop_year_flg as $loop_year_flg2)
+                                    <select style="margin-right:5px;" class="custom-select" id="year" name="year">
+                                        @foreach ($loop_year_flg as $loop_year_flg2)
+                                            @if ($loop_year_flg2['no']==0)
+                                                <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                            @else
                                                 @if ($loop_year_flg2['no']==$nowyear)
                                                     <option selected value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
                                                 @else
-                                                    {{-- <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option> --}}
                                                     <option value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
                                                 @endif
-                                            @endforeach
-                                        </select>
-
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword" class="form-control" placeholder="顧客名検索">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">検索</button>
-                                        </div>
-
-                                    <!-- 年あり 顧客名なし -->
-                                    <!-- 会社申請・設立 11 -->
-                                    {{-- @elseif ($common_no == '11')
-                                        <style>
-                                            .exright{
-                                                text-align: right;
-                                            }
-                                        </style>
-                                        <div class="exright">
-                                            <select style="margin-right:5px;" class="custom-select" id="year" name="year">
-                                                @foreach ($loop_year_flg as $loop_year_flg2)
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                    @endif
+                                    @if( $common_no == '09' || $common_no == '09_1' || $common_no == '10' || $common_no == '11')
+                                        <select style="margin-right:5px;" class="custom-select" id="year" name="year">
+                                            @foreach ($loop_year_flg as $loop_year_flg2)
+                                                @if ($loop_year_flg2['no']==0)
+                                                    <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                                @else
                                                     @if ($loop_year_flg2['no']==$nowyear)
                                                         <option selected value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
                                                     @else
                                                         <option value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
                                                     @endif
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                        <select style="margin-right:5px;" class="custom-select" id="sel_custom" name="sel_custom" >
+                                            @foreach ($customselects as $customselects2)
+                                                {{-- ALL(9999999) --}}
+                                                @if ($customselects2->custm_id==$int_custom)
+                                                    <option selected="selected" value={{$customselects2->custm_id}}>{{ $customselects2->business_name }}</option>
+                                                @else
+                                                    <option value={{$customselects2->custm_id}}>{{ $customselects2->business_name }}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                        <button type="submit" class="btn btn-secondary btn_sm">検索</button>
+                                    @else
+                                        @if( $common_no == '00_3' )
+                                        @else
+                                            {{-- <input type="text" value="{{$keyword2}}" name="keyword" class="form-control" placeholder="顧客名検索">
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-secondary btn_sm">検索</button>
+                                            </div> --}}
+                                        @endif
 
-                                                @endforeach
-                                            </select>
-                                            <button type="submit" class="btn btn-secondary btn_sm">検索</button>
-                                        </div> --}}
-
-                                    <!-- 年なし 顧客名あり -->
-                                    <!-- 顧客管理 00_2 -->
-                                    <!-- アップロードユーザー 01 -->
-                                    <!-- 複数法人 00_4 -->
-                                    <!-- 税理士業務処理簿 07 -->
-                                    @elseif($common_no == '00_2')
-<input style="margin-right:5px;" type="text" value="{{$keyword}}" name="keyword" class="form-control" placeholder="顧客名検索">
-<input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword2" class="form-control" placeholder="代表者名検索">
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-secondary">検索</button>
-                                    </div>
-
-                                    @elseif($common_no == '01' || $common_no == '00_4' || $common_no == '07' )
-                                    {{-- @elseif($common_no != '00_1' && $common_no ='07' || $common_no ='00_4' ) --}}
-         <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword" class="form-control" placeholder="顧客名検索">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">検索</button>
-                                        </div>
-                                    <!-- 年なし 名前あり -->
-                                    <!-- 利用者管理 00_1 -->
-                                    @elseif($common_no == '00_ope')
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword}}" name="keyword" class="form-control" placeholder="名前検索">
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword2" class="form-control" placeholder="顧客名検索">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">検索</button>
-                                        </div>
-                                    <!-- 利用者管理 00_1 -->
-                                    @elseif($common_no == '00_1')
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword}}" name="keyword" class="form-control" placeholder="名前検索">
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword2" class="form-control" placeholder="顧客名検索">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">検索</button>
-                                        </div>
                                     @endif
+
                                 </div>
                             </div>
                         </form>
@@ -440,21 +421,17 @@
                     </div>
 
                     <!-- フラッシュメッセージ -->
-                    @include('components.toastr')
+                    {{-- @include('components.toastr') --}}
 
                     <div class="container">
                         @yield('content')
                     </div>
 
-
                 </main>
             </div>
         </div>
 
-        <script src="{{ asset('js/back/bootstrap.bundle.min.js') }}" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-        <script src="{{ asset('js/back/dashboard.js') }}"></script>
+        <script src="{{ asset('js/app.js')}}" defer></script>
 
     </body>
 

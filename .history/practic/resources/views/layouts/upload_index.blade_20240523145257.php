@@ -16,14 +16,14 @@
         <!-- Tytle -->
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Scripts -->
-        {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-        <script src="{{ asset('js/jquery-3.6.0.min.js') }}" defer></script>
-
         <!-- Bootstrap core CSS -->
         {{-- <link href="{{ asset('css/back/bootstrap.min.css') }}" rel="stylesheet"> --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+        <!-- Scripts -->
+        {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+        {{-- <script src="{{ asset('js/jquery-3.6.0.min.js') }}" defer></script> --}}
 
         <!-- Fonts -->
         {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com"> --}}
@@ -32,18 +32,26 @@
         <!-- Custom styles for this template -->
         <link href="{{ asset('css/back/dashboard.css') }}" rel="stylesheet">
 
+        <!-- jQuery -->
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+        <!-- My js -->
+        <script src="{{asset('js/back/common.js')}}"></script>
+
+        {{-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> --}}
+
         <!-- flash_message -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
         {{-- プラグイン(pace.min.js center-atom.css) loading-bar.css center-circle.css--}}
         <script type="text/javascript" src="{{ asset('js/back/pace.min.js') }}"></script>
         <link href="{{ asset('css/back/center-circle_d.css') }}" rel="stylesheet">
 
         <!-- Place your kit's code here -->
-        <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script>
-        {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> --}}
+        {{-- <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script> --}}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
         <style>
             .bd-placeholder-img {
@@ -102,7 +110,7 @@
                                 if(check){
                                     document.getElementById('logout-form').submit();
                                 }
-                            }
+                        }
                     </script>
                 </li>
             </ul>
@@ -169,7 +177,7 @@
                         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                             <span>業務管理</span>
                             <a class="link-secondary" href="#" aria-label="Add a new report">
-                              <span data-feather="plus-circle"></span>
+                                <span data-feather="plus-circle"></span>
                             </a>
                         </h6>
 
@@ -205,7 +213,7 @@
                                     会計未処理事業者
                                 </a>
                             </li>
-                            {{-- 2023/10/12 --}}
+                            {{-- 2023/10/12 復活 --}}
                             {{-- 顧問料金 2022/05/20不要 --}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('advisorsfee.input')}}">
@@ -284,8 +292,31 @@
                                 <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('ctluserserch')}}" method="GET">
                                 @break;
                             @case ('01')
-                                <!-- layouts.upload 検索が日付でdatapickを使用-->
+                                <!-- 2022/09/11 -->
                                 <h3>アップロードユーザー</h3>
+                                <form action="{{ route('upload_file_check' ) }}" method="POST">
+                                    @csrf
+                                    <div class="btn-toolbar">
+                                        <div class="btn-group me-2 mb-0">
+                <input type="submit" class="btn btn-primary btn-sm" value="ファイルチェック">
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <form action="{{ route('upload_custum' ) }}" method="POST">
+                                    @csrf
+                                    <div class="btn-toolbar">
+                                        <div class="btn-group me-2 mb-0">
+                <input type="submit" class="btn btn-primary btn-sm mb-2" value="顧客絞込">
+                                        </div>
+                                        <select style="margin-bottom:5px;" class="custom-select" id="individual_mail" name="individual_mail">
+                <option value="1" {{ $individual_mail == 1 ? 'selected' : '' }}>法人</option>
+                <option value="2" {{ $individual_mail == 2 ? 'selected' : '' }}>個人</option>
+                <option value="3" {{ $individual_mail == 3 ? 'selected' : '' }}>全て</option>
+                                        </select>
+                                    </div>
+                                </form>
+
                                 <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('uploadserch_customer')}}" method="GET">
                                 @break;
                             @case ('02')
@@ -379,7 +410,7 @@
 
                                     <!-- 年あり 顧客名なし -->
                                     <!-- 会社申請・設立 11 -->
-                                    {{-- @elseif ($common_no == '11')
+                                    @elseif ($common_no == '11')
                                         <style>
                                             .exright{
                                                 text-align: right;
@@ -397,38 +428,16 @@
                                                 @endforeach
                                             </select>
                                             <button type="submit" class="btn btn-secondary btn_sm">検索</button>
-                                        </div> --}}
+                                        </div>
 
                                     <!-- 年なし 顧客名あり -->
+                                    <!-- 利用者管理 00_1 -->
                                     <!-- 顧客管理 00_2 -->
-                                    <!-- アップロードユーザー 01 -->
                                     <!-- 複数法人 00_4 -->
+                                    <!-- アップロードユーザー 01 -->
                                     <!-- 税理士業務処理簿 07 -->
-                                    @elseif($common_no == '00_2')
-<input style="margin-right:5px;" type="text" value="{{$keyword}}" name="keyword" class="form-control" placeholder="顧客名検索">
-<input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword2" class="form-control" placeholder="代表者名検索">
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-secondary">検索</button>
-                                    </div>
-
-                                    @elseif($common_no == '01' || $common_no == '00_4' || $common_no == '07' )
-                                    {{-- @elseif($common_no != '00_1' && $common_no ='07' || $common_no ='00_4' ) --}}
-         <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword" class="form-control" placeholder="顧客名検索">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">検索</button>
-                                        </div>
-                                    <!-- 年なし 名前あり -->
-                                    <!-- 利用者管理 00_1 -->
-                                    @elseif($common_no == '00_ope')
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword}}" name="keyword" class="form-control" placeholder="名前検索">
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword2" class="form-control" placeholder="顧客名検索">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">検索</button>
-                                        </div>
-                                    <!-- 利用者管理 00_1 -->
-                                    @elseif($common_no == '00_1')
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword}}" name="keyword" class="form-control" placeholder="名前検索">
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword2" class="form-control" placeholder="顧客名検索">
+                                @elseif($common_no != '00_1' && $common_no != '00_2' && $common_no != '01' || $common_no ='07' || $common_no ='00_4' )
+        <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword" class="form-control" placeholder="顧客名検索">
                                         <div class="input-group-append">
                                             <button type="submit" class="btn btn-secondary">検索</button>
                                         </div>

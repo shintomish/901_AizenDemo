@@ -42,8 +42,8 @@
         <link href="{{ asset('css/back/center-circle_d.css') }}" rel="stylesheet">
 
         <!-- Place your kit's code here -->
-        <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script>
-        {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> --}}
+        {{-- <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script> --}}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
         <style>
             .bd-placeholder-img {
@@ -102,7 +102,7 @@
                                 if(check){
                                     document.getElementById('logout-form').submit();
                                 }
-                            }
+                        }
                     </script>
                 </li>
             </ul>
@@ -116,6 +116,7 @@
                             <li class="nav-item">
                                 <a class="nav-link active">
                                     <i class="fas fa-address-card"></i>
+                                    {{-- {{ $user->name }} --}}
                                     <?php $user = Auth::user(); ?>{{ $user->name }}
                                 </a>
                             </li>
@@ -128,18 +129,22 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('organization.index')}}">
+                                    {{-- <span data-feather="users"></span> --}}
                                     <i class="fas fa-user-alt"></i>
                                     組織
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('user.index')}}">
+                                    {{-- <span data-feather="users"></span> --}}
                                     <i class="fas fa-user-friends"></i>
                                     利用者管理
                                 </a>
+
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('customer.index')}}">
+                                    {{-- <span data-feather="users"></span> --}}
                                     <i class="fas fa-users"></i>
                                     顧客管理
                                 </a>
@@ -177,35 +182,41 @@
 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('uploaduser')}}">
+                                {{-- <a class="nav-link" href=""> --}}
+                                    {{-- <span data-feather="file"></span> --}}
                                     <i class="fas fa-file-upload"></i>
                                     アップロードユーザー
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('newsrepo.index')}}">
+                                    {{-- <span data-feather="file-text"></span> --}}
                                     <i class="fas fa-edit"></i>
                                     News・メール配信作成
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('spedelidate.input')}}">
+                                    {{-- <span data-feather="file-text"></span> --}}
                                     <i class="fas fa-clipboard"></i>
                                     納期特例
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('yrendadjust.input')}}">
+                                    {{-- <span data-feather="file-text"></span> --}}
                                     <i class="fas fa-wallet"></i>
                                     年末調整
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('notaccount.index')}}">
+                                    {{-- <span data-feather="file-text"></span> --}}
                                     <i class="fas fa-wallet"></i>
                                     会計未処理事業者
                                 </a>
                             </li>
-                            {{-- 2023/10/12 --}}
+                            {{-- 2023/10/12 復活 --}}
                             {{-- 顧問料金 2022/05/20不要 --}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('advisorsfee.input')}}">
@@ -222,31 +233,34 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('wokprocbook.input')}}">
+                                    {{-- <span data-feather="file"></span> --}}
                                     <i class="fas fa-address-book"></i>
                                     税理士業務処理簿
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('businesname.index')}}">
+                                    {{-- <span data-feather="file-text"></span> --}}
                                     <i class="fas fa-file-alt"></i>
                                     業務名管理
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('progrecheck.input')}}">
+                                    {{-- <span data-feather="file-text"></span> --}}
                                     <i class="fas fa-pen-square"></i>
                                     進捗チェック
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('schedule.index')}}">
-                                    <i class="fas fa-calendar-check"></i>
-                                    {{-- <i class="fas fa-tasks"></i> --}}
+                                    {{-- <span data-feather="file-text"></span> --}}
+                                    <i class="fas fa-tasks"></i>
                                     スケジュール
                                 </a>
                             </li>
                             {{-- 2022/05/20 --}}
-                            {{-- 今月の申請・設立 不要 --}}
+                            {{-- 会社申請・設立 不要 --}}
                             {{-- <li class="nav-item">
                                 <a class="nav-link" href="{{route('applestabl.index')}}">
                                     <i class="fas fa-edit"></i>
@@ -259,183 +273,19 @@
 
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-
                         <!-- 検索エリア -->
-                        @switch ($common_no)
-                            {{-- 2023/09/04 以下「顧客ログイン状態」追加--}}
-                            @case ('00_ope')
-                                <!-- タイトル -->
-                                <h3>顧客ログイン状態</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('operationserch')}}" method="GET">
-                                @break;
-                            @case ('00_1')
-                                <!-- タイトル -->
-                                <h3>利用者管理</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('userserch')}}" method="GET">
-                                @break;
-                            @case ('00_2')
-                                <!-- タイトル -->
-                                <h3>顧客管理</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('customerserch')}}" method="GET">
-                                @break;
-                            @case ('00_4')
-                                <!-- タイトル -->
-                                <h3>複数法人</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('ctluserserch')}}" method="GET">
-                                @break;
-                            @case ('01')
-                                <!-- layouts.upload 検索が日付でdatapickを使用-->
-                                <h3>アップロードユーザー</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('uploadserch_customer')}}" method="GET">
-                                @break;
-                            @case ('02')
-                                <!-- layouts.costomer-->
-                                {{-- <h3>NEWS作成</h3> --}}
-                                @break;
-                            <!-- 03以降 顧客名検索 -->
-                            @case ('03')
-                                <!-- タイトル -->
-                                <h3>納期特例</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('spedelidate_custom')}}" method="GET">
-                                @break;
-                            @case ('04')
-                                <!-- タイトル -->
-                                <h3>年末調整</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('yrendadjust_custom')}}" method="GET">
-                                @break;
-                            @case ('05')
-                                <!-- タイトル -->
-                                <h3>会計未処理事業者</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('notaccounth_custom')}}" method="GET">
-                                @break;
-                            @case ('06')
-                                <!-- タイトル -->
-                                <h3>顧問料金</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('advisorsfee_custom')}}" method="GET">
-                                @break;
-                            @case ('07')
-                                <!-- タイトル -->
-                                <h3>税理士業務処理簿</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('wokprocbookserch')}}" method="GET">
-                                @break;
-
-                            @case ('08')
-                                <!-- タイトル -->
-                                <h3>業務名管理</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('businesname_custom')}}" method="GET">
-                                @break;
-
-                            @case ('09')
-                                <!-- タイトル -->
-                                <h3>進捗チェック</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('progrecheck_custom')}}" method="GET">
-                                @break;
-
-                            @case ('10')
-                                <!-- タイトル -->
-                                <h3>スケジュール</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('schedule_custom')}}" method="GET">
-                                @break;
-
-                            @case ('11')
-                                <!-- タイトル -->
-                                <h3>会社申請・設立</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('applestablserch')}}" method="GET">
-                                @break;
-
-                            @default:
-                                @break;
-                        @endswitch
-
-                        {{-- <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('wokprocbookserch')}}" method="GET"> --}}
+                        {{-- <form  class="form-inline my-2 my-lg-0 ml-2" action="" method="GET">
                             @csrf
                             @method('get')
                             <div class='btn-toolbar' role="toolbar">
                                 <div class="input-group">
-                                    <!-- 年あり 顧客名あり -->
-                                    <!-- 納期特例 03 -->
-                                    <!-- 年末調整 04 -->
-                                    <!-- 顧問料金 06 -->
-                                    <!-- 業務名管理 08 -->
-                                    <!-- 進捗チェック 09 -->
-                                    <!-- スケジュール 10 -->
-                                    @if( $common_no == '03' || $common_no == '04'  || $common_no == '06' || $common_no == '08' || $common_no == '09'  || $common_no == '10' )
-
-                                        <select style="margin-right:5px;" class="custom-select" id="year" name="year">
-                                            @foreach ($loop_year_flg as $loop_year_flg2)
-                                                @if ($loop_year_flg2['no']==$nowyear)
-                                                    <option selected value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
-                                                @else
-                                                    {{-- <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option> --}}
-                                                    <option value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
-                                                @endif
-                                            @endforeach
-                                        </select>
-
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword" class="form-control" placeholder="顧客名検索">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">検索</button>
-                                        </div>
-
-                                    <!-- 年あり 顧客名なし -->
-                                    <!-- 会社申請・設立 11 -->
-                                    {{-- @elseif ($common_no == '11')
-                                        <style>
-                                            .exright{
-                                                text-align: right;
-                                            }
-                                        </style>
-                                        <div class="exright">
-                                            <select style="margin-right:5px;" class="custom-select" id="year" name="year">
-                                                @foreach ($loop_year_flg as $loop_year_flg2)
-                                                    @if ($loop_year_flg2['no']==$nowyear)
-                                                        <option selected value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
-                                                    @else
-                                                        <option value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
-                                                    @endif
-
-                                                @endforeach
-                                            </select>
-                                            <button type="submit" class="btn btn-secondary btn_sm">検索</button>
-                                        </div> --}}
-
-                                    <!-- 年なし 顧客名あり -->
-                                    <!-- 顧客管理 00_2 -->
-                                    <!-- アップロードユーザー 01 -->
-                                    <!-- 複数法人 00_4 -->
-                                    <!-- 税理士業務処理簿 07 -->
-                                    @elseif($common_no == '00_2')
-<input style="margin-right:5px;" type="text" value="{{$keyword}}" name="keyword" class="form-control" placeholder="顧客名検索">
-<input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword2" class="form-control" placeholder="代表者名検索">
+                                    <input type="text" name="keyword" class="form-control" placeholder="検索">
                                     <div class="input-group-append">
                                         <button type="submit" class="btn btn-secondary">検索</button>
                                     </div>
-
-                                    @elseif($common_no == '01' || $common_no == '00_4' || $common_no == '07' )
-                                    {{-- @elseif($common_no != '00_1' && $common_no ='07' || $common_no ='00_4' ) --}}
-         <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword" class="form-control" placeholder="顧客名検索">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">検索</button>
-                                        </div>
-                                    <!-- 年なし 名前あり -->
-                                    <!-- 利用者管理 00_1 -->
-                                    @elseif($common_no == '00_ope')
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword}}" name="keyword" class="form-control" placeholder="名前検索">
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword2" class="form-control" placeholder="顧客名検索">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">検索</button>
-                                        </div>
-                                    <!-- 利用者管理 00_1 -->
-                                    @elseif($common_no == '00_1')
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword}}" name="keyword" class="form-control" placeholder="名前検索">
-                                        <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword2" class="form-control" placeholder="顧客名検索">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">検索</button>
-                                        </div>
-                                    @endif
                                 </div>
                             </div>
-                        </form>
+                        </form> --}}
                         <!-- 検索エリア -->
                     </div>
 
@@ -452,9 +302,8 @@
         </div>
 
         <script src="{{ asset('js/back/bootstrap.bundle.min.js') }}" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-        <script src="{{ asset('js/back/dashboard.js') }}"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="{{ asset('js/back/dashboard.js') }}"></script>
 
     </body>
 
