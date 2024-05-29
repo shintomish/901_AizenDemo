@@ -2,10 +2,6 @@
 
 namespace App\Console;
 
-
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\DB;
-
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -61,12 +57,11 @@ class Kernel extends ConsoleKernel
         $schedule->command('backup:run')
                  ->weeklyOn(0, '06:10');                // 毎週日曜日(0)AM6:00に実行する
 
-        $schedule->command('cache:clear')
-                ->dailyAt('10:00')                      // 毎日AM10:00に実行する
-                ->onSuccess(function () {
-                    Log::info('schedule cache:clear 成功');
+        $schedule->command('command:quiz')
+        ->everyMinute()
+        ->onSuccess(function () {
+            Log::info('成功');
         });
-
     }
 
     /**

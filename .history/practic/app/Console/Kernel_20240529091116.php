@@ -62,9 +62,9 @@ class Kernel extends ConsoleKernel
                  ->weeklyOn(0, '06:10');                // 毎週日曜日(0)AM6:00に実行する
 
         $schedule->command('cache:clear')
-                ->dailyAt('10:00')                      // 毎日AM10:00に実行する
-                ->onSuccess(function () {
-                    Log::info('schedule cache:clear 成功');
+        ->dailyAt('05:00')                    // 毎日AM5:00に実行する
+        ->onSuccess(function () {
+            Log::info('schedule cache:clear 成功');
         });
 
     }
