@@ -42,8 +42,8 @@
         <link href="{{ asset('css/back/center-circle_d.css') }}" rel="stylesheet">
 
         <!-- Place your kit's code here -->
-        <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script>
-        {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> --}}
+        {{-- <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script> --}}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
     <style>
             .bd-placeholder-img {

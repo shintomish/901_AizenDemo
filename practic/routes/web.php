@@ -1,5 +1,7 @@
 <?php
 namespace App\Http\Controllers;
+
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -309,6 +311,14 @@ Route::post('linetrialuserhistory/update_api', 'App\Http\Controllers\LineTrialUs
 Route::resource('linetrialuserhistory',     'App\Http\Controllers\LineTrialUserHistoryController');
 
 //-----------------------------------------------------------------------------------------------
+//- お問合せフォーム
+//-----------------------------------------------------------------------------------------------
+Route::get('/contact', [FormController::class, 'index'])->name('contact');
+Route::post('/contact/confirm', [FormController::class, 'sendMail']);
+Route::get('/contact/confirm', [FormController::class, 'confirm'])->name('contact.confirm');
+Route::get('/contact/complete', [FormController::class, 'complete'])->name('contact.complete');
+
+//-----------------------------------------------------------------------------------------------
 //- LINE AnnouncementController
 //-----------------------------------------------------------------------------------------------
 Route::prefix('announcement')->middleware('auth')->group(function(){
@@ -316,7 +326,6 @@ Route::prefix('announcement')->middleware('auth')->group(function(){
     Route::get('/', [AnnouncementController::class, 'index'])->name('announcement.index');
     Route::get('/list', [AnnouncementController::class, 'list'])->name('announcement.list');
     Route::get('/{announcement}', [AnnouncementController::class, 'show'])->name('announcement.show');
-
 });
 ?>
 

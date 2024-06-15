@@ -42,8 +42,8 @@
         <link href="{{ asset('css/back/center-circle_d.css') }}" rel="stylesheet">
 
         <!-- Place your kit's code here -->
-        <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script>
-        {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> --}}
+        {{-- <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script> --}}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
         <style>
             .bd-placeholder-img {
@@ -418,14 +418,14 @@
                                             <button type="submit" class="btn btn-secondary">検索</button>
                                         </div>
                                     <!-- 年なし 名前あり -->
-                                    <!-- 利用者管理 00_1 -->
+                                    <!-- 利用者管理 00_1 -->    
                                     @elseif($common_no == '00_ope')
                                         <input style="margin-right:5px;" type="text" value="{{$keyword}}" name="keyword" class="form-control" placeholder="名前検索">
                                         <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword2" class="form-control" placeholder="顧客名検索">
                                         <div class="input-group-append">
                                             <button type="submit" class="btn btn-secondary">検索</button>
                                         </div>
-                                    <!-- 利用者管理 00_1 -->
+                                    <!-- 利用者管理 00_1 -->    
                                     @elseif($common_no == '00_1')
                                         <input style="margin-right:5px;" type="text" value="{{$keyword}}" name="keyword" class="form-control" placeholder="名前検索">
                                         <input style="margin-right:5px;" type="text" value="{{$keyword2}}" name="keyword2" class="form-control" placeholder="顧客名検索">
