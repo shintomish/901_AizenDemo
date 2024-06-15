@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
         <style>
             body {
                 /* background-color:rgb(239, 247, 208); 2023/11/09 */
@@ -21,13 +21,13 @@
         </style>
 
         @if($errors->any())
-            <div>
-                <ul>
-                    @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+        <div>
+            <ul>
+                @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
         @endif
 
         <form action="{{ route('contact.confirm') }}" method="POST">
@@ -81,8 +81,8 @@
 
             <div>
                 <label for="body"></label>
-                {{-- <textarea id="body" placeholder="お問い合わせ内容 必須" class="form-control" type="text" name="body">{{ old('body') }}</textarea> --}}
-                <textarea id="body" placeholder="お問い合わせ内容 必須" type="text" class="form-control @error('body') is-invalid @enderror" name="body" value="{{ old('body') }}" required autocomplete="body" autofocus></textarea>
+                <textarea id="body" placeholder="お問い合わせ内容 必須" class="form-control" type="text" name="body">{{ old('body') }}</textarea>
+                <textarea id="body" placeholder="お問い合わせ内容 必須"  class="form-controltype="text" @error('body') is-invalid @enderror" name="body" value="{{ old('body') }}" required autocomplete="age" autofocus></textarea>
 
                 {{-- @if($errors->has('body'))
                 <p>{{ $errors->first('body') }}</p>

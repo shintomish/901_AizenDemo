@@ -58,7 +58,7 @@
         <div>
             <label for="body">お問い合わせ内容</label>
             {{ old('body') }}
-            <textarea id="body" type="text" name="body"  class="form-control" value="{{ old('body') }}"></textarea>
+            <textarea id="body" type="hidden" name="body"  class="form-control" value="{{ old('body') }}"></textarea>
         </div>
 
         <div>

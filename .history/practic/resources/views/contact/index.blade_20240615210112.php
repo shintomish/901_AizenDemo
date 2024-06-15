@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
         <style>
             body {
                 /* background-color:rgb(239, 247, 208); 2023/11/09 */
@@ -21,13 +21,13 @@
         </style>
 
         @if($errors->any())
-            <div>
-                <ul>
-                    @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+        <div>
+            <ul>
+                @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
         @endif
 
         <form action="{{ route('contact.confirm') }}" method="POST">
@@ -66,24 +66,22 @@
             <div>
                 <label for="email"></label>
                 <input id="email" placeholder="メールアドレス 必須" name="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                {{-- @if($errors->has('email'))
+                @if($errors->has('email'))
                 <p>{{ $errors->first('email') }}</p>
-                @endif --}}
+                @endif
             </div>
 
             <div>
                 <label for="email_confirmation"></label>
                 <input id="email_confirmation" placeholder="メールアドレスの確認 必須" type="email" class="form-control @error('email') is-invalid @enderror" name="email_confirmation" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                {{-- @if($errors->has('email_confirmation'))
+                @if($errors->has('email_confirmation'))
                 <p>{{ $errors->first('email_confirmation') }}</p>
-                @endif --}}
+                @endif
             </div>
 
             <div>
                 <label for="body"></label>
-                {{-- <textarea id="body" placeholder="お問い合わせ内容 必須" class="form-control" type="text" name="body">{{ old('body') }}</textarea> --}}
-                <textarea id="body" placeholder="お問い合わせ内容 必須" type="text" class="form-control @error('body') is-invalid @enderror" name="body" value="{{ old('body') }}" required autocomplete="body" autofocus></textarea>
-
+                <textarea id="body" placeholder="お問い合わせ内容 必須" class="form-control" type="text" name="body">{{ old('body') }}</textarea>
                 {{-- @if($errors->has('body'))
                 <p>{{ $errors->first('body') }}</p>
                 @endif --}}

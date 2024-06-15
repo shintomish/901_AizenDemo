@@ -39,7 +39,7 @@
         <div>
             <label for="sex-id">性別</label>
             {{ old('sex-id') }}
-            <input id="sex-id" type="text" class="form-control" name="sex-id" value="{{ old('sex-id') }}">
+            <input id="sex-id" type="text"  class="form-control" name="sex-id" value="{{ old('sex-id') }}">
         </div>
 
         <div>
@@ -58,7 +58,7 @@
         <div>
             <label for="body">お問い合わせ内容</label>
             {{ old('body') }}
-            <textarea id="body" type="text" name="body"  class="form-control" value="{{ old('body') }}"></textarea>
+            <textarea id="body" type="hidden" name="body" value="{{ old('body') }}"></textarea>
         </div>
 
         <div>
