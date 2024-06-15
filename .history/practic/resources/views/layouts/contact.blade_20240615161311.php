@@ -17,8 +17,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Tytle -->
+        {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
         <title>{{ config('app.name', 'Laravel') }}</title>
-        {{-- <title>トレーニングメニュー提供サービス</title> --}}
 
         <!-- Bootstrap core CSS -->
         {{-- <link href="{{ asset('css/back/bootstrap.min.css') }}" rel="stylesheet"> --}}

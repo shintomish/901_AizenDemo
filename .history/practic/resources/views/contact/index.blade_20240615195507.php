@@ -39,8 +39,7 @@
 
             <div>
                 <label for="age"></label>
-                <input id="age" placeholder="年齢 必須"  type="text" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" required autocomplete="age" autofocus>
-            </div>
+            <input id="age" placeholder="年齢 必須"  type="text" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" required autocomplete="age" autofocus>
 
             <!--  性別プルダウン -->
             <div class="form-group">
@@ -63,11 +62,9 @@
                 </select>
             </div>
 
-            <div>
-                <label for="email"></label>
-                <input id="email" placeholder="メールアドレス 必須"  type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-            </div>
-            
+            <label for="email"></label>
+            <input id="email" placeholder="メールアドレス 必須"  type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
             <div>
                 <label for="body"></label>
                 <textarea id="body" placeholder="お問い合わせ内容 必須" class="form-control" type="text" name="body">{{ old('body') }}</textarea>

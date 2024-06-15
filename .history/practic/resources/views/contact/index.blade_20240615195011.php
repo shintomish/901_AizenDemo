@@ -32,19 +32,15 @@
 
         <form action="{{ route('contact.confirm') }}" method="POST">
             @csrf
-            <div>
-                <label for="name"></label>
-                <input id="name" placeholder="お名前 必須"  type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-            </div>
+            <label class="text-left" for="name">{{ __('お名前') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
+            <input id="name" placeholder="お名前"  type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-            <div>
-                <label for="age"></label>
-                <input id="age" placeholder="年齢 必須"  type="text" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" required autocomplete="age" autofocus>
-            </div>
+            <label class="text-left" for="age">{{ __('年齢') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
+            <input id="age" placeholder="年齢"  type="text" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" required autocomplete="age" autofocus>
 
             <!--  性別プルダウン -->
             <div class="form-group">
-                <label for="sex-id"></label>
+                <label class="text-left" for="sex-id">{{ __('性別') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
                 <select class="form-control" id="sex-id" name="sex_id">
                     <option value="1">男性</option>
                     <option value="2">女性</option>
@@ -53,7 +49,7 @@
 
             <!--  スポーツレベルプルダウン -->
             <div class="form-group">
-                <label for="level-id"></label>
+                <label class="text-left" for="level-id">{{ __('スポーツレベル') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
                 <select class="form-control" id="level-id" name="level_id">
                     <option value="1">S トップアスリート(世界レベル)</option>
                     <option value="2">A アスリート(国内レベル)</option>
@@ -63,13 +59,12 @@
                 </select>
             </div>
 
+            <label class="text-left" for="email">{{ __('メールアドレス') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
+            <input id="email" placeholder="メールアドレス"  type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
             <div>
-                <label for="email"></label>
-                <input id="email" placeholder="メールアドレス 必須"  type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-            </div>
-            
-            <div>
-                <label for="body"></label>
+                <p 
+                <label class="text-left" for="body">お問い合わせ内容</label>
                 <textarea id="body" placeholder="お問い合わせ内容 必須" class="form-control" type="text" name="body">{{ old('body') }}</textarea>
                 @if($errors->has('body'))
                 <p>{{ $errors->first('body') }}</p>

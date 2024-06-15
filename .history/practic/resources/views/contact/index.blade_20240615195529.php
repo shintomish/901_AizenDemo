@@ -66,8 +66,7 @@
             <div>
                 <label for="email"></label>
                 <input id="email" placeholder="メールアドレス 必須"  type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-            </div>
-            
+
             <div>
                 <label for="body"></label>
                 <textarea id="body" placeholder="お問い合わせ内容 必須" class="form-control" type="text" name="body">{{ old('body') }}</textarea>

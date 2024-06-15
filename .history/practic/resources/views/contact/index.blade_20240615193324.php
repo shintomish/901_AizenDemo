@@ -32,28 +32,22 @@
 
         <form action="{{ route('contact.confirm') }}" method="POST">
             @csrf
-            <div>
-                <label for="name"></label>
-                <input id="name" placeholder="お名前 必須"  type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-            </div>
+            <label for="name"></label>
+            <input id="name" placeholder="お名前 必須"  type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-            <div>
-                <label for="age"></label>
-                <input id="age" placeholder="年齢 必須"  type="text" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" required autocomplete="age" autofocus>
-            </div>
+            <label for="age"></label>
+            <input id="age" placeholder="年齢 必須"  type="text" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" required autocomplete="age" autofocus>
 
-            <!--  性別プルダウン -->
+            <label for="sex"></label>
+            <select class="custom-select" id="sex" name="sex">
+                <option value="1" >男性</option>
+                <option value="2" >女性</option>
+            </select>
+
+
+            <!--  スポーツレベルダウン -->
             <div class="form-group">
-                <label for="sex-id"></label>
-                <select class="form-control" id="sex-id" name="sex_id">
-                    <option value="1">男性</option>
-                    <option value="2">女性</option>
-                </select>
-            </div>
-
-            <!--  スポーツレベルプルダウン -->
-            <div class="form-group">
-                <label for="level-id"></label>
+                <label for="level-id">{{ __('スポーツレベル') }}<span class="badge badge-danger ml-2">{{ __('必須') }}</span></label>
                 <select class="form-control" id="level-id" name="level_id">
                     <option value="1">S トップアスリート(世界レベル)</option>
                     <option value="2">A アスリート(国内レベル)</option>
@@ -63,11 +57,9 @@
                 </select>
             </div>
 
-            <div>
-                <label for="email"></label>
-                <input id="email" placeholder="メールアドレス 必須"  type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-            </div>
-            
+            <label for="email"></label>
+            <input id="email" placeholder="メールアドレス 必須"  type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
             <div>
                 <label for="body"></label>
                 <textarea id="body" placeholder="お問い合わせ内容 必須" class="form-control" type="text" name="body">{{ old('body') }}</textarea>

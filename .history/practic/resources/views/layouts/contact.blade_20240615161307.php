@@ -18,7 +18,7 @@
 
         <!-- Tytle -->
         <title>{{ config('app.name', 'Laravel') }}</title>
-        {{-- <title>トレーニングメニュー提供サービス</title> --}}
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Bootstrap core CSS -->
         {{-- <link href="{{ asset('css/back/bootstrap.min.css') }}" rel="stylesheet"> --}}
