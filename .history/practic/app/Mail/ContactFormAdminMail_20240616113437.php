@@ -3,14 +3,14 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
+// use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Queue\SerializesModels;
 
-class ContactFormUserMail extends Mailable
+class ContactFormAdminMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,11 +28,11 @@ class ContactFormUserMail extends Mailable
     public function envelope(): Envelope
     {
         // return new Envelope(
-        //     subject: 'Contact Form User Mail',
+        //     subject: 'Contact Form Admin Mail',
         // );
-        $from    = new Address(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
-        // $subject = '【' . env('APP_NAME') . '】お問い合せありがとうございます';
-        $subject = '【トレーニングメニュー提供サービス】】お問い合せありがとうございます';
+        $from = new Address($this->form_data['email'], $this->form_data['name']);
+        // $subject = '【' . env('APP_NAME') . '】お問い合せがありました';
+        $subject = '【トレーニングメニュー提供サービス】お問い合せがありました';
 
         return new Envelope(
             from: $from,
@@ -49,7 +49,7 @@ class ContactFormUserMail extends Mailable
         //     view: 'view.name',
         // );
         return new Content(
-            text: 'emails.contact.user', // プレーンテキストで送信
+            text: 'emails.contact.admin', // プレーンテキストで送信
         );
     }
 

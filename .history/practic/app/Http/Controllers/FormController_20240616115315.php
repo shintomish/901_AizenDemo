@@ -113,7 +113,7 @@ class FormController extends Controller
                 $email_name  = $form_data['name'];
 
                 // 管理者宛メール
-                // Mail::to($email_admin)->send(new ContactFormAdminMail($email_user,$email_name));
+                Mail::to($email_admin)->send(new ContactFormAdminMail($email_user));
                 // ユーザー宛メール
                 Mail::to($email_user)->send(new ContactFormUserMail($form_data));
 

@@ -6,18 +6,27 @@
 ==============================
 ■お名前:
 {{ $form_data['name'] }}
-
 ■年齢:
 {{ $form_data['age'] }}
-
 ■メールアドレス:
 {{ $form_data['email'] }}
-
 ■性別:
-{{ $form_data['sex_id'] }}
-
+@php
+    $str = '';
+    if($form_data['sex_id'] == 1)
+        $str ='男性';
+    endif
+    if($form_data['sex_id'] == 2)
+        $str ='女性';
+    endif
+@endphp
+{{ $str }}
 ■スポーツレベル:
-{{ $form_data['level_id'] }}
+@php
+
+@endphp
+
+{{ $str1 }}
 
 ■お問い合わせ内容:
 {{ $form_data['body'] }}

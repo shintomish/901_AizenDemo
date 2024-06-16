@@ -110,10 +110,9 @@ class FormController extends Controller
                 // 送信先メールアドレス
                 $email_admin = env('MAIL_FROM_ADDRESS');
                 $email_user  = $form_data['email'];
-                $email_name  = $form_data['name'];
 
                 // 管理者宛メール
-                // Mail::to($email_admin)->send(new ContactFormAdminMail($email_user,$email_name));
+                Mail::to($email_admin)->send(new ContactFormAdminMail($name,$));
                 // ユーザー宛メール
                 Mail::to($email_user)->send(new ContactFormUserMail($form_data));
 

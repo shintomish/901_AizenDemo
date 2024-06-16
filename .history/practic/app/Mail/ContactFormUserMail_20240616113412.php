@@ -3,7 +3,7 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
+// use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -32,7 +32,8 @@ class ContactFormUserMail extends Mailable
         // );
         $from    = new Address(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
         // $subject = '【' . env('APP_NAME') . '】お問い合せありがとうございます';
-        $subject = '【トレーニングメニュー提供サービス】】お問い合せありがとうございます';
+                // $subject = '【' . env('APP_NAME') . '】お問い合せがありました';
+                $subject = '【トレーニングメニュー提供サービス】】お問い合せありがとうございます';
 
         return new Envelope(
             from: $from,
