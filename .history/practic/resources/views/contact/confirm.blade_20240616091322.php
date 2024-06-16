@@ -43,7 +43,7 @@
 
         <div>
             <label for="level-id">レベル</label>
-            <input id="level-id" type="text" class="form-control"  name="level-id" value="S トップアスリート(世界レベル)">
+            <input id="level-id" type="text" class="form-control"  name="level-id" value=">S トップアスリート(世界レベル)">
         </div>
 
         <div>

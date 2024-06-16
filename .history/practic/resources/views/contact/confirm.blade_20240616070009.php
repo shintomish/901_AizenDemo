@@ -38,12 +38,12 @@
 
         <div>
             <label for="sex-id">性別</label>
-            <input id="sex-id" type="text" class="form-control" name="sex-id" value="男">
+            <input id="sex-id" type="text" class="form-control" name="sex-id" value="{{ old('sex-id') }}">
         </div>
 
         <div>
             <label for="level-id">レベル</label>
-            <input id="level-id" type="text" class="form-control"  name="level-id" value="S トップアスリート(世界レベル)">
+            <input id="level-id" type="text" class="form-control"  name="level-id" value="{{ old('level-id') }}">
         </div>
 
         <div>
@@ -54,7 +54,7 @@
 
         <div>
             <label for="body">お問い合わせ内容</label>
-            <textarea id="body" type="text" name="body" class="form-control" value="{{ old('body') }}"></textarea>
+            <textarea id="body" type="text" name="body"  class="form-control" value="{{ old('body') }}"></textarea>
         </div>
 
         <div>

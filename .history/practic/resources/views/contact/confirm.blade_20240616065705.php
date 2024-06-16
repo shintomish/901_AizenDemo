@@ -38,23 +38,27 @@
 
         <div>
             <label for="sex-id">性別</label>
-            <input id="sex-id" type="text" class="form-control" name="sex-id" value="男">
+            @if sex-id == 1
+            
+            <input id="sex-id" type="text" class="form-control" name="sex-id" value="{{ old('sex-id') }}">
         </div>
 
         <div>
             <label for="level-id">レベル</label>
-            <input id="level-id" type="text" class="form-control"  name="level-id" value="S トップアスリート(世界レベル)">
+            {{ old('level-id') }}
+            <input id="level-id" type="hidden" name="level-id" value="{{ old('level-id') }}">
         </div>
 
         <div>
             <label for="email">メールアドレス</label>
-            <input id="email" type="text" class="form-control"  name="email" value="{{ old('email') }}">
-            {{-- <input id="email_confirmation" type="hidden" name="email_confirmation" value="{{ old('email_confirmation') }}"> --}}
+            {{ old('email') }}
+            <input id="email" type="hidden" name="email" value="{{ old('email') }}">
+            <input id="email_confirmation" type="hidden" name="email_confirmation" value="{{ old('email_confirmation') }}">
         </div>
 
         <div>
             <label for="body">お問い合わせ内容</label>
-            <textarea id="body" type="text" name="body" class="form-control" value="{{ old('body') }}"></textarea>
+            <textarea id="body" type="text" name="body"  class="form-control" value="{{ old('body') }}"></textarea>
         </div>
 
         <div>

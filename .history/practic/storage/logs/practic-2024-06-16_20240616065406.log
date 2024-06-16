@@ -1,0 +1,10 @@
+[2024-06-16 06:23:31] local.ERROR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'practic.cache' doesn't exist (Connection: mysql, SQL: delete from `cache`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'practic.cache' doesn't exist (Connection: mysql, SQL: delete from `cache`) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:813)
+
+[2024-06-16 06:52:47] local.INFO: FormController index START  
+[2024-06-16 06:52:47] local.INFO: FormController index END  
+[2024-06-16 06:53:03] local.INFO: FormController sendMail START  
+[2024-06-16 06:53:03] local.INFO: FormController sendMail confirm END  
+[2024-06-16 06:53:05] local.INFO: FormController confirm START  
+[2024-06-16 06:53:05] local.INFO: FormController confirm END  
+[2024-06-16 06:53:26] local.INFO: FormController confirm START  
+[2024-06-16 06:53:26] local.INFO: FormController confirm END  

@@ -24,10 +24,9 @@ class FormController extends Controller
     /**
      * 確認ページ
      */
-    public function confirm(ContactFormRequest $request)
+    public function confirm()
     {
         Log::info('FormController confirm START');
-        
         Log::info('FormController confirm END');
         return view('contact.confirm');
     }
@@ -38,7 +37,6 @@ class FormController extends Controller
     public function complete()
     {
         Log::info('FormController complete START');
-
         Log::info('FormController complete END');
         return view('contact.complete');
     }

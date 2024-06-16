@@ -20,7 +20,7 @@
         }
     </style>
 
-    <form action="{{ route('contact.confirm') }}" method="POST">
+    <form action="{{ route('contact.sendMail') }}" method="POST">
         @csrf
 
         <div>

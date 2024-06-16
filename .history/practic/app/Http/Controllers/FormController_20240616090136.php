@@ -27,7 +27,40 @@ class FormController extends Controller
     public function confirm(ContactFormRequest $request)
     {
         Log::info('FormController confirm START');
-        
+        $form_data = $request->validated();
+
+        // submitボタンの値により分岐させる
+        $submitBtnVal = $request->input('submitBtnVal');
+        switch ($submitBtnVal) {
+            case 'confirm':
+                Log::info('FormController confirm confirm END');
+                // 確認画面へ
+                return to_route('contact.confirm')->withInput();
+                break;
+            case 'back':
+                Log::info('FormController confirm back END');
+                // 入力画面へ戻る
+                return to_route('contact')->withInput();
+                break;
+            case 'complete':
+                // 送信先メールアドレス
+                $email_admin = env('MAIL_FROM_ADDRESS');
+                $email_user  = $form_data['email'];
+
+                // 管理者宛メール
+                Mail::to($email_admin)->send(new ContactFormAdminMail($form_data));
+                // ユーザー宛メール
+                Mail::to($email_user)->send(new ContactFormUserMail($form_data));
+
+                Log::info('FormController sendMail complete END');
+
+                return to_route('contact.complete');
+                break;
+            default:
+                // エラー
+        }
+
+
         Log::info('FormController confirm END');
         return view('contact.confirm');
     }
