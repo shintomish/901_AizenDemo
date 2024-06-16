@@ -315,7 +315,7 @@ Route::resource('linetrialuserhistory',     'App\Http\Controllers\LineTrialUserH
 //-----------------------------------------------------------------------------------------------
 Route::get('/contact', [FormController::class, 'index'])->name('contact');
 Route::post('/contact/confirm', [FormController::class, 'sendMail']);
-Route::post('/contact/send', [FormController::class, 'send'])->name('contact.send');
+Route::post('/contact/confirm', [FormController::class, 'sendMail']);
 Route::get('/contact/confirm', [FormController::class, 'confirm'])->name('contact.confirm');
 Route::get('/contact/complete', [FormController::class, 'complete'])->name('contact.complete');
 

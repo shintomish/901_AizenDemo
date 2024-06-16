@@ -32,9 +32,9 @@
 
         <form action="{{ route('contact.send') }}" method="POST">
             @csrf
-            <h6>
+            <h3>
                 <label for="1" style="margin-bottom:10px;" class="text-warning">以下を入力してください</label>
-            </h6>
+            </h3>
             <div>
                 {{-- <label for="name"></label> --}}
                 <input id="name" style="margin-top:10px;"  placeholder="お名前 必須"  type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -92,7 +92,7 @@
                 @endif --}}
             </div>
 
-            <button type="submit" style="margin-top:10px;" class="w-50 btn btn-sm btn-primary" name="submitBtnVal" value="complete">送信</button>
+            <button type="submit" style="margin-top:10px;" class="w-50 btn btn-sm btn-primary" name="submitBtnVal" value="confirm">送信</button>
 
         </form>
     </section>

@@ -26,7 +26,7 @@
         <label for="1" style="margin-bottom:10px;" class="text-warning">確認</label>
         </h3>
         <div>
-            {{-- <label for="name"></label> --}}
+            <label for="name"></label>
             {{-- <input id="name" type="hidden" name="name" value="{{ old('name') }}"> --}}
             <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" disabled>
 
@@ -45,18 +45,18 @@
 
         <div>
             <label for="level-id"></label>
-            <input id="level-id" type="text" class="form-control" name="level-id" value="S トップアスリート(世界レベル)">
+            <input id="level-id" type="text" class="form-control"  name="level-id" value="S トップアスリート(世界レベル)">
         </div>
 
         <div>
             <label for="email"></label>
-            <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" disabled>
+            <input id="email" type="text" class="form-control"  name="email" value="{{ old('email') }}" disabled>
             {{-- <input id="email_confirmation" type="hidden" name="email_confirmation" value="{{ old('email_confirmation') }}"> --}}
         </div>
 
         <div>
             <label for="body"></label>
-            <textarea id="body" type="text" class="form-control" name="body" disabled>{{ old('body') }}</textarea>
+            <input id="body" type="text" name="body" class="row-5" value="{{ old('body') }}" disabled>
         </div>
 
         <div>

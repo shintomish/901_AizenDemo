@@ -116,7 +116,7 @@ class FormController extends Controller
                 // ユーザー宛メール
                 Mail::to($email_user)->send(new ContactFormUserMail($form_data));
 
-                Log::info('FormController send complete END');
+                Log::info('FormController sendMail complete END');
 
                 return to_route('contact.complete');
                 break;

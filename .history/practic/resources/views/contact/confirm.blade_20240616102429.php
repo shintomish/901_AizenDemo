@@ -17,16 +17,23 @@
         body {
             /* background-color:rgb(239, 247, 208); 2023/11/09 */
             background-color:rgba(218, 175, 162, 0.918)
+        },
+                /** ５行ピッタシに調整 6行*/
+                .row-5 {
+            height: calc( 1.4em * 6 );
+            line-height: 1.3;
+            /* max-width: 550px; */
+            width: 550px;
+            margin-top:5px;
+            margin-bottom:5px;
         }
     </style>
 
     <form action="{{ route('contact.confirm') }}" method="POST">
         @csrf
-        <h3>
-        <label for="1" style="margin-bottom:10px;" class="text-warning">確認</label>
-        </h3>
+        <label for="1" style="margin-bottom:10px;" >確認</label>
         <div>
-            {{-- <label for="name"></label> --}}
+            <label for="name"></label>
             {{-- <input id="name" type="hidden" name="name" value="{{ old('name') }}"> --}}
             <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" disabled>
 
@@ -45,35 +52,25 @@
 
         <div>
             <label for="level-id"></label>
-            <input id="level-id" type="text" class="form-control" name="level-id" value="S トップアスリート(世界レベル)">
+            <input id="level-id" type="text" class="form-control"  name="level-id" value="S トップアスリート(世界レベル)">
         </div>
 
         <div>
             <label for="email"></label>
-            <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" disabled>
+            <input id="email" type="text" class="form-control"  name="email" value="{{ old('email') }}" disabled>
             {{-- <input id="email_confirmation" type="hidden" name="email_confirmation" value="{{ old('email_confirmation') }}"> --}}
         </div>
 
         <div>
             <label for="body"></label>
-            <textarea id="body" type="text" class="form-control" name="body" disabled>{{ old('body') }}</textarea>
+            <input id="body"  style="margin-top:15px;" type="text" name="body" class="form-control" value="{{ old('body') }}" disabled>
         </div>
 
         <div>
             <button type="submit" style="margin-top:15px;" class="btn btn-primary" name="submitBtnVal" value="back">戻る</button>
             <button type="submit" style="margin-top:15px;" class="btn btn-primary" name="submitBtnVal" value="complete">送信</button>
         </div>
-        <!-- ５行にしたいテキストエリア -->
-        <style>
-            /** ５行ピッタシに調整 6行*/
-            .row-5 {
-                height: calc( 1.4em * 4 );
-                line-height: 1.3;
-                width: 274px;
-                margin-top:5px;
-                margin-bottom:5px;
-            }
-        </style>
+
     </form>
 </section>
 @endsection

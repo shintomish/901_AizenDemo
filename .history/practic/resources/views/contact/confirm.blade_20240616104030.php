@@ -45,12 +45,12 @@
 
         <div>
             <label for="level-id"></label>
-            <input id="level-id" type="text" class="form-control" name="level-id" value="S トップアスリート(世界レベル)">
+            <input id="level-id" type="text" class="form-control"  name="level-id" value="S トップアスリート(世界レベル)">
         </div>
 
         <div>
             <label for="email"></label>
-            <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" disabled>
+            <input id="email" type="text" class="form-control"  name="email" value="{{ old('email') }}" disabled>
             {{-- <input id="email_confirmation" type="hidden" name="email_confirmation" value="{{ old('email_confirmation') }}"> --}}
         </div>
 

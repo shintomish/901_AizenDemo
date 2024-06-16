@@ -92,7 +92,7 @@
                 @endif --}}
             </div>
 
-            <button type="submit" style="margin-top:10px;" class="w-50 btn btn-sm btn-primary" name="submitBtnVal" value="complete">送信</button>
+            <button type="submit" style="margin-top:10px;" class="w-50 btn btn-sm btn-primary" name="submitBtnVal" value="confirm">送信</button>
 
         </form>
     </section>

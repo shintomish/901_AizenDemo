@@ -88,7 +88,7 @@ class FormController extends Controller
      */
     public function send(ContactFormRequest $request)
     {
-        Log::info('FormController send START');
+        Log::info('FormController sendMail START');
 
         //
         $form_data = $request->validated();
@@ -97,12 +97,12 @@ class FormController extends Controller
         $submitBtnVal = $request->input('submitBtnVal');
         switch ($submitBtnVal) {
             case 'confirm':
-                Log::info('FormController send confirm END');
+                Log::info('FormController sendMail confirm END');
                 // 確認画面へ
                 return to_route('contact.confirm')->withInput();
                 break;
             case 'back':
-                Log::info('FormController send back END');
+                Log::info('FormController sendMail back END');
                 // 入力画面へ戻る
                 return to_route('contact')->withInput();
                 break;
@@ -116,7 +116,7 @@ class FormController extends Controller
                 // ユーザー宛メール
                 Mail::to($email_user)->send(new ContactFormUserMail($form_data));
 
-                Log::info('FormController send complete END');
+                Log::info('FormController sendMail complete END');
 
                 return to_route('contact.complete');
                 break;
