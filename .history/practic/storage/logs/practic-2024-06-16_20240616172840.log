@@ -1,0 +1,320 @@
+[2024-06-16 06:23:31] local.ERROR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'practic.cache' doesn't exist (Connection: mysql, SQL: delete from `cache`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'practic.cache' doesn't exist (Connection: mysql, SQL: delete from `cache`) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:813)
+
+[2024-06-16 06:52:47] local.INFO: FormController index START  
+[2024-06-16 06:52:47] local.INFO: FormController index END  
+[2024-06-16 06:53:03] local.INFO: FormController sendMail START  
+[2024-06-16 06:53:03] local.INFO: FormController sendMail confirm END  
+[2024-06-16 06:53:05] local.INFO: FormController confirm START  
+[2024-06-16 06:53:05] local.INFO: FormController confirm END  
+[2024-06-16 06:53:26] local.INFO: FormController confirm START  
+[2024-06-16 06:53:26] local.INFO: FormController confirm END  
+[2024-06-16 07:01:29] local.INFO: FormController index START  
+[2024-06-16 07:01:29] local.INFO: FormController index END  
+[2024-06-16 07:02:01] local.INFO: FormController sendMail START  
+[2024-06-16 07:02:01] local.INFO: FormController sendMail confirm END  
+[2024-06-16 07:02:03] local.INFO: FormController confirm START  
+[2024-06-16 07:02:03] local.INFO: FormController confirm END  
+[2024-06-16 07:02:52] local.INFO: FormController confirm START  
+[2024-06-16 07:02:52] local.INFO: FormController confirm END  
+[2024-06-16 08:37:12] local.INFO: FormController index START  
+[2024-06-16 08:37:12] local.INFO: FormController index END  
+[2024-06-16 08:37:25] local.INFO: FormController sendMail START  
+[2024-06-16 08:37:25] local.INFO: FormController sendMail confirm END  
+[2024-06-16 08:37:28] local.INFO: FormController confirm START  
+[2024-06-16 08:37:28] local.INFO: FormController confirm END  
+[2024-06-16 08:39:55] local.INFO: FormController sendMail START  
+[2024-06-16 08:39:55] local.INFO: FormController sendMail confirm END  
+[2024-06-16 08:40:00] local.INFO: FormController confirm START  
+[2024-06-16 08:40:00] local.INFO: FormController confirm END  
+[2024-06-16 08:40:21] local.INFO: FormController confirm START  
+[2024-06-16 08:40:22] local.INFO: FormController confirm END  
+[2024-06-16 08:40:59] local.INFO: FormController index START  
+[2024-06-16 08:40:59] local.INFO: FormController index END  
+[2024-06-16 08:41:12] local.INFO: FormController sendMail START  
+[2024-06-16 08:41:12] local.INFO: FormController sendMail confirm END  
+[2024-06-16 08:41:14] local.INFO: FormController confirm START  
+[2024-06-16 08:41:14] local.INFO: FormController confirm END  
+[2024-06-16 08:43:06] local.INFO: FormController confirm START  
+[2024-06-16 08:43:06] local.INFO: FormController confirm END  
+[2024-06-16 08:44:59] local.INFO: FormController index START  
+[2024-06-16 08:44:59] local.INFO: FormController index END  
+[2024-06-16 08:47:54] local.INFO: FormController index START  
+[2024-06-16 08:47:55] local.INFO: FormController index END  
+[2024-06-16 08:55:19] local.INFO: FormController index START  
+[2024-06-16 08:55:19] local.INFO: FormController index END  
+[2024-06-16 08:57:10] local.INFO: FormController sendMail START  
+[2024-06-16 08:57:10] local.INFO: FormController sendMail confirm END  
+[2024-06-16 08:57:13] local.INFO: FormController confirm START  
+[2024-06-16 08:57:13] local.INFO: FormController confirm END  
+[2024-06-16 08:58:29] local.INFO: FormController confirm START  
+[2024-06-16 08:58:29] local.INFO: FormController confirm END  
+[2024-06-16 08:58:41] local.INFO: FormController confirm START  
+[2024-06-16 08:58:41] local.INFO: FormController confirm END  
+[2024-06-16 09:02:37] local.INFO: FormController index START  
+[2024-06-16 09:02:37] local.INFO: FormController index END  
+[2024-06-16 09:02:50] local.INFO: FormController sendMail START  
+[2024-06-16 09:02:50] local.INFO: FormController sendMail confirm END  
+[2024-06-16 09:02:55] local.INFO: FormController index START  
+[2024-06-16 09:02:55] local.INFO: FormController index END  
+[2024-06-16 09:04:28] local.INFO: FormController index START  
+[2024-06-16 09:04:28] local.INFO: FormController index END  
+[2024-06-16 09:04:47] local.INFO: FormController sendMail START  
+[2024-06-16 09:04:47] local.INFO: FormController sendMail confirm END  
+[2024-06-16 09:04:50] local.INFO: FormController index START  
+[2024-06-16 09:04:50] local.INFO: FormController index END  
+[2024-06-16 09:07:36] local.INFO: FormController index START  
+[2024-06-16 09:07:36] local.INFO: FormController index END  
+[2024-06-16 09:08:21] local.INFO: FormController index START  
+[2024-06-16 09:08:21] local.INFO: FormController index END  
+[2024-06-16 09:09:01] local.INFO: FormController sendMail START  
+[2024-06-16 09:09:01] local.INFO: FormController sendMail confirm END  
+[2024-06-16 09:09:05] local.INFO: FormController index START  
+[2024-06-16 09:09:05] local.INFO: FormController index END  
+[2024-06-16 09:09:26] local.INFO: FormController sendMail START  
+[2024-06-16 09:09:26] local.INFO: FormController sendMail confirm END  
+[2024-06-16 09:09:29] local.INFO: FormController index START  
+[2024-06-16 09:09:29] local.INFO: FormController index END  
+[2024-06-16 09:09:56] local.INFO: FormController index START  
+[2024-06-16 09:09:56] local.INFO: FormController index END  
+[2024-06-16 09:10:12] local.INFO: FormController sendMail START  
+[2024-06-16 09:10:12] local.INFO: FormController sendMail confirm END  
+[2024-06-16 09:10:15] local.INFO: FormController index START  
+[2024-06-16 09:10:15] local.INFO: FormController index END  
+[2024-06-16 09:10:33] local.INFO: FormController sendMail START  
+[2024-06-16 09:10:33] local.INFO: FormController sendMail confirm END  
+[2024-06-16 09:10:36] local.INFO: FormController index START  
+[2024-06-16 09:10:36] local.INFO: FormController index END  
+[2024-06-16 09:11:45] local.INFO: FormController index START  
+[2024-06-16 09:11:45] local.INFO: FormController index END  
+[2024-06-16 09:12:32] local.INFO: FormController sendMail START  
+[2024-06-16 09:12:32] local.INFO: FormController sendMail confirm END  
+[2024-06-16 09:12:37] local.INFO: FormController index START  
+[2024-06-16 09:12:37] local.INFO: FormController index END  
+[2024-06-16 09:12:52] local.INFO: FormController sendMail START  
+[2024-06-16 09:12:52] local.INFO: FormController sendMail confirm END  
+[2024-06-16 09:12:55] local.INFO: FormController index START  
+[2024-06-16 09:12:55] local.INFO: FormController index END  
+[2024-06-16 09:16:03] local.INFO: FormController index START  
+[2024-06-16 09:16:03] local.INFO: FormController index END  
+[2024-06-16 09:16:13] local.INFO: FormController sendMail START  
+[2024-06-16 09:16:13] local.INFO: FormController sendMail confirm END  
+[2024-06-16 09:16:16] local.INFO: FormController index START  
+[2024-06-16 09:16:16] local.INFO: FormController index END  
+[2024-06-16 09:17:39] local.INFO: FormController index START  
+[2024-06-16 09:17:39] local.INFO: FormController index END  
+[2024-06-16 09:17:51] local.INFO: FormController sendMail START  
+[2024-06-16 09:17:51] local.INFO: FormController sendMail confirm END  
+[2024-06-16 09:17:53] local.INFO: FormController confirm START  
+[2024-06-16 09:17:53] local.INFO: FormController confirm END  
+[2024-06-16 09:18:11] local.INFO: FormController confirm START  
+[2024-06-16 09:18:11] local.INFO: FormController confirm END  
+[2024-06-16 09:58:04] local.INFO: FormController index START  
+[2024-06-16 09:58:04] local.INFO: FormController index END  
+[2024-06-16 09:58:22] local.INFO: FormController sendMail START  
+[2024-06-16 09:58:22] local.INFO: FormController sendMail confirm END  
+[2024-06-16 09:58:24] local.INFO: FormController confirm START  
+[2024-06-16 09:58:24] local.INFO: FormController confirm END  
+[2024-06-16 09:58:47] local.INFO: FormController confirm START  
+[2024-06-16 09:58:47] local.INFO: FormController confirm END  
+[2024-06-16 10:00:26] local.INFO: FormController index START  
+[2024-06-16 10:00:26] local.INFO: FormController index END  
+[2024-06-16 10:00:40] local.INFO: FormController index START  
+[2024-06-16 10:00:40] local.INFO: FormController index END  
+[2024-06-16 10:01:12] local.INFO: FormController sendMail START  
+[2024-06-16 10:01:12] local.INFO: FormController sendMail confirm END  
+[2024-06-16 10:01:14] local.INFO: FormController confirm START  
+[2024-06-16 10:01:14] local.INFO: FormController confirm END  
+[2024-06-16 10:05:45] local.INFO: FormController confirm START  
+[2024-06-16 10:05:45] local.INFO: FormController confirm END  
+[2024-06-16 10:05:53] local.INFO: FormController index START  
+[2024-06-16 10:05:53] local.INFO: FormController index END  
+[2024-06-16 10:06:05] local.INFO: FormController sendMail START  
+[2024-06-16 10:06:05] local.INFO: FormController sendMail confirm END  
+[2024-06-16 10:06:06] local.INFO: FormController confirm START  
+[2024-06-16 10:06:06] local.INFO: FormController confirm END  
+[2024-06-16 10:07:43] local.INFO: FormController index START  
+[2024-06-16 10:07:43] local.INFO: FormController index END  
+[2024-06-16 10:08:37] local.INFO: FormController index START  
+[2024-06-16 10:08:37] local.INFO: FormController index END  
+[2024-06-16 10:08:59] local.INFO: FormController sendMail START  
+[2024-06-16 10:08:59] local.INFO: FormController sendMail confirm END  
+[2024-06-16 10:09:01] local.INFO: FormController confirm START  
+[2024-06-16 10:09:01] local.INFO: FormController confirm END  
+[2024-06-16 10:10:29] local.INFO: FormController confirm START  
+[2024-06-16 10:10:29] local.INFO: FormController confirm END  
+[2024-06-16 10:10:57] local.INFO: FormController confirm START  
+[2024-06-16 10:10:57] local.INFO: FormController confirm END  
+[2024-06-16 10:11:06] local.INFO: FormController index START  
+[2024-06-16 10:11:06] local.INFO: FormController index END  
+[2024-06-16 10:12:22] local.INFO: FormController index START  
+[2024-06-16 10:12:22] local.INFO: FormController index END  
+[2024-06-16 10:12:32] local.INFO: FormController sendMail START  
+[2024-06-16 10:12:32] local.INFO: FormController sendMail confirm END  
+[2024-06-16 10:12:35] local.INFO: FormController confirm START  
+[2024-06-16 10:12:35] local.INFO: FormController confirm END  
+[2024-06-16 10:13:36] local.INFO: FormController index START  
+[2024-06-16 10:13:36] local.INFO: FormController index END  
+[2024-06-16 10:13:50] local.INFO: FormController sendMail START  
+[2024-06-16 10:13:50] local.INFO: FormController sendMail confirm END  
+[2024-06-16 10:13:50] local.INFO: FormController confirm START  
+[2024-06-16 10:13:50] local.INFO: FormController confirm END  
+[2024-06-16 10:14:56] local.INFO: FormController index START  
+[2024-06-16 10:14:56] local.INFO: FormController index END  
+[2024-06-16 10:15:06] local.INFO: FormController sendMail START  
+[2024-06-16 10:15:06] local.INFO: FormController sendMail confirm END  
+[2024-06-16 10:15:08] local.INFO: FormController confirm START  
+[2024-06-16 10:15:08] local.INFO: FormController confirm END  
+[2024-06-16 10:15:57] local.INFO: FormController index START  
+[2024-06-16 10:15:57] local.INFO: FormController index END  
+[2024-06-16 10:16:07] local.INFO: FormController sendMail START  
+[2024-06-16 10:16:07] local.INFO: FormController sendMail confirm END  
+[2024-06-16 10:16:10] local.INFO: FormController confirm START  
+[2024-06-16 10:16:10] local.INFO: FormController confirm END  
+[2024-06-16 10:18:22] local.INFO: FormController confirm START  
+[2024-06-16 10:18:22] local.INFO: FormController confirm END  
+[2024-06-16 10:25:05] local.INFO: FormController confirm START  
+[2024-06-16 10:25:05] local.INFO: FormController confirm END  
+[2024-06-16 10:27:14] local.INFO: FormController confirm START  
+[2024-06-16 10:27:14] local.INFO: FormController confirm END  
+[2024-06-16 10:27:41] local.INFO: FormController confirm START  
+[2024-06-16 10:27:41] local.INFO: FormController confirm END  
+[2024-06-16 10:28:17] local.INFO: FormController confirm START  
+[2024-06-16 10:28:17] local.INFO: FormController confirm END  
+[2024-06-16 10:28:34] local.INFO: FormController confirm START  
+[2024-06-16 10:28:34] local.INFO: FormController confirm END  
+[2024-06-16 10:28:50] local.INFO: FormController confirm START  
+[2024-06-16 10:28:50] local.INFO: FormController confirm END  
+[2024-06-16 10:29:51] local.INFO: FormController confirm START  
+[2024-06-16 10:29:51] local.INFO: FormController confirm END  
+[2024-06-16 10:30:18] local.INFO: FormController confirm START  
+[2024-06-16 10:30:18] local.INFO: FormController confirm END  
+[2024-06-16 10:30:31] local.INFO: FormController confirm START  
+[2024-06-16 10:30:31] local.INFO: FormController confirm END  
+[2024-06-16 10:30:44] local.INFO: FormController confirm START  
+[2024-06-16 10:30:44] local.INFO: FormController confirm END  
+[2024-06-16 10:31:02] local.INFO: FormController confirm START  
+[2024-06-16 10:31:02] local.INFO: FormController confirm END  
+[2024-06-16 10:31:28] local.INFO: FormController confirm START  
+[2024-06-16 10:31:28] local.INFO: FormController confirm END  
+[2024-06-16 10:31:53] local.INFO: FormController index START  
+[2024-06-16 10:31:53] local.INFO: FormController index END  
+[2024-06-16 10:35:13] local.INFO: FormController sendMail START  
+[2024-06-16 10:35:13] local.INFO: FormController sendMail confirm END  
+[2024-06-16 10:35:15] local.INFO: FormController confirm START  
+[2024-06-16 10:35:15] local.INFO: FormController confirm END  
+[2024-06-16 10:36:33] local.INFO: FormController confirm START  
+[2024-06-16 10:36:33] local.INFO: FormController confirm END  
+[2024-06-16 10:37:10] local.INFO: FormController confirm START  
+[2024-06-16 10:37:10] local.INFO: FormController confirm END  
+[2024-06-16 10:37:32] local.INFO: FormController confirm START  
+[2024-06-16 10:37:32] local.INFO: FormController confirm END  
+[2024-06-16 10:39:23] local.INFO: FormController index START  
+[2024-06-16 10:39:23] local.INFO: FormController index END  
+[2024-06-16 10:39:41] local.INFO: FormController sendMail START  
+[2024-06-16 10:39:41] local.INFO: FormController sendMail confirm END  
+[2024-06-16 10:39:43] local.INFO: FormController confirm START  
+[2024-06-16 10:39:43] local.INFO: FormController confirm END  
+[2024-06-16 10:40:42] local.INFO: FormController confirm START  
+[2024-06-16 10:40:42] local.INFO: FormController confirm END  
+[2024-06-16 10:45:55] local.INFO: FormController index START  
+[2024-06-16 10:45:55] local.INFO: FormController index END  
+[2024-06-16 10:48:43] local.INFO: FormController index START  
+[2024-06-16 10:48:43] local.INFO: FormController index END  
+[2024-06-16 10:49:42] local.INFO: FormController index START  
+[2024-06-16 10:49:42] local.INFO: FormController index END  
+[2024-06-16 10:52:10] local.INFO: FormController index START  
+[2024-06-16 10:52:10] local.INFO: FormController index END  
+[2024-06-16 10:54:34] local.INFO: FormController index START  
+[2024-06-16 10:54:34] local.INFO: FormController index END  
+[2024-06-16 10:54:58] local.INFO: FormController index START  
+[2024-06-16 10:54:58] local.INFO: FormController index END  
+[2024-06-16 10:55:21] local.INFO: FormController send START  
+[2024-06-16 10:55:21] local.INFO: FormController send confirm END  
+[2024-06-16 10:55:24] local.INFO: FormController confirm START  
+[2024-06-16 10:55:24] local.INFO: FormController confirm END  
+[2024-06-16 10:56:42] local.INFO: FormController index START  
+[2024-06-16 10:56:42] local.INFO: FormController index END  
+[2024-06-16 10:56:53] local.INFO: FormController send START  
+ 
+[2024-06-16 11:00:52] local.INFO: FormController send START  
+[2024-06-16 11:00:52] local.INFO: FormController send complete END  
+[2024-06-16 11:00:54] local.INFO: FormController complete START  
+[2024-06-16 11:00:54] local.INFO: FormController complete END  
+[2024-06-16 11:04:22] local.INFO: FormController complete START  
+[2024-06-16 11:04:22] local.INFO: FormController complete END  
+[2024-06-16 11:05:59] local.INFO: FormController complete START  
+[2024-06-16 11:05:59] local.INFO: FormController complete END  
+[2024-06-16 11:06:16] local.INFO: FormController complete START  
+[2024-06-16 11:06:16] local.INFO: FormController complete END  
+[2024-06-16 11:06:50] local.INFO: FormController index START  
+[2024-06-16 11:06:50] local.INFO: FormController index END  
+[2024-06-16 11:08:18] local.INFO: FormController send START  
+[2024-06-16 11:08:18] local.INFO: FormController send complete END  
+[2024-06-16 11:08:20] local.INFO: FormController complete START  
+[2024-06-16 11:08:20] local.INFO: FormController complete END  
+[2024-06-16 11:08:50] local.INFO: FormController complete START  
+[2024-06-16 11:08:50] local.INFO: FormController complete END  
+[2024-06-16 11:09:53] local.INFO: FormController complete START  
+[2024-06-16 11:09:53] local.INFO: FormController complete END  
+[2024-06-16 11:11:11] local.INFO: FormController complete START  
+[2024-06-16 11:11:11] local.INFO: FormController complete END  
+[2024-06-16 11:11:42] local.INFO: FormController complete START  
+[2024-06-16 11:11:42] local.INFO: FormController complete END  
+[2024-06-16 11:11:57] local.INFO: FormController index START  
+[2024-06-16 11:11:57] local.INFO: FormController index END  
+[2024-06-16 11:12:23] local.INFO: FormController index START  
+[2024-06-16 11:12:23] local.INFO: FormController index END  
+[2024-06-16 11:14:06] local.INFO: FormController index START  
+[2024-06-16 11:14:06] local.INFO: FormController index END  
+[2024-06-16 11:14:17] local.INFO: FormController send START  
+[2024-06-16 11:14:17] local.INFO: FormController send complete END  
+[2024-06-16 11:14:18] local.INFO: FormController complete START  
+[2024-06-16 11:14:18] local.INFO: FormController complete END  
+[2024-06-16 11:14:29] local.INFO: FormController index START  
+[2024-06-16 11:14:29] local.INFO: FormController index END  
+[2024-06-16 11:30:23] local.INFO: FormController index START  
+[2024-06-16 11:30:23] local.INFO: FormController index END  
+[2024-06-16 11:31:06] local.INFO: FormController send START  
+[2024-06-16 11:44:27] local.INFO: FormController send START  
+[2024-06-16 11:45:24] local.INFO: FormController send START  
+[2024-06-16 12:05:32] local.INFO: FormController send START  
+[2024-06-16 16:39:03] local.INFO: FormController index START  
+[2024-06-16 16:39:03] local.INFO: FormController index END  
+[2024-06-16 16:39:28] local.INFO: FormController send START  
+[2024-06-16 16:39:28] local.INFO: FormController send  $email_user = shintomi.sh@gmail.com  
+[2024-06-16 16:39:28] local.INFO: FormController send  $email_name = 新冨 泰明  
+[2024-06-16 16:47:09] local.INFO: FormController send START  
+[2024-06-16 16:47:09] local.INFO: FormController send $email_user = shintomi.sh@gmail.com  
+[2024-06-16 16:47:09] local.INFO: FormController send $email_name = 新冨 泰明  
+[2024-06-16 16:58:46] local.INFO: FormController index START  
+[2024-06-16 16:58:46] local.INFO: FormController index END  
+[2024-06-16 16:59:01] local.INFO: FormController send START  
+[2024-06-16 16:59:01] local.INFO: FormController send $email_user = shintomi.sh@gmail.com  
+[2024-06-16 16:59:01] local.INFO: FormController send $email_name = 新冨 泰明  
+[2024-06-16 17:06:29] local.INFO: FormController send START  
+[2024-06-16 17:06:29] local.INFO: FormController send $form_data = Array
+(
+    [name] => 新冨 泰明
+    [age] => 45
+    [email] => shintomi.sh@gmail.com
+    [email_confirmation] => shintomi.sh@gmail.com
+    [body] => オリンピック
+よろしくお願いいたします。
+)
+  
+[2024-06-16 17:25:56] local.INFO: FormController send START  
+[2024-06-16 17:25:56] local.INFO: FormController send $form_data = Array
+(
+    [_token] => LRxh0fLktoLXlnVAtqDnr8URFSevxn5ECQbBLFkF
+    [name] => 新冨 泰明
+    [age] => 45
+    [sex_id] => 1
+    [level_id] => 1
+    [email] => shintomi.sh@gmail.com
+    [email_confirmation] => shintomi.sh@gmail.com
+    [body] => オリンピック
+よろしくお願いいたします。
+    [submitBtnVal] => complete
+)
+  
+[2024-06-16 17:25:59] local.ERROR: Expected response code "250/251/252" but got code "553", with message "553 5.7.1 <shintomi.sh@gmail.com>: Sender address rejected: not owned by user y-shintomi@aizen-sol.co.jp". {"exception":"[object] (Symfony\\Component\\Mailer\\Exception\\UnexpectedResponseException(code: 553): Expected response code \"250/251/252\" but got code \"553\", with message \"553 5.7.1 <shintomi.sh@gmail.com>: Sender address rejected: not owned by user y-shintomi@aizen-sol.co.jp\". at /var/www/html/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php:333)
