@@ -1,5 +1,5 @@
 {{-- @extends('layouts.app') --}}
-@extends('layouts.teach')
+@extends('layouts.cliant')
 <?php
     function formatBytes($bytes, $precision = 2, array $units = null)
     {

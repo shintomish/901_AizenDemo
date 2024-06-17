@@ -121,12 +121,14 @@
                             <li class="nav-item">
                                 <a class="nav-link active">
                                     <i class="fas fa-address-card"></i>
+                                    {{-- {{ $user->name }} --}}
                                     <?php $user = Auth::user(); ?>{{ $user->name }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">
                                     <a class="nav-link" href="{{route('topclient')}}">
+                                    {{-- <a class="nav-link" href="{{route('media-library')}}"> --}}
                                     <i class="fas fa-laptop-house"></i>
                                     ホーム
                                 </a>
@@ -154,8 +156,6 @@
                                     チャット
                                 </a>
                             </li>
-                        </ul>
-                    </div>
                 </nav>
 
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -173,6 +173,7 @@
                             <div class="btn-group me-2">
                                 <!--button type="button" class="w-100 btn btn-lg btn-primary" >Delete</button-->
                             </div>
+
                         </div>
                     </div>
 

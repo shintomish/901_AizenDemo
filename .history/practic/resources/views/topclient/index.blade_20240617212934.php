@@ -1,5 +1,5 @@
 {{-- @extends('layouts.app') --}}
-@extends('layouts.teach')
+@extends('layouts.client')
 <?php
     function formatBytes($bytes, $precision = 2, array $units = null)
     {
@@ -174,11 +174,13 @@
 
         </style>
 
+
         <hr class="mb-4">  {{-- // line --}}
 
     </div>
 
 @endsection
+
 
 @section('scripts')
 <!-- Scripts -->
@@ -204,162 +206,161 @@
     file_put_contents($jsonfile , $arr);
 ?>
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        (function () {
-        var customer_id = $("#customer_id" + " option:selected").val();
-        var isImage = true;
-        var r = new Flow({
-            simultaneousUploads : 5,
-            // target: '/uploads',
-            target: "{{ route('postUpload', $customer_id ) }}",
-            permanentErrors:[404, 500, 501],
-            headers: { 'X-CSRF-TOKEN': '{{csrf_token()}}'},
-            testChunks:false
-        });
-        // Flow.js isn't supported, fall back on a different method
-        if (!r.support) {
-            $('.flow-error').show();
-            return ;
+    (function () {
+    var customer_id = $("#customer_id" + " option:selected").val();
+    var isImage = true;
+    var r = new Flow({
+        simultaneousUploads : 5,
+        // target: '/uploads',
+        target: "{{ route('postUpload', $customer_id ) }}",
+        permanentErrors:[404, 500, 501],
+        headers: { 'X-CSRF-TOKEN': '{{csrf_token()}}'},
+        testChunks:false
+    });
+      // Flow.js isn't supported, fall back on a different method
+    if (!r.support) {
+        $('.flow-error').show();
+        return ;
+    }
+    // Show a place for dropping/selecting files
+    $('.flow-drop').show();
+    r.assignDrop($('.flow-drop')[0]);
+    r.assignBrowse($('.flow-browse')[0]);
+    // Handle file add event
+    r.on('fileAdded', function(file){
+        isImage = true;
+
+        if( isImage ) {
+            // Show progress bar
+            $('.flow-progress, .flow-list').show();
+
+            $('.flow-drop').css({color:'#220477'}); /* 青にする */
+
+            // Add the file to the list
+            $('.flow-list').append(
+                '<li class="flow-file list-group-item flow-file-'+file.uniqueIdentifier+'">' +
+                'Uploading <span class="flow-file-name mr10"></span> ' +
+                '<span class="flow-file-size mr10"></span> ' +
+                '<span class="flow-file-progress mr10"></span> '
+            );
+            var $self = $('.flow-file-'+file.uniqueIdentifier);
+            $self.find('.flow-file-name').text(file.name);
+            $self.find('.flow-file-size').text(readablizeBytes(file.size));
         }
-        // Show a place for dropping/selecting files
-        $('.flow-drop').show();
-        r.assignDrop($('.flow-drop')[0]);
-        r.assignBrowse($('.flow-browse')[0]);
-        // Handle file add event
-        r.on('fileAdded', function(file){
-            isImage = true;
 
-            if( isImage ) {
-                // Show progress bar
-                $('.flow-progress, .flow-list').show();
+    });
+    r.on('filesSubmitted', function(file) {
+        if( isImage ) {
+            r.upload();
+        }
+    });
 
-                $('.flow-drop').css({color:'#220477'}); /* 青にする */
+    r.on('fileSuccess', function(file,message){
+        setTimeout(function(){
+        $('.flow-progress').fadeOut(400,function(){
+            // 2023/08/20 以下コメント
+            // $(this).hide();
 
-                // Add the file to the list
-                $('.flow-list').append(
-                    '<li class="flow-file list-group-item flow-file-'+file.uniqueIdentifier+'">' +
-                    'Uploading <span class="flow-file-name mr10"></span> ' +
-                    '<span class="flow-file-size mr10"></span> ' +
-                    '<span class="flow-file-progress mr10"></span> '
-                );
-                var $self = $('.flow-file-'+file.uniqueIdentifier);
-                $self.find('.flow-file-name').text(file.name);
-                $self.find('.flow-file-size').text(readablizeBytes(file.size));
-            }
+            $('.progress-bar').css({width:'0'});
+            $('.flow-list').css({width:'0'});
+            $('.flow-drop').css({color:'#505050'}); /* 元に戻す */
 
-        });
-        r.on('filesSubmitted', function(file) {
-            if( isImage ) {
-                r.upload();
-            }
-        });
+            // 2023/08/20 以下追加 リストファイル名を消す
+            // $('.flow-file-'+file.uniqueIdentifier).hide();
 
-        r.on('fileSuccess', function(file,message){
-            setTimeout(function(){
-            $('.flow-progress').fadeOut(400,function(){
-                // 2023/08/20 以下コメント
-                // $(this).hide();
+            message = file.name + " のアップロードが正常に終了しました。";
 
-                $('.progress-bar').css({width:'0'});
-                $('.flow-list').css({width:'0'});
-                $('.flow-drop').css({color:'#505050'}); /* 元に戻す */
+            // 2023/08/20 1秒->5秒表示
+            // alert('success',message,1000);
+            alert('success',message,5000);
 
-                // 2023/08/20 以下追加 リストファイル名を消す
-                // $('.flow-file-'+file.uniqueIdentifier).hide();
+            // 2023/08/20 以下追加 flow-progressを再表示
+            $('.flow-progress').show();
+            // 表示5sec javasrripterror対応で[client.blade]のjquery.min.jsをcommentoutする
+        })
 
-                message = file.name + " のアップロードが正常に終了しました。";
+    },5000)
 
-                // 2023/08/20 1秒->5秒表示
-                // alert('success',message,1000);
-                alert('success',message,5000);
-
-                // 2023/08/20 以下追加 flow-progressを再表示
-                $('.flow-progress').show();
-                // 表示5sec javasrripterror対応で[client.blade]のjquery.min.jsをcommentoutする
-            })
-
-        },5000)
-
-        });
-        r.on('fileError', function(file, message){
-            // Reflect that the file upload has resulted in error
-            $('.flow-progress').hide();
-            $('.flow-file-'+file.uniqueIdentifier).hide();
-            // 2021/12/19
-            var response = JSON.parse(message || "null");
-            // console.log(response);
-            if(response == null) {
+    });
+    r.on('fileError', function(file, message){
+        // Reflect that the file upload has resulted in error
+        $('.flow-progress').hide();
+        $('.flow-file-'+file.uniqueIdentifier).hide();
+        // 2021/12/19
+        var response = JSON.parse(message || "null");
+        // console.log(response);
+        if(response == null) {
+            message = file.name + ' のアップロードが出来ませんでした。';
+            // 2023/08/17
+            // alert('danger',message,1000);    // 表示1sec
+            alert('danger',message,5000);    // 表示5sec
+        } else {
+            if(response.status == "BG") {
+                // 2023/08/17
+                // alert('danger',response.error,1000);    // 表示1sec
+                alert('danger',response.error,5000);    // 表示5sec
+            } else {
                 message = file.name + ' のアップロードが出来ませんでした。';
                 // 2023/08/17
-                // alert('danger',message,1000);    // 表示1sec
-                alert('danger',message,5000);    // 表示5sec
-            } else {
-                if(response.status == "BG") {
-                    // 2023/08/17
-                    // alert('danger',response.error,1000);    // 表示1sec
-                    alert('danger',response.error,5000);    // 表示5sec
-                } else {
-                    message = file.name + ' のアップロードが出来ませんでした。';
-                    // 2023/08/17
-                    // alert('danger',response.error,1000);    // 表示1sec
-                    alert('danger',response.error,5000);    // 表示5sec
-                }
+                // alert('danger',response.error,1000);    // 表示1sec
+                alert('danger',response.error,5000);    // 表示5sec
             }
-        });
-        r.on('fileProgress', function(file){
-            // Handle progress for both the file and the overall upload
-            $('.flow-file-'+file.uniqueIdentifier+' .flow-file-progress')
-            .html(Math.floor(file.progress()*100) + '% '
-                + readablizeBytes(file.averageSpeed) + '/s '
-                // + secondsToStr(file.timeRemaining()) + ' remaining') ;
-                // + secondsToStr(file.timeRemaining()) + ' 残り') ;
-                + ' 残り 約 ' + secondsToStr(file.timeRemaining()) ) ;
-            $('.progress-bar').css({width:Math.floor(r.progress()*100) + '%'});
-        });
+        }
+    });
+    r.on('fileProgress', function(file){
+        // Handle progress for both the file and the overall upload
+        $('.flow-file-'+file.uniqueIdentifier+' .flow-file-progress')
+        .html(Math.floor(file.progress()*100) + '% '
+            + readablizeBytes(file.averageSpeed) + '/s '
+            // + secondsToStr(file.timeRemaining()) + ' remaining') ;
+            // + secondsToStr(file.timeRemaining()) + ' 残り') ;
+            + ' 残り 約 ' + secondsToStr(file.timeRemaining()) ) ;
+        $('.progress-bar').css({width:Math.floor(r.progress()*100) + '%'});
+    });
 
-        function alert(type,message,timeout){
-            $('.flow-error').find('.alert').hide();
-            $('.flow-error').show();
-            $('.flow-error').find('.alert-' + type).text(message).fadeIn(400,function(){
-                    setTimeout(function(){
-                        $(this).fadeOut(400,function(){
-                        $(this).hide();
-                        $('.flow-error').hide();
-                    });
-                },timeout)
+    function alert(type,message,timeout){
+        $('.flow-error').find('.alert').hide();
+        $('.flow-error').show();
+        $('.flow-error').find('.alert-' + type).text(message).fadeIn(400,function(){
+                setTimeout(function(){
+                    $(this).fadeOut(400,function(){
+                    $(this).hide();
+                    $('.flow-error').hide();
                 });
-            }
-        })();
-        function readablizeBytes(bytes) {
-            var s = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB'];
-            var e = Math.floor(Math.log(bytes) / Math.log(1024));
-            // 2022/11/04 0(-Infinity)対応
-            if(e == -Infinity) return(0).toFixed(2)+ " " + s[0];;
-            return (bytes / Math.pow(1024, e)).toFixed(2) + " " + s[e];
+            },timeout)
+            });
         }
-        function secondsToStr (temp) {
-            function numberEnding (number) {
-                return (number > 1) ? '' : '';
-            }
-            var years = Math.floor(temp / 31536000);
-            if (years) {
-                return years + ' 年' + numberEnding(years);
-            }
-            var days = Math.floor((temp %= 31536000) / 86400);
-            if (days) {
-                return days + ' 日' + numberEnding(days);
-            }
-            var hours = Math.floor((temp %= 86400) / 3600);
-            if (hours) {
-                return hours + ' 時間' + numberEnding(hours);
-            }
-            var minutes = Math.floor((temp %= 3600) / 60);
-            if (minutes) {
-                return minutes + ' 分' + numberEnding(minutes);
-            }
-            var seconds = temp % 60;
-            return seconds + ' 秒' + numberEnding(seconds);
+    })();
+    function readablizeBytes(bytes) {
+        var s = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB'];
+        var e = Math.floor(Math.log(bytes) / Math.log(1024));
+        // 2022/11/04 0(-Infinity)対応
+        if(e == -Infinity) return(0).toFixed(2)+ " " + s[0];;
+        return (bytes / Math.pow(1024, e)).toFixed(2) + " " + s[e];
+    }
+    function secondsToStr (temp) {function numberEnding (number) {
+            return (number > 1) ? '' : '';
         }
-    </script>
+        var years = Math.floor(temp / 31536000);
+        if (years) {
+            return years + ' 年' + numberEnding(years);
+        }
+        var days = Math.floor((temp %= 31536000) / 86400);
+        if (days) {
+            return days + ' 日' + numberEnding(days);
+        }
+        var hours = Math.floor((temp %= 86400) / 3600);
+        if (hours) {
+            return hours + ' 時間' + numberEnding(hours);
+        }
+        var minutes = Math.floor((temp %= 3600) / 60);
+        if (minutes) {
+            return minutes + ' 分' + numberEnding(minutes);
+        }
+        var seconds = temp % 60;
+        return seconds + ' 秒' + numberEnding(seconds);
+    }
+</script>
 @endsection

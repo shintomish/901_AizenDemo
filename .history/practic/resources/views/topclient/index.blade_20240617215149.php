@@ -1,6 +1,6 @@
 {{-- @extends('layouts.app') --}}
-@extends('layouts.cliant')
-{{-- // ユーザー 運動データダウンロード --}}
+@extends('layouts.billdata')
+{{-- // 事務所 請求書データ確認 --}}
 @section('content')
     <div class="row">
         <div class="progress">
@@ -28,7 +28,6 @@
             </thead>
 
             <tbody id="table" >
-
             </tbody>
             <style>
                 /* 点滅 */
@@ -105,11 +104,25 @@
 
     {{-- ページネーション / pagination）の表示 --}}
     <ul class="pagination justify-content-center">
-        {{-- {{ $billdatas->appends(request()->query())->render() }} --}}
+    {{-- {{ $billdatas->render() }} --}}
+    {{-- {{ $billdatas->appends(request()->query())->links() }} --}}
+        {{ $billdatas->appends(request()->query())->render() }}
     </ul>
 
 @endsection
 
 @section('part_javascript')
-
+{{-- ChangeSideBar("nav-item-system-user");
+    <script type="text/javascript">
+            $('.btn_del').click(function()
+                if( !confirm('本当に削除しますか？') ){
+                    /* キャンセルの時の処理 */
+                    return false;
+                }
+                else{
+                    /*　OKの時の処理 */
+                    return true;
+                }
+            });
+    </script> --}}
 @endsection

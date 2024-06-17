@@ -1,5 +1,5 @@
 {{-- @extends('layouts.app') --}}
-@extends('layouts.teach')
+@extends('layouts.client')
 <?php
     function formatBytes($bytes, $precision = 2, array $units = null)
     {
@@ -174,11 +174,13 @@
 
         </style>
 
+
         <hr class="mb-4">  {{-- // line --}}
 
     </div>
 
 @endsection
+
 
 @section('scripts')
 <!-- Scripts -->

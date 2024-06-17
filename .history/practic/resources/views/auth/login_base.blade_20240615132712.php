@@ -1,13 +1,11 @@
 @extends('layouts.login')
 
 @section('content')
-    <style>
-        body {
-            /* background-color:rgb(239, 247, 208); 2023/11/09 */
-            /* background-color:rgb(208, 247, 215) */
-            background-color:rgba(218, 175, 162, 0.918)
-        }
-    </style>
+<style>
+    body {
+        background-color:rgb(240, 250, 240);
+    }
+</style>
     {{-- <img class="mb-4" src="{{ asset('img/actver.png') }}" alt="" width="80" height="80"> --}}
     {{-- <i class="fas fa-project-diagram"></i> --}}
     {{-- <i class="fas fa-landmark"></i>

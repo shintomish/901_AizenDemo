@@ -1,5 +1,5 @@
 {{-- @extends('layouts.app') --}}
-@extends('layouts.cliant')
+@extends('layouts.billdata')
 {{-- // ユーザー 運動データダウンロード --}}
 @section('content')
     <div class="row">

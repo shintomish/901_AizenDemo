@@ -1,5 +1,5 @@
 {{-- @extends('layouts.app') --}}
-@extends('layouts.teach')
+@extends('layouts.client')
 <?php
     function formatBytes($bytes, $precision = 2, array $units = null)
     {
@@ -173,6 +173,7 @@
             .is-error .uploader-item-creating-thumbnail {display:none;}
 
         </style>
+
 
         <hr class="mb-4">  {{-- // line --}}
 

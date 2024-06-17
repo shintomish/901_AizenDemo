@@ -127,6 +127,7 @@
                             <li class="nav-item">
                                 <a class="nav-link">
                                     <a class="nav-link" href="{{route('topclient')}}">
+                                    {{-- <a class="nav-link" href="{{route('media-library')}}"> --}}
                                     <i class="fas fa-laptop-house"></i>
                                     ホーム
                                 </a>
