@@ -57,7 +57,7 @@ class ContactFormRequest extends FormRequest
     {
         //
         return [
-            'age.regex'   => ':attributeが正しくありません。'
+            'age.regex'   => ':attributeの形式が正しくありません。'
         ];
     }
 }

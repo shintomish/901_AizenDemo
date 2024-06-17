@@ -24,7 +24,7 @@
             <div>
                 <ul>
                     @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
+                    <li class="text-danger">{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
@@ -33,16 +33,16 @@
         <form action="{{ route('contact.send') }}" method="POST">
             @csrf
             <h6>
-                <label for="1" style="margin-bottom:10px;" class="text-info">以下を入力してください</label>
+                <label for="1" style="margin-bottom:10px;" class="text-primary">以下を入力してください</label>
             </h6>
             <div>
                 {{-- <label for="name"></label> --}}
-                <input id="name" style="margin-top:10px;"  placeholder="お名前 必須"  type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                <input id="name" style="margin-top:10px;"  placeholder="お名前 必須"  type="text" class="form-control" @error('name') is-invalid @enderror name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
             </div>
 
             <div>
                 {{-- <label for="age"></label> --}}
-                <input id="age"  style="margin-top:10px;" placeholder="年齢 必須"  type="text" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" required autocomplete="age" autofocus>
+                <input id="age"  style="margin-top:10px;" placeholder="年齢 必須"  type="text" class="form-control" @error('age') is-invalid @enderror name="age" value="{{ old('age') }}" required autocomplete="age" autofocus>
             </div>
 
             <!--  性別プルダウン -->
@@ -68,7 +68,7 @@
 
             <div>
                 {{-- <label for="email"></label> --}}
-                <input id="email"  style="margin-top:10px;" placeholder="メールアドレス 必須" name="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <input id="email"  style="margin-top:10px;" placeholder="メールアドレス 必須" name="email" type="email" class="form-control" @error('email') is-invalid @enderror name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                 {{-- @if($errors->has('email'))
                 <p>{{ $errors->first('email') }}</p>
                 @endif --}}
@@ -76,7 +76,7 @@
 
             <div>
                 {{-- <label for="email_confirmation"></label> --}}
-                <input id="email_confirmation"  style="margin-top:10px;" placeholder="メールアドレスの確認 必須" type="email" class="form-control @error('email') is-invalid @enderror" name="email_confirmation" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <input id="email_confirmation"  style="margin-top:10px;" placeholder="メールアドレスの確認 必須" type="email" class="form-control" @error('email') is-invalid @enderror name="email_confirmation" value="{{ old('email') }}" required autocomplete="email" autofocus>
                 {{-- @if($errors->has('email_confirmation'))
                 <p>{{ $errors->first('email_confirmation') }}</p>
                 @endif --}}
@@ -84,8 +84,8 @@
 
             <div>
                 {{-- <label for="body"></label> --}}
-                {{-- <textarea id="body" placeholder="お問い合わせ内容 必須" class="form-control" type="text" name="body">{{ old('body') }}</textarea> --}}
-                <textarea id="body"  style="margin-top:10px;" placeholder="お問い合わせ内容 必須" type="text" class="form-control @error('body') is-invalid @enderror" name="body" value="{{ old('body') }}" required autocomplete="body" autofocus></textarea>
+                <textarea id="body"  style="margin-top:10px;" placeholder="お問い合わせ内容 必須" class="form-control" type="text" name="body">{{ old('body') }}</textarea>
+                {{-- <textarea id="body" style="margin-top:10px;" placeholder="お問い合わせ内容 必須" type="text" class="form-control" @error('body') is-invalid @enderror name="body" value="{{ old('body') }}" required autocomplete="body" autofocus></textarea> --}}
 
                 {{-- @if($errors->has('body'))
                 <p>{{ $errors->first('body') }}</p>
@@ -93,7 +93,17 @@
             </div>
 
             <button type="submit" style="margin-top:10px;" class="w-50 btn btn-sm btn-primary" name="submitBtnVal" value="complete">送信</button>
-
+        <!-- ５行にしたいテキストエリア 未使用 -->
+        <style>
+            /** ５行ピッタシに調整 6行*/
+            .row-5 {
+                height: calc( 1.4em * 4 );
+                line-height: 1.3;
+                width: 274px;
+                margin-top:5px;
+                margin-bottom:5px;
+            }
+        </style>
         </form>
     </section>
 @endsection
