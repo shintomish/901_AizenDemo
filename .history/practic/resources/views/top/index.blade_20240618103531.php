@@ -50,9 +50,14 @@
                 .exright{
                     text-align: right;
                 }
+                .selectbox {
+    width:90%;
+    margin:1em auto;
+  position:relative;
+}
             </style>
             <div class="exright">
-                <select style="margin-right:5px;width:200px;height:40px;" class="custom-select" id="user_id" name="user_id">
+                <select style="margin-right:5px;" class="custom-select" id="user_id" name="user_id">
                     {{-- @foreach ($customer_findrec as $customer_findrec2)
                         @if ($customer_findrec2['id']==$customer_id)
                     <option selected="selected" value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
@@ -78,28 +83,30 @@
         <form action="" id="file-upload" method="POST" enctype="multipart/form-data">
             <div id="upload-container" style="border: 1px solid; padding: 30px;">
                 @csrf
-            {{-- ユーザー --}}
-            <h6>
-                <a style="color:blue">To: </a>
+            {{-- 複数法人 --}}
+            <a style="color:blue">To: </a>
 
-                <select style="margin-bottom:5px; background-color:rgb(214, 209, 209); width:200px;height:40px;" class="custom-select" id="user_id" name="user_id">
-                    {{-- @foreach ($customer_findrec as $customer_findrec2)
-                        @if ($customer_findrec2['id']==$customer_id)
-                    <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
-                        @else
-                        <option disabled value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
-                        @endif
-                    @endforeach --}}
-                    <option value="1">山田五郎</option>
-                    <option value="2">佐藤愛子</option>
-                </select>
+            <select style="margin-bottom:5px; background-color:rgb(214, 209, 209)" class="custom-select" id="user_id" name="user_id">
+                {{-- @foreach ($customer_findrec as $customer_findrec2)
+                    @if ($customer_findrec2['id']==$customer_id)
+                <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                    @else
+                    <option disabled value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                    @endif
+                @endforeach --}}
+                <option value="1">山田五郎</option>
+                <option value="2">佐藤愛子</option>
+            </select>
 
-                <a >
-                    <span style="color:red"> アップロード後は、左の </span>
-                    <span style="color:blue">「データ送信確認ページ」</span>
-                    <span style="color:red"> からファイルが送信できているか確認してください。</span>
-                </a>
-            </h6>
+        <a >
+            {{-- 2023/08/20 --}}
+            {{-- <span style="margin-left:5px;" style="color:rgb(0, 0, 0)"> アップロード後は、左の </span> --}}
+            <span style="color:red"> アップロード後は、左の </span>
+            <span style="color:blue">「データ送信確認ページ」</span>
+            {{-- 2023/08/20 --}}
+            {{-- <span style="color:rgb(0, 0, 0)"> からファイルが送信できているか確認してください</span> --}}
+            <span style="color:red"> からファイルが送信できているか確認してください。</span>
+        </a>
             <div class="flow-error">
                 <div class="alert alert-danger">
                 </div>

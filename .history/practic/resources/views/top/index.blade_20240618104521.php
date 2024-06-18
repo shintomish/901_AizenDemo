@@ -93,13 +93,12 @@
                     <option value="1">山田五郎</option>
                     <option value="2">佐藤愛子</option>
                 </select>
-
+            </h6>
                 <a >
                     <span style="color:red"> アップロード後は、左の </span>
                     <span style="color:blue">「データ送信確認ページ」</span>
                     <span style="color:red"> からファイルが送信できているか確認してください。</span>
                 </a>
-            </h6>
             <div class="flow-error">
                 <div class="alert alert-danger">
                 </div>

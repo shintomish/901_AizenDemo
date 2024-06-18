@@ -99,8 +99,8 @@
                     <span style="color:blue">「データ送信確認ページ」</span>
                     <span style="color:red"> からファイルが送信できているか確認してください。</span>
                 </a>
-            </h6>
-            <div class="flow-error">
+
+                <div class="flow-error">
                 <div class="alert alert-danger">
                 </div>
                 <div class="alert alert-success">
