@@ -80,14 +80,14 @@
     <style>
         /** ５行ピッタシに調整 6行*/
         .row-5 {
-            height: calc( 1.4em * 5 );
+            height: calc( 1.4em * 3 );
             line-height: 1.3;
             /* max-width: 600px; */
-            width: 600px;
+            width: 500px;
         }
         .row-6 {
             overflow:auto;
-            width:600px;
+            width:500px;
             height:400px;
             padding:5px;
             border:2px dotted #ffffff;
@@ -110,7 +110,7 @@
             <textarea  style="" class="row-5" v-model="message"></textarea>
 
             <br>
-            <button class="btn btn-sm btn-secondary" type="button" @click="send()">送信</button>
+            <button classtype="button" @click="send()">送信</button>
 
             {{-- Line --}}
             <hr>

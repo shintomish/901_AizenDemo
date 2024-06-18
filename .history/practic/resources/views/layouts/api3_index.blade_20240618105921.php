@@ -11,6 +11,9 @@
         <!-- favicon.ico -->
         <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}">
 
+        <!-- Saite Seal -->
+        {{-- <img alt="gif" src="{{ asset('css/back/RapidSSL-SEAL.gif') }}" width="90" height="50"> --}}
+
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -18,8 +21,13 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Bootstrap core CSS -->
+        {{-- <link href="{{ asset('css/back/bootstrap.min.css') }}" rel="stylesheet"> --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+        <!-- Scripts -->
+        {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+        {{-- <script src="{{ asset('js/jquery-3.6.0.min.js') }}" defer></script> --}}
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -37,6 +45,9 @@
 
         <!-- Place your kit's code here -->
         <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script>
+        {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> --}}
+
+        {{-- <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script> --}}
 
         <style>
             .bd-placeholder-img {
@@ -66,6 +77,10 @@
             <ul class="navbar-nav px-3">
                 <li class="nav-item text-nowrap">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="return logout(event);">
+                        {{-- <span class="text-danger"> --}}
+                            {{-- <i class="fa fa-sign-out-alt"></i> ログアウト --}}
+                        {{-- </span> --}}
+                        {{-- 2022/10/17 --}}
                         <h5 >
                             <span class="text-danger">
                                 <i class="fa fa-sign-out-alt"></i> ログアウト
@@ -104,30 +119,118 @@
                             <li class="nav-item">
                                 <a class="nav-link">
                                     <a class="nav-link" href="{{route('topclient')}}">
+                                    {{-- <a class="nav-link" href="{{route('media-library')}}"> --}}
                                     <i class="fas fa-laptop-house"></i>
                                     ホーム
                                 </a>
                             </li>
+                            {{-- <li class="nav-item"> --}}
+                                {{-- <a class="nav-link"> --}}
+                                    {{-- <a class="nav-link" href="{{route('camera_capture')}}"> --}}
+                                    {{-- <i class="fas fa-file-upload"></i> --}}
+                                    {{-- カメラアップロード --}}
+                                {{-- </a> --}}
+                            {{-- </li> --}}
 
-                            <h3 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                                <span>メニュー</span>
+                            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                                <span>業務管理</span>
                                 <a class="link-secondary" href="#" aria-label="Add a new report">
                                     <span data-feather="plus-circle"></span>
                                 </a>
-                            </h3>
+                            </h6>
+
 
                             <ul class="nav flex-column mb-2">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{route('topclient')}}">
-                                        <i class="fas fa-file-download"></i>
-                                        データダウンロード
+                                    <a class="nav-link" href="{{route('transhistory')}}">
+                                    {{-- <a class="nav-link" href=""> --}}
+                                        {{-- <span data-feather="file"></span> --}}
+                                        <i class="fas fa-file-upload"></i>
+                                        送信データ確認ページ
                                     </a>
                                 </li>
                             </ul>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('chatclientin')}}">
+                                <i class="fas fa-wifi"></i>
+                                チャット
+                            </a>
+                        </li>
+
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>請求書データ</span>
+                            <a class="link-secondary" href="#" aria-label="Add a new report">
+                                <span data-feather="plus-circle"></span>
+                            </a>
+                        </h6>
+
+                        <ul class="nav flex-column mb-2">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('chatclientin')}}">
-                                    <i class="fas fa-wifi"></i>
-                                    チャット
+                                <a class="nav-link" href="{{route('invoicehistory')}}">
+                                {{-- <a class="nav-link" href=""> --}}
+                                    <i class="fas fa-download"></i>
+                                    請求書データダウンロードページ
+                                </a>
+                            </li>
+                        </ul>
+
+                        {{-- 2023/08/17 以下追加 --}}
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>アップロード資料</span>
+                            <a class="link-secondary" href="#" aria-label="Add a new report">
+                                <span data-feather="plus-circle"></span>
+                            </a>
+                        </h6>
+                        {{-- 2023/08/17 上追加 --}}
+
+                        {{-- 2023/08/17 以下追加 --}}
+                        <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                                <a class="nav-link" target="_blank" href="{{route('topcli_pdf01')}}">
+                                {{-- <a class="nav-link" target="_blank" href="{{route('topclinewpdf')}}"> --}}
+                                {{-- <a class="nav-link" href=""> --}}
+                                    {{-- <span data-feather="file"></span> --}}
+                                    <i class="fas fa-download"></i>
+                                    インボイス制度開始にあたっての確認と対応
+                                </a>
+                            </li>
+                        </ul>
+                        {{-- 2023/08/17 上追加 --}}
+
+                        {{-- 2023/08/17 以下追加 --}}
+                        <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                                <a class="nav-link" target="_blank" href="{{route('topcli_pdf02')}}">
+                                {{-- <a class="nav-link" href=""> --}}
+                                    {{-- <span data-feather="file"></span> --}}
+                                    <i class="fas fa-download"></i>
+                                    電子帳簿保存法の改正ポイントと対応
+                                </a>
+                            </li>
+                        </ul>
+                        {{-- 2023/08/17 上追加 --}}
+
+                        {{-- 2023/08/30 以下追加 --}}
+                        <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                                <a class="nav-link" target="_blank" href="{{route('topcli_pdf03')}}">
+                                {{-- <a class="nav-link" href=""> --}}
+                                    {{-- <span data-feather="file"></span> --}}
+                                    <i class="fas fa-download"></i>
+                                    法人設立・法人成したタイミングで知っておくべき知識
+                                </a>
+                            </li>
+                        </ul>
+                        {{-- 2023/08/30 上追加 --}}
+
+                        <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                                <a class="nav-link" target="_blank" href="{{route('topclientpdf')}}">
+                                {{-- <a class="nav-link" href=""> --}}
+                                    {{-- <span data-feather="file"></span> --}}
+                                    <i class="fas fa-download"></i>
+                                    マニュアル
                                 </a>
                             </li>
                         </ul>
@@ -149,6 +252,11 @@
                             <div class="btn-group me-2">
                                 <!--button type="button" class="w-100 btn btn-lg btn-primary" >Delete</button-->
                             </div>
+                            {{-- <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle"> --}}
+                                {{-- <span data-feather="calendar"></span> --}}
+                                {{-- This week --}}
+                            {{-- </button> --}}
+
                         </div>
                     </div>
 
@@ -161,7 +269,7 @@
                     @yield('scripts')
 
                     <!-- フラッシュメッセージ -->
-                    @include('components.toastr')
+                    {{-- @include('components.toastr') --}}
 
                 </main>
             </div>

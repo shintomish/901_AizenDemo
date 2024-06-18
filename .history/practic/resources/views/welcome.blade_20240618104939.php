@@ -6,6 +6,8 @@
 
     <style>
         body {
+            /* background-color:rgb(239, 247, 208); 2023/11/09 */
+            /* background-color:rgb(208, 247, 215) */
             background-color:rgba(218, 175, 162, 0.918)
         }
     </style>
@@ -26,7 +28,7 @@
                         {{-- <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block"> --}}
                         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                             @auth
-                                <a href="{{ url('/back') }}" class="text-sm text-gray-700 underline">Back</a>
+                                <a href="{{ url('/back') }}" class="text-sm text-gray-700 underline">Dashboard</a>
                             @else
                             <p>
                                 <a href="{{ route('login') }}" class="text-center underline">{{ __('Login') }}</a>

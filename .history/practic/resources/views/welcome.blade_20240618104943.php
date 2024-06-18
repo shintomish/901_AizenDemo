@@ -6,6 +6,8 @@
 
     <style>
         body {
+            /* background-color:rgb(239, 247, 208); 2023/11/09 */
+            /* background-color:rgb(208, 247, 215) */
             background-color:rgba(218, 175, 162, 0.918)
         }
     </style>

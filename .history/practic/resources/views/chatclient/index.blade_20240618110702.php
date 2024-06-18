@@ -83,11 +83,11 @@
             height: calc( 1.4em * 5 );
             line-height: 1.3;
             /* max-width: 600px; */
-            width: 600px;
+            width: 500px;
         }
         .row-6 {
             overflow:auto;
-            width:600px;
+            width:500px;
             height:400px;
             padding:5px;
             border:2px dotted #ffffff;

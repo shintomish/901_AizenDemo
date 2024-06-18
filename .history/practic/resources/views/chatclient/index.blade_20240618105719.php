@@ -80,14 +80,14 @@
     <style>
         /** ５行ピッタシに調整 6行*/
         .row-5 {
-            height: calc( 1.4em * 5 );
+            height: calc( 1.4em * 3 );
             line-height: 1.3;
             /* max-width: 600px; */
-            width: 600px;
+            width: 500px;
         }
         .row-6 {
             overflow:auto;
-            width:600px;
+            width:500px;
             height:400px;
             padding:5px;
             border:2px dotted #ffffff;
@@ -101,6 +101,34 @@
 
     <body>
         <div id="chat">
+            {{-- <button @click="send()" :disabled="!textExists">送信</button> --}}
+
+            <!-- 検索エリア -->
+            <!-- ユーザーは1個なので、送信元を切り替える必要はない -->
+            {{-- <form  class="my-2 my-lg-0 ml-2" action="{{route('chatclientserch')}}" method="GET"> --}}
+                {{-- @csrf --}}
+                {{-- @method('get') --}}
+                {{-- <style>
+                    .exright{
+                        text-align: right;
+                    }
+                </style> --}}
+                {{-- <div class="exright"> --}}
+                    {{-- <select style="margin-right:5px;" class="custom-select" id="customer_id" name="customer_id"> --}}
+                        {{-- @foreach ($customer_findrec as $customer_findrec2) --}}
+                            {{-- @if ($customer_findrec2['id']==$customer_id) --}}
+                        {{-- <option selected="selected" value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option> --}}
+                            {{-- @else --}}
+                                {{-- <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option> --}}
+                            {{-- @endif --}}
+
+                        {{-- @endforeach --}}
+                    {{-- </select> --}}
+                    {{-- <button type="submit" class="btn btn-secondary btn_sm">送信元</button> --}}
+                {{-- </div> --}}
+
+            {{-- </form --> --}}
+            <!-- 検索エリア -->
 
             <br>
             <div class="col-2">
@@ -110,7 +138,7 @@
             <textarea  style="" class="row-5" v-model="message"></textarea>
 
             <br>
-            <button class="btn btn-sm btn-secondary" type="button" @click="send()">送信</button>
+            <button type="button" @click="send()">送信</button>
 
             {{-- Line --}}
             <hr>
@@ -137,8 +165,62 @@
                     </template >
                 </ul>
             </div>
+            {{-- <table class="table table-striped table-borderd"> --}}
+                {{-- <table class="table table-striped table-borderd table_sticky"> --}}
+                {{-- <thead> --}}
+                    {{-- <tr>
+                        <th scope="col" class ="fixed01">日時</th>
+                        <th scope="col" class ="fixed01">@sortablelink('users_name', 'ユーザー名')</th>
+                        <th scope="col" class ="fixed01">メッセージ</th>
+                    </tr> --}}
+                {{-- </thead> --}}
+
+                {{-- <tbody>
+                    @if($messages->count())
+                        @foreach($messages as $message)
+                        <tr> --}}
+                            {{-- <td>{{ $message->id }}</td> --}}
+                            {{-- @php
+                                $str = "";
+                                $str = ( new DateTime($message->m_created_at))->format('Y-m-d H:i:s');
+                            @endphp
+                            <td>{{ $str }}</td>
+                            <td>
+                                @foreach ($users as $users2)
+                                    @if ($users2->id==$message->user_id)
+                                        {{$users2->name}}
+                                    @endif
+                                @endforeach
+                            </td> --}}
+                            {{-- <td>
+                                @foreach ($customers as $customers2)
+                                    @if ($customers2->id==$message->customer_id)
+                                        {{$customers2->business_name}}
+                                    @endif
+                                @endforeach
+                            </td> --}}
+
+                            {{-- <td>{{ $message->m_body }}</td>
+                        </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td><p>0件です。</p></td>
+                            <td><p> </p></td>
+                            <td><p> </p></td>
+                        </tr>
+                    @endif
+                </tbody>
+            </table> --}}
+
+            {{-- ページネーション / pagination）の表示 --}}
+            {{-- <ul class="pagination justify-content-center">
+                {{ $messages->appends(request()->query())->render() }}
+            </ul> --}}
         </div>
 
+        {{-- <script src="/js/app.js"></script> --}}
+        {{-- <script src="{{ asset('js/app.js')}}"></script> --}}
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
         {{-- 2022/05/06 --}}
