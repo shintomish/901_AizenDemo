@@ -35,7 +35,7 @@
         <form action="{{ route('contact.send') }}" method="POST">
             @csrf
             <h6>
-                <ul for="inp" style="margin-bottom:10px;" class="text-primary">以下を入力してください</ul>
+                <ul for="inp" style="margin-bottom:10px;" class="text-primary">以下を入力してください</label>
             </h6>
             <div>
                 {{-- <label for="name"></label> --}}
