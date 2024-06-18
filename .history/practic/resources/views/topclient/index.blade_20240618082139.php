@@ -1,5 +1,4 @@
 @extends('layouts.client')
-
 {{-- // ユーザー 運動データダウンロード --}}
 @section('content')
     <div class="row">

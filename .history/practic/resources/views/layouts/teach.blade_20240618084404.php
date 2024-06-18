@@ -176,16 +176,8 @@
                                 <li class="nav-item">
                                     {{-- <a class="nav-link" href="{{route('transhistory')}}"> --}}
                                     <a class="nav-link" href="">
-                                        <i class="fas fa-file-upload"></i>
-                                        データアップロード
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="nav flex-column mb-2">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">
-                                        <i class="fas fa-file-upload"></i>
-                                        データ送信確認
+                                        <i class="fas fa-file-download"></i>
+                                        データダウンロード
                                     </a>
                                 </li>
                             </ul>

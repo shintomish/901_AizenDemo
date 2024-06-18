@@ -185,7 +185,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="">
                                         <i class="fas fa-file-upload"></i>
-                                        データ送信確認
+                                        データ確認ページ
                                     </a>
                                 </li>
                             </ul>

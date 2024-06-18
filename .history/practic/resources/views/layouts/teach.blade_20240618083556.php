@@ -134,61 +134,141 @@
                                 </a>
                             </li>
 
-                            <h3 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                                <span>メニュー</span>
-                                <a class="link-secondary" href="#" aria-label="Add a new report">
-                                    <span data-feather="plus-circle"></span>
-                                </a>
-                            </h3>
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>メニュー</span>
+                            <a class="link-secondary" href="#" aria-label="Add a new report">
+                                <span data-feather="plus-circle"></span>
+                            </a>
+                        </h6>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="">
-                                    {{-- <span data-feather="users"></span> --}}
-                                    <i class="fas fa-user-friends"></i>
-                                    利用者管理
-                                </a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">
+                                {{-- <span data-feather="users"></span> --}}
+                                <i class="fas fa-user-friends"></i>
+                                利用者管理
+                            </a>
+                        </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="">
-                                    {{-- <span data-feather="users"></span> --}}
-                                    <i class="fas fa-user-alt"></i>
-                                    スポーツレベル
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('chatclientin')}}">
-                                    <i class="fas fa-wifi"></i>
-                                    チャット
-                                </a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('organization.index')}}">
+                                {{-- <span data-feather="users"></span> --}}
+                                <i class="fas fa-user-alt"></i>
+                                すぽ
+                            </a>
+                        </li>
 
 
-                            <h3 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                                <span>運動データ</span>
-                                <a class="link-secondary" href="#" aria-label="Add a new report">
-                                    <span data-feather="plus-circle"></span>
-                                </a>
-                            </h3>
-
+                        {{-- 2023/09/29 --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('chatclientin')}}">
+                                <i class="fas fa-wifi"></i>
+                                チャット
+                            </a>
+                        </li>
+                        {{-- 2023/08/17 以下コメント --}}
+                        {{-- 2022/11/10 --}}
+                        {{-- @if($indiv_class == 1 )
                             <ul class="nav flex-column mb-2">
                                 <li class="nav-item">
-                                    {{-- <a class="nav-link" href="{{route('transhistory')}}"> --}}
-                                    <a class="nav-link" href="">
-                                        <i class="fas fa-file-upload"></i>
-                                        データアップロード
+                                    <a class="nav-link" target="_blank" href="{{route('topclinewzip')}}">
+                                        <i class="fas fa-download"></i>
+                                        <span style="color:red">
+                                            2022年_年末調整資料（法人様向け資料）
+                                        </span>
                                     </a>
                                 </li>
                             </ul>
-                            <ul class="nav flex-column mb-2">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">
-                                        <i class="fas fa-file-upload"></i>
-                                        データ送信確認
-                                    </a>
-                                </li>
-                            </ul>
+                        @endif --}}
+                        {{-- 2023/08/17 上コメント --}}
+
+                        {{-- 2023/08/17 以下コメント --}}
+                        {{-- <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                                <a class="nav-link" target="_blank" href="{{route('topclinewpdf')}}">
+                                    <i class="fas fa-download"></i>
+                                    <?php echo $latestinfodate; ?>
+                                </a>
+                            </li>
+                        </ul> --}}
+                        {{-- 2023/08/17 上コメント --}}
+
+                        {{-- 2023/10/12 以下追加 --}}
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>請求書データ</span>
+                            <a class="link-secondary" href="#" aria-label="Add a new report">
+                                <span data-feather="plus-circle"></span>
+                            </a>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('invoicehistory')}}">
+                                {{-- <a class="nav-link" href=""> --}}
+                                    {{-- <span data-feather="file"></span> --}}
+                                    <i class="fas fa-download"></i>
+                                    請求書データダウンロードページ
+                                </a>
+                            </li>
+                        </ul>
+                        {{-- 2023/10/12 上追加 --}}
+
+                        {{-- 2023/08/17 以下追加 --}}
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>アップロード資料</span>
+                            <a class="link-secondary" href="#" aria-label="Add a new report">
+                                <span data-feather="plus-circle"></span>
+                            </a>
+                        </h6>
+                        {{-- 2023/08/17 上追加 --}}
+
+                        {{-- 2023/08/17 以下追加 --}}
+                        <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                                <a class="nav-link" target="_blank" href="{{route('topcli_pdf01')}}">
+                                {{-- <a class="nav-link" target="_blank" href="{{route('topclinewpdf')}}"> --}}
+                                {{-- <a class="nav-link" href=""> --}}
+                                    {{-- <span data-feather="file"></span> --}}
+                                    <i class="fas fa-download"></i>
+                                    インボイス制度開始にあたっての確認と対応
+                                </a>
+                            </li>
+                        </ul>
+                        {{-- 2023/08/17 上追加 --}}
+
+                        {{-- 2023/08/17 以下追加 --}}
+                        <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                                <a class="nav-link" target="_blank" href="{{route('topcli_pdf02')}}">
+                                {{-- <a class="nav-link" href=""> --}}
+                                    {{-- <span data-feather="file"></span> --}}
+                                    <i class="fas fa-download"></i>
+                                    電子帳簿保存法の改正ポイントと対応
+                                </a>
+                            </li>
+                        </ul>
+                        {{-- 2023/08/17 上追加 --}}
+
+                        {{-- 2023/08/30 以下追加 --}}
+                        <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                                <a class="nav-link" target="_blank" href="{{route('topcli_pdf03')}}">
+                                {{-- <a class="nav-link" href=""> --}}
+                                    {{-- <span data-feather="file"></span> --}}
+                                    <i class="fas fa-download"></i>
+                                    法人設立・法人成したタイミングで知っておくべき知識
+                                </a>
+                            </li>
+                        </ul>
+                        {{-- 2023/08/30 上追加 --}}
+
+                        <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                                <a class="nav-link" target="_blank" href="{{route('topclientpdf')}}">
+                                {{-- <a class="nav-link" href=""> --}}
+                                    {{-- <span data-feather="file"></span> --}}
+                                    <i class="fas fa-download"></i>
+                                    マニュアル
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -196,7 +276,9 @@
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1 class="h2">
-
+                            <!--button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButtonLG" data-bs-toggle="dropdown" aria-expanded="false">
+                            ALLUSER
+                            </button-->
                         </h1>
 
                         <div class="btn-toolbar mb-2 mb-md-0">
@@ -206,6 +288,10 @@
                             <div class="btn-group me-2">
                                 <!--button type="button" class="w-100 btn btn-lg btn-primary" >Delete</button-->
                             </div>
+                            {{-- <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle"> --}}
+                                {{-- <span data-feather="calendar"></span> --}}
+                                {{-- This week --}}
+                            {{-- </button> --}}
 
                         </div>
                     </div>

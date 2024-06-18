@@ -166,29 +166,13 @@
 
 
                             <h3 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                                <span>運動データ</span>
+                                <span>運動</span>
                                 <a class="link-secondary" href="#" aria-label="Add a new report">
                                     <span data-feather="plus-circle"></span>
                                 </a>
                             </h3>
 
-                            <ul class="nav flex-column mb-2">
-                                <li class="nav-item">
-                                    {{-- <a class="nav-link" href="{{route('transhistory')}}"> --}}
-                                    <a class="nav-link" href="">
-                                        <i class="fas fa-file-upload"></i>
-                                        データアップロード
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="nav flex-column mb-2">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">
-                                        <i class="fas fa-file-upload"></i>
-                                        データ送信確認
-                                    </a>
-                                </li>
-                            </ul>
+
                         </ul>
                     </div>
                 </nav>

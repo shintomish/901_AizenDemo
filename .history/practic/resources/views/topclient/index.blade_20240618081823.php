@@ -1,16 +1,15 @@
+{{-- @extends('layouts.app') --}}
 @extends('layouts.client')
-
 {{-- // ユーザー 運動データダウンロード --}}
 @section('content')
     <div class="row">
-        <!-- 進捗BARエリア -->
-        {{-- <div class="progress">
+        <div class="progress">
             <div id="pgss2" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
             </div>
-        </div> --}}
+        </div>
         <!-- 検索エリア -->
 
-
+        <!-- 検索エリア -->
     </div>
 
     <div class="table-responsive">
@@ -29,6 +28,24 @@
             <tbody id="table" >
 
             </tbody>
+            <style>
+                /* 点滅 */
+                .light_box{
+                    width: 40px;
+                    height: 40px;
+                    margin: 5px auto;
+                    opacity: 0;
+                    background-color:rgb(255, 0, 0);
+                    border-radius: 3.0rem;
+                    animation: flash 1.5s infinite linear;
+                    color:rgb(254, 254, 254);
+                }
+                @keyframes flash {
+                    50% {
+                    opacity: 1;
+                    }
+                }
+            </style>
 
 
         </table>

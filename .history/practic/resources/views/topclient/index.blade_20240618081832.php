@@ -1,16 +1,15 @@
+{{-- @extends('layouts.app') --}}
 @extends('layouts.client')
-
 {{-- // ユーザー 運動データダウンロード --}}
 @section('content')
     <div class="row">
-        <!-- 進捗BARエリア -->
-        {{-- <div class="progress">
+        <div class="progress">
             <div id="pgss2" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
             </div>
-        </div> --}}
+        </div>
         <!-- 検索エリア -->
 
-
+        <!-- 検索エリア -->
     </div>
 
     <div class="table-responsive">

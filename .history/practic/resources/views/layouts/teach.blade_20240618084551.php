@@ -183,9 +183,9 @@
                             </ul>
                             <ul class="nav flex-column mb-2">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="">
+                                    <a class="nav-link" href="{{route('transhistory')}}">
                                         <i class="fas fa-file-upload"></i>
-                                        データ送信確認
+                                        送信データ確認ページ
                                     </a>
                                 </li>
                             </ul>

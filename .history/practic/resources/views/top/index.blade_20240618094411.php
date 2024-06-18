@@ -27,7 +27,7 @@
 ?>
 
 @section('content')
-    <h2>運動データアップロード</h2>
+    <h2>スケジュール一覧</h2>
     @if (session('message'))
         @if (session('message') == '送信処理を正常終了しました。')
             <div class="alert alert-success">
@@ -97,7 +97,7 @@
             {{-- 2023/08/20 --}}
             {{-- <span style="margin-left:5px;" style="color:rgb(0, 0, 0)"> アップロード後は、左の </span> --}}
             <span style="color:red"> アップロード後は、左の </span>
-            <span style="color:blue">「データ送信確認ページ」</span>
+            <span style="color:blue">「運動データ確認ページ」</span>
             {{-- 2023/08/20 --}}
             {{-- <span style="color:rgb(0, 0, 0)"> からファイルが送信できているか確認してください</span> --}}
             <span style="color:red"> からファイルが送信できているか確認してください。</span>

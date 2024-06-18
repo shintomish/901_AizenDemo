@@ -1,6 +1,5 @@
 {{-- @extends('layouts.app') --}}
 @extends('layouts.teach')
-
 <?php
     function formatBytes($bytes, $precision = 2, array $units = null)
     {
@@ -27,7 +26,6 @@
 ?>
 
 @section('content')
-    <h2>運動データアップロード</h2>
     @if (session('message'))
         @if (session('message') == '送信処理を正常終了しました。')
             <div class="alert alert-success">
@@ -52,18 +50,16 @@
                 }
             </style>
             <div class="exright">
-                <select style="margin-right:5px;" class="custom-select" id="customer_id" name="customer_id">
-                    {{-- @foreach ($customer_findrec as $customer_findrec2)
+                {{-- <select style="margin-right:5px;" class="custom-select" id="customer_id" name="customer_id">
+                    @foreach ($customer_findrec as $customer_findrec2)
                         @if ($customer_findrec2['id']==$customer_id)
                     <option selected="selected" value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
                         @else
                             <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
                         @endif
-                    @endforeach --}}
-                    <option value="1">山田五郎</option>
-                    <option value="2">佐藤愛子</option>
-                </select>
 
+                    @endforeach
+                </select> --}}
                 <button type="submit" class="btn btn-secondary btn_sm">送信先</button>
             </div>
 
@@ -74,30 +70,26 @@
     <div class="container">
         <h6 class="jumbotron" >ファイルアップロード</h6>
 
-        {{-- <form action="{{ route('postUpload', $customer_id )}}" id="file-upload" method="POST" enctype="multipart/form-data"> --}}
-        <form action="" id="file-upload" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('postUpload', $customer_id )}}" id="file-upload" method="POST" enctype="multipart/form-data">
             <div id="upload-container" style="border: 1px solid; padding: 30px;">
                 @csrf
             {{-- 複数法人 --}}
             <a style="color:blue">To: </a>
-
             <select style="margin-bottom:5px; background-color:rgb(214, 209, 209)" class="custom-select" id="customer_id" name="customer_id">
-                {{-- @foreach ($customer_findrec as $customer_findrec2)
+                @foreach ($customer_findrec as $customer_findrec2)
                     @if ($customer_findrec2['id']==$customer_id)
                 <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
                     @else
                     <option disabled value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
                     @endif
-                @endforeach --}}
-                <option value="1">山田五郎</option>
-                <option value="2">佐藤愛子</option>
+                @endforeach
             </select>
-
+        {{-- 2022/11/30 --}}
         <a >
             {{-- 2023/08/20 --}}
             {{-- <span style="margin-left:5px;" style="color:rgb(0, 0, 0)"> アップロード後は、左の </span> --}}
             <span style="color:red"> アップロード後は、左の </span>
-            <span style="color:blue">「データ送信確認ページ」</span>
+            <span style="color:blue">「運動データ確認ページ」</span>
             {{-- 2023/08/20 --}}
             {{-- <span style="color:rgb(0, 0, 0)"> からファイルが送信できているか確認してください</span> --}}
             <span style="color:red"> からファイルが送信できているか確認してください。</span>
@@ -206,13 +198,10 @@
         )
     );
 
+    $arr = json_encode($arr);
     // file_put_contents("customer_info_status.json" , $arr); <===Orijinal
     // $jsonfileは、Controllerのindexより取得
-
-    // $arr = json_encode($arr);
-    // file_put_contents($jsonfile , $arr);
-
-                // target: "{{ route('postUpload', $customer_id ) }}",
+    file_put_contents($jsonfile , $arr);
 ?>
 
     <script type="text/javascript">
@@ -222,8 +211,8 @@
         var isImage = true;
         var r = new Flow({
             simultaneousUploads : 5,
-//
-            target: "",
+            // target: '/uploads',
+            target: "{{ route('postUpload', $customer_id ) }}",
             permanentErrors:[404, 500, 501],
             headers: { 'X-CSRF-TOKEN': '{{csrf_token()}}'},
             testChunks:false
