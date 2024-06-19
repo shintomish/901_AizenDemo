@@ -119,6 +119,14 @@ Route::get('top/index',        'App\Http\Controllers\TopController@index')->name
 Route::post('top/update_api',  'App\Http\Controllers\TopController@update_api')->name('top.update_api');
 Route::resource('top',         'App\Http\Controllers\TopController');
 
+
+//-----------------------------------------------------------------------------------------------
+//- tophistory 事務所 00_3
+//-----------------------------------------------------------------------------------------------
+Route::get('tophistory/index',        'App\Http\Controllers\TopHistoryController@index')->name('tophis');
+Route::post('tophistory/update_api',  'App\Http\Controllers\TopHistoryController@update_api')->name('tophis.update_api');
+Route::resource('tophistory',         'App\Http\Controllers\TopHistoryController');
+
 //-----------------------------------------------------------------------------------------------
 //- 事務所 organization 組織
 //-----------------------------------------------------------------------------------------------

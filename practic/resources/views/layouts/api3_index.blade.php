@@ -89,6 +89,7 @@
             </ul>
         </header>
 
+
         <div class="container-fluid">
             <div class="row">
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -97,7 +98,6 @@
                             <li class="nav-item">
                                 <a class="nav-link active">
                                     <i class="fas fa-address-card"></i>
-                                    {{-- {{ $user->name }} --}}
                                     <?php $user = Auth::user(); ?>{{ $user->name }}
                                 </a>
                             </li>
@@ -166,6 +166,7 @@
                 </main>
             </div>
         </div>
+
         <script src="{{ asset('js/app.js')}}" defer></script>
 
     </body>

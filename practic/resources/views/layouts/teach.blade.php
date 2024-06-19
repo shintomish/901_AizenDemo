@@ -127,7 +127,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">
-                                    <a class="nav-link" href="">
+                                    <a class="nav-link" href="{{route('top')}}">
                                     {{-- <a class="nav-link" href="{{route('media-library')}}"> --}}
                                     <i class="fas fa-laptop-house"></i>
                                     ホーム
@@ -158,7 +158,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('chatclientin')}}">
+                                <a class="nav-link" href="{{route('chatin')}}">
                                     <i class="fas fa-wifi"></i>
                                     チャット
                                 </a>
@@ -174,8 +174,7 @@
 
                             <ul class="nav flex-column mb-2">
                                 <li class="nav-item">
-                                    {{-- <a class="nav-link" href="{{route('transhistory')}}"> --}}
-                                    <a class="nav-link" href="">
+                                    <a class="nav-link" href="{{route('top')}}">
                                         <i class="fas fa-file-upload"></i>
                                         データアップロード
                                     </a>
@@ -183,7 +182,7 @@
                             </ul>
                             <ul class="nav flex-column mb-2">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="">
+                                    <a class="nav-link" href="{{route('tophis')}}">
                                         <i class="fas fa-file-upload"></i>
                                         データ送信確認
                                     </a>

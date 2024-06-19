@@ -42,7 +42,7 @@
     <div class="row">
 
         <!-- 検索エリア -->
-        <form  class="my-2 my-lg-0 ml-2" action="{{route('topclientserch')}}" method="GET">
+        <form  class="my-2 my-lg-0 ml-2" action="" method="GET">
             {{-- <form  class="my-2 my-lg-0 ml-2" action="{{route('transserch_custom')}}" method="GET"> --}}
             @csrf
             @method('get')
@@ -53,22 +53,16 @@
             </style>
             <div class="exright">
                 <select style="margin-right:5px;width:200px;height:40px;" class="custom-select" id="user_id" name="user_id">
-                    {{-- @foreach ($customer_findrec as $customer_findrec2)
-                        @if ($customer_findrec2['id']==$customer_id)
-                    <option selected="selected" value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
-                        @else
-                            <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
-                        @endif
-                    @endforeach --}}
-                    <option value="1">山田五郎</option>
-                    <option value="2">佐藤愛子</option>
+                    @foreach ($users as $user)
+                        <option value="{{ $user['id'] }}">{{ $user['name'] }}</option>
+                    @endforeach
+                    {{-- <option value="1">山田五郎</option>
+                    <option value="2">佐藤愛子</option> --}}
                 </select>
 
-                <button type="submit" class="btn btn-secondary btn_sm">送信先</button>
+                <button style="margin-bottom:10px;" type="submit" class="btn btn-secondary btn_sm">送信先</button>
             </div>
-
-        </form -->
-        <!-- 検索エリア -->
+        </form>
     </div>
 
     <div class="container">
@@ -83,15 +77,11 @@
                 <a style="color:blue">To: </a>
 
                 <select style="margin-bottom:5px; background-color:rgb(214, 209, 209); width:200px;height:40px;" class="custom-select" id="user_id" name="user_id">
-                    {{-- @foreach ($customer_findrec as $customer_findrec2)
-                        @if ($customer_findrec2['id']==$customer_id)
-                    <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
-                        @else
-                        <option disabled value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
-                        @endif
-                    @endforeach --}}
-                    <option value="1">山田五郎</option>
-                    <option value="2">佐藤愛子</option>
+                    @foreach ($users as $user)
+                        <option value="{{ $user['id'] }}">{{ $user['name'] }}</option>
+                    @endforeach
+                    {{-- <option value="1">山田五郎</option>
+                    <option value="2">佐藤愛子</option> --}}
                 </select>
 
                 <a >

@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class TopController extends Controller
+class TopHistoryController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -35,7 +35,7 @@ class TopController extends Controller
         $user  = $this->auth_user_info();
         $userid = $user->id;
 
-        Log::info('office top index START $user->name = ' . print_r($user->name ,true));
+        Log::info('office tophistory index START $user->name = ' . print_r($user->name ,true));
 
         $organization  = $this->auth_user_organization();
         $organization_id = $organization->id;
@@ -57,8 +57,8 @@ class TopController extends Controller
 
         $compacts = compact( 'userid','users','exercises','common_no' );
 
-        Log::info('office top index END $user->name = ' . print_r($user->name ,true));
-        return view( 'top.index', $compacts);
+        Log::info('office tophistory index END $user->name = ' . print_r($user->name ,true));
+        return view( 'tophistory.index', $compacts);
     }
 
     /**
