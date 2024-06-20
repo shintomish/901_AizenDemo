@@ -1,0 +1,51 @@
+[2024-06-21 06:45:31] local.INFO: auth_user_info START  
+[2024-06-21 06:45:31] local.INFO: auth_user_info END  
+[2024-06-21 06:45:31] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-05-27T03:06:38.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-21 06:45:31] local.INFO: loginout operation update START  
+[2024-06-21 06:45:31] local.INFO: loginout operation update $id < 10 END  
+[2024-06-21 06:45:34] local.INFO: auth_user_info START  
+[2024-06-21 06:45:34] local.INFO: auth_user_info END  
+[2024-06-21 06:45:34] local.INFO: office top index START $user->name = 新冨泰明  
+[2024-06-21 06:45:34] local.INFO: auth_user_organization START  
+[2024-06-21 06:45:34] local.INFO: auth_user_organization END  
+[2024-06-21 06:45:34] local.INFO: auth_customer_allrec START  
+[2024-06-21 06:45:34] local.INFO: auth_customer_findrec END  
+[2024-06-21 06:45:34] local.DEBUG: office top index customer_id  = 6  
+[2024-06-21 06:45:34] local.INFO: office top index END $user->name = 新冨泰明  
+[2024-06-21 06:46:10] local.INFO: top serch START  
+[2024-06-21 06:46:10] local.INFO: auth_user_info START  
+[2024-06-21 06:46:10] local.INFO: auth_user_info END  
+[2024-06-21 06:46:10] local.INFO: auth_customer_allrec START  
+[2024-06-21 06:46:10] local.INFO: auth_customer_findrec END  
+[2024-06-21 06:46:10] local.INFO: top serch END  
+[2024-06-21 06:46:56] local.INFO: top postUpload  START  
+[2024-06-21 06:46:56] local.INFO: top postUpload_info  START  
+[2024-06-21 06:46:56] local.INFO: auth_user_info START  
+[2024-06-21 06:46:56] local.INFO: auth_user_info END  
+[2024-06-21 06:46:56] local.INFO: auth_user_foldername START  
+[2024-06-21 06:46:56] local.INFO: auth_user_foldername END  
+[2024-06-21 06:46:56] local.INFO: top postUpload_info $compacts[customer_id]  = 15  
+[2024-06-21 06:46:56] local.INFO: top json_put_info_set  START  
+[2024-06-21 06:46:56] local.INFO: top json_put_info_set  END  
+[2024-06-21 06:46:56] local.INFO: top postUpload_info  END  
+[2024-06-21 06:46:56] local.INFO: client postUpload not empty  
+[2024-06-21 06:46:56] local.INFO: client json_get_info  START  
+[2024-06-21 06:46:56] local.INFO: client json_get_info not empty  
+[2024-06-21 06:46:56] local.INFO: client json_get_info  END  
+[2024-06-21 06:46:56] local.INFO: top postUpload  $fileName = 06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf  
+[2024-06-21 06:46:56] local.INFO: beginTransaction - top postUpload saveFile start  
+[2024-06-21 06:46:57] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'foldername' in 'field list' (Connection: mysql, SQL: insert into `exercisedatas` (`foldername`, `business_name`, `organization_id`, `user_id`, `customer_id`, `yearmonth`, `filepath`, `filename`, `extension`, `filesize`, `urgent_flg`, `updated_at`, `created_at`) values (folder0015, 佐藤 雄一, 1, 1, 15, 2024/06, userdata/folder0015/06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf, 06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf, pdf, 680504, 1, 2024-06-21 06:46:56, 2024-06-21 06:46:56)) {"userId":1,"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'foldername' in 'field list' (Connection: mysql, SQL: insert into `exercisedatas` (`foldername`, `business_name`, `organization_id`, `user_id`, `customer_id`, `yearmonth`, `filepath`, `filename`, `extension`, `filesize`, `urgent_flg`, `updated_at`, `created_at`) values (folder0015, 佐藤 雄一, 1, 1, 15, 2024/06, userdata/folder0015/06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf, 06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf, pdf, 680504, 1, 2024-06-21 06:46:56, 2024-06-21 06:46:56)) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:813)
