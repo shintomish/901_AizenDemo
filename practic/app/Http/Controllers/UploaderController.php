@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use DateTime;
 use App\Models\ImageUpload;
 use App\Models\UploadUser;
-
+use App\Models\Exercisedata;
 // use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
@@ -45,36 +45,31 @@ class UploaderController extends Controller
      */
     public function postUpload_info($customer_id)
     {
-        Log::info('client postUpload_info  START');
+        Log::info('top postUpload_info  START');
 
         // ログインユーザーのユーザー情報を取得する
         $user = $this->auth_user_info();
         $u_id = $user->id;
         $o_id = $user->organization_id;
 
-        // ログインユーザーのCustomer情報からフォルダー名を取得する
-        $uploadusers     = $this->auth_user_foldername($customer_id);
-        $foldername      = $uploadusers->foldername;
-        $business_name   = $uploadusers->business_name;
-        if (isset($uploadusers->check_flg)) {
-            $check_flg   = $uploadusers->check_flg; //ファイル無し(1):ファイル有り(2)
-        } else {
-            $check_flg   = 1;
-        }
+        // 顧客IDからCustomer情報を取得する
+        $customers       = $this->auth_user_foldername($customer_id);
+        $foldername      = $customers->foldername;
+        $business_name   = $customers->business_name;
         $folderpath      = 'app'. '/' . 'userdata'. '/' . $foldername;
 
         // 年月取得
         $now = DateTime::createFromFormat('U.u', number_format(microtime(true), 6, '.', ''));
         $dateNew = ($now->format('Y/m'));
 
-        $compacts = compact( 'u_id','o_id', 'customer_id', 'foldername','business_name','folderpath','check_flg','dateNew' );
+        $compacts = compact( 'u_id','o_id', 'customer_id', 'foldername','business_name','folderpath','dateNew' );
 
-        Log::info('client postUpload_info $compacts[customer_id]  = ' . print_r($compacts['customer_id'] ,true));
+        Log::info('top postUpload_info $compacts[customer_id]  = ' . print_r($compacts['customer_id'] ,true));
 
         // * ログインユーザーのCustomerオブジェクトをjsonにSetする
-        $this->json_put_info_set($u_id, $o_id,$customer_id, $foldername, $business_name,$folderpath,$check_flg,$dateNew);
+        $this->json_put_info_set($u_id, $o_id,$customer_id, $foldername, $business_name,$folderpath,$dateNew);
 
-        Log::info('client postUpload_info  END');
+        Log::info('top postUpload_info  END');
 
         return  $compacts;
 
@@ -87,7 +82,7 @@ class UploaderController extends Controller
      */
     public function postUpload($customer_id, Request $request)
     {
-        Log::info('client postUpload  START');
+        Log::info('top postUpload  START');
 
         $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
         $jsonUrl = $jsonfile; //JSONファイルの場所とファイル名を記述
@@ -111,13 +106,6 @@ class UploaderController extends Controller
                 Log::info('client postUpload not empty');
             }
 
-            // $obj = json_decode($json, true);
-            // $obj = $obj["res"]["info"];
-            // foreach($obj as $key => $val) {
-            //     $status = false;
-            //     $status = $val["status"];
-            // }
-            // Log::info('client postUpload  jsonUrl OK');
         } else {
             // echo "データがありません";
             // Log::info('client postUpload  jsonUrl NG');
@@ -160,17 +148,16 @@ class UploaderController extends Controller
         if ($totalSize && $totalSize > $maxtatalsize)
         {
             $errormsg = 'ファイルサイズが大きすぎます。アップロード可能なサイズは '. $maxtataldisp. ' MBまでです。';
-            Log::info('client postUpload  failesize to big ');
+            Log::info('top postUpload  failesize to big ');
             // Statusを変える
             $status = false;
             $this->json_put_status($status,$customer_id);
             //400 Bad Request	一般的なクライアントエラー
             return \Response::json(['error'=>$errormsg,'status'=>'BG'],400);
-
         }
 
         $uploadFile = $request->getFile();
-     
+
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             if ($file->checkChunk()) {
                 header("HTTP/1.1 200 Ok");
@@ -189,11 +176,6 @@ class UploaderController extends Controller
                 // Log::info('client postUpload validateChunk ok ');
                 $file->saveChunk();
             } else {
-
-                // // Statusを変える
-                // $status = false;
-                // $this->json_put_status($status,$customer_id);
-
                 //「400 Bad Request」は、不正な構文、無効なリクエストメッセージフレーミング、
                 //または不正なリクエストルーティングのために、サーバーがクライアントによって
                 //送信されたリクエストを処理できなかったことを示すHTTPステータスコードです。
@@ -201,46 +183,27 @@ class UploaderController extends Controller
                 header("HTTP/1.1 400 Bad Request");
                 Log::debug('client postUpload HTTP/1.1 400 Bad Request ');
                 return ;
-
-                // // strage/tmp
-                // $file->deleteChunks();
-                // Log::debug('client postUpload HTTP/1.1 400 Bad Request ');
-                // Log::debug('client postUpload_info  validateChunk not   $uploadFile[name]  = ' . print_r($uploadFile['name'] ,true));
-
-                $errormsg = 'アップロード出来ませんでした。';
-                // Indicate that we are not done with all the chunks.
-                return \Response::json(['error'=>$errormsg,'status'=>'NG'], 400);
-                // return redirect('topclient/index')->with('message', '送信処理出来ませんでした。');
             }
         }
 
         $fileName = $uploadFile['name'];         // FileName
         $fileSize = $request->getTotalSize();    // FileSize
-        $filedir = '/app/userdata/' . $compacts['foldername'] . '/';
+        $filedir  = '/app/userdata/' . $compacts['foldername'] . '/';
+        $ext      = substr($fileName, strrpos($fileName, '.') + 1);  // 拡張子
 
+        // フォルダー作成
         if(!file_exists( storage_path() . $filedir)){
             mkdir( storage_path() . $filedir, $mode = 0777, true);
         }
 
-        //2023/09/14 Middleware\ActlogMiddleware::classをコメント
-        // $tmp_name = $uploadFile['tmp_name'];     // tmp_name
-        // if(!file_exists( $tmp_name)){
-        //     mkdir( $tmp_name, $mode = 0777, true);
-        // }
-        // Log::debug('client postUpload  $tmp_name = ' . print_r($tmp_name ,true));
-
-        // 2023/02/13 ERROR: Undefined array key "extension"
-        // $identifier = md5($uploadFile['name']).'-' . time() ;
-        // $p = pathinfo($uploadFile['name']);
-        // /* hashファイル名と拡張子を結合 */
-        // $identifier .= "." . $p['extension'];
-
         /* アップロードパス */
-        // $path =  $filedir . $identifier;
         $path =  $filedir . $fileName;
         $storage_path = storage_path() . $path;
 
-        Log::info('client postUpload  $fileName = ' . print_r($fileName,true));
+        /* テーブル設定パス */
+        $setpath = 'userdata/' . $compacts['foldername'] . '/' .$fileName;
+
+        Log::info('top postUpload  $fileName = ' . print_r($fileName,true));
         if ($file->validateFile() && $file->save($storage_path))
         {
             // strage/tmp
@@ -248,7 +211,7 @@ class UploaderController extends Controller
 
             try {
                 DB::beginTransaction();
-                Log::info('beginTransaction - client postUpload saveFile start');
+                Log::info('beginTransaction - top postUpload saveFile start');
 
                 $imageUpload = new ImageUpload();
                 $imageUpload->filename        = $fileName;
@@ -258,42 +221,28 @@ class UploaderController extends Controller
                 $imageUpload->filesize        = $fileSize;
                 $imageUpload->save();               //  Inserts
 
-                $data['count'] = UploadUser::where('customer_id',$compacts['customer_id'])->count();
-
-                //更新
-                if( $data['count'] > 0 ) {
-                    $uploadusers = DB::table('uploadusers')
-                    // ユーザーの絞り込み
-                    ->where('customer_id',$compacts['customer_id'])
-                    // 削除されていない
-                    ->whereNull('deleted_at')
-                    ->update([
-                        'yearmonth'  =>  $compacts['dateNew'],
-                        'check_flg'  =>  2,                     // ファイル無し(1):ファイル有り(2)
-                        'prime_flg'  =>  3,                     // 優先順位 -(1): 低(2): 中(3): 高(4) 2022/11/04
-                        // 'created_at' =>  now()  2022/12/16
-                        'updated_at' =>  now()
-                    ]);
                 //追加
-                } else {
-                    $uploaduser = new UploadUser();
-                    $uploaduser->foldername      = $compacts['foldername'];     // フォルダー000x
-                    $uploaduser->business_name   = $compacts['business_name'];  // 顧客名
-                    $uploaduser->organization_id = $compacts['o_id'];
-                    $uploaduser->customer_id     = $compacts['customer_id'];
-                    $uploaduser->yearmonth       = $compacts['dateNew'];        // 年月 2021/08
-                    $uploaduser->check_flg       = 2;                           // ファイル無し(1):ファイル有り(2)
-                    $uploaduser->prime_flg       = 3;                           // 優先順位 -(1): 低(2): 中(3): 高(4) 2022/11/04
-                    $uploaduser->save();                                        // Inserts
-                }
+                $exercisedata = new Exercisedata();
+                $exercisedata->foldername      = $compacts['foldername'];     // フォルダー000x
+                $exercisedata->business_name   = $compacts['business_name'];  // 顧客名
+                $exercisedata->organization_id = 1;
+                $exercisedata->user_id         = $compacts['u_id'];           // ユーザーID
+                $exercisedata->customer_id     = $compacts['customer_id'];    // 顧客ID
+                $exercisedata->yearmonth       = $compacts['dateNew'];        // 年月 2021/08
+                $exercisedata->filepath        = $setpath;                    // テーブル設定パス
+                $exercisedata->filename        = $fileName;                   // アップロードファイルのオリジナルファイル名
+                $exercisedata->extension       = $ext;                        // アップロードファイルの拡張子
+                $exercisedata->filesize        = $fileSize;                   // ファイルサイズ
+                $exercisedata->urgent_flg      = 1;                           // 未読フラグ(1):未読 (2):既読
+                $exercisedata->save();                                        // Inserts
 
                 DB::commit();
-                Log::info('beginTransaction - client postUpload saveFile end(commit)');
+                Log::info('beginTransaction - top postUpload saveFile end(commit)');
             }
             catch(\QueryException $e) {
                 Log::error('exception : ' . $e->getMessage());
                 DB::rollback();
-                Log::info('beginTransaction - client postUpload saveFile end(rollback)');
+                Log::info('beginTransaction - top postUpload saveFile end(rollback)');
                 // Statusを変える
                 $status = false;
                 $this->json_put_status($status,$customer_id);
@@ -305,14 +254,14 @@ class UploaderController extends Controller
             $status = false;
             $this->json_put_status($status,$customer_id);
 
-            Log::info('client postUpload  END');
+            Log::info('top postUpload  END');
 
             // $data = 'ok';
             // return \Response::json($data, 200);
             return \Response::json(['error'=>'アップロードが正常に終了しました。','status'=>'OK'], 200);
         } else {
             // This is not a final chunk, continue to upload
-            Log::info('client postUpload  This is not a final chunk, continue to upload ');
+            Log::info('top postUpload  This is not a final chunk, continue to upload ');
         }
 
     }
@@ -344,9 +293,9 @@ class UploaderController extends Controller
     /**
      * ログインユーザーのCustomerオブジェクトをSetする
      */
-    public function json_put_info_set($u_id, $o_id,$customer_id, $foldername, $business_name,$folderpath,$check_flg,$dateNew)
+    public function json_put_info_set($u_id, $o_id,$customer_id, $foldername, $business_name,$folderpath,$dateNew)
     {
-        Log::info('client json_put_info_set  START');
+        Log::info('top json_put_info_set  START');
 
         $arr = array(
             "res" => array(
@@ -358,7 +307,6 @@ class UploaderController extends Controller
                         "foldername"     => $foldername,
                         "business_name"  => $business_name,
                         "folderpath"     => $folderpath,
-                        "check_flg"      => $check_flg,
                         "dateNew"        => $dateNew
                     ]
                 )
@@ -369,7 +317,7 @@ class UploaderController extends Controller
         $jsonfile = storage_path() . "/tmp/customer_info_". $customer_id. ".json";
 
         file_put_contents($jsonfile , $arr);
-        Log::info('client json_put_info_set  END');
+        Log::info('top json_put_info_set  END');
     }
 
     /**
@@ -410,7 +358,6 @@ class UploaderController extends Controller
                 $foldername    = $val["foldername"];
                 $business_name = $val["business_name"];
                 $folderpath    = $val["folderpath"];
-                $check_flg     = $val["check_flg"];
                 $dateNew       = $val["dateNew"];
             }
             // Log::info('client json_get_info  OK');
@@ -418,7 +365,7 @@ class UploaderController extends Controller
             echo "データがありません";
             Log::info('client json_get_info  NG');
         }
-        $compacts = compact( 'u_id','o_id', 'customer_id', 'foldername','business_name','folderpath','check_flg','dateNew' );
+        $compacts = compact('u_id','o_id','customer_id','foldername','business_name','folderpath','dateNew' );
 
         Log::info('client json_get_info  END');
         return  $compacts;

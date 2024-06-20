@@ -22,7 +22,7 @@
                     <th class="text-left"scope="col">ID</th>
                     <th scope="col">受信ファイル名</th>
                     <th class="text-left" scope="col">ファイルサイズ</th>
-                    <th scope="col">受信日</th>
+                    <th scope="col">受信日時</th>
                     <th scope="col">未読/既読</th>
                     <th scope="col"></th>
                     <th scope="col">操作</th>
@@ -43,7 +43,7 @@
                         @php
                             $str = "";
                             if (isset($exercise->created_at)) {
-                                $str = ( new DateTime($exercise->created_at))->format('Y-m-d');
+                                $str = ( new DateTime($exercise->created_at))->format('Y-m-d H-i-s');
                             }
 
                             $insize = $exercise->filesize;
@@ -92,7 +92,7 @@
                         {{-- 未読/既読 --}}
                         <td>
                             <h6>
-                                <p class={{ $textcolor }}>{{ $kidoku }}</p>
+                                <p name="kidoku_{{$exercise->id}}" id="kidoku_{{$exercise->id}}" class={{ $textcolor }}>{{ $kidoku }}</p>
                             </h6>
                         </td>
                         <td>
@@ -102,7 +102,7 @@
                             </h6>
                         </td>
                         <td>
-            <input class="btn btn-secondary btn-sm" type="submit" id="btn_del_{{$exercise->id}}" name="btn_del_{{$exercise->id}}" id2="btn_del_{{$exercise->urgent_flg}}" value="ダウンロード" >
+            <input class="btn btn-secondary btn-sm" type="submit" id="btn_del_{{$exercise->id}}" name="btn_del_{{$exercise->id}}" id2="btn_del_{{$exercise->urgent_flg}}" id3="btn_del_{{$exercise->extension}}" value="ダウンロード" >
                         </td>
                     </tr>
                     @endforeach
@@ -142,12 +142,97 @@
                     var wok_id       = $(this).attr("name").replace('btn_del_', '');
                     var this_id      = $(this).attr("id");
                     var urgent_flg   = $(this).attr("id2").replace('btn_del_', '');
+                    var extension    = $(this).attr("id3").replace('btn_del_', '');
                     var url          = "pdf/" + wok_id;
                     $('#temp_form').method = 'POST';
                     $('#temp_form').submit();
-                    var popup = window.open(url,"preview","width=800, height=600, top=200, left=500 scrollbars=yes");
+                    if(extension == 'pdf'){
+                        var popup = window.open(url,"preview","width=800, height=600, top=200, left=500 scrollbars=yes");
+                    } else {
+                        var popup  = window.open(url,"preview","width=800, height=600, top=200, left=500 scrollbars=yes");
+                        var popup1 = window.close();
+                    }
+
+                    change_exercisedata_info( this_id       // 対象コントロール
+                                            , wok_id        // ExercisedataテーブルのID
+                                            , urgent_flg    // Exercisedataテーブルのurgent_flgの値
+                                        );
 
                 });
+
+                /**
+                * this_id         : 対象コントロール
+                * wok_id          : invoiceテーブルのID
+                *
+                */
+                function change_exercisedata_info( this_id
+                                            , wok_id        // invoiceテーブルのID
+                                            , urgent_flg    // invoiceテーブルのurgent_flgの値
+                                            ) {
+                    var reqData = new FormData();
+                                                reqData.append( "id"             , wok_id      );
+                    if( null != urgent_flg    ) reqData.append( "urgent_flg"     , urgent_flg );
+
+                    AjaxAPI.callAjax(
+                        "{{ route('topclient_upload_api') }}",
+                        reqData,
+                        function (res) {
+                            var shinename = 'shine_'   + wok_id;
+                            var btnname   = 'btn_del_' + wok_id;
+                            var kidoku    = 'kidoku_'  + wok_id;
+                            // console.log( shinename );
+                            console.log( btnname );
+
+                            // 未読フラグ(1):未読 (2):既読
+                            if(urgent_flg == 1) {
+                                // 点滅のclass削除
+                                const elem = document.getElementById(shinename);
+                                if (elem) {
+                                    // クラス名を削除
+                                    elem.classList.remove("light_box");
+                                    // テキストを削除
+                                    elem.textContent = "";
+                                } else {
+                                    console.log( 'shine_non' );
+                                }
+
+                                // btnのclass変更
+                                const elem2 = document.getElementById(btnname);
+                                if (elem2) {
+                                    // クラス名を削除
+                                    elem2.classList.remove("btn-danger");
+                                    // クラス名を追加
+                                    elem2.classList.add("btn-secondary");
+                                } else {
+                                    console.log( 'btn_del_non' );
+                                }
+                                
+                                // kidokuのclass変更
+                                const elem3 = document.getElementById(kidoku);
+                                if (elem3) {
+                                    // クラス名を削除
+                                    elem3.classList.remove("text-danger");
+                                    // クラス名を追加
+                                    elem3.classList.add("text-secondary");
+                                    // テキストを追加
+                                    elem3.textContent = "既読";
+                                } else {
+                                    console.log( 'kidoku_non' );
+                                }
+
+                                $('#'+this_id).effect("pulsate", { times:2 }, 500);
+                            }
+                        }
+                    )
+
+                    // 未読フラグ(1):未読 (2):既読
+                    if(urgent_flg == 2) {
+                        // 何もしない
+                        console.log('no repaint');
+                        return;
+                    }
+
+                };
 
             </script>
         </table>

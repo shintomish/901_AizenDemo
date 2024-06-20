@@ -6,8 +6,8 @@ use Log;
 use DateTime;
 use App\Models\Organization;
 use App\Models\User;
-use App\Models\Book;
-use App\Models\UploadUser;
+// use App\Models\Book;
+// use App\Models\UploadUser;
 use App\Models\Customer;
 use App\Models\ControlUser;
 use App\Models\ImageUpload;
@@ -138,6 +138,27 @@ class Controller extends BaseController
         Log::info('auth_customer_findrec END $u_id = ' . print_r($u_id ,true));
         Log::info('auth_customer_findrec END');
         return $ret_val;
+    }
+
+    /**
+     * Customer(ALLレコード)情報を取得する
+     */
+    public function auth_customer_allrec()
+    {
+        Log::info('auth_customer_allrec START');
+
+        $u_id = auth::user()->id;
+
+        // Log::info('auth_customer_allrec START $u_id = ' . print_r($u_id ,true));
+
+        $ret_val = Customer::whereNull('deleted_at')
+                    // `active_cancel` 1:契約 2:SPOT 3:解約',
+                    ->where('active_cancel','!=', 3)
+                    ->orderBy('customers.business_name', 'asc')
+                    ->get();
+        Log::info('auth_customer_findrec END');
+        return $ret_val;
+
     }
 
     /**

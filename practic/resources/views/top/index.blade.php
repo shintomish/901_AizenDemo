@@ -42,9 +42,8 @@
     <div class="row">
 
         <!-- 検索エリア -->
-        <form  class="my-2 my-lg-0 ml-2" action="" method="GET">
-            {{-- <form  class="my-2 my-lg-0 ml-2" action="{{route('transserch_custom')}}" method="GET"> --}}
-            @csrf
+        <form  class="my-2 my-lg-0 ml-2" action="{{route('topserch')}}" method="GET">
+                @csrf
             @method('get')
             <style>
                 .exright{
@@ -52,14 +51,21 @@
                 }
             </style>
             <div class="exright">
-                <select style="margin-right:5px;width:200px;height:40px;" class="custom-select" id="user_id" name="user_id">
+                {{-- <select style="margin-right:5px;width:200px;height:40px;" class="custom-select" id="user_id" name="user_id">
                     @foreach ($users as $user)
                         <option value="{{ $user['id'] }}">{{ $user['name'] }}</option>
                     @endforeach
-                    {{-- <option value="1">山田五郎</option>
-                    <option value="2">佐藤愛子</option> --}}
-                </select>
+                </select> --}}
+                <select style="margin-right:5px;width:200px;height:40px;" class="custom-select" id="customer_id" name="customer_id">
+                    @foreach ($customer_findrec as $customer_findrec2)
+                        @if ($customer_findrec2['id']==$customer_id)
+                    <option selected="selected" value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                        @else
+                            <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                        @endif
 
+                    @endforeach
+                </select>
                 <button style="margin-bottom:10px;" type="submit" class="btn btn-secondary btn_sm">送信先</button>
             </div>
         </form>
@@ -75,14 +81,20 @@
             {{-- ユーザー --}}
             <h6>
                 <a style="color:blue">To: </a>
-
-                <select style="margin-bottom:5px; background-color:rgb(214, 209, 209); width:200px;height:40px;" class="custom-select" id="user_id" name="user_id">
+                <select style="margin-bottom:5px; width:200px;height:40px;background-color:rgb(214, 209, 209)" class="custom-select" id="customer_id" name="customer_id">
+                    @foreach ($customer_findrec as $customer_findrec2)
+                        @if ($customer_findrec2['id']==$customer_id)
+                    <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                        @else
+                        <option disabled value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                        @endif
+                    @endforeach
+                </select>
+                {{-- <select style="margin-bottom:5px; background-color:rgb(214, 209, 209); width:200px;height:40px;" class="custom-select" id="user_id" name="user_id">
                     @foreach ($users as $user)
                         <option value="{{ $user['id'] }}">{{ $user['name'] }}</option>
                     @endforeach
-                    {{-- <option value="1">山田五郎</option>
-                    <option value="2">佐藤愛子</option> --}}
-                </select>
+                </select> --}}
 
                 <a >
                     <span style="color:red"> アップロード後は、左の </span>
@@ -182,7 +194,7 @@
 
 <?php
     // 初期設定 2021/12/14
-    // auth_customer_findrecの多重読み込みを1回で行う。jsonを利用
+    // auth_customer_allrecの多重読み込みを1回で行う。jsonを利用
     $status = false;
     $arr = array(
         "res" => array(
@@ -194,13 +206,9 @@
         )
     );
 
-    // file_put_contents("customer_info_status.json" , $arr); <===Orijinal
-    // $jsonfileは、Controllerのindexより取得
+    $arr = json_encode($arr);
+    file_put_contents($jsonfile , $arr);
 
-    // $arr = json_encode($arr);
-    // file_put_contents($jsonfile , $arr);
-
-                // target: "{{ route('postUpload', $customer_id ) }}",
 ?>
 
     <script type="text/javascript">
@@ -210,8 +218,7 @@
         var isImage = true;
         var r = new Flow({
             simultaneousUploads : 5,
-//
-            target: "",
+            target: "{{ route('postUpload', $customer_id ) }}",
             permanentErrors:[404, 500, 501],
             headers: { 'X-CSRF-TOKEN': '{{csrf_token()}}'},
             testChunks:false

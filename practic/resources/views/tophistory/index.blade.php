@@ -42,8 +42,7 @@
     <div class="row">
 
         <!-- 検索エリア -->
-        <form  class="my-2 my-lg-0 ml-2" action="" method="GET">
-            {{-- <form  class="my-2 my-lg-0 ml-2" action="{{route('transserch_custom')}}" method="GET"> --}}
+        <form  class="my-2 my-lg-0 ml-2" action="{{route('tophisserch')}}" method="GET">
             @csrf
             @method('get')
             <style>
@@ -52,12 +51,19 @@
                 }
             </style>
             <div class="exright">
-                <select style="margin-right:5px;width:200px;height:40px;" class="custom-select" id="user_id" name="user_id">
+                {{-- <select style="margin-right:5px;width:200px;height:40px;" class="custom-select" id="user_id" name="user_id">
                     @foreach ($users as $user)
                         <option value="{{ $user['id'] }}">{{ $user['name'] }}</option>
                     @endforeach
-                    {{-- <option value="1">山田五郎</option>
-                    <option value="2">佐藤愛子</option> --}}
+                </select> --}}
+                <select style="margin-right:5px;width:200px;height:40px;" class="custom-select" id="customer_id" name="customer_id">
+                    @foreach ($customer_findrec as $customer_findrec2)
+                        @if ($customer_findrec2['id']==$customer_id)
+                    <option selected="selected" value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                        @else
+                            <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                        @endif
+                    @endforeach
                 </select>
 
                 <button style="margin-bottom:10px;" type="submit" class="btn btn-secondary btn_sm">送信先</button>
@@ -73,7 +79,7 @@
                         <th scope="row" class ="fixed02" >顧客名</th>
                         <th scope="row" class ="fixed02" >ファイル名</th>
                         <th scope="row" class ="fixed02" >ファイルサイズ</th>
-                        <th scope="row" class ="fixed02" >送信日</th>
+                        <th scope="row" class ="fixed02" >送信日時</th>
                         <th scope="row" class ="fixed02" >未読/既読</th>
                     </tr>
                 </thead>
@@ -88,9 +94,9 @@
                             @endphp
                             <td>{{ $str }}</td>
                             <td>
-                                @foreach ($users as $user)
-                                    @if ($exercise->user_id==$user->id)
-                                        {{ $user['name'] }}
+                                @foreach ($customer_findrec as $customer_findrec2)
+                                    @if ($customer_findrec2->id==$exercise->customer_id)
+                                        {{ $customer_findrec2['business_name'] }}
                                     @endif
                                 @endforeach
                             </td>
@@ -98,7 +104,7 @@
                             @php
                                 $str = "";
                                 if (isset($exercise->created_at)) {
-                                    $str = ( new DateTime($exercise->created_at))->format('Y-m-d');
+                                    $str = ( new DateTime($exercise->created_at))->format('Y-m-d H-i-s');
                                 }
 
                                 $insize = $exercise->filesize;

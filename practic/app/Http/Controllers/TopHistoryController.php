@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 // use Validator;
 use App\Models\User;
-// use App\Models\Customer;
+use App\Models\Customer;
 use App\Models\Exercisedata;
 
 use Illuminate\Http\Request;
@@ -45,17 +45,38 @@ class TopHistoryController extends Controller
                     ->whereNull('deleted_at')
                     ->get();
 
+        $data['count'] = Exercisedata::whereNull('deleted_at')->count();
+        Log::debug('office tophistory index $data[count]  = ' . print_r($data['count'] ,true));
+
+        // データあり
+        if( $data['count'] > 0 ) {
+            $ret_val = Exercisedata::whereNull('deleted_at')
+                        ->orderBy('created_at', 'desc')
+                        ->first();
+            $customer_id = $ret_val->customer_id;
+        } else {
+            $customer_id = 1;
+        }
+
+        Log::debug('office tophistory index customer_id  = ' . print_r($customer_id ,true));
+
+        // Customer(ALLレコード)情報を取得する
+        $customer_findrec = $this->auth_customer_allrec();
+        // $customer_id = $customer_findrec[0]['id'];
+
         $exercises = Exercisedata::where('organization_id','>=',$organization_id)
+                    ->where('customer_id','=',$customer_id)
                     ->whereNull('deleted_at')
+                    ->orderBy('created_at', 'desc')
                     ->sortable()
                     ->paginate(200);
 
         $common_no = '00_3';
 
         // * 今年の年を取得
-        $nowyear = $this->get_now_year();
+        // $nowyear = $this->get_now_year();
 
-        $compacts = compact( 'userid','users','exercises','common_no' );
+        $compacts = compact( 'userid','users','exercises','customer_findrec','customer_id','common_no' );
 
         Log::info('office tophistory index END $user->name = ' . print_r($user->name ,true));
         return view( 'tophistory.index', $compacts);
@@ -66,10 +87,10 @@ class TopHistoryController extends Controller
      */
     public function update_api(Request $request)
     {
-        Log::info('office top update_api top START');
+        Log::info('office tophistory update_api top START');
 
 
-        Log::info('office top update_api top END');
+        Log::info('office tophistory update_api top END');
 
     }
 
@@ -89,8 +110,39 @@ class TopHistoryController extends Controller
      */
     public function show($id)
     {
-        Log::info('top show START');
-        Log::info('top show END');
+        Log::info('tophistory show START');
+        Log::info('tophistory show END');
     }
 
+    public function serch(Request $request)
+    {
+        Log::info('office tophistory serch START');
+
+        //-------------------------------------------------------------
+        //- Request パラメータ
+        //-------------------------------------------------------------
+        $customer_id = $request->Input('customer_id');
+
+        // ログインユーザーのユーザー情報を取得する
+        $user  = $this->auth_user_info();
+        $u_id = $user->id;
+        $organization_id =  $user->organization_id;
+
+        // Customer(ALLレコード)情報を取得する
+        $customer_findrec = $this->auth_customer_allrec();
+
+        $exercises = Exercisedata::where('organization_id','>=',$organization_id)
+                    ->where('customer_id','=',$customer_id)
+                    ->whereNull('deleted_at')
+                    ->sortable()
+                    ->paginate(200);
+
+        $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
+
+        $compacts = compact( 'exercises','customer_findrec','customer_id','jsonfile' );
+
+        Log::info('office tophistory serch END');
+
+        return view( 'tophistory.index', $compacts );
+    }
 }

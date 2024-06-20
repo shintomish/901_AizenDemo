@@ -75,17 +75,12 @@ Route::get('ajax/chatclientin',  'App\Http\Controllers\Ajax\ChatClientController
 Route::post('ajax/chatclientcr', 'App\Http\Controllers\Ajax\ChatClientController@create')->name('ajaxchatclientcr'); // チャット登録
 
 //-----------------------------------------------------------------------------------------------
-//- TopClient クライアントTOP
+//- ClientTop クライアントTOP
 //-----------------------------------------------------------------------------------------------
-Route::get('topclient/index',  'App\Http\Controllers\TopClientController@index')->name('topclient');
-Route::get('topclientserch',   'App\Http\Controllers\TopClientController@serch')->name('topclientserch');
-Route::get('topclientpdf',     'App\Http\Controllers\TopClientController@show')->name('topclientpdf');
-Route::get('topclinewpdf',     'App\Http\Controllers\TopClientController@show_new')->name('topclinewpdf');
-Route::get('topclinewzip',     'App\Http\Controllers\TopClientController@show_houjin')->name('topclinewzip');
-Route::get('topclient/alert/{id}',  'App\Http\Controllers\TopClientController@show_alert')->name('topclialert');
-Route::get('topcli_pdf01',     'App\Http\Controllers\TopClientController@show_up01')->name('topcli_pdf01');
-Route::get('topcli_pdf02',     'App\Http\Controllers\TopClientController@show_up02')->name('topcli_pdf02');
-Route::get('topcli_pdf03',     'App\Http\Controllers\TopClientController@show_up03')->name('topcli_pdf03');
+Route::get('client/index',  'App\Http\Controllers\ClientTopController@index')->name('topclient');
+Route::get('clientserch',   'App\Http\Controllers\ClientTopController@serch')->name('topclientserch');
+Route::get('client/pdf/{id}', 'App\Http\Controllers\ClientTopController@show_up')->name('topcli_show');
+Route::post('client/update_api', 'App\Http\Controllers\ClientTopController@update_api')->name('topclient_upload_api');
 
 //-----------------------------------------------------------------------------------------------
 //- Camera Capture
@@ -116,14 +111,15 @@ Route::post('invoicehistory/update_api', 'App\Http\Controllers\InvoiceHistoryCon
 //- top 事務所 00_3
 //-----------------------------------------------------------------------------------------------
 Route::get('top/index',        'App\Http\Controllers\TopController@index')->name('top');
+Route::get('topserch',         'App\Http\Controllers\TopController@serch')->name('topserch');
 Route::post('top/update_api',  'App\Http\Controllers\TopController@update_api')->name('top.update_api');
 Route::resource('top',         'App\Http\Controllers\TopController');
-
 
 //-----------------------------------------------------------------------------------------------
 //- tophistory 事務所 00_3
 //-----------------------------------------------------------------------------------------------
 Route::get('tophistory/index',        'App\Http\Controllers\TopHistoryController@index')->name('tophis');
+Route::get('tophisserch',             'App\Http\Controllers\TopHistoryController@serch')->name('tophisserch');
 Route::post('tophistory/update_api',  'App\Http\Controllers\TopHistoryController@update_api')->name('tophis.update_api');
 Route::resource('tophistory',         'App\Http\Controllers\TopHistoryController');
 

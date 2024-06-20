@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 // use Validator;
 use App\Models\User;
-// use App\Models\Customer;
+use App\Models\Customer;
 use App\Models\Exercisedata;
 
 use Illuminate\Http\Request;
@@ -45,6 +45,11 @@ class TopController extends Controller
                     ->whereNull('deleted_at')
                     ->get();
 
+        // Customer(ALLレコード)情報を取得する
+        $customer_findrec = $this->auth_customer_allrec();
+        $customer_id = $customer_findrec[0]['id'];
+        Log::debug('office top index customer_id  = ' . print_r($customer_id ,true));
+
         $exercises = Exercisedata::where('organization_id','>=',$organization_id)
                     ->whereNull('deleted_at')
                     ->sortable()
@@ -53,9 +58,10 @@ class TopController extends Controller
         $common_no = '00_3';
 
         // * 今年の年を取得
-        $nowyear = $this->get_now_year();
+        // $nowyear = $this->get_now_year();
+        $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
 
-        $compacts = compact( 'userid','users','exercises','common_no' );
+        $compacts = compact( 'userid','users','customer_findrec','customer_id','exercises','common_no','jsonfile' );
 
         Log::info('office top index END $user->name = ' . print_r($user->name ,true));
         return view( 'top.index', $compacts);
@@ -91,6 +97,35 @@ class TopController extends Controller
     {
         Log::info('top show START');
         Log::info('top show END');
+    }
+
+    public function serch(Request $request)
+    {
+        Log::info('top serch START');
+
+        //-------------------------------------------------------------
+        //- Request パラメータ
+        //-------------------------------------------------------------
+        $customer_id = $request->Input('customer_id');
+
+        // ログインユーザーのユーザー情報を取得する
+        $user  = $this->auth_user_info();
+        $u_id = $user->id;
+        $organization_id =  $user->organization_id;
+
+        // Customer(ALLレコード)情報を取得する
+        $customer_findrec = $this->auth_customer_allrec();
+
+        $customers = Customer::where('id',$customer_id)
+                    ->orderBy('id', 'asc')
+                    ->first();
+
+        $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
+
+        $compacts = compact( 'customer_findrec','customer_id','jsonfile' );
+
+        Log::info('top serch END');
+        return view( 'top.index', $compacts );
     }
 
 }
