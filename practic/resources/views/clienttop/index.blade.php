@@ -102,7 +102,15 @@
                             </h6>
                         </td>
                         <td>
-            <input class="btn btn-secondary btn-sm" type="submit" id="btn_del_{{$exercise->id}}" name="btn_del_{{$exercise->id}}" id2="btn_del_{{$exercise->urgent_flg}}" id3="btn_del_{{$exercise->extension}}" value="ダウンロード" >
+                            @if($exercise->extension == 'pdf')
+                                <input class="btn btn-secondary btn-sm" type="submit" id="btn_del_{{$exercise->id}}" name="btn_del_{{$exercise->id}}" id2="btn_del_{{$exercise->urgent_flg}}" id3="btn_del_{{$exercise->extension}}" value="ダウンロード" >
+                            @else 
+                                <form action="{{ route('topcli_show', $exercise->id)}}" method="GET">
+                                    @csrf
+                                    @method('GET')
+                                <input class="btn btn-secondary btn-sm" type="submit" id="btn2_del_{{$exercise->id}}" name="btn2_del_{{$exercise->id}}" id2="btn2_del_{{$exercise->urgent_flg}}" id3="btn2_del_{{$exercise->extension}}" value="ダウンロード" >
+                                </form>
+                            @endif
                         </td>
                     </tr>
                     @endforeach
@@ -142,16 +150,22 @@
                     var wok_id       = $(this).attr("name").replace('btn_del_', '');
                     var this_id      = $(this).attr("id");
                     var urgent_flg   = $(this).attr("id2").replace('btn_del_', '');
-                    var extension    = $(this).attr("id3").replace('btn_del_', '');
                     var url          = "pdf/" + wok_id;
                     $('#temp_form').method = 'POST';
                     $('#temp_form').submit();
-                    if(extension == 'pdf'){
-                        var popup = window.open(url,"preview","width=800, height=600, top=200, left=500 scrollbars=yes");
-                    } else {
-                        var popup  = window.open(url,"preview","width=800, height=600, top=200, left=500 scrollbars=yes");
-                        var popup1 = window.close();
-                    }
+                    var popup = window.open(url,"preview","width=800, height=600, top=200, left=500 scrollbars=yes");
+
+                    change_exercisedata_info( this_id       // 対象コントロール
+                                            , wok_id        // ExercisedataテーブルのID
+                                            , urgent_flg    // Exercisedataテーブルのurgent_flgの値
+                                        );
+
+                });
+                $('input[name^="btn2_del_"]').click( function(e){
+                    // alert('ダウンロードbtn2Click');
+                    var wok_id       = $(this).attr("name").replace('btn2_del_', '');
+                    var this_id      = $(this).attr("id");
+                    var urgent_flg   = $(this).attr("id2").replace('btn2_del_', '');
 
                     change_exercisedata_info( this_id       // 対象コントロール
                                             , wok_id        // ExercisedataテーブルのID
@@ -162,12 +176,12 @@
 
                 /**
                 * this_id         : 対象コントロール
-                * wok_id          : invoiceテーブルのID
+                * wok_id          : ExercisedataテーブルのID
                 *
                 */
                 function change_exercisedata_info( this_id
-                                            , wok_id        // invoiceテーブルのID
-                                            , urgent_flg    // invoiceテーブルのurgent_flgの値
+                                            , wok_id        // ExercisedataテーブルのID
+                                            , urgent_flg    // Exercisedataテーブルのurgent_flgの値
                                             ) {
                     var reqData = new FormData();
                                                 reqData.append( "id"             , wok_id      );

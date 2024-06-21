@@ -29,6 +29,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // contact
+        // ` '男性(1):女性(2)',
+        $loop_sex_flg = array(
+            '01' => array ( 'no'=> 1,  'name'=>'男性', ),
+            '02' => array ( 'no'=> 2,  'name'=>'女性', ),
+        );
+        view()->share('loop_sex_flg', $loop_sex_flg);
+
         // user
         // `login_flg` int(11) NOT NULL DEFAULT 1  COMMENT '顧客(1):社員(2):所属(3)',
         $loop_login_flg = array(

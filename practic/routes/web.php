@@ -63,6 +63,7 @@ Route::get('/excel/exp',  'App\Http\Controllers\ExcelMakeController@excel')->nam
 //- Chat
 //-----------------------------------------------------------------------------------------------
 Route::get('chat',         'App\Http\Controllers\ChatController@index')->name('chatin');
+Route::get('chatserch',    'App\Http\Controllers\ChatController@serch')->name('chatserch');
 Route::get('ajax/chatin',  'App\Http\Controllers\Ajax\ChatController@index')->name('ajaxchatin'); // メッセージ一覧を取得
 Route::post('ajax/chatcr', 'App\Http\Controllers\Ajax\ChatController@create')->name('ajaxchatcr'); // チャット登録
 

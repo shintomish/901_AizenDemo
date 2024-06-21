@@ -51,8 +51,12 @@
             <div class="form-group">
                 {{-- <label for="sex-id"></label> --}}
                 <select style="margin-top:10px;" class="form-control" id="sex-id" name="sex_id">
-                    <option value="1">男性</option>
-                    <option value="2">女性</option>
+                    {{-- <option value="1">男性</option>
+                    <option value="2">女性</option> --}}
+                    {{-- //Providers/AppServiceProvider.php --}}
+                    @foreach ($loop_sex_flg as $loop_sex_flg2)
+                    <option value="{{$loop_sex_flg2['no']}}" @if(old('sex-id')==$loop_sex_flg2['no']) 'selected' @endif > {{$loop_sex_flg2['name']}} </option>
+                    @endforeach
                 </select>
             </div>
 
@@ -60,11 +64,14 @@
             <div class="form-group">
                 {{-- <label for="level-id"></label> --}}
                 <select style="margin-top:10px;" class="form-control" id="level-id" name="level_id">
-                    <option value="1">S トップアスリート(世界レベル)</option>
+                    {{-- <option value="1">S トップアスリート(世界レベル)</option>
                     <option value="2">A アスリート(国内レベル)</option>
                     <option value="3">B アスリート(都道府県レベル)</option>
                     <option value="4">C マスターズ(国際レベル)</option>
-                    <option value="5">D マスターズ(国内レベル)</option>
+                    <option value="5">D マスターズ(国内レベル)</option> --}}
+                @foreach ($exelevel as $exelevel2)
+                    <option value="{{$exelevel2->id}}" @if(old('level-id')==$exelevel2->id) 'selected' @endif > {{$exelevel2->name}} </option>
+                @endforeach
                 </select>
             </div>
 

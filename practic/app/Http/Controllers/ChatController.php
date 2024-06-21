@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use DateTime;
+// use DateTime;
 use App\Models\User;
 use App\Models\Customer;
 use App\Models\Message;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class ChatController extends Controller
@@ -21,9 +21,11 @@ class ChatController extends Controller
     public function index() {
 
         Log::info('ChatController index START');
-        // return Message::orderBy('id', 'desc')->get();
-        // $messages = Message::orderBy('id', 'desc')->get();
-        // $messages = Message::with('user')->orderBy('id', 'desc')->get();
+        // Customer(ALLレコード)情報を取得する
+        $customer_findrec = $this->auth_customer_allrec();
+        $customer_id = $customer_findrec[0]['id'];
+        Log::debug('ChatController index customer_id  = ' . print_r($customer_id ,true));
+
         $messages = Message::select(
                 'messages.id              as id'
                 // ,'messages.organization_id as organization_id'
@@ -44,7 +46,7 @@ class ChatController extends Controller
             })
             ->whereNull('customers.deleted_at')
             ->whereNull('users.deleted_at')
-            // ->whereNull('messages.deleted_at')
+            ->where('messages.customer_id','=',$customer_id)
             ->orderBy('messages.id', 'desc')
             ->orderBy('messages.customer_id', 'asc')
             ->paginate(300);
@@ -59,10 +61,40 @@ class ChatController extends Controller
                             ->get();
 
         $common_no = '00_7';
-        $compacts = compact( 'messages','common_no','users','customers' );
+        $compacts = compact( 'messages','common_no','users','customers','customer_findrec','customer_id' );
 
         Log::info('ChatController index END');
 
         return view('chat.index', $compacts );
     }
+    
+    public function serch(Request $request)
+    {
+        Log::info('ChatController serch START');
+
+        //-------------------------------------------------------------
+        //- Request パラメータ
+        //-------------------------------------------------------------
+        $customer_id = $request->Input('customer_id');
+
+        // ログインユーザーのユーザー情報を取得する
+        $user  = $this->auth_user_info();
+        $u_id = $user->id;
+        $organization_id =  $user->organization_id;
+
+        // Customer(ALLレコード)情報を取得する
+        $customer_findrec = $this->auth_customer_allrec();
+
+        $messages = Message::where('customer_id',$customer_id)
+                        ->orderBy('id', 'asc')
+                        ->first();
+
+        // $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
+        $common_no = '00_7';
+        $compacts = compact( 'messages','customer_findrec','customer_id','common_no' );
+
+        Log::info('ChatController serch END');
+        return view( 'chat.index', $compacts );
+    }
+
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
+use App\Models\Exelevelname;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactFormRequest;
@@ -17,8 +18,15 @@ class FormController extends Controller
     public function index()
     {
         Log::info('FormController index START');
+
+        $exelevel = Exelevelname::where('deleted_at')
+            ->orderBy('id', 'asc')
+            ->get();
+
+        $compacts = compact( 'exelevel' );
+
         Log::info('FormController index END');
-        return view('contact.index');
+        return view('contact.index', $compacts );
     }
 
     /**

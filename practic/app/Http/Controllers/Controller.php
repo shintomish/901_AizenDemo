@@ -154,6 +154,8 @@ class Controller extends BaseController
         $ret_val = Customer::whereNull('deleted_at')
                     // `active_cancel` 1:契約 2:SPOT 3:解約',
                     ->where('active_cancel','!=', 3)
+                    // `individual_class` 法人(1):個人事業主(2)',
+                    ->where('individual_class','=', 2)
                     ->orderBy('customers.business_name', 'asc')
                     ->get();
         Log::info('auth_customer_findrec END');
