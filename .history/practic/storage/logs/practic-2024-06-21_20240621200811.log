@@ -1,0 +1,389 @@
+[2024-06-21 06:45:31] local.INFO: auth_user_info START  
+[2024-06-21 06:45:31] local.INFO: auth_user_info END  
+[2024-06-21 06:45:31] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-05-27T03:06:38.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-21 06:45:31] local.INFO: loginout operation update START  
+[2024-06-21 06:45:31] local.INFO: loginout operation update $id < 10 END  
+[2024-06-21 06:45:34] local.INFO: auth_user_info START  
+[2024-06-21 06:45:34] local.INFO: auth_user_info END  
+[2024-06-21 06:45:34] local.INFO: office top index START $user->name = 新冨泰明  
+[2024-06-21 06:45:34] local.INFO: auth_user_organization START  
+[2024-06-21 06:45:34] local.INFO: auth_user_organization END  
+[2024-06-21 06:45:34] local.INFO: auth_customer_allrec START  
+[2024-06-21 06:45:34] local.INFO: auth_customer_findrec END  
+[2024-06-21 06:45:34] local.DEBUG: office top index customer_id  = 6  
+[2024-06-21 06:45:34] local.INFO: office top index END $user->name = 新冨泰明  
+[2024-06-21 06:46:10] local.INFO: top serch START  
+[2024-06-21 06:46:10] local.INFO: auth_user_info START  
+[2024-06-21 06:46:10] local.INFO: auth_user_info END  
+[2024-06-21 06:46:10] local.INFO: auth_customer_allrec START  
+[2024-06-21 06:46:10] local.INFO: auth_customer_findrec END  
+[2024-06-21 06:46:10] local.INFO: top serch END  
+[2024-06-21 06:46:56] local.INFO: top postUpload  START  
+[2024-06-21 06:46:56] local.INFO: top postUpload_info  START  
+[2024-06-21 06:46:56] local.INFO: auth_user_info START  
+[2024-06-21 06:46:56] local.INFO: auth_user_info END  
+[2024-06-21 06:46:56] local.INFO: auth_user_foldername START  
+[2024-06-21 06:46:56] local.INFO: auth_user_foldername END  
+[2024-06-21 06:46:56] local.INFO: top postUpload_info $compacts[customer_id]  = 15  
+[2024-06-21 06:46:56] local.INFO: top json_put_info_set  START  
+[2024-06-21 06:46:56] local.INFO: top json_put_info_set  END  
+[2024-06-21 06:46:56] local.INFO: top postUpload_info  END  
+[2024-06-21 06:46:56] local.INFO: client postUpload not empty  
+[2024-06-21 06:46:56] local.INFO: client json_get_info  START  
+[2024-06-21 06:46:56] local.INFO: client json_get_info not empty  
+[2024-06-21 06:46:56] local.INFO: client json_get_info  END  
+[2024-06-21 06:46:56] local.INFO: top postUpload  $fileName = 06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf  
+[2024-06-21 06:46:56] local.INFO: beginTransaction - top postUpload saveFile start  
+[2024-06-21 06:46:57] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'foldername' in 'field list' (Connection: mysql, SQL: insert into `exercisedatas` (`foldername`, `business_name`, `organization_id`, `user_id`, `customer_id`, `yearmonth`, `filepath`, `filename`, `extension`, `filesize`, `urgent_flg`, `updated_at`, `created_at`) values (folder0015, 佐藤 雄一, 1, 1, 15, 2024/06, userdata/folder0015/06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf, 06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf, pdf, 680504, 1, 2024-06-21 06:46:56, 2024-06-21 06:46:56)) {"userId":1,"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'foldername' in 'field list' (Connection: mysql, SQL: insert into `exercisedatas` (`foldername`, `business_name`, `organization_id`, `user_id`, `customer_id`, `yearmonth`, `filepath`, `filename`, `extension`, `filesize`, `urgent_flg`, `updated_at`, `created_at`) values (folder0015, 佐藤 雄一, 1, 1, 15, 2024/06, userdata/folder0015/06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf, 06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf, pdf, 680504, 1, 2024-06-21 06:46:56, 2024-06-21 06:46:56)) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:813)
+[2024-06-21 06:57:53] local.INFO: top serch START  
+[2024-06-21 06:57:53] local.INFO: auth_user_info START  
+[2024-06-21 06:57:53] local.INFO: auth_user_info END  
+[2024-06-21 06:57:53] local.INFO: auth_customer_allrec START  
+[2024-06-21 06:57:53] local.INFO: auth_customer_findrec END  
+[2024-06-21 06:57:53] local.INFO: top serch END  
+[2024-06-21 06:58:12] local.INFO: top postUpload  START  
+[2024-06-21 06:58:12] local.INFO: top postUpload_info  START  
+[2024-06-21 06:58:12] local.INFO: auth_user_info START  
+[2024-06-21 06:58:12] local.INFO: auth_user_info END  
+[2024-06-21 06:58:12] local.INFO: auth_user_foldername START  
+[2024-06-21 06:58:13] local.INFO: auth_user_foldername END  
+[2024-06-21 06:58:13] local.INFO: top postUpload_info $compacts[customer_id]  = 15  
+[2024-06-21 06:58:13] local.INFO: top json_put_info_set  START  
+[2024-06-21 06:58:13] local.INFO: top json_put_info_set  END  
+[2024-06-21 06:58:13] local.INFO: top postUpload_info  END  
+[2024-06-21 06:58:13] local.INFO: client postUpload not empty  
+[2024-06-21 06:58:13] local.INFO: client json_get_info  START  
+[2024-06-21 06:58:13] local.INFO: client json_get_info not empty  
+[2024-06-21 06:58:13] local.INFO: client json_get_info  END  
+[2024-06-21 06:58:13] local.INFO: top postUpload  $fileName = 06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf  
+[2024-06-21 06:58:13] local.INFO: beginTransaction - top postUpload saveFile start  
+[2024-06-21 06:58:13] local.INFO: beginTransaction - top postUpload saveFile end(commit)  
+[2024-06-21 06:58:13] local.INFO: client json_put_status  START  
+[2024-06-21 06:58:13] local.INFO: client json_put_status  END  
+[2024-06-21 06:58:13] local.INFO: top postUpload  END  
+[2024-06-21 06:58:58] local.INFO: top postUpload  START  
+[2024-06-21 06:58:58] local.INFO: top postUpload_info  START  
+[2024-06-21 06:58:58] local.INFO: auth_user_info START  
+[2024-06-21 06:58:58] local.INFO: auth_user_info END  
+[2024-06-21 06:58:58] local.INFO: auth_user_foldername START  
+[2024-06-21 06:58:58] local.INFO: auth_user_foldername END  
+[2024-06-21 06:58:58] local.INFO: top postUpload_info $compacts[customer_id]  = 15  
+[2024-06-21 06:58:58] local.INFO: top json_put_info_set  START  
+[2024-06-21 06:58:58] local.INFO: top json_put_info_set  END  
+[2024-06-21 06:58:58] local.INFO: top postUpload_info  END  
+[2024-06-21 06:58:58] local.INFO: client postUpload not empty  
+[2024-06-21 06:58:58] local.INFO: client json_get_info  START  
+[2024-06-21 06:58:58] local.INFO: client json_get_info not empty  
+[2024-06-21 06:58:58] local.INFO: client json_get_info  END  
+[2024-06-21 06:58:58] local.INFO: top postUpload  $fileName = ja.233.199.zip  
+[2024-06-21 06:58:58] local.INFO: top postUpload  This is not a final chunk, continue to upload   
+[2024-06-21 06:59:01] local.INFO: top postUpload  START  
+[2024-06-21 06:59:01] local.INFO: top postUpload_info  START  
+[2024-06-21 06:59:01] local.INFO: auth_user_info START  
+[2024-06-21 06:59:01] local.INFO: auth_user_info END  
+[2024-06-21 06:59:01] local.INFO: auth_user_foldername START  
+[2024-06-21 06:59:01] local.INFO: auth_user_foldername END  
+[2024-06-21 06:59:01] local.INFO: top postUpload_info $compacts[customer_id]  = 15  
+[2024-06-21 06:59:01] local.INFO: top json_put_info_set  START  
+[2024-06-21 06:59:01] local.INFO: top json_put_info_set  END  
+[2024-06-21 06:59:01] local.INFO: top postUpload_info  END  
+[2024-06-21 06:59:01] local.INFO: client postUpload not empty  
+[2024-06-21 06:59:01] local.INFO: client json_get_info  START  
+[2024-06-21 06:59:01] local.INFO: client json_get_info not empty  
+[2024-06-21 06:59:01] local.INFO: client json_get_info  END  
+[2024-06-21 06:59:01] local.INFO: top postUpload  $fileName = ja.233.199.zip  
+[2024-06-21 06:59:01] local.INFO: top postUpload  This is not a final chunk, continue to upload   
+[2024-06-21 06:59:02] local.INFO: top postUpload  START  
+[2024-06-21 06:59:02] local.INFO: top postUpload_info  START  
+[2024-06-21 06:59:02] local.INFO: auth_user_info START  
+[2024-06-21 06:59:02] local.INFO: auth_user_info END  
+[2024-06-21 06:59:02] local.INFO: auth_user_foldername START  
+[2024-06-21 06:59:02] local.INFO: auth_user_foldername END  
+[2024-06-21 06:59:02] local.INFO: top postUpload_info $compacts[customer_id]  = 15  
+[2024-06-21 06:59:02] local.INFO: top json_put_info_set  START  
+[2024-06-21 06:59:02] local.INFO: top json_put_info_set  END  
+[2024-06-21 06:59:02] local.INFO: top postUpload_info  END  
+[2024-06-21 06:59:02] local.INFO: client postUpload not empty  
+[2024-06-21 06:59:02] local.INFO: client json_get_info  START  
+[2024-06-21 06:59:02] local.INFO: client json_get_info not empty  
+[2024-06-21 06:59:02] local.INFO: client json_get_info  END  
+[2024-06-21 06:59:02] local.INFO: top postUpload  $fileName = ja.233.199.zip  
+[2024-06-21 06:59:02] local.INFO: top postUpload  This is not a final chunk, continue to upload   
+[2024-06-21 06:59:04] local.INFO: top postUpload  START  
+[2024-06-21 06:59:04] local.INFO: top postUpload_info  START  
+[2024-06-21 06:59:04] local.INFO: auth_user_info START  
+[2024-06-21 06:59:04] local.INFO: auth_user_info END  
+[2024-06-21 06:59:04] local.INFO: auth_user_foldername START  
+[2024-06-21 06:59:05] local.INFO: auth_user_foldername END  
+[2024-06-21 06:59:05] local.INFO: top postUpload_info $compacts[customer_id]  = 15  
+[2024-06-21 06:59:05] local.INFO: top json_put_info_set  START  
+[2024-06-21 06:59:05] local.INFO: top json_put_info_set  END  
+[2024-06-21 06:59:05] local.INFO: top postUpload_info  END  
+[2024-06-21 06:59:05] local.INFO: client postUpload not empty  
+[2024-06-21 06:59:05] local.INFO: client json_get_info  START  
+[2024-06-21 06:59:05] local.INFO: client json_get_info not empty  
+[2024-06-21 06:59:05] local.INFO: client json_get_info  END  
+[2024-06-21 06:59:05] local.INFO: top postUpload  $fileName = ja.233.199.zip  
+[2024-06-21 06:59:05] local.INFO: top postUpload  This is not a final chunk, continue to upload   
+[2024-06-21 06:59:07] local.INFO: top postUpload  START  
+[2024-06-21 06:59:07] local.INFO: top postUpload_info  START  
+[2024-06-21 06:59:07] local.INFO: auth_user_info START  
+[2024-06-21 06:59:07] local.INFO: auth_user_info END  
+[2024-06-21 06:59:07] local.INFO: auth_user_foldername START  
+[2024-06-21 06:59:07] local.INFO: auth_user_foldername END  
+[2024-06-21 06:59:07] local.INFO: top postUpload_info $compacts[customer_id]  = 15  
+[2024-06-21 06:59:07] local.INFO: top json_put_info_set  START  
+[2024-06-21 06:59:07] local.INFO: top json_put_info_set  END  
+[2024-06-21 06:59:07] local.INFO: top postUpload_info  END  
+[2024-06-21 06:59:07] local.INFO: client postUpload not empty  
+[2024-06-21 06:59:07] local.INFO: client json_get_info  START  
+[2024-06-21 06:59:07] local.INFO: client json_get_info not empty  
+[2024-06-21 06:59:07] local.INFO: client json_get_info  END  
+[2024-06-21 06:59:07] local.INFO: top postUpload  $fileName = ja.233.199.zip  
+[2024-06-21 06:59:07] local.INFO: top postUpload  This is not a final chunk, continue to upload   
+[2024-06-21 06:59:08] local.INFO: top postUpload  START  
+[2024-06-21 06:59:08] local.INFO: top postUpload_info  START  
+[2024-06-21 06:59:08] local.INFO: auth_user_info START  
+[2024-06-21 06:59:08] local.INFO: auth_user_info END  
+[2024-06-21 06:59:08] local.INFO: auth_user_foldername START  
+[2024-06-21 06:59:08] local.INFO: auth_user_foldername END  
+[2024-06-21 06:59:08] local.INFO: top postUpload_info $compacts[customer_id]  = 15  
+[2024-06-21 06:59:08] local.INFO: top json_put_info_set  START  
+[2024-06-21 06:59:08] local.INFO: top json_put_info_set  END  
+[2024-06-21 06:59:08] local.INFO: top postUpload_info  END  
+[2024-06-21 06:59:08] local.INFO: client postUpload not empty  
+[2024-06-21 06:59:08] local.INFO: client json_get_info  START  
+[2024-06-21 06:59:08] local.INFO: client json_get_info not empty  
+[2024-06-21 06:59:08] local.INFO: client json_get_info  END  
+[2024-06-21 06:59:08] local.INFO: top postUpload  $fileName = ja.233.199.zip  
+[2024-06-21 06:59:08] local.INFO: beginTransaction - top postUpload saveFile start  
+[2024-06-21 06:59:09] local.INFO: beginTransaction - top postUpload saveFile end(commit)  
+[2024-06-21 06:59:09] local.INFO: client json_put_status  START  
+[2024-06-21 06:59:09] local.INFO: client json_put_status  END  
+[2024-06-21 06:59:09] local.INFO: top postUpload  END  
+[2024-06-21 06:59:25] local.INFO: auth_user_info START  
+[2024-06-21 06:59:25] local.INFO: auth_user_info END  
+[2024-06-21 06:59:25] local.INFO: office tophistory index START $user->name = 新冨泰明  
+[2024-06-21 06:59:25] local.INFO: auth_user_organization START  
+[2024-06-21 06:59:25] local.INFO: auth_user_organization END  
+[2024-06-21 06:59:25] local.DEBUG: office tophistory index $data[count]  = 2  
+[2024-06-21 06:59:25] local.DEBUG: office tophistory index customer_id  = 15  
+[2024-06-21 06:59:25] local.INFO: auth_customer_allrec START  
+[2024-06-21 06:59:25] local.INFO: auth_customer_findrec END  
+[2024-06-21 06:59:25] local.INFO: office tophistory index END $user->name = 新冨泰明  
+[2024-06-21 06:59:38] local.INFO: auth_user_info START  
+[2024-06-21 06:59:38] local.INFO: auth_user_info END  
+[2024-06-21 06:59:38] local.INFO: office top index START $user->name = 新冨泰明  
+[2024-06-21 06:59:38] local.INFO: auth_user_organization START  
+[2024-06-21 06:59:38] local.INFO: auth_user_organization END  
+[2024-06-21 06:59:38] local.INFO: auth_customer_allrec START  
+[2024-06-21 06:59:38] local.INFO: auth_customer_findrec END  
+[2024-06-21 06:59:38] local.DEBUG: office top index customer_id  = 6  
+[2024-06-21 06:59:38] local.INFO: office top index END $user->name = 新冨泰明  
+[2024-06-21 06:59:47] local.INFO: top serch START  
+[2024-06-21 06:59:47] local.INFO: auth_user_info START  
+[2024-06-21 06:59:47] local.INFO: auth_user_info END  
+[2024-06-21 06:59:47] local.INFO: auth_customer_allrec START  
+[2024-06-21 06:59:47] local.INFO: auth_customer_findrec END  
+[2024-06-21 06:59:47] local.INFO: top serch END  
+[2024-06-21 07:00:04] local.INFO: top postUpload  START  
+[2024-06-21 07:00:04] local.INFO: top postUpload_info  START  
+[2024-06-21 07:00:04] local.INFO: auth_user_info START  
+[2024-06-21 07:00:04] local.INFO: auth_user_info END  
+[2024-06-21 07:00:04] local.INFO: auth_user_foldername START  
+[2024-06-21 07:00:04] local.INFO: auth_user_foldername END  
+[2024-06-21 07:00:04] local.INFO: top postUpload_info $compacts[customer_id]  = 15  
+[2024-06-21 07:00:04] local.INFO: top json_put_info_set  START  
+[2024-06-21 07:00:04] local.INFO: top json_put_info_set  END  
+[2024-06-21 07:00:04] local.INFO: top postUpload_info  END  
+[2024-06-21 07:00:04] local.INFO: client postUpload not empty  
+[2024-06-21 07:00:04] local.INFO: client json_get_info  START  
+[2024-06-21 07:00:04] local.INFO: client json_get_info not empty  
+[2024-06-21 07:00:04] local.INFO: client json_get_info  END  
+[2024-06-21 07:00:04] local.INFO: top postUpload  $fileName = Reserve_202404261933_1.csv  
+[2024-06-21 07:00:04] local.INFO: beginTransaction - top postUpload saveFile start  
+[2024-06-21 07:00:05] local.INFO: beginTransaction - top postUpload saveFile end(commit)  
+[2024-06-21 07:00:05] local.INFO: client json_put_status  START  
+[2024-06-21 07:00:05] local.INFO: client json_put_status  END  
+[2024-06-21 07:00:05] local.INFO: top postUpload  END  
+[2024-06-21 07:00:19] local.INFO: auth_user_info START  
+[2024-06-21 07:00:19] local.INFO: auth_user_info END  
+[2024-06-21 07:00:19] local.INFO: office tophistory index START $user->name = 新冨泰明  
+[2024-06-21 07:00:19] local.INFO: auth_user_organization START  
+[2024-06-21 07:00:19] local.INFO: auth_user_organization END  
+[2024-06-21 07:00:19] local.DEBUG: office tophistory index $data[count]  = 3  
+[2024-06-21 07:00:19] local.DEBUG: office tophistory index customer_id  = 15  
+[2024-06-21 07:00:19] local.INFO: auth_customer_allrec START  
+[2024-06-21 07:00:19] local.INFO: auth_customer_findrec END  
+[2024-06-21 07:00:19] local.INFO: office tophistory index END $user->name = 新冨泰明  
+[2024-06-21 07:01:19] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-05-27T03:06:38.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-21 07:01:19] local.INFO: loginout operation update START  
+[2024-06-21 07:01:19] local.INFO: loginout operation update $id < 10 END  
+[2024-06-21 07:01:45] local.INFO: auth_user_info START  
+[2024-06-21 07:01:45] local.INFO: auth_user_info END  
+[2024-06-21 07:01:45] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 15
+    [name] => 佐藤 雄一
+    [email] => user15@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 6
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-06-14T17:29:35.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-21 07:01:45] local.INFO: loginout operation update START  
+[2024-06-21 07:01:45] local.INFO: beginTransaction - loginout operation update start  
+[2024-06-21 07:01:45] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-06-21 07:01:45] local.INFO: loginout operation update END  
+[2024-06-21 07:01:48] local.INFO: auth_user_info START  
+[2024-06-21 07:01:48] local.INFO: auth_user_info END  
+[2024-06-21 07:01:48] local.INFO: topclient index START $user->name = 佐藤 雄一  
+[2024-06-21 07:01:48] local.INFO: topclient index END $user->name = 佐藤 雄一  
+[2024-06-21 07:02:02] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 15
+    [name] => 佐藤 雄一
+    [email] => user15@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 6
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-06-14T17:29:35.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-21 07:02:02] local.INFO: loginout operation update START  
+[2024-06-21 07:02:02] local.INFO: beginTransaction - loginout operation update start  
+[2024-06-21 07:02:02] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-06-21 07:02:02] local.INFO: loginout operation update END  
+[2024-06-21 07:04:22] local.INFO: auth_user_info START  
+[2024-06-21 07:04:22] local.INFO: auth_user_info END  
+[2024-06-21 07:04:22] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 15
+    [name] => 佐藤 雄一
+    [email] => user15@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 15
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-06-14T17:29:35.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-21 07:04:22] local.INFO: loginout operation update START  
+[2024-06-21 07:04:22] local.INFO: beginTransaction - loginout operation update start  
+[2024-06-21 07:04:23] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-06-21 07:04:23] local.INFO: loginout operation update END  
+[2024-06-21 07:04:25] local.INFO: auth_user_info START  
+[2024-06-21 07:04:26] local.INFO: auth_user_info END  
+[2024-06-21 07:04:26] local.INFO: topclient index START $user->name = 佐藤 雄一  
+[2024-06-21 07:04:26] local.INFO: topclient index END $user->name = 佐藤 雄一  
+[2024-06-21 07:05:33] local.INFO: topclient show_up START  
+[2024-06-21 07:05:34] local.DEBUG: topclient show_up  filename = 06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf  
+[2024-06-21 07:05:34] local.DEBUG: topclient show_up  pdf_path = userdata/folder0015/06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf  
+[2024-06-21 07:05:34] local.INFO: topclient show_up pdf END  
+[2024-06-21 07:05:37] local.INFO: update_api clienttop START  
+[2024-06-21 07:05:37] local.INFO: update_api clienttop beginTransaction - start  
+[2024-06-21 07:05:37] local.INFO: update_api clienttop beginTransaction - end  
+[2024-06-21 07:05:37] local.INFO: update_api clienttop END  
+[2024-06-21 07:05:39] local.INFO: topclient show_up START  
+[2024-06-21 07:05:39] local.DEBUG: topclient show_up  filename = 06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf  
+[2024-06-21 07:05:39] local.DEBUG: topclient show_up  pdf_path = userdata/folder0015/06月14日号_1校目_株式会社アイゼン・ソリューション様.pdf  
+[2024-06-21 07:05:39] local.INFO: topclient show_up pdf END  
+[2024-06-21 07:06:05] local.INFO: topclient show_up START  
+[2024-06-21 07:06:05] local.DEBUG: topclient show_up  filename = ja.233.199.zip  
+[2024-06-21 07:06:05] local.DEBUG: topclient show_up  pdf_path = userdata/folder0015/ja.233.199.zip  
+[2024-06-21 07:06:05] local.INFO: topclient show_up not pdf END  
+[2024-06-21 07:06:11] local.INFO: update_api clienttop START  
+[2024-06-21 07:06:11] local.INFO: update_api clienttop beginTransaction - start  
+[2024-06-21 07:06:11] local.INFO: update_api clienttop beginTransaction - end  
+[2024-06-21 07:06:11] local.INFO: update_api clienttop END  
+[2024-06-21 07:07:37] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 15
+    [name] => 佐藤 雄一
+    [email] => user15@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 15
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-06-14T17:29:35.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-21 07:07:37] local.INFO: loginout operation update START  
+[2024-06-21 07:07:37] local.INFO: beginTransaction - loginout operation update start  
+[2024-06-21 07:07:37] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-06-21 07:07:37] local.INFO: loginout operation update END  
+[2024-06-21 20:06:29] local.INFO: auth_user_info START  
+[2024-06-21 20:06:29] local.INFO: auth_user_info END  
+[2024-06-21 20:06:29] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-05-27T03:06:38.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-21 20:06:29] local.INFO: loginout operation update START  
+[2024-06-21 20:06:29] local.INFO: loginout operation update $id < 10 END  
+[2024-06-21 20:06:32] local.INFO: auth_user_info START  
+[2024-06-21 20:06:32] local.INFO: auth_user_info END  
+[2024-06-21 20:06:32] local.INFO: office top index START $user->name = 新冨泰明  
+[2024-06-21 20:06:32] local.INFO: auth_user_organization START  
+[2024-06-21 20:06:32] local.INFO: auth_user_organization END  
+[2024-06-21 20:06:32] local.INFO: auth_customer_allrec START  
+[2024-06-21 20:06:32] local.INFO: auth_customer_findrec END  
+[2024-06-21 20:06:32] local.DEBUG: office top index customer_id  = 19  
+[2024-06-21 20:06:32] local.INFO: office top index END $user->name = 新冨泰明  
+[2024-06-21 20:06:38] local.INFO: ChatController index START  
+[2024-06-21 20:06:38] local.INFO: auth_user_info START  
+[2024-06-21 20:06:38] local.INFO: auth_user_info END  
+[2024-06-21 20:06:38] local.DEBUG: ChatController index customer_id  = 11  

@@ -36,7 +36,7 @@ class ChatController extends Controller
 
         // Customer(ALLレコード)情報を取得する
         $customer_findrec = $this->auth_customer_allrec();
-        // $customer_id = $customer_findrec[0]['id'];
+        $customer_id = $customer_findrec[0]['id'];
         Log::debug('ChatController index customer_id  = ' . print_r($customer_id ,true));
 
         $messages = Message::select(
@@ -59,7 +59,7 @@ class ChatController extends Controller
             })
             ->whereNull('customers.deleted_at')
             ->whereNull('users.deleted_at')
-            ->where('messages.customer_id',   $user_id)
+            ->where('messages.user_id',     $user_id)
             ->orWhere('messages.customer_id', $customer_id)
             ->orderBy('messages.id', 'desc')
             ->orderBy('messages.customer_id', 'asc')

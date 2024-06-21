@@ -59,7 +59,7 @@ class ChatController extends Controller
             })
             ->whereNull('customers.deleted_at')
             ->whereNull('users.deleted_at')
-            ->where('messages.customer_id',   $user_id)
+            ->where('messages.customer_id',  $user_id)
             ->orWhere('messages.customer_id', $customer_id)
             ->orderBy('messages.id', 'desc')
             ->orderBy('messages.customer_id', 'asc')
