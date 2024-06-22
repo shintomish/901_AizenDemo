@@ -116,7 +116,7 @@
             <hr>
             @php
                 $to_flg = 1;
-
+                $customer_id = 16;
             @endphp
             {{--  チャットルーム  --}}
             <div class="row-6" id="room">
@@ -131,7 +131,7 @@
                         <div><span class="u-pre-wrap" style="color: green" v-text="m.body"></span></div>
                         </div>
                     </template >
-                    <template v-else-if="m.customer_id == {{ $user_id }}">
+                    <template v-else->
                         <div class="send" style="text-align: left">
                         <span style="color: rgb(238, 104, 8)" v-text="m.user.name"></span>
                         <span style="color: rgb(238, 104, 8)"> :</span>&nbsp;
