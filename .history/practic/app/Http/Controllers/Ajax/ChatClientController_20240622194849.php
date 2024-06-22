@@ -30,7 +30,7 @@ class ChatClientController extends Controller
         $organization_id = $user->organization_id;
         $customer_id  = $user->customer_id;
 
-        Log::debug('Ajax ChatClientController index  $customer_id = ' . print_r($customer_id,true));
+        Log::debug('Ajax ChatClientController index  $user_id = ' . print_r($customer_id,true));
 
         Log::info('Ajax ChatClientController index END');
 

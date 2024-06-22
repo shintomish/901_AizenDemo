@@ -65,7 +65,7 @@ class ChatClientController extends Controller
             ->paginate(300);
 
         $common_no = '00_7';
-        $compacts = compact( 'messages','common_no','customer_findrec','user_id','customer_id');
+        $compacts = compact( 'messages','common_no','customer_findrec');
 
         Log::info('ChatClientController index END');
 

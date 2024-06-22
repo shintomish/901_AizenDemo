@@ -131,7 +131,7 @@
                         <div><span class="u-pre-wrap" style="color: green" v-text="m.body"></span></div>
                         </div>
                     </template >
-                    <template v-else>
+                    <template v-else-if="m.customer_id == {{ $customer_id }}">
                         <div class="send" style="text-align: left">
                         <span style="color: rgb(238, 104, 8)" v-text="m.user.name"></span>
                         <span style="color: rgb(238, 104, 8)"> :</span>&nbsp;

@@ -25,7 +25,6 @@ class ChatClientController extends Controller
         // ログインユーザーのユーザー情報を取得する
         $user     = $this->auth_user_info();
         $user_id  = $user->id;
-        $customer_id  = $user->customer_id;
         $organization_id =  $user->organization_id;
 
         // Customer(ALLレコード)情報を取得する
@@ -39,7 +38,7 @@ class ChatClientController extends Controller
         $messages = Message::select(
                 'messages.id              as id'
                 // ,'messages.organization_id as organization_id'
-                ,'messages.to_flg          as to_flg'
+                                ,'messages.to_flg         as to_flg'
                 ,'messages.user_id         as user_id'
                 ,'messages.customer_id     as customer_id'
                 ,'messages.body            as m_body'
@@ -57,15 +56,14 @@ class ChatClientController extends Controller
                 $join->on('messages.customer_id', '=', 'customers.id');
             })
             ->whereNull('customers.deleted_at')
-            // ->where('messages.user_id',   '<', 11)
-            // ->orWhere('messages.customer_id', $customer_id)
-            // ->orWhere('messages.customer_id', $user_id)
+            ->where('messages.user_id',   '<', 11)
+            ->orWhere('messages.customer_id', $user_id)
             ->orderBy('messages.id', 'desc')
             ->orderBy('messages.customer_id', 'asc')
             ->paginate(300);
 
         $common_no = '00_7';
-        $compacts = compact( 'messages','common_no','customer_findrec','user_id','customer_id');
+        $compacts = compact( 'messages','common_no','customer_findrec');
 
         Log::info('ChatClientController index END');
 

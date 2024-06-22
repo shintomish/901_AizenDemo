@@ -115,19 +115,17 @@
             {{-- Line --}}
             <hr>
             @php
-                $to_flg = 1;
-                $customer_id = 16;
+                $user_id = 16;
             @endphp
             {{--  チャットルーム  --}}
             <div class="row-6" id="room">
                 <ul class="" v-for="(m, key) in messages" :key="key">
                     {{-- 事務所はグリーン --}}
-                    <template v-if="m.to_flg == {{ $to_flg }}">
+                    <template v-if="m.customer_id === {{ $user_id }}">
                         <div class="recieve" style="text-align: right">
                         <span style="color: green" v-text="m.created_at"></span>
                         <span style="color: green"> :</span>&nbsp;
-                        <span style="color: green" v-text="m.user.name"></span>
-                        <span style="color: green">  </span>&nbsp;
+                        <span style="color: green" v-text="m.user.name"></span>                        <span style="color: green">  </span>&nbsp;
                         <div><span class="u-pre-wrap" style="color: green" v-text="m.body"></span></div>
                         </div>
                     </template >

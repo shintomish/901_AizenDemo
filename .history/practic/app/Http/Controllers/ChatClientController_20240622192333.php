@@ -58,14 +58,14 @@ class ChatClientController extends Controller
             })
             ->whereNull('customers.deleted_at')
             // ->where('messages.user_id',   '<', 11)
-            // ->orWhere('messages.customer_id', $customer_id)
-            // ->orWhere('messages.customer_id', $user_id)
+            ->orWhere('messages.customer_id', $customer_id)
+            ->orWhere('messages.customer_id', $user_id)
             ->orderBy('messages.id', 'desc')
             ->orderBy('messages.customer_id', 'asc')
             ->paginate(300);
 
         $common_no = '00_7';
-        $compacts = compact( 'messages','common_no','customer_findrec','user_id','customer_id');
+        $compacts = compact( 'messages','common_no','customer_findrec');
 
         Log::info('ChatClientController index END');
 

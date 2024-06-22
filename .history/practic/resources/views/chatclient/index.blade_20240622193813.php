@@ -116,7 +116,6 @@
             <hr>
             @php
                 $to_flg = 1;
-                $customer_id = 16;
             @endphp
             {{--  チャットルーム  --}}
             <div class="row-6" id="room">
