@@ -101,10 +101,9 @@ class ChatController extends Controller
         $messages = Message::where('customer_id',$customer_id)
                         ->orderBy('id', 'asc')
                         ->first();
-
         // * ログインユーザーのCustomerオブジェクトをjsonにSetする
-        $this->json_put_info_set($u_id, 1, $customer_id);
-
+        $this->json_put_info_set($user_id, 1, 11);
+        // $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
         $common_no = '00_7';
         $compacts = compact( 'messages','customer_findrec','customer_id','common_no' );
 

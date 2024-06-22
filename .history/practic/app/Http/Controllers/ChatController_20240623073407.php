@@ -89,7 +89,7 @@ class ChatController extends Controller
         //-------------------------------------------------------------
         $customer_id = $request->Input('customer_id');
         Log::debug('ChatController serch  $customer_id = ' . print_r($customer_id,true));
-
+        
         // ログインユーザーのユーザー情報を取得する
         $user  = $this->auth_user_info();
         $u_id = $user->id;
@@ -102,9 +102,7 @@ class ChatController extends Controller
                         ->orderBy('id', 'asc')
                         ->first();
 
-        // * ログインユーザーのCustomerオブジェクトをjsonにSetする
-        $this->json_put_info_set($u_id, 1, $customer_id);
-
+        // $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
         $common_no = '00_7';
         $compacts = compact( 'messages','customer_findrec','customer_id','common_no' );
 

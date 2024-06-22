@@ -102,8 +102,8 @@ class ChatController extends Controller
                         ->orderBy('id', 'asc')
                         ->first();
 
-        // * ログインユーザーのCustomerオブジェクトをjsonにSetする
-        $this->json_put_info_set($u_id, 1, $customer_id);
+                        // * ログインユーザーのCustomerオブジェクトをjsonにSetする
+        $this->json_put_info_set($user_id, 1, $customer_id);
 
         $common_no = '00_7';
         $compacts = compact( 'messages','customer_findrec','customer_id','common_no' );
