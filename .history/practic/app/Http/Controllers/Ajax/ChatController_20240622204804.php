@@ -55,7 +55,7 @@ class ChatController extends Controller
         $compacts = $this->json_get_info($user_id);
         $customer_id     = $compacts['customer_id'];
 
-        Log::debug('Ajax ChatController create  $customer_id = ' . print_r($customer_id,true));
+        Log::debug('Ajax ChatClientController create  $customer_id = ' . print_r($customer_id,true));
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
