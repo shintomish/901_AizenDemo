@@ -25,8 +25,7 @@ class ChatController extends Controller
 
         // ログインユーザーのユーザー情報を取得する
         $user            = $this->auth_user_info();
-        // $organization_id = $user->organization_id;
-        $organization_id = 1;
+        $organization_id = $user->organization_id;
         $user_id         = $user->id;
 
         // * ログインユーザーのCustomerオブジェクトをjsonから取得する
@@ -47,9 +46,17 @@ class ChatController extends Controller
 
         Log::info('Ajax ChatController create START');
 
+        //-------------------------------------------------------------
+        //- Request パラメータ
+        //-------------------------------------------------------------
+        // $customer_id = $request->Input('customer_id');
+        // if($customer_id == '') {
+        //     $customer_id = 11;
+        // }
+
         $user            = Auth::user();
         $user_id         = $user->id;
-        $organization_id = 1;
+        $organization_id = $user->organization_id;
 
         // * ログインユーザーのCustomerオブジェクトをjsonから取得する
         $compacts = $this->json_get_info($user_id);
@@ -59,8 +66,7 @@ class ChatController extends Controller
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
-            'to_flg'          => 1,
-            'user_id'         => 1,
+            'user_id'         => $user_id,
             'customer_id'     => $customer_id,
             'organization_id' => $organization_id,
         ]);

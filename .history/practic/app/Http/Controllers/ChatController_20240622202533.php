@@ -29,7 +29,7 @@ class ChatController extends Controller
         $messages = Message::select(
                 'messages.id              as id'
                 // ,'messages.organization_id as organization_id'
-                ,'messages.to_flg          as to_flg'
+                                ,'messages.to_flg          as to_flg'
                 ,'messages.user_id         as user_id'
                 ,'messages.customer_id     as customer_id'
                 ,'messages.body            as m_body'
@@ -47,6 +47,7 @@ class ChatController extends Controller
             })
             ->whereNull('customers.deleted_at')
             ->whereNull('users.deleted_at')
+            ->where('messages.id','=',$customer_id)
             ->orderBy('messages.id', 'desc')
             ->orderBy('messages.customer_id', 'asc')
             ->paginate(300);

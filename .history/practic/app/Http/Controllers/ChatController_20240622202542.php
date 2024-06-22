@@ -47,6 +47,7 @@ class ChatController extends Controller
             })
             ->whereNull('customers.deleted_at')
             ->whereNull('users.deleted_at')
+            ->where('messages.id','=',$customer_id)
             ->orderBy('messages.id', 'desc')
             ->orderBy('messages.customer_id', 'asc')
             ->paginate(300);

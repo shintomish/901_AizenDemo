@@ -49,7 +49,7 @@ class ChatController extends Controller
 
         $user            = Auth::user();
         $user_id         = $user->id;
-        $organization_id = 1;
+        $organization_id = $user->organization_id;
 
         // * ログインユーザーのCustomerオブジェクトをjsonから取得する
         $compacts = $this->json_get_info($user_id);
@@ -59,8 +59,7 @@ class ChatController extends Controller
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
-            'to_flg'          => 1,
-            'user_id'         => 1,
+            'user_id'         => $user_id,
             'customer_id'     => $customer_id,
             'organization_id' => $organization_id,
         ]);
