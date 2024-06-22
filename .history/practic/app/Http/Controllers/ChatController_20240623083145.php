@@ -151,7 +151,7 @@ class ChatController extends Controller
             // echo "データがありません";
             Log::info('Ajax ChatController json_get_info  Nothing');
         }
-        $o_id = 1;
+        $o_id 
         $compacts = compact('user_id','o_id','customer_id' );
 
         Log::info('Ajax ChatController json_get_info  END');

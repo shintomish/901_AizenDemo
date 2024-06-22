@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Ajax;
 
-// use DateTime;
-use App\Models\User;
-use App\Models\Customer;
+// use App\Models\User;
 use App\Models\Message;
+use App\Events\MessageCreated;
+
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 // use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -18,97 +19,88 @@ class ChatController extends Controller
         $this->middleware('auth');
     }
 
-    public function index() {
+    public function index(Request $request) { // 新着順にメッセージ一覧を取得
 
-        Log::info('ChatController index START');
+        Log::info('Ajax ChatController index START');
 
         // ログインユーザーのユーザー情報を取得する
-        $user     = $this->auth_user_info();
-        $user_id  = $user->id;
-        $organization_id =  1;
+        $user            = $this->auth_user_info();
+        // $organization_id = $user->organization_id;
+        $organization_id = 1;
+        $user_id         = $user->id;
 
-        // Customer(ALLレコード)情報を取得する
-        $customer_findrec = $this->auth_customer_allrec();
-        // $customer_id = $customer_findrec[0]['id'];
+        // * ログインユーザーのCustomerオブジェクトをjsonから取得する
+        // $compacts = $this->json_get_info($user_id);
+        // $customer_id     = $compacts['customer_id'];
+
+        Log::info('Ajax ChatController index END');
+
+        // return Message::orderBy('id', 'desc')->get();
+        return Message::where('organization_id', $organization_id)
+                ->with('user')
+                ->orderBy('id', 'desc')
+                ->get();
+
+    }
+
+    public function create(Request $request) { // メッセージを登録
+
+        Log::info('Ajax ChatController create START');
+
+        $user            = Auth::user();
+        $user_id         = $user->id;
+        $organization_id = 1;
 
         // * ログインユーザーのCustomerオブジェクトをjsonから取得する
         $compacts = $this->json_get_info($user_id);
         $customer_id     = $compacts['customer_id'];
-        // $user_id         = $compacts['user_id'];
 
-        Log::debug('ChatController index customer_id  = ' . print_r($customer_id ,true));
+        Log::debug('Ajax ChatController create  $customer_id = ' . print_r($customer_id,true));
 
-        $messages = Message::select(
-                'messages.id              as id'
-                // ,'messages.organization_id as organization_id'
-                ,'messages.to_flg          as to_flg'
-                ,'messages.user_id         as user_id'
-                ,'messages.customer_id     as customer_id'
-                ,'messages.body            as m_body'
-                ,'messages.created_at      as m_created_at'
-                ,'users.id                 as users_id'
-                ,'users.name               as users_name'
-                ,'customers.id             as customers_id'
-                ,'customers.business_name  as business_name'
-            )
-            ->leftJoin('users', function ($join) {
-                $join->on('messages.user_id', '=', 'users.id');
-            })
-            ->leftJoin('customers', function ($join) {
-                $join->on('messages.customer_id', '=', 'customers.id');
-            })
-            ->whereNull('customers.deleted_at')
-            ->whereNull('users.deleted_at')
-            ->orderBy('messages.id', 'desc')
-            ->orderBy('messages.customer_id', 'asc')
-            ->paginate(300);
+        $message = $user->messages()->create([
+            'body'            => $request->input('message'),
+            'to_flg'          => 1,
+            'user_id'         => $user_id,
+            'customer_id'     => $customer_id,
+            'organization_id' => $organization_id,
+        ]);
 
-            $organization_id = 1;
-            $users = User::where('organization_id','=',$organization_id)
-                            // ->where('login_flg','=', 1 )  //顧客
-                            ->whereNull('deleted_at')
-                            ->get();
-            $customers = Customer::where('organization_id','=',$organization_id)
-                            ->whereNull('deleted_at')
-                            ->get();
+        Log::info('Ajax ChatController create END');
 
-        $common_no = '00_7';
-        $compacts = compact( 'messages','common_no','users','customers','customer_findrec','customer_id','user_id' );
+        broadcast(new MessageCreated($user, $customer_id, $organization_id, $message));
 
-        Log::info('ChatController index END');
-
-        return view('chat.index', $compacts );
     }
 
     public function serch(Request $request)
     {
-        Log::info('ChatController serch START');
+        Log::info('Ajax ChatController serch START');
 
         //-------------------------------------------------------------
         //- Request パラメータ
         //-------------------------------------------------------------
         $customer_id = $request->Input('customer_id');
-        Log::debug('ChatController serch  $customer_id = ' . print_r($customer_id,true));
+        Log::debug('Ajax ChatController serch  $customer_id = ' . print_r($customer_id,true));
 
         // ログインユーザーのユーザー情報を取得する
-        $user  = $this->auth_user_info();
-        $u_id = $user->id;
-        $organization_id =  $user->organization_id;
+        $user            = $this->auth_user_info();
+        $organization_id = $user->organization_id;
+        $user_id         = $user->id;
 
-        // Customer(ALLレコード)情報を取得する
+        // Customer(ALLレコード)情報を取得する Select用
         $customer_findrec = $this->auth_customer_allrec();
 
-        $messages = Message::where('customer_id',$customer_id)
+        $messages = Message::where('customer_id', $customer_id)
+                        ->orWhere('user_id',      $user_id)
                         ->orderBy('id', 'asc')
                         ->first();
-
-        // * ログインユーザーのCustomerオブジェクトをjsonにSetする
-        $this->json_put_info_set($u_id, 1, $customer_id);
 
         $common_no = '00_7';
         $compacts = compact( 'messages','customer_findrec','customer_id','common_no' );
 
-        Log::info('ChatController serch END');
+        // * ログインユーザーのCustomerオブジェクトをjsonにSetする
+        $this->json_put_info_set($user_id, $organization_id, $customer_id);
+
+        Log::info('Ajax ChatController serch END');
         return view( 'chat.index', $compacts );
     }
 
@@ -151,7 +143,6 @@ class ChatController extends Controller
             // echo "データがありません";
             Log::info('Ajax ChatController json_get_info  Nothing');
         }
-        $o_id = 1;
         $compacts = compact('user_id','o_id','customer_id' );
 
         Log::info('Ajax ChatController json_get_info  END');
@@ -208,6 +199,7 @@ class ChatController extends Controller
         file_put_contents($jsonfile , $arr);
         Log::info('Ajax ChatController json_put_info_set  END');
     }
+
 
 
 }

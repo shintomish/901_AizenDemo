@@ -59,6 +59,7 @@ class ChatController extends Controller
             })
             ->whereNull('customers.deleted_at')
             ->whereNull('users.deleted_at')
+            ->orWhere('messages.user_id',      $user_id)
             ->orderBy('messages.id', 'desc')
             ->orderBy('messages.customer_id', 'asc')
             ->paginate(300);
@@ -151,7 +152,6 @@ class ChatController extends Controller
             // echo "データがありません";
             Log::info('Ajax ChatController json_get_info  Nothing');
         }
-        $o_id = 1;
         $compacts = compact('user_id','o_id','customer_id' );
 
         Log::info('Ajax ChatController json_get_info  END');

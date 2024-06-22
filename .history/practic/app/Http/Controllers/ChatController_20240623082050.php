@@ -34,7 +34,7 @@ class ChatController extends Controller
         // * ログインユーザーのCustomerオブジェクトをjsonから取得する
         $compacts = $this->json_get_info($user_id);
         $customer_id     = $compacts['customer_id'];
-        // $user_id         = $compacts['user_id'];
+        $user_id         = $compacts['user_id'];
 
         Log::debug('ChatController index customer_id  = ' . print_r($customer_id ,true));
 
@@ -59,6 +59,7 @@ class ChatController extends Controller
             })
             ->whereNull('customers.deleted_at')
             ->whereNull('users.deleted_at')
+            ->orWhere('user_id',      $user_id)
             ->orderBy('messages.id', 'desc')
             ->orderBy('messages.customer_id', 'asc')
             ->paginate(300);
@@ -151,7 +152,6 @@ class ChatController extends Controller
             // echo "データがありません";
             Log::info('Ajax ChatController json_get_info  Nothing');
         }
-        $o_id = 1;
         $compacts = compact('user_id','o_id','customer_id' );
 
         Log::info('Ajax ChatController json_get_info  END');
