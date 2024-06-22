@@ -31,8 +31,7 @@ class ChatController extends Controller
 
 
         $customer_id = $request->input('customer_id');
-        Log::debug('Ajax ChatController index  $customer_id = ' . print_r($customer_id,true));
-
+        Log::debug('Ajax ChatController create  $customer_id = ' . print_r($customer_id,true));
         // * ログインユーザーのCustomerオブジェクトをjsonから取得する
         // $compacts = $this->json_get_info($user_id);
         // $customer_id     = $compacts['customer_id'];

@@ -29,13 +29,9 @@ class ChatController extends Controller
         $organization_id = 1;
         $user_id         = $user->id;
 
-
-        $customer_id = $request->input('customer_id');
-        Log::debug('Ajax ChatController index  $customer_id = ' . print_r($customer_id,true));
-
         // * ログインユーザーのCustomerオブジェクトをjsonから取得する
-        // $compacts = $this->json_get_info($user_id);
-        // $customer_id     = $compacts['customer_id'];
+        $compacts = $this->json_get_info($user_id);
+        $customer_id     = $compacts['customer_id'];
 
         Log::info('Ajax ChatController index END');
 
@@ -56,10 +52,9 @@ class ChatController extends Controller
         $organization_id = 1;
 
         // * ログインユーザーのCustomerオブジェクトをjsonから取得する
-        // $compacts = $this->json_get_info($user_id);
-        // $customer_id     = $compacts['customer_id'];
+        $compacts = $this->json_get_info($user_id);
+        $customer_id     = $compacts['customer_id'];
 
-        $customer_id = $request->input('customer_id');
         Log::debug('Ajax ChatController create  $customer_id = ' . print_r($customer_id,true));
 
         $message = $user->messages()->create([
