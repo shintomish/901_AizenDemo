@@ -25,22 +25,18 @@ class ChatClientController extends Controller
         Log::info('Ajax ChatClientController index START');
 
         // ログインユーザーのユーザー情報を取得する
-        $user  = $this->auth_user_info();
-        $organization_id =  $user->organization_id;
-
-        // Customer(複数レコード)情報を取得する
-        // $customer_findrec = $this->auth_customer_findrec();
-        // $customer_id = $customer_findrec[0]['id'];
-        $customer_id_staff = 1;
-        $user_id           = $user->id;
+        $user            = Auth::user();
+        $user_id         = $user->user_id;
+        $organization_id = $user->organization_id;
 
         Log::debug('Ajax ChatClientController index  $user_id = ' . print_r($user_id,true));
 
         Log::info('Ajax ChatClientController index END');
 
-        return Message::where('organization_id', $organization_id)
-                ->where('user_id', $user_id)
-                ->orWhere('customer_id', $customer_id_staff)
+        return Message::where('organization_id', '>=', $organization_id)
+                    ->orWhere('customer_id', $user_id)
+                    ->orWhere('user_id',   '=', 1)
+
                 ->with('user')
                 ->orderBy('id', 'desc')
                 ->get();
@@ -50,14 +46,8 @@ class ChatClientController extends Controller
     public function create(Request $request) { // メッセージを登録
 
         Log::info('Ajax ChatClientController create START');
-        // $message = Message::create([
-        //     'body' => $request->message
-        // ]);
 
-        // event(new MessageCreated($message));
-        // broadcast(new MessageCreated($message))->toOthers();
-        // broadcast(new MessageCreated($message));
-
+        // ログインユーザーのユーザー情報を取得する
         $user            = Auth::user();
         $user_id         = $user->user_id;
         $organization_id = $user->organization_id;
@@ -68,15 +58,13 @@ class ChatClientController extends Controller
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
-            'customer_id'     => $customer_id,
+            'user_id'         => $user_id,
+            'customer_id'     => $user_id,
             'organization_id' => $organization_id,
         ]);
 
         Log::info('Ajax ChatClientController create END');
-        // broadcast(new MessageCreated($user, $message))->toOthers();
+
         broadcast(new MessageCreated($user, $user_id, $organization_id,$message));
-
-        // return ['status' => 'Message Sent!'];
-
     }
 }

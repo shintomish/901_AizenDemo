@@ -104,9 +104,10 @@
         <div id="chat">
             <br>
             <!-- 検索エリア -->
-            <form  class="my-2 my-lg-0 ml-2" action="{{route('chatserch')}}" method="GET">
+            <form  class="my-2 my-lg-0 ml-2" action="{{route('chatserch')}}" method="POST">
                 @csrf
                 @method('get')
+                {{-- {{method_field('get')}} --}}
                 <style>
                     .exright{
                         text-align: right;
@@ -140,7 +141,7 @@
             <div class="row-6" id="room">
                 <ul class="" v-for="(m, key) in messages" :key="key">
                     {{-- 事務所はグリーン {!! nl2br(htmlspecialchars("m.body")) !!} --}}
-                    <template v-if="m.user_id === 1">
+                    <template v-if="m.user_id <= 10">
                         <div class="send" style="text-align: left">
                         <span style="color: green" v-text="m.user.name"></span>
                         <span style="color: green"> :</span>&nbsp;
