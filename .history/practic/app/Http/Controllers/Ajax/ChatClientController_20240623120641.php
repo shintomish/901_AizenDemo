@@ -27,7 +27,7 @@ class ChatClientController extends Controller
         // ログインユーザーのユーザー情報を取得する
         $user  = $this->auth_user_info();
         $user_id         = $user->id;
-        $organization_id =  1;
+        $organization_id =  2;
 
         Log::debug('Ajax ChatClientController index  $user_id = ' . print_r($user_id,true));
 
@@ -46,7 +46,7 @@ class ChatClientController extends Controller
 
         $user            = Auth::user();
         $user_id         = $user->user_id;
-        $organization_id = 1;
+        $organization_id = $user->organization_id;
 
         // Customer(複数レコード)情報を取得する
         $customer_findrec = $this->auth_customer_findrec();
@@ -54,14 +54,13 @@ class ChatClientController extends Controller
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
-            'user_id'         => $user_id,
             'customer_id'     => $customer_id,
             'organization_id' => 1,
         ]);
 
         Log::info('Ajax ChatClientController create END');
         // broadcast(new MessageCreated($user, $message))->toOthers();
-        broadcast(new MessageCreated($user, $user_id, $organization_id, $message));
+        broadcast(new MessageCreated($user, $user_id, $organization_id,$message));
 
         // return ['status' => 'Message Sent!'];
 

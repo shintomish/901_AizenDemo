@@ -26,8 +26,13 @@ class ChatClientController extends Controller
 
         // ログインユーザーのユーザー情報を取得する
         $user  = $this->auth_user_info();
-        $user_id         = $user->id;
-        $organization_id =  1;
+        $organization_id =  $user->organization_id;
+
+        // Customer(複数レコード)情報を取得する
+        // $customer_findrec = $this->auth_customer_findrec();
+        // $customer_id = $customer_findrec[0]['id'];
+        $customer_id_staff = 1;
+        $user_id           = $user->id;
 
         Log::debug('Ajax ChatClientController index  $user_id = ' . print_r($user_id,true));
 
@@ -43,10 +48,17 @@ class ChatClientController extends Controller
     public function create(Request $request) { // メッセージを登録
 
         Log::info('Ajax ChatClientController create START');
+        // $message = Message::create([
+        //     'body' => $request->message
+        // ]);
+
+        // event(new MessageCreated($message));
+        // broadcast(new MessageCreated($message))->toOthers();
+        // broadcast(new MessageCreated($message));
 
         $user            = Auth::user();
         $user_id         = $user->user_id;
-        $organization_id = 1;
+        $organization_id = $user->organization_id;
 
         // Customer(複数レコード)情報を取得する
         $customer_findrec = $this->auth_customer_findrec();
@@ -54,14 +66,13 @@ class ChatClientController extends Controller
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
-            'user_id'         => $user_id,
             'customer_id'     => $customer_id,
-            'organization_id' => 1,
+            'organization_id' => $organization_id,
         ]);
 
         Log::info('Ajax ChatClientController create END');
         // broadcast(new MessageCreated($user, $message))->toOthers();
-        broadcast(new MessageCreated($user, $user_id, $organization_id, $message));
+        broadcast(new MessageCreated($user, $user_id, $organization_id,$message));
 
         // return ['status' => 'Message Sent!'];
 

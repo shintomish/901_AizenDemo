@@ -142,9 +142,7 @@
 
             {{-- Line --}}
             <hr>
-            @php
-                $user_id = 12;
-            @endphp
+            @ph
             {{--  チャットルーム  --}}
             <div class="row-6" id="room">
                 <ul class="" v-for="(m, key) in messages" :key="key">

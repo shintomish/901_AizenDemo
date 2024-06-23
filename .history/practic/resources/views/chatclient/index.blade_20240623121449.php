@@ -142,9 +142,6 @@
 
             {{-- Line --}}
             <hr>
-            @php
-                $user_id = 12;
-            @endphp
             {{--  チャットルーム  --}}
             <div class="row-6" id="room">
                 <ul class="" v-for="(m, key) in messages" :key="key">
@@ -154,7 +151,7 @@
                         <span style="color: green" v-text="m.created_at"></span>
                         <span style="color: green"> :</span>&nbsp;
                         <span style="color: green" v-text="m.user.name"></span>
-                        <span style="color: green">  </span>&nbsp;
+                                                <span style="color: green">  </span>&nbsp;
                         <div><span class="u-pre-wrap" style="color: green" v-text="m.body"></span></div>
                         </div>
                     </template >

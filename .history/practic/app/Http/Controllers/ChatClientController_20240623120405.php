@@ -25,7 +25,7 @@ class ChatClientController extends Controller
         // ログインユーザーのユーザー情報を取得する
         $user  = $this->auth_user_info();
         $u_id = $user->id;
-        $organization_id = 1;
+        $organization_id =  $user->organization_id;
 
         // Customer(個人レコード)情報を取得する
         $customer_findrec = $this->auth_customer_allrec();
@@ -71,6 +71,9 @@ class ChatClientController extends Controller
 
         return view('chatclient.index', $compacts );
 
+        // return Message::orderBy('id', 'desc')->get();
+        // $messages = Message::orderBy('id', 'desc')->get();
+        // $messages = Message::with('user')->orderBy('id', 'desc')->get();
     }
 
     /**

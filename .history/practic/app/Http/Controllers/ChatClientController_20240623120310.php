@@ -25,11 +25,20 @@ class ChatClientController extends Controller
         // ログインユーザーのユーザー情報を取得する
         $user  = $this->auth_user_info();
         $u_id = $user->id;
-        $organization_id = 1;
+        $organization_id =  $user->organization_id;
 
-        // Customer(個人レコード)情報を取得する
-        $customer_findrec = $this->auth_customer_allrec();
+        //FileNameは「latestinformation.pdf」固定 2022/09/24
+        $books = DB::table('books')->first();
+        $str   = ( new DateTime($books->info_date))->format('Y-m-d');
+        $latestinfodate = '最新情報'.'('.$str.')';
+
+        // Customer(全レコード)情報を取得する
+        $customer_findrec = $this->auth_customer_findrec();
         $customer_id = $customer_findrec[0]['id'];
+
+        // // Log::debug('ChatClientController index  $customer_id = ' . print_r($customer_id,true));
+        // $staff_id = 1;     //事務所Staffのusers.id
+        // $user_id = $user->user_id;
 
         $messages = Message::select(
                 'messages.id              as id'
@@ -65,12 +74,15 @@ class ChatClientController extends Controller
                         ->get();
 
         $common_no = '00_7';
-        $compacts = compact( 'messages','common_no','customer_findrec','customer_id' );
+        $compacts = compact( 'indiv_class','messages','common_no','users','customers','customer_findrec','customer_id','jsonfile','latestinfodate' );
 
         Log::info('ChatClientController index END');
 
         return view('chatclient.index', $compacts );
 
+        // return Message::orderBy('id', 'desc')->get();
+        // $messages = Message::orderBy('id', 'desc')->get();
+        // $messages = Message::with('user')->orderBy('id', 'desc')->get();
     }
 
     /**

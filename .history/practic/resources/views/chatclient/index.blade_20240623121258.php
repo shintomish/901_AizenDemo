@@ -138,13 +138,10 @@
             <textarea  style="" class="row-5" v-model="message"></textarea>
 
             <br>
-            <button class="btn btn-secondary btn-sm" @click="send()">送信</button>
+            <button type="btn btn-secondary btn-sm" @click="send()">送信</button>
 
             {{-- Line --}}
             <hr>
-            @php
-                $user_id = 12;
-            @endphp
             {{--  チャットルーム  --}}
             <div class="row-6" id="room">
                 <ul class="" v-for="(m, key) in messages" :key="key">
@@ -153,12 +150,11 @@
                         <div class="recieve" style="text-align: right">
                         <span style="color: green" v-text="m.created_at"></span>
                         <span style="color: green"> :</span>&nbsp;
-                        <span style="color: green" v-text="m.user.name"></span>
-                        <span style="color: green">  </span>&nbsp;
+                        <span style="color: green" v-text="m.user.name"></span>                        <span style="color: green">  </span>&nbsp;
                         <div><span class="u-pre-wrap" style="color: green" v-text="m.body"></span></div>
                         </div>
                     </template >
-                    <template v-else-if="m.user_id === {{ $user_id }}">
+                    <template v-else-if="m.user_id === {{ $user_ }}">
                         <div class="send" style="text-align: left">
                         <span style="color: rgb(238, 104, 8)" v-text="m.user.name"></span>
                         <span style="color: rgb(238, 104, 8)"> :</span>&nbsp;

@@ -83,12 +83,12 @@
             height: calc( 1.4em * 3 );
             line-height: 1.3;
             /* max-width: 600px; */
-            width: 700px;
+            width: 500px;
         }
         .row-6 {
             overflow:auto;
-            width:700px;
-            height:500px;
+            width:500px;
+            height:400px;
             padding:5px;
             border:2px dotted #ffffff;
             color:#e8e8e8;
@@ -138,27 +138,23 @@
             <textarea  style="" class="row-5" v-model="message"></textarea>
 
             <br>
-            <button class="btn btn-secondary btn-sm" @click="send()">送信</button>
+            <button type="btn btn-secondary btn-sm" @click="send()">送信</button>
 
             {{-- Line --}}
             <hr>
-            @php
-                $user_id = 12;
-            @endphp
             {{--  チャットルーム  --}}
             <div class="row-6" id="room">
                 <ul class="" v-for="(m, key) in messages" :key="key">
                     {{-- 事務所はグリーン --}}
-                    <template v-if="m.to_flg === 1">
+                    <template v-if="m.customer_id === 1">
                         <div class="recieve" style="text-align: right">
                         <span style="color: green" v-text="m.created_at"></span>
                         <span style="color: green"> :</span>&nbsp;
-                        <span style="color: green" v-text="m.user.name"></span>
-                        <span style="color: green">  </span>&nbsp;
+                        <span style="color: green" v-text="m.user.name"></span>                        <span style="color: green">  </span>&nbsp;
                         <div><span class="u-pre-wrap" style="color: green" v-text="m.body"></span></div>
                         </div>
                     </template >
-                    <template v-else-if="m.user_id === {{ $user_id }}">
+                    <template v-else>
                         <div class="send" style="text-align: left">
                         <span style="color: rgb(238, 104, 8)" v-text="m.user.name"></span>
                         <span style="color: rgb(238, 104, 8)"> :</span>&nbsp;

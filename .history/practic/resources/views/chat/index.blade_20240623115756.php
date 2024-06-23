@@ -1,14 +1,14 @@
-@extends('layouts.api3_index')
+@extends('layouts.api2_index')
 
 @section('content')
     <h2>チャット</h2>
-    <div class="text-right">
+    {{-- <div class="text-right"> --}}
 
-    </div>
+    {{-- </div> --}}
 
-    <div class="row">
+    {{-- <div class="row"> --}}
         <!-- 検索エリア -->
-    </div>
+    {{-- </div> --}}
 
     {{-- Line --}}
     <hr class="mb-4">
@@ -42,7 +42,7 @@
         }
 
         table{
-            width: 400px;
+            width: 200px;
         }
         th,td{
             width: 100px;   /* 200->250 */
@@ -87,8 +87,8 @@
         }
         .row-6 {
             overflow:auto;
-            width:700px;
-            height:500px;
+            width:500px;
+            height:400px;
             padding:5px;
             border:2px dotted #ffffff;
             color:#e8e8e8;
@@ -99,76 +99,48 @@
 
     <script src="{{ asset('js/app.js')}}"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue-moment@4.1.0/dist/vue-moment.min.js"></script>
     <body>
         <div id="chat">
+
             {{-- <button @click="send()" :disabled="!textExists">送信</button> --}}
-
-            <!-- 検索エリア -->
-            <!-- ユーザーは1個なので、送信元を切り替える必要はない -->
-            {{-- <form  class="my-2 my-lg-0 ml-2" action="{{route('chatclientserch')}}" method="GET"> --}}
-                {{-- @csrf --}}
-                {{-- @method('get') --}}
-                {{-- <style>
-                    .exright{
-                        text-align: right;
-                    }
-                </style> --}}
-                {{-- <div class="exright"> --}}
-                    {{-- <select style="margin-right:5px;" class="custom-select" id="customer_id" name="customer_id"> --}}
-                        {{-- @foreach ($customer_findrec as $customer_findrec2) --}}
-                            {{-- @if ($customer_findrec2['id']==$customer_id) --}}
-                        {{-- <option selected="selected" value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option> --}}
-                            {{-- @else --}}
-                                {{-- <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option> --}}
-                            {{-- @endif --}}
-
-                        {{-- @endforeach --}}
-                    {{-- </select> --}}
-                    {{-- <button type="submit" class="btn btn-secondary btn_sm">送信元</button> --}}
-                {{-- </div> --}}
-
-            {{-- </form --> --}}
-            <!-- 検索エリア -->
-
             <br>
-            <div class="col-2">
+            <div class="col-50">
                 <label for="comment">コメント</label>
             </div>
 
-            <textarea  style="" class="row-5" v-model="message"></textarea>
+            <textarea  class="row-5" v-model="message"></textarea>
 
             <br>
-            <button class="btn btn-secondary btn-sm" @click="send()">送信</button>
+            <button type="btn btn-secondary btn-sm" @click="send()">送信</button>
 
             {{-- Line --}}
             <hr>
-            @php
-                $user_id = 12;
-            @endphp
             {{--  チャットルーム  --}}
             <div class="row-6" id="room">
                 <ul class="" v-for="(m, key) in messages" :key="key">
-                    {{-- 事務所はグリーン --}}
-                    <template v-if="m.to_flg === 1">
-                        <div class="recieve" style="text-align: right">
-                        <span style="color: green" v-text="m.created_at"></span>
-                        <span style="color: green"> :</span>&nbsp;
+                    {{-- 事務所はグリーン {!! nl2br(htmlspecialchars("m.body")) !!} --}}
+                    <template v-if="m.customer_id === 1">
+                        <div class="send" style="text-align: left">
                         <span style="color: green" v-text="m.user.name"></span>
+                        <span style="color: green"> :</span>&nbsp;
+                        <span style="color: green" v-text="m.created_at" ></span>
                         <span style="color: green">  </span>&nbsp;
                         <div><span class="u-pre-wrap" style="color: green" v-text="m.body"></span></div>
                         </div>
                     </template >
-                    <template v-else-if="m.user_id === {{ $user_id }}">
-                        <div class="send" style="text-align: left">
-                        <span style="color: rgb(238, 104, 8)" v-text="m.user.name"></span>
+                    <template v-else>
+                        <div class="recieve" style="text-align: right">
+                        <span style="color: rgb(238, 104, 8)" v-text="m.created_at" ></span>
                         <span style="color: rgb(238, 104, 8)"> :</span>&nbsp;
-                        <span style="color: rgb(238, 104, 8)" v-text="m.created_at"></span>
+                        <span style="color: rgb(238, 104, 8)" v-text="m.user.name"></span>
                         <span style="color: rgb(238, 104, 8)">  </span>&nbsp;
                         <div><span class="u-pre-wrap" style="color: rgb(238, 104, 8)" v-text="m.body"></span></div>
                         </div>
                     </template >
                 </ul>
             </div>
+
             {{-- <table class="table table-striped table-borderd"> --}}
                 {{-- <table class="table table-striped table-borderd table_sticky"> --}}
                 {{-- <thead> --}}
@@ -221,8 +193,8 @@
             {{-- <ul class="pagination justify-content-center">
                 {{ $messages->appends(request()->query())->render() }}
             </ul> --}}
-        </div>
 
+        </div>
         {{-- <script src="/js/app.js"></script> --}}
         {{-- <script src="{{ asset('js/app.js')}}"></script> --}}
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -238,6 +210,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 
         <script>
+
             new Vue({
                 el: '#chat',
                 data: {
@@ -247,24 +220,30 @@
                 methods: {
                     getMessages() {
                         // const url = '/ajax/chat';
-                        const url = "{{ route('ajaxchatclientin') }}";
+                        const url = "{{ route('ajaxchatin') }}";
                         axios.get(url)
                         .then((response) => {
 
                             this.messages = response.data;
 
+// 2022/10/26
+// Laravel8でDBのcreated_atのカラムを参照しようとした際、タイムゾーンが9時間ずれる。
+// Date Serializationの仕様が変更になってることが原因
+// モデルをオーバーライドする
+// 正しくタイムゾーンを切り替えるには、モデルをserializeDate()メソッドを使ってオーバーライドする必要がある。
+//
 //                             $param = [this.messages];
 //                             $i = 0;
 //                             for( ; ; ){
 //                                 if(($param[0][$i]['created_at']) == null) break;
 //                                 if(($param[0][$i]['created_at']) == '') break;
 //                                 // console.log($i);
-//                                 // console.log($param[0][$i]['created_at']);
+//                                 console.log($param[0][$i]['created_at']);
 
 //                                 const str = String($param[0][$i]['created_at'])
 //                                 // 表示用に加工 2022-10-26T05:24:29.000000Z 2022/10/26 05:24:29
 // $param[0][$i]['created_at'] = `${str.slice(0, 4)}/${str.slice(5,7)}/${str.slice(8,10)} ${str.slice(11,13)}:${str.slice(14,16)}:${str.slice(17,19)} `
-//                                 // console.log($param[0][$i]['created_at']);
+//                                 console.log($param[0][$i]['created_at']);
 //                                 $i++;
 //                                 // if($i==10) break;
 //                             }
@@ -274,7 +253,7 @@
                     send() {
 
                         // const url = '/ajax/chat';
-                        const url = "{{ route('ajaxchatclientcr') }}";
+                        const url = "{{ route('ajaxchatcr') }}";
                         // const params = { message: this.message, user: this.user };
                         const params = { message: this.message};
                         axios.post(url, params)
@@ -306,6 +285,7 @@
                 margin-left: 0px;
             }
         </style>
+
     </body>
 
     {{-- Line --}}

@@ -143,7 +143,7 @@
             {{-- Line --}}
             <hr>
             @php
-                $user_id = 12;
+                $user_id = 11;
             @endphp
             {{--  チャットルーム  --}}
             <div class="row-6" id="room">
