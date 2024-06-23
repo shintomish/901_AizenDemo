@@ -7,7 +7,7 @@ use App\Models\User;
 use App\Models\Customer;
 use App\Models\Message;
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -23,13 +23,22 @@ class ChatClientController extends Controller
         Log::info('ChatClientController index START');
 
         // ログインユーザーのユーザー情報を取得する
-        $user     = $this->auth_user_info();
-        $user_id  = $user->id;
+        $user  = $this->auth_user_info();
+        $u_id = $user->id;
         $organization_id =  $user->organization_id;
 
-        // Customer(ALLレコード)情報を取得する
-        $customer_findrec = $this->auth_customer_allrec();
-        // $customer_id = $customer_findrec[0]['id'];
+        //FileNameは「latestinformation.pdf」固定 2022/09/24
+        $books = DB::table('books')->first();
+        $str   = ( new DateTime($books->info_date))->format('Y-m-d');
+        $latestinfodate = '最新情報'.'('.$str.')';
+
+        // Customer(複数レコード)情報を取得する
+        $customer_findrec = $this->auth_customer_findrec();
+        $customer_id = $customer_findrec[0]['id'];
+        // 2023/03/17
+        $indiv_class = $customer_findrec[0]['individual_class'];
+
+        $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
 
         // // Log::debug('ChatClientController index  $customer_id = ' . print_r($customer_id,true));
         // $staff_id = 1;     //事務所Staffのusers.id
@@ -38,7 +47,6 @@ class ChatClientController extends Controller
         $messages = Message::select(
                 'messages.id              as id'
                 // ,'messages.organization_id as organization_id'
-                ,'messages.to_flg          as to_flg'
                 ,'messages.user_id         as user_id'
                 ,'messages.customer_id     as customer_id'
                 ,'messages.body            as m_body'
@@ -56,19 +64,29 @@ class ChatClientController extends Controller
                 $join->on('messages.customer_id', '=', 'customers.id');
             })
             ->whereNull('customers.deleted_at')
-            // ->where('messages.user_id',   '<', 11)
-            // ->orWhere('messages.customer_id', $customer_id)
-            // ->orWhere('messages.customer_id', $user_id)
             ->orderBy('messages.id', 'desc')
             ->orderBy('messages.customer_id', 'asc')
             ->paginate(300);
 
+        $users = User::where('organization_id','=',$organization_id)
+                        ->where('login_flg','=', 1 )  //顧客
+                        ->whereNull('deleted_at')
+                        ->get();
+
+        $customers = Customer::where('organization_id','=',$organization_id)
+                        ->whereNull('deleted_at')
+                        ->get();
+
         $common_no = '00_7';
-        $compacts = compact( 'messages','common_no','customer_findrec','user_id');
+        $compacts = compact( 'indiv_class','messages','common_no','users','customers','customer_findrec','customer_id','jsonfile','latestinfodate' );
 
         Log::info('ChatClientController index END');
 
         return view('chatclient.index', $compacts );
+
+        // return Message::orderBy('id', 'desc')->get();
+        // $messages = Message::orderBy('id', 'desc')->get();
+        // $messages = Message::with('user')->orderBy('id', 'desc')->get();
     }
 
     /**

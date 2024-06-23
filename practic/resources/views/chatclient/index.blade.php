@@ -80,14 +80,14 @@
     <style>
         /** ５行ピッタシに調整 6行*/
         .row-5 {
-            height: calc( 1.4em * 5 );
+            height: calc( 1.4em * 3 );
             line-height: 1.3;
             /* max-width: 600px; */
-            width: 600px;
+            width: 500px; 
         }
         .row-6 {
             overflow:auto;
-            width:600px;
+            width:500px;
             height:400px;
             padding:5px;
             border:2px dotted #ffffff;
@@ -101,6 +101,34 @@
 
     <body>
         <div id="chat">
+            {{-- <button @click="send()" :disabled="!textExists">送信</button> --}}
+
+            <!-- 検索エリア -->
+            <!-- ユーザーは1個なので、送信元を切り替える必要はない -->
+            {{-- <form  class="my-2 my-lg-0 ml-2" action="{{route('chatclientserch')}}" method="GET"> --}}
+                {{-- @csrf --}}
+                {{-- @method('get') --}}
+                {{-- <style>
+                    .exright{
+                        text-align: right;
+                    }
+                </style> --}}
+                {{-- <div class="exright"> --}}
+                    {{-- <select style="margin-right:5px;" class="custom-select" id="customer_id" name="customer_id"> --}}
+                        {{-- @foreach ($customer_findrec as $customer_findrec2) --}}
+                            {{-- @if ($customer_findrec2['id']==$customer_id) --}}
+                        {{-- <option selected="selected" value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option> --}}
+                            {{-- @else --}}
+                                {{-- <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option> --}}
+                            {{-- @endif --}}
+
+                        {{-- @endforeach --}}
+                    {{-- </select> --}}
+                    {{-- <button type="submit" class="btn btn-secondary btn_sm">送信元</button> --}}
+                {{-- </div> --}}
+
+            {{-- </form --> --}}
+            <!-- 検索エリア -->
 
             <br>
             <div class="col-2">
@@ -110,27 +138,23 @@
             <textarea  style="" class="row-5" v-model="message"></textarea>
 
             <br>
-            <button class="btn btn-sm btn-secondary" type="button" @click="send()">送信</button>
+            <button type="button" @click="send()">送信</button>
 
             {{-- Line --}}
             <hr>
-            @php
-                $to_flg = 1;
-            @endphp
             {{--  チャットルーム  --}}
             <div class="row-6" id="room">
                 <ul class="" v-for="(m, key) in messages" :key="key">
                     {{-- 事務所はグリーン --}}
-                    <template v-if="m.to_flg == {{ $to_flg }} && m.customer_id == {{ $user_id }}">
+                    <template v-if="m.customer_id === 1">
                         <div class="recieve" style="text-align: right">
                         <span style="color: green" v-text="m.created_at"></span>
                         <span style="color: green"> :</span>&nbsp;
-                        <span style="color: green" v-text="m.user.name"></span>
-                        <span style="color: green">  </span>&nbsp;
+                        <span style="color: green" v-text="m.user.name"></span>                        <span style="color: green">  </span>&nbsp;
                         <div><span class="u-pre-wrap" style="color: green" v-text="m.body"></span></div>
                         </div>
                     </template >
-                    <template v-else-if="m.customer_id == {{ $user_id }}">
+                    <template v-else>
                         <div class="send" style="text-align: left">
                         <span style="color: rgb(238, 104, 8)" v-text="m.user.name"></span>
                         <span style="color: rgb(238, 104, 8)"> :</span>&nbsp;
@@ -141,8 +165,62 @@
                     </template >
                 </ul>
             </div>
+            {{-- <table class="table table-striped table-borderd"> --}}
+                {{-- <table class="table table-striped table-borderd table_sticky"> --}}
+                {{-- <thead> --}}
+                    {{-- <tr>
+                        <th scope="col" class ="fixed01">日時</th>
+                        <th scope="col" class ="fixed01">@sortablelink('users_name', 'ユーザー名')</th>
+                        <th scope="col" class ="fixed01">メッセージ</th>
+                    </tr> --}}
+                {{-- </thead> --}}
+
+                {{-- <tbody>
+                    @if($messages->count())
+                        @foreach($messages as $message)
+                        <tr> --}}
+                            {{-- <td>{{ $message->id }}</td> --}}
+                            {{-- @php
+                                $str = "";
+                                $str = ( new DateTime($message->m_created_at))->format('Y-m-d H:i:s');
+                            @endphp
+                            <td>{{ $str }}</td>
+                            <td>
+                                @foreach ($users as $users2)
+                                    @if ($users2->id==$message->user_id)
+                                        {{$users2->name}}
+                                    @endif
+                                @endforeach
+                            </td> --}}
+                            {{-- <td>
+                                @foreach ($customers as $customers2)
+                                    @if ($customers2->id==$message->customer_id)
+                                        {{$customers2->business_name}}
+                                    @endif
+                                @endforeach
+                            </td> --}}
+
+                            {{-- <td>{{ $message->m_body }}</td>
+                        </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td><p>0件です。</p></td>
+                            <td><p> </p></td>
+                            <td><p> </p></td>
+                        </tr>
+                    @endif
+                </tbody>
+            </table> --}}
+
+            {{-- ページネーション / pagination）の表示 --}}
+            {{-- <ul class="pagination justify-content-center">
+                {{ $messages->appends(request()->query())->render() }}
+            </ul> --}}
         </div>
 
+        {{-- <script src="/js/app.js"></script> --}}
+        {{-- <script src="{{ asset('js/app.js')}}"></script> --}}
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
         {{-- 2022/05/06 --}}
@@ -171,6 +249,22 @@
 
                             this.messages = response.data;
 
+//                             $param = [this.messages];
+//                             $i = 0;
+//                             for( ; ; ){
+//                                 if(($param[0][$i]['created_at']) == null) break;
+//                                 if(($param[0][$i]['created_at']) == '') break;
+//                                 // console.log($i);
+//                                 // console.log($param[0][$i]['created_at']);
+
+//                                 const str = String($param[0][$i]['created_at'])
+//                                 // 表示用に加工 2022-10-26T05:24:29.000000Z 2022/10/26 05:24:29
+// $param[0][$i]['created_at'] = `${str.slice(0, 4)}/${str.slice(5,7)}/${str.slice(8,10)} ${str.slice(11,13)}:${str.slice(14,16)}:${str.slice(17,19)} `
+//                                 // console.log($param[0][$i]['created_at']);
+//                                 $i++;
+//                                 // if($i==10) break;
+//                             }
+
                         });
                     },
                     send() {
@@ -184,7 +278,7 @@
 
                             // 成功したらメッセージをクリア
                             this.message = '';
-                            this.getMessages(); // メッセージを再読込 2024/05/26
+
                         });
                         console.log('send');
                     }
@@ -192,7 +286,8 @@
                 mounted() {
                     console.log('mounted');
                     this.getMessages();
-                    Echo.channel('chat').listen('MessageCreated', (e) => {
+                    Echo.channel('chat')
+                    .listen('MessageCreated', (e) => {
                         this.getMessages(); // メッセージを再読込
                     });
 
