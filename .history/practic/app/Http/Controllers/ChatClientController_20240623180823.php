@@ -62,9 +62,9 @@ class ChatClientController extends Controller
         //-------------------------------------------------------------
         //- Request パラメータ
         //-------------------------------------------------------------
-        // $user_id = $request->Input('user_id');
+        $user_id = $request->Input('user_id');
 
-
+        
         $common_no = '00_7';
         $compacts = compact( 'messages','common_no','users','customer_id','user_id' );
 

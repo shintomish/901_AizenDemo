@@ -1,0 +1,1224 @@
+[2024-06-23 07:06:44] local.INFO: auth_user_info START  
+[2024-06-23 07:06:44] local.INFO: auth_user_info END  
+[2024-06-23 07:06:44] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-05-27T03:06:38.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 07:06:44] local.INFO: loginout operation update START  
+[2024-06-23 07:06:44] local.INFO: loginout operation update $id < 10 END  
+[2024-06-23 07:06:47] local.INFO: ChatController serch START  
+[2024-06-23 07:06:47] local.INFO: auth_user_info START  
+[2024-06-23 07:06:47] local.INFO: auth_user_info END  
+[2024-06-23 07:06:47] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:06:47] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:06:47] local.INFO: ChatController serch END  
+[2024-06-23 07:06:50] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:06:50] local.INFO: auth_user_info START  
+[2024-06-23 07:06:50] local.INFO: auth_user_info END  
+[2024-06-23 07:06:50] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:06:50] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:06:50] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:06:50] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:06:56] local.INFO: ChatController index START  
+[2024-06-23 07:06:56] local.INFO: auth_user_info START  
+[2024-06-23 07:06:56] local.INFO: auth_user_info END  
+[2024-06-23 07:06:56] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:06:56] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:06:56] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:06:56] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:06:56] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:06:56] local.DEBUG: ChatController index customer_id  = 11  
+[2024-06-23 07:06:57] local.INFO: ChatController index END  
+[2024-06-23 07:06:59] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:06:59] local.INFO: auth_user_info START  
+[2024-06-23 07:06:59] local.INFO: auth_user_info END  
+[2024-06-23 07:06:59] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:06:59] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:06:59] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:06:59] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:07:12] local.INFO: ChatController serch START  
+[2024-06-23 07:07:12] local.INFO: auth_user_info START  
+[2024-06-23 07:07:12] local.INFO: auth_user_info END  
+[2024-06-23 07:07:12] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:07:12] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:07:12] local.INFO: ChatController serch END  
+[2024-06-23 07:07:15] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:07:15] local.INFO: auth_user_info START  
+[2024-06-23 07:07:15] local.INFO: auth_user_info END  
+[2024-06-23 07:07:15] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:07:15] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:07:15] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:07:15] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:11:14] local.INFO: ChatController index START  
+[2024-06-23 07:11:14] local.INFO: auth_user_info START  
+[2024-06-23 07:11:14] local.INFO: auth_user_info END  
+[2024-06-23 07:11:14] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:11:14] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:11:14] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:11:14] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:11:14] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:11:14] local.DEBUG: ChatController index customer_id  = 11  
+[2024-06-23 07:11:15] local.INFO: ChatController index END  
+[2024-06-23 07:11:18] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:11:18] local.INFO: auth_user_info START  
+[2024-06-23 07:11:18] local.INFO: auth_user_info END  
+[2024-06-23 07:11:18] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:11:18] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:11:18] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:11:18] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:13:35] local.INFO: ChatController index START  
+[2024-06-23 07:13:35] local.INFO: auth_user_info START  
+[2024-06-23 07:13:35] local.INFO: auth_user_info END  
+[2024-06-23 07:13:35] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:13:35] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:13:35] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:13:35] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:13:35] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:13:35] local.DEBUG: ChatController index customer_id  = 11  
+[2024-06-23 07:13:36] local.INFO: ChatController index END  
+[2024-06-23 07:13:39] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:13:39] local.INFO: auth_user_info START  
+[2024-06-23 07:13:39] local.INFO: auth_user_info END  
+[2024-06-23 07:13:39] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:13:39] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:13:39] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:13:39] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:14:07] local.INFO: ChatController index START  
+[2024-06-23 07:14:07] local.INFO: auth_user_info START  
+[2024-06-23 07:14:07] local.INFO: auth_user_info END  
+[2024-06-23 07:14:07] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:14:07] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:14:07] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:14:07] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:14:07] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:14:07] local.DEBUG: ChatController index customer_id  = 11  
+[2024-06-23 07:14:07] local.INFO: ChatController index END  
+[2024-06-23 07:14:10] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:14:10] local.INFO: auth_user_info START  
+[2024-06-23 07:14:10] local.INFO: auth_user_info END  
+[2024-06-23 07:14:10] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:14:10] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:14:10] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:14:10] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:16:15] local.INFO: ChatController index START  
+[2024-06-23 07:16:15] local.INFO: auth_user_info START  
+[2024-06-23 07:16:15] local.INFO: auth_user_info END  
+[2024-06-23 07:16:15] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:16:15] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:16:15] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:16:15] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:16:15] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:16:15] local.DEBUG: ChatController index customer_id  = 11  
+[2024-06-23 07:16:15] local.INFO: ChatController index END  
+[2024-06-23 07:16:18] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:16:18] local.INFO: auth_user_info START  
+[2024-06-23 07:16:18] local.INFO: auth_user_info END  
+[2024-06-23 07:16:18] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:16:18] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:16:18] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:16:18] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:16:38] local.INFO: ChatController serch START  
+[2024-06-23 07:16:38] local.INFO: auth_user_info START  
+[2024-06-23 07:16:39] local.INFO: auth_user_info END  
+[2024-06-23 07:16:39] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:16:39] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:16:39] local.INFO: ChatController serch END  
+[2024-06-23 07:16:44] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:16:44] local.INFO: auth_user_info START  
+[2024-06-23 07:16:44] local.INFO: auth_user_info END  
+[2024-06-23 07:16:44] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:16:44] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:16:44] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:16:44] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:23:36] local.INFO: Ajax ChatController create START  
+[2024-06-23 07:23:36] local.DEBUG: Ajax ChatController create  $customer_id = Array
+(
+    [message] => さくらさん
+おはようございます。
+)
+  
+[2024-06-23 07:23:36] local.ERROR: Array to string conversion (Connection: mysql, SQL: insert into `messages` (`body`, `to_flg`, `user_id`, `customer_id`, `organization_id`, `updated_at`, `created_at`) values (さくらさん
+おはようございます。, 1, 1, ?, 1, 2024-06-23 07:23:36, 2024-06-23 07:23:36)) {"userId":1,"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): Array to string conversion (Connection: mysql, SQL: insert into `messages` (`body`, `to_flg`, `user_id`, `customer_id`, `organization_id`, `updated_at`, `created_at`) values (さくらさん
+おはようございます。, 1, 1, ?, 1, 2024-06-23 07:23:36, 2024-06-23 07:23:36)) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:813)
+[2024-06-23 07:28:28] local.INFO: ChatController index START  
+[2024-06-23 07:28:28] local.INFO: auth_user_info START  
+[2024-06-23 07:28:28] local.INFO: auth_user_info END  
+[2024-06-23 07:28:28] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:28:28] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:28:28] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:28:28] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:28:28] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:28:28] local.DEBUG: ChatController index customer_id  = 11  
+[2024-06-23 07:28:28] local.INFO: ChatController index END  
+[2024-06-23 07:28:32] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:28:32] local.INFO: auth_user_info START  
+[2024-06-23 07:28:32] local.INFO: auth_user_info END  
+[2024-06-23 07:28:32] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:28:32] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:28:32] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:28:32] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:28:40] local.INFO: ChatController serch START  
+[2024-06-23 07:28:40] local.INFO: auth_user_info START  
+[2024-06-23 07:28:40] local.INFO: auth_user_info END  
+[2024-06-23 07:28:40] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:28:40] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:28:40] local.INFO: ChatController serch END  
+[2024-06-23 07:28:41] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:28:41] local.INFO: auth_user_info START  
+[2024-06-23 07:28:41] local.INFO: auth_user_info END  
+[2024-06-23 07:28:41] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:28:41] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:28:41] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:28:41] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:30:02] local.INFO: ChatController serch START  
+[2024-06-23 07:30:02] local.INFO: auth_user_info START  
+[2024-06-23 07:30:02] local.INFO: auth_user_info END  
+[2024-06-23 07:30:02] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:30:02] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:30:02] local.INFO: ChatController serch END  
+[2024-06-23 07:30:06] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:30:06] local.INFO: auth_user_info START  
+[2024-06-23 07:30:06] local.INFO: auth_user_info END  
+[2024-06-23 07:30:06] local.DEBUG: Ajax ChatController index  $customer_id =   
+[2024-06-23 07:30:06] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:33:35] local.INFO: ChatController serch START  
+[2024-06-23 07:33:35] local.DEBUG: ChatController serch  $customer_id = 14  
+[2024-06-23 07:33:35] local.INFO: auth_user_info START  
+[2024-06-23 07:33:35] local.INFO: auth_user_info END  
+[2024-06-23 07:33:35] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:33:35] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:33:35] local.INFO: ChatController serch END  
+[2024-06-23 07:33:38] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:33:38] local.INFO: auth_user_info START  
+[2024-06-23 07:33:38] local.INFO: auth_user_info END  
+[2024-06-23 07:33:38] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:37:47] local.INFO: ChatController serch START  
+[2024-06-23 07:37:47] local.DEBUG: ChatController serch  $customer_id = 15  
+[2024-06-23 07:37:47] local.INFO: auth_user_info START  
+[2024-06-23 07:37:47] local.INFO: auth_user_info END  
+[2024-06-23 07:37:47] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:37:47] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:37:47] local.INFO: Ajax ChatController json_put_info_set  START  
+[2024-06-23 07:37:47] local.INFO: Ajax ChatController json_put_info_set  END  
+[2024-06-23 07:37:47] local.INFO: ChatController serch END  
+[2024-06-23 07:37:50] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:37:50] local.INFO: auth_user_info START  
+[2024-06-23 07:37:50] local.INFO: auth_user_info END  
+[2024-06-23 07:37:50] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:38:08] local.INFO: ChatController serch START  
+[2024-06-23 07:38:08] local.DEBUG: ChatController serch  $customer_id = 15  
+[2024-06-23 07:38:08] local.INFO: auth_user_info START  
+[2024-06-23 07:38:08] local.INFO: auth_user_info END  
+[2024-06-23 07:38:08] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:38:08] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:38:08] local.INFO: Ajax ChatController json_put_info_set  START  
+[2024-06-23 07:38:08] local.INFO: Ajax ChatController json_put_info_set  END  
+[2024-06-23 07:38:08] local.INFO: ChatController serch END  
+[2024-06-23 07:38:11] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:38:11] local.INFO: auth_user_info START  
+[2024-06-23 07:38:11] local.INFO: auth_user_info END  
+[2024-06-23 07:38:11] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:38:23] local.INFO: ChatController serch START  
+[2024-06-23 07:38:23] local.DEBUG: ChatController serch  $customer_id = 21  
+[2024-06-23 07:38:23] local.INFO: auth_user_info START  
+[2024-06-23 07:38:23] local.INFO: auth_user_info END  
+[2024-06-23 07:38:23] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:38:23] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:38:23] local.INFO: Ajax ChatController json_put_info_set  START  
+[2024-06-23 07:38:23] local.INFO: Ajax ChatController json_put_info_set  END  
+[2024-06-23 07:38:23] local.INFO: ChatController serch END  
+[2024-06-23 07:38:25] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:38:25] local.INFO: auth_user_info START  
+[2024-06-23 07:38:25] local.INFO: auth_user_info END  
+[2024-06-23 07:38:25] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:38:46] local.INFO: Ajax ChatController create START  
+[2024-06-23 07:38:46] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:38:46] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:38:46] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:38:46] local.DEBUG: Ajax ChatController create  $customer_id = 21  
+[2024-06-23 07:38:47] local.INFO: Ajax ChatController create END  
+[2024-06-23 07:38:50] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:38:50] local.INFO: auth_user_info START  
+[2024-06-23 07:38:50] local.INFO: auth_user_info END  
+[2024-06-23 07:38:50] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:41:40] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-05-27T03:06:38.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 07:41:40] local.INFO: loginout operation update START  
+[2024-06-23 07:41:40] local.INFO: loginout operation update $id < 10 END  
+[2024-06-23 07:42:06] local.INFO: auth_user_info START  
+[2024-06-23 07:42:06] local.INFO: auth_user_info END  
+[2024-06-23 07:42:06] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 21
+    [name] => 松田 浩一
+    [email] => user21@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 21
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-06-22T22:42:06.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 07:42:06] local.INFO: loginout operation update START  
+[2024-06-23 07:42:06] local.INFO: beginTransaction - loginout operation update start  
+[2024-06-23 07:42:06] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-06-23 07:42:06] local.INFO: loginout operation update END  
+[2024-06-23 07:42:09] local.INFO: auth_user_info START  
+[2024-06-23 07:42:09] local.INFO: auth_user_info END  
+[2024-06-23 07:42:09] local.INFO: topclient index START $user->name = 松田 浩一  
+[2024-06-23 07:42:09] local.INFO: topclient index END $user->name = 松田 浩一  
+[2024-06-23 07:42:15] local.INFO: ChatClientController index START  
+[2024-06-23 07:42:15] local.INFO: auth_user_info START  
+[2024-06-23 07:42:15] local.INFO: auth_user_info END  
+[2024-06-23 07:42:15] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:42:15] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:42:16] local.INFO: ChatClientController index END  
+[2024-06-23 07:42:18] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 07:42:18] local.DEBUG: Ajax ChatClientController index  $user_id = 21  
+[2024-06-23 07:42:18] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 07:43:24] local.INFO: Ajax ChatClientController create START  
+[2024-06-23 07:43:24] local.INFO: Ajax ChatClientController create END  
+[2024-06-23 07:43:27] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 07:43:27] local.DEBUG: Ajax ChatClientController index  $user_id = 21  
+[2024-06-23 07:43:27] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 07:45:16] local.INFO: ChatClientController index START  
+[2024-06-23 07:45:16] local.INFO: auth_user_info START  
+[2024-06-23 07:45:16] local.INFO: auth_user_info END  
+[2024-06-23 07:45:16] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:45:16] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:45:16] local.INFO: ChatClientController index END  
+[2024-06-23 07:45:19] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 07:45:19] local.DEBUG: Ajax ChatClientController index  $user_id = 21  
+[2024-06-23 07:45:19] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 07:45:40] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 21
+    [name] => 松田 浩一
+    [email] => user21@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 21
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-06-22T22:42:06.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 07:45:40] local.INFO: loginout operation update START  
+[2024-06-23 07:45:40] local.INFO: beginTransaction - loginout operation update start  
+[2024-06-23 07:45:41] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-06-23 07:45:41] local.INFO: loginout operation update END  
+[2024-06-23 07:46:05] local.INFO: auth_user_info START  
+[2024-06-23 07:46:05] local.INFO: auth_user_info END  
+[2024-06-23 07:46:05] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => 田中 健太郎
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 11
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-06-22T22:46:05.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 07:46:05] local.INFO: loginout operation update START  
+[2024-06-23 07:46:05] local.INFO: beginTransaction - loginout operation update start  
+[2024-06-23 07:46:06] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-06-23 07:46:06] local.INFO: loginout operation update END  
+[2024-06-23 07:46:08] local.INFO: auth_user_info START  
+[2024-06-23 07:46:08] local.INFO: auth_user_info END  
+[2024-06-23 07:46:08] local.INFO: topclient index START $user->name = 田中 健太郎  
+[2024-06-23 07:46:08] local.INFO: topclient index END $user->name = 田中 健太郎  
+[2024-06-23 07:46:14] local.INFO: ChatClientController index START  
+[2024-06-23 07:46:14] local.INFO: auth_user_info START  
+[2024-06-23 07:46:14] local.INFO: auth_user_info END  
+[2024-06-23 07:46:14] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:46:14] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:46:14] local.INFO: ChatClientController index END  
+[2024-06-23 07:46:17] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 07:46:17] local.DEBUG: Ajax ChatClientController index  $user_id = 11  
+[2024-06-23 07:46:17] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 07:48:00] local.INFO: ChatClientController index START  
+[2024-06-23 07:48:00] local.INFO: auth_user_info START  
+[2024-06-23 07:48:00] local.INFO: auth_user_info END  
+[2024-06-23 07:48:00] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:48:00] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:48:01] local.INFO: ChatClientController index END  
+[2024-06-23 07:48:04] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 07:48:04] local.DEBUG: Ajax ChatClientController index  $user_id = 11  
+[2024-06-23 07:48:04] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 07:48:23] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => 田中 健太郎
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 11
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-06-22T22:46:05.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 07:48:23] local.INFO: loginout operation update START  
+[2024-06-23 07:48:23] local.INFO: beginTransaction - loginout operation update start  
+[2024-06-23 07:48:24] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-06-23 07:48:24] local.INFO: loginout operation update END  
+[2024-06-23 07:50:13] local.INFO: auth_user_info START  
+[2024-06-23 07:50:13] local.INFO: auth_user_info END  
+[2024-06-23 07:50:13] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-05-27T03:06:38.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 07:50:13] local.INFO: loginout operation update START  
+[2024-06-23 07:50:13] local.INFO: loginout operation update $id < 10 END  
+[2024-06-23 07:50:16] local.INFO: auth_user_info START  
+[2024-06-23 07:50:16] local.INFO: auth_user_info END  
+[2024-06-23 07:50:16] local.INFO: office top index START $user->name = 新冨泰明  
+[2024-06-23 07:50:16] local.INFO: auth_user_organization START  
+[2024-06-23 07:50:16] local.INFO: auth_user_organization END  
+[2024-06-23 07:50:16] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:50:16] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:50:16] local.DEBUG: office top index customer_id  = 19  
+[2024-06-23 07:50:17] local.INFO: office top index END $user->name = 新冨泰明  
+[2024-06-23 07:50:23] local.INFO: ChatController index START  
+[2024-06-23 07:50:23] local.INFO: auth_user_info START  
+[2024-06-23 07:50:23] local.INFO: auth_user_info END  
+[2024-06-23 07:50:23] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:50:23] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:50:23] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:50:23] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:50:23] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:50:23] local.DEBUG: ChatController index customer_id  = 21  
+[2024-06-23 07:50:23] local.INFO: ChatController index END  
+[2024-06-23 07:50:26] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:50:26] local.INFO: auth_user_info START  
+[2024-06-23 07:50:26] local.INFO: auth_user_info END  
+[2024-06-23 07:50:26] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:52:23] local.INFO: ChatController index START  
+[2024-06-23 07:52:23] local.INFO: auth_user_info START  
+[2024-06-23 07:52:23] local.INFO: auth_user_info END  
+[2024-06-23 07:52:23] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:52:23] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:52:23] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:52:23] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:52:23] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:52:23] local.DEBUG: ChatController index customer_id  = 21  
+[2024-06-23 07:52:23] local.INFO: ChatController index END  
+[2024-06-23 07:52:27] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:52:27] local.INFO: auth_user_info START  
+[2024-06-23 07:52:27] local.INFO: auth_user_info END  
+[2024-06-23 07:52:27] local.INFO: Ajax ChatController index END  
+[2024-06-23 07:57:00] local.INFO: ChatController index START  
+[2024-06-23 07:57:00] local.INFO: auth_user_info START  
+[2024-06-23 07:57:00] local.INFO: auth_user_info END  
+[2024-06-23 07:57:00] local.INFO: auth_customer_allrec START  
+[2024-06-23 07:57:00] local.INFO: auth_customer_findrec END  
+[2024-06-23 07:57:00] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 07:57:00] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 07:57:00] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 07:57:00] local.DEBUG: ChatController index customer_id  = 21  
+[2024-06-23 07:57:01] local.INFO: ChatController index END  
+[2024-06-23 07:57:04] local.INFO: Ajax ChatController index START  
+[2024-06-23 07:57:04] local.INFO: auth_user_info START  
+[2024-06-23 07:57:04] local.INFO: auth_user_info END  
+[2024-06-23 07:57:04] local.INFO: Ajax ChatController index END  
+[2024-06-23 08:06:00] local.INFO: ChatController serch START  
+[2024-06-23 08:06:00] local.DEBUG: ChatController serch  $customer_id = 11  
+[2024-06-23 08:06:00] local.INFO: auth_user_info START  
+[2024-06-23 08:06:00] local.INFO: auth_user_info END  
+[2024-06-23 08:06:00] local.INFO: auth_customer_allrec START  
+[2024-06-23 08:06:00] local.INFO: auth_customer_findrec END  
+[2024-06-23 08:06:00] local.INFO: Ajax ChatController json_put_info_set  START  
+[2024-06-23 08:06:00] local.INFO: Ajax ChatController json_put_info_set  END  
+[2024-06-23 08:06:00] local.INFO: ChatController serch END  
+[2024-06-23 08:22:45] local.INFO: ChatController index START  
+[2024-06-23 08:22:45] local.INFO: auth_user_info START  
+[2024-06-23 08:22:45] local.INFO: auth_user_info END  
+[2024-06-23 08:22:45] local.INFO: auth_customer_allrec START  
+[2024-06-23 08:22:45] local.INFO: auth_customer_findrec END  
+[2024-06-23 08:22:45] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 08:22:45] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 08:22:45] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 08:22:45] local.DEBUG: ChatController index customer_id  = 11  
+[2024-06-23 08:22:46] local.INFO: ChatController index END  
+[2024-06-23 08:22:49] local.INFO: Ajax ChatController index START  
+[2024-06-23 08:22:49] local.INFO: auth_user_info START  
+[2024-06-23 08:22:49] local.INFO: auth_user_info END  
+[2024-06-23 08:22:49] local.INFO: Ajax ChatController index END  
+[2024-06-23 08:26:38] local.INFO: ChatController index START  
+[2024-06-23 08:26:38] local.INFO: auth_user_info START  
+[2024-06-23 08:26:38] local.INFO: auth_user_info END  
+[2024-06-23 08:26:38] local.INFO: auth_customer_allrec START  
+[2024-06-23 08:26:38] local.INFO: auth_customer_findrec END  
+[2024-06-23 08:26:38] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 08:26:38] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 08:26:38] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 08:26:38] local.DEBUG: ChatController index customer_id  = 11  
+[2024-06-23 08:26:38] local.INFO: ChatController index END  
+[2024-06-23 08:26:41] local.INFO: Ajax ChatController index START  
+[2024-06-23 08:26:41] local.INFO: auth_user_info START  
+[2024-06-23 08:26:41] local.INFO: auth_user_info END  
+[2024-06-23 08:26:41] local.INFO: Ajax ChatController index END  
+[2024-06-23 08:27:23] local.INFO: ChatController index START  
+[2024-06-23 08:27:23] local.INFO: auth_user_info START  
+[2024-06-23 08:27:23] local.INFO: auth_user_info END  
+[2024-06-23 08:27:23] local.INFO: auth_customer_allrec START  
+[2024-06-23 08:27:23] local.INFO: auth_customer_findrec END  
+[2024-06-23 08:27:23] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 08:27:23] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 08:27:23] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 08:27:23] local.DEBUG: ChatController index customer_id  = 11  
+[2024-06-23 08:27:23] local.INFO: ChatController index END  
+[2024-06-23 08:27:26] local.INFO: Ajax ChatController index START  
+[2024-06-23 08:27:26] local.INFO: auth_user_info START  
+[2024-06-23 08:27:26] local.INFO: auth_user_info END  
+[2024-06-23 08:27:26] local.INFO: Ajax ChatController index END  
+[2024-06-23 08:27:57] local.INFO: ChatController index START  
+[2024-06-23 08:27:57] local.INFO: auth_user_info START  
+[2024-06-23 08:27:58] local.INFO: auth_user_info END  
+[2024-06-23 08:27:58] local.INFO: auth_customer_allrec START  
+[2024-06-23 08:27:58] local.INFO: auth_customer_findrec END  
+[2024-06-23 08:27:58] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 08:27:58] local.INFO: Ajax ChatController json_get_info not empty  
+[2024-06-23 08:27:58] local.INFO: Ajax ChatController json_get_info  END  
+[2024-06-23 08:27:58] local.DEBUG: ChatController index customer_id  = 11  
+[2024-06-23 08:27:58] local.INFO: ChatController index END  
+[2024-06-23 08:28:01] local.INFO: Ajax ChatController index START  
+[2024-06-23 08:28:01] local.INFO: auth_user_info START  
+[2024-06-23 08:28:01] local.INFO: auth_user_info END  
+[2024-06-23 08:28:01] local.INFO: Ajax ChatController index END  
+[2024-06-23 08:29:27] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-05-27T03:06:38.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 08:29:27] local.INFO: loginout operation update START  
+[2024-06-23 08:29:27] local.INFO: loginout operation update $id < 10 END  
+[2024-06-23 08:30:03] local.INFO: auth_user_info START  
+[2024-06-23 08:30:03] local.INFO: auth_user_info END  
+[2024-06-23 08:30:03] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 2
+    [name] => 関秀樹
+    [email] => h-seki@aizen-sol.co.jp
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-06-22T23:30:03.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 08:30:03] local.INFO: loginout operation update START  
+[2024-06-23 08:30:03] local.INFO: loginout operation update $id < 10 END  
+[2024-06-23 08:30:06] local.INFO: auth_user_info START  
+[2024-06-23 08:30:06] local.INFO: auth_user_info END  
+[2024-06-23 08:30:06] local.INFO: office top index START $user->name = 関秀樹  
+[2024-06-23 08:30:06] local.INFO: auth_user_organization START  
+[2024-06-23 08:30:06] local.INFO: auth_user_organization END  
+[2024-06-23 08:30:06] local.INFO: auth_customer_allrec START  
+[2024-06-23 08:30:06] local.INFO: auth_customer_findrec END  
+[2024-06-23 08:30:06] local.DEBUG: office top index customer_id  = 19  
+[2024-06-23 08:30:06] local.INFO: office top index END $user->name = 関秀樹  
+[2024-06-23 08:30:11] local.INFO: ChatController index START  
+[2024-06-23 08:30:11] local.INFO: auth_user_info START  
+[2024-06-23 08:30:11] local.INFO: auth_user_info END  
+[2024-06-23 08:30:11] local.INFO: auth_customer_allrec START  
+[2024-06-23 08:30:11] local.INFO: auth_customer_findrec END  
+[2024-06-23 08:30:11] local.INFO: Ajax ChatController json_get_info  START  
+[2024-06-23 08:30:11] local.INFO: Ajax ChatController json_put_info_set  START  
+[2024-06-23 08:30:11] local.INFO: Ajax ChatController json_put_info_set  END  
+[2024-06-23 08:30:11] local.INFO: Ajax ChatController json_get_info  Nothing  
+[2024-06-23 08:30:11] local.ERROR: compact(): Undefined variable $o_id {"userId":2,"exception":"[object] (ErrorException(code: 0): compact(): Undefined variable $o_id at /var/www/html/app/Http/Controllers/ChatController.php:154)
+[2024-06-23 08:54:22] local.INFO: ChatController serch START  
+[2024-06-23 08:54:22] local.DEBUG: ChatController serch  $customer_id = 19  
+[2024-06-23 08:54:22] local.INFO: auth_user_info START  
+[2024-06-23 08:54:23] local.INFO: auth_user_info END  
+[2024-06-23 08:54:23] local.INFO: auth_customer_allrec START  
+[2024-06-23 08:54:23] local.INFO: auth_customer_findrec END  
+[2024-06-23 08:54:23] local.INFO: Ajax ChatController json_put_info_set  START  
+[2024-06-23 08:54:23] local.INFO: Ajax ChatController json_put_info_set  END  
+[2024-06-23 08:54:23] local.INFO: ChatController serch END  
+[2024-06-23 08:54:27] local.INFO: Ajax ChatController index START  
+[2024-06-23 08:54:27] local.INFO: auth_user_info START  
+[2024-06-23 08:54:27] local.INFO: auth_user_info END  
+[2024-06-23 08:54:27] local.INFO: Ajax ChatController index END  
+[2024-06-23 08:54:31] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 2
+    [name] => 関秀樹
+    [email] => h-seki@aizen-sol.co.jp
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-06-22T23:30:03.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 08:54:31] local.INFO: loginout operation update START  
+[2024-06-23 08:54:31] local.INFO: loginout operation update $id < 10 END  
+[2024-06-23 11:46:37] local.INFO: auth_user_info START  
+[2024-06-23 11:46:37] local.INFO: auth_user_info END  
+[2024-06-23 11:46:37] local.INFO: office top index START $user->name = 新冨泰明  
+[2024-06-23 11:46:37] local.INFO: auth_user_organization START  
+[2024-06-23 11:46:37] local.INFO: auth_user_organization END  
+[2024-06-23 11:46:37] local.INFO: auth_customer_allrec START  
+[2024-06-23 11:46:38] local.INFO: auth_customer_findrec END  
+[2024-06-23 11:46:38] local.DEBUG: office top index customer_id  = 19  
+[2024-06-23 11:46:38] local.INFO: office top index END $user->name = 新冨泰明  
+[2024-06-23 11:46:43] local.INFO: ChatController index START  
+[2024-06-23 11:46:43] local.INFO: ChatController index END  
+[2024-06-23 11:46:46] local.INFO: Ajax ChatController index START  
+[2024-06-23 11:46:46] local.INFO: auth_user_info START  
+[2024-06-23 11:46:46] local.INFO: auth_user_info END  
+[2024-06-23 11:46:46] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 11:46:46] local.INFO: Ajax ChatController index END  
+[2024-06-23 11:47:39] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-05-27T03:06:38.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 11:47:39] local.INFO: loginout operation update START  
+[2024-06-23 11:47:39] local.INFO: loginout operation update $id < 10 END  
+[2024-06-23 11:48:05] local.INFO: auth_user_info START  
+[2024-06-23 11:48:05] local.INFO: auth_user_info END  
+[2024-06-23 11:48:05] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => 田中 健太郎
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 11
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-06-22T22:46:05.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 11:48:05] local.INFO: loginout operation update START  
+[2024-06-23 11:48:05] local.INFO: beginTransaction - loginout operation update start  
+[2024-06-23 11:48:06] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-06-23 11:48:06] local.INFO: loginout operation update END  
+[2024-06-23 11:48:08] local.INFO: auth_user_info START  
+[2024-06-23 11:48:09] local.INFO: auth_user_info END  
+[2024-06-23 11:48:09] local.INFO: topclient index START $user->name = 田中 健太郎  
+[2024-06-23 11:48:09] local.INFO: topclient index END $user->name = 田中 健太郎  
+[2024-06-23 11:48:14] local.INFO: ChatClientController index START  
+[2024-06-23 11:48:14] local.INFO: auth_user_info START  
+[2024-06-23 11:48:14] local.INFO: auth_user_info END  
+[2024-06-23 11:48:15] local.INFO: auth_customer_findrec START  
+[2024-06-23 11:48:15] local.INFO: auth_customer_findrec START $u_id = 11  
+[2024-06-23 11:48:15] local.INFO: auth_customer_findrec END $u_id = 11  
+[2024-06-23 11:48:15] local.INFO: auth_customer_findrec END  
+[2024-06-23 11:48:15] local.INFO: ChatClientController index END  
+[2024-06-23 11:48:18] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 11:48:18] local.INFO: auth_user_info START  
+[2024-06-23 11:48:18] local.INFO: auth_user_info END  
+[2024-06-23 11:48:18] local.DEBUG: Ajax ChatClientController index  $user_id = 11  
+[2024-06-23 11:48:18] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 11:54:37] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => 田中 健太郎
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 11
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-06-22T22:46:05.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 11:54:37] local.INFO: loginout operation update START  
+[2024-06-23 11:54:37] local.INFO: beginTransaction - loginout operation update start  
+[2024-06-23 11:54:37] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-06-23 11:54:37] local.INFO: loginout operation update END  
+[2024-06-23 12:00:00] local.INFO: auth_user_info START  
+[2024-06-23 12:00:00] local.INFO: auth_user_info END  
+[2024-06-23 12:00:00] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 12
+    [name] => 山本 美咲
+    [email] => user12@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 12
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-05-27T03:11:12.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 12:00:00] local.INFO: loginout operation update START  
+[2024-06-23 12:00:01] local.INFO: beginTransaction - loginout operation update start  
+[2024-06-23 12:00:01] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-06-23 12:00:01] local.INFO: loginout operation update END  
+[2024-06-23 12:00:03] local.INFO: auth_user_info START  
+[2024-06-23 12:00:03] local.INFO: auth_user_info END  
+[2024-06-23 12:00:03] local.INFO: topclient index START $user->name = 山本 美咲  
+[2024-06-23 12:00:03] local.INFO: topclient index END $user->name = 山本 美咲  
+[2024-06-23 12:00:11] local.INFO: ChatClientController index START  
+[2024-06-23 12:00:11] local.INFO: auth_user_info START  
+[2024-06-23 12:00:11] local.INFO: auth_user_info END  
+[2024-06-23 12:00:11] local.INFO: auth_customer_findrec START  
+[2024-06-23 12:00:11] local.INFO: auth_customer_findrec START $u_id = 12  
+[2024-06-23 12:00:11] local.INFO: auth_customer_findrec END $u_id = 12  
+[2024-06-23 12:00:11] local.INFO: auth_customer_findrec END  
+[2024-06-23 12:00:11] local.INFO: ChatClientController index END  
+[2024-06-23 12:00:14] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 12:00:14] local.INFO: auth_user_info START  
+[2024-06-23 12:00:14] local.INFO: auth_user_info END  
+[2024-06-23 12:00:14] local.DEBUG: Ajax ChatClientController index  $user_id = 12  
+[2024-06-23 12:00:14] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 12:01:07] local.INFO: ChatClientController index START  
+[2024-06-23 12:01:07] local.INFO: auth_user_info START  
+[2024-06-23 12:01:07] local.INFO: auth_user_info END  
+[2024-06-23 12:01:07] local.INFO: auth_customer_findrec START  
+[2024-06-23 12:01:07] local.INFO: auth_customer_findrec START $u_id = 12  
+[2024-06-23 12:01:08] local.INFO: auth_customer_findrec END $u_id = 12  
+[2024-06-23 12:01:08] local.INFO: auth_customer_findrec END  
+[2024-06-23 12:01:08] local.INFO: ChatClientController index END  
+[2024-06-23 12:01:11] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 12:01:11] local.INFO: auth_user_info START  
+[2024-06-23 12:01:11] local.INFO: auth_user_info END  
+[2024-06-23 12:01:11] local.DEBUG: Ajax ChatClientController index  $user_id = 12  
+[2024-06-23 12:01:11] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 12:04:31] local.INFO: ChatClientController index START  
+[2024-06-23 12:04:31] local.INFO: auth_user_info START  
+[2024-06-23 12:04:31] local.INFO: auth_user_info END  
+[2024-06-23 12:04:31] local.INFO: auth_customer_allrec START  
+[2024-06-23 12:04:31] local.INFO: auth_customer_findrec END  
+[2024-06-23 12:04:31] local.INFO: ChatClientController index END  
+[2024-06-23 12:04:34] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 12:04:34] local.INFO: auth_user_info START  
+[2024-06-23 12:04:34] local.INFO: auth_user_info END  
+[2024-06-23 12:04:34] local.DEBUG: Ajax ChatClientController index  $user_id = 12  
+[2024-06-23 12:04:34] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 12:07:49] local.INFO: ChatClientController index START  
+[2024-06-23 12:07:49] local.INFO: auth_user_info START  
+[2024-06-23 12:07:50] local.INFO: auth_user_info END  
+[2024-06-23 12:07:50] local.INFO: auth_customer_allrec START  
+[2024-06-23 12:07:50] local.INFO: auth_customer_findrec END  
+[2024-06-23 12:07:50] local.INFO: ChatClientController index END  
+[2024-06-23 12:07:53] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 12:07:53] local.INFO: auth_user_info START  
+[2024-06-23 12:07:53] local.INFO: auth_user_info END  
+[2024-06-23 12:07:53] local.DEBUG: Ajax ChatClientController index  $user_id = 12  
+[2024-06-23 12:07:53] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 12:09:35] local.INFO: ChatClientController index START  
+[2024-06-23 12:09:35] local.INFO: auth_user_info START  
+[2024-06-23 12:09:35] local.INFO: auth_user_info END  
+[2024-06-23 12:09:35] local.INFO: auth_customer_allrec START  
+[2024-06-23 12:09:35] local.INFO: auth_customer_findrec END  
+[2024-06-23 12:09:35] local.INFO: ChatClientController index END  
+[2024-06-23 12:09:38] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 12:09:38] local.INFO: auth_user_info START  
+[2024-06-23 12:09:38] local.INFO: auth_user_info END  
+[2024-06-23 12:09:38] local.DEBUG: Ajax ChatClientController index  $user_id = 12  
+[2024-06-23 12:09:38] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 12:10:33] local.INFO: ChatClientController index START  
+[2024-06-23 12:10:33] local.INFO: auth_user_info START  
+[2024-06-23 12:10:33] local.INFO: auth_user_info END  
+[2024-06-23 12:10:33] local.INFO: auth_customer_allrec START  
+[2024-06-23 12:10:33] local.INFO: auth_customer_findrec END  
+[2024-06-23 12:10:33] local.INFO: ChatClientController index END  
+[2024-06-23 12:10:36] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 12:10:36] local.INFO: auth_user_info START  
+[2024-06-23 12:10:36] local.INFO: auth_user_info END  
+[2024-06-23 12:10:36] local.DEBUG: Ajax ChatClientController index  $user_id = 12  
+[2024-06-23 12:10:36] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 12:13:11] local.INFO: auth_user_info START  
+[2024-06-23 12:13:11] local.INFO: auth_user_info END  
+[2024-06-23 12:13:11] local.INFO: topclient index START $user->name = 山本 美咲  
+[2024-06-23 12:13:11] local.INFO: topclient index END $user->name = 山本 美咲  
+[2024-06-23 12:13:16] local.INFO: ChatClientController index START  
+[2024-06-23 12:13:16] local.INFO: auth_user_info START  
+[2024-06-23 12:13:16] local.INFO: auth_user_info END  
+[2024-06-23 12:13:16] local.INFO: auth_customer_allrec START  
+[2024-06-23 12:13:16] local.INFO: auth_customer_findrec END  
+[2024-06-23 12:13:17] local.INFO: ChatClientController index END  
+[2024-06-23 12:16:18] local.INFO: ChatClientController index START  
+[2024-06-23 12:16:18] local.INFO: auth_user_info START  
+[2024-06-23 12:16:18] local.INFO: auth_user_info END  
+[2024-06-23 12:16:18] local.INFO: auth_customer_allrec START  
+[2024-06-23 12:16:18] local.INFO: auth_customer_findrec END  
+[2024-06-23 12:16:19] local.INFO: ChatClientController index END  
+[2024-06-23 12:16:22] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 12:16:22] local.INFO: auth_user_info START  
+[2024-06-23 12:16:22] local.INFO: auth_user_info END  
+[2024-06-23 12:16:22] local.DEBUG: Ajax ChatClientController index  $user_id = 12  
+[2024-06-23 12:16:22] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 12:17:14] local.INFO: ChatClientController index START  
+[2024-06-23 12:17:14] local.INFO: auth_user_info START  
+[2024-06-23 12:17:14] local.INFO: auth_user_info END  
+[2024-06-23 12:17:14] local.INFO: auth_customer_allrec START  
+[2024-06-23 12:17:15] local.INFO: auth_customer_findrec END  
+[2024-06-23 12:17:15] local.INFO: ChatClientController index END  
+[2024-06-23 12:17:18] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 12:17:18] local.INFO: auth_user_info START  
+[2024-06-23 12:17:18] local.INFO: auth_user_info END  
+[2024-06-23 12:17:18] local.DEBUG: Ajax ChatClientController index  $user_id = 12  
+[2024-06-23 12:17:18] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 12:17:43] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 12
+    [name] => 山本 美咲
+    [email] => user12@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 12
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-05-27T03:11:12.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 12:17:43] local.INFO: loginout operation update START  
+[2024-06-23 12:17:43] local.INFO: beginTransaction - loginout operation update start  
+[2024-06-23 12:17:44] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-06-23 12:17:44] local.INFO: loginout operation update END  
+[2024-06-23 16:38:14] local.INFO: auth_user_info START  
+[2024-06-23 16:38:14] local.INFO: auth_user_info END  
+[2024-06-23 16:38:14] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-05-27T03:06:38.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 16:38:14] local.INFO: loginout operation update START  
+[2024-06-23 16:38:14] local.INFO: loginout operation update $id < 10 END  
+[2024-06-23 16:38:17] local.INFO: auth_user_info START  
+[2024-06-23 16:38:17] local.INFO: auth_user_info END  
+[2024-06-23 16:38:17] local.INFO: office top index START $user->name = 新冨泰明  
+[2024-06-23 16:38:17] local.INFO: auth_user_organization START  
+[2024-06-23 16:38:17] local.INFO: auth_user_organization END  
+[2024-06-23 16:38:17] local.INFO: auth_customer_allrec START  
+[2024-06-23 16:38:17] local.INFO: auth_customer_findrec END  
+[2024-06-23 16:38:17] local.DEBUG: office top index customer_id  = 19  
+[2024-06-23 16:38:17] local.INFO: office top index END $user->name = 新冨泰明  
+[2024-06-23 16:38:27] local.INFO: ChatController index START  
+[2024-06-23 16:38:27] local.INFO: ChatController index END  
+[2024-06-23 16:38:30] local.INFO: Ajax ChatController index START  
+[2024-06-23 16:38:30] local.INFO: auth_user_info START  
+[2024-06-23 16:38:30] local.INFO: auth_user_info END  
+[2024-06-23 16:38:30] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 16:38:30] local.INFO: Ajax ChatController index END  
+[2024-06-23 16:38:46] local.INFO: auth_user_info START  
+[2024-06-23 16:38:46] local.INFO: auth_user_info END  
+[2024-06-23 16:38:46] local.INFO: office top index START $user->name = 新冨泰明  
+[2024-06-23 16:38:46] local.INFO: auth_user_organization START  
+[2024-06-23 16:38:46] local.INFO: auth_user_organization END  
+[2024-06-23 16:38:46] local.INFO: auth_customer_allrec START  
+[2024-06-23 16:38:46] local.INFO: auth_customer_findrec END  
+[2024-06-23 16:38:46] local.DEBUG: office top index customer_id  = 19  
+[2024-06-23 16:38:46] local.INFO: office top index END $user->name = 新冨泰明  
+[2024-06-23 16:40:26] local.INFO: auth_user_info START  
+[2024-06-23 16:40:27] local.INFO: auth_user_info END  
+[2024-06-23 16:40:27] local.INFO: office top index START $user->name = 新冨泰明  
+[2024-06-23 16:40:27] local.INFO: auth_user_organization START  
+[2024-06-23 16:40:27] local.INFO: auth_user_organization END  
+[2024-06-23 16:40:27] local.INFO: auth_customer_allrec START  
+[2024-06-23 16:40:27] local.INFO: auth_customer_findrec END  
+[2024-06-23 16:40:27] local.DEBUG: office top index customer_id  = 19  
+[2024-06-23 16:40:27] local.INFO: office top index END $user->name = 新冨泰明  
+[2024-06-23 16:40:37] local.INFO: ChatController index START  
+[2024-06-23 16:40:37] local.INFO: ChatController index END  
+[2024-06-23 16:40:40] local.INFO: Ajax ChatController index START  
+[2024-06-23 16:40:40] local.INFO: auth_user_info START  
+[2024-06-23 16:40:40] local.INFO: auth_user_info END  
+[2024-06-23 16:40:40] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 16:40:40] local.INFO: Ajax ChatController index END  
+[2024-06-23 16:54:27] local.INFO: ChatController index START  
+[2024-06-23 16:54:27] local.INFO: auth_customer_allrec START  
+[2024-06-23 16:54:27] local.INFO: auth_customer_findrec END  
+[2024-06-23 16:54:27] local.INFO: ChatController index END  
+[2024-06-23 16:54:31] local.INFO: Ajax ChatController index START  
+[2024-06-23 16:54:31] local.INFO: auth_user_info START  
+[2024-06-23 16:54:31] local.INFO: auth_user_info END  
+[2024-06-23 16:54:31] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 16:54:31] local.INFO: Ajax ChatController index END  
+[2024-06-23 16:54:49] local.INFO: top serch START  
+[2024-06-23 16:54:49] local.INFO: auth_user_info START  
+[2024-06-23 16:54:49] local.INFO: auth_user_info END  
+[2024-06-23 16:54:49] local.INFO: auth_customer_allrec START  
+[2024-06-23 16:54:49] local.INFO: auth_customer_findrec END  
+[2024-06-23 16:54:49] local.INFO: top serch END  
+[2024-06-23 16:56:52] local.INFO: ChatController index START  
+[2024-06-23 16:56:52] local.INFO: auth_customer_allrec START  
+[2024-06-23 16:56:52] local.INFO: auth_customer_findrec END  
+[2024-06-23 16:56:52] local.INFO: ChatController index END  
+[2024-06-23 16:56:55] local.INFO: Ajax ChatController index START  
+[2024-06-23 16:56:55] local.INFO: auth_user_info START  
+[2024-06-23 16:56:56] local.INFO: auth_user_info END  
+[2024-06-23 16:56:56] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 16:56:56] local.INFO: Ajax ChatController index END  
+[2024-06-23 16:57:07] local.ERROR: Class "App\Http\Controllers\Request" does not exist {"userId":1,"exception":"[object] (ReflectionException(code: -1): Class \"App\\Http\\Controllers\\Request\" does not exist at /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/ResolvesRouteDependencies.php:81)
+[2024-06-23 16:57:59] local.INFO: ChatController index START  
+[2024-06-23 16:57:59] local.INFO: auth_customer_allrec START  
+[2024-06-23 16:57:59] local.INFO: auth_customer_findrec END  
+[2024-06-23 16:57:59] local.INFO: ChatController index END  
+[2024-06-23 16:58:02] local.INFO: Ajax ChatController index START  
+[2024-06-23 16:58:02] local.INFO: auth_user_info START  
+[2024-06-23 16:58:02] local.INFO: auth_user_info END  
+[2024-06-23 16:58:02] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 16:58:02] local.INFO: Ajax ChatController index END  
+[2024-06-23 16:58:17] local.INFO: ChatController serch START  
+[2024-06-23 16:58:17] local.INFO: auth_user_info START  
+[2024-06-23 16:58:17] local.INFO: auth_user_info END  
+[2024-06-23 16:58:17] local.INFO: auth_customer_allrec START  
+[2024-06-23 16:58:17] local.INFO: auth_customer_findrec END  
+[2024-06-23 16:58:17] local.INFO: ChatController serch END  
+[2024-06-23 16:58:20] local.INFO: Ajax ChatController index START  
+[2024-06-23 16:58:20] local.INFO: auth_user_info START  
+[2024-06-23 16:58:20] local.INFO: auth_user_info END  
+[2024-06-23 16:58:20] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 16:58:20] local.INFO: Ajax ChatController index END  
+[2024-06-23 17:01:03] local.INFO: ChatController serch START  
+[2024-06-23 17:01:03] local.INFO: auth_user_info START  
+[2024-06-23 17:01:03] local.INFO: auth_user_info END  
+[2024-06-23 17:01:03] local.INFO: auth_customer_allrec START  
+[2024-06-23 17:01:03] local.INFO: auth_customer_findrec END  
+[2024-06-23 17:01:03] local.INFO: ChatController serch END  
+[2024-06-23 17:01:07] local.INFO: Ajax ChatController index START  
+[2024-06-23 17:01:07] local.INFO: auth_user_info START  
+[2024-06-23 17:01:07] local.INFO: auth_user_info END  
+[2024-06-23 17:01:07] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 17:01:07] local.INFO: Ajax ChatController index END  
+[2024-06-23 17:03:11] local.INFO: ChatController index START  
+[2024-06-23 17:03:11] local.INFO: auth_customer_allrec START  
+[2024-06-23 17:03:11] local.INFO: auth_customer_findrec END  
+[2024-06-23 17:03:11] local.INFO: ChatController index END  
+[2024-06-23 17:03:14] local.INFO: Ajax ChatController index START  
+[2024-06-23 17:03:14] local.INFO: auth_user_info START  
+[2024-06-23 17:03:14] local.INFO: auth_user_info END  
+[2024-06-23 17:03:14] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 17:03:14] local.INFO: Ajax ChatController index END  
+[2024-06-23 17:04:11] local.INFO: ChatController index START  
+[2024-06-23 17:04:11] local.INFO: auth_customer_allrec START  
+[2024-06-23 17:04:12] local.INFO: auth_customer_findrec END  
+[2024-06-23 17:04:12] local.INFO: ChatController index END  
+[2024-06-23 17:04:14] local.INFO: Ajax ChatController index START  
+[2024-06-23 17:04:14] local.INFO: auth_user_info START  
+[2024-06-23 17:04:14] local.INFO: auth_user_info END  
+[2024-06-23 17:04:14] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 17:04:14] local.INFO: Ajax ChatController index END  
+[2024-06-23 17:06:35] local.INFO: ChatController index START  
+[2024-06-23 17:06:35] local.INFO: auth_customer_allrec START  
+[2024-06-23 17:06:35] local.INFO: auth_customer_findrec END  
+[2024-06-23 17:06:35] local.INFO: ChatController index END  
+[2024-06-23 17:06:38] local.INFO: Ajax ChatController index START  
+[2024-06-23 17:06:38] local.INFO: auth_user_info START  
+[2024-06-23 17:06:38] local.INFO: auth_user_info END  
+[2024-06-23 17:06:38] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 17:06:38] local.INFO: Ajax ChatController index END  
+[2024-06-23 17:06:57] local.INFO: ChatController serch START  
+[2024-06-23 17:06:57] local.INFO: auth_user_info START  
+[2024-06-23 17:06:57] local.INFO: auth_user_info END  
+[2024-06-23 17:06:57] local.INFO: auth_customer_allrec START  
+[2024-06-23 17:06:57] local.INFO: auth_customer_findrec END  
+[2024-06-23 17:06:58] local.INFO: ChatController serch END  
+[2024-06-23 17:07:00] local.INFO: Ajax ChatController index START  
+[2024-06-23 17:07:00] local.INFO: auth_user_info START  
+[2024-06-23 17:07:00] local.INFO: auth_user_info END  
+[2024-06-23 17:07:00] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 17:07:00] local.INFO: Ajax ChatController index END  
+[2024-06-23 17:08:45] local.INFO: ChatController index START  
+[2024-06-23 17:08:45] local.INFO: auth_customer_allrec START  
+[2024-06-23 17:08:45] local.INFO: auth_customer_findrec END  
+[2024-06-23 17:08:45] local.INFO: ChatController index END  
+[2024-06-23 17:08:48] local.INFO: Ajax ChatController index START  
+[2024-06-23 17:08:48] local.INFO: auth_user_info START  
+[2024-06-23 17:08:48] local.INFO: auth_user_info END  
+[2024-06-23 17:08:48] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 17:08:48] local.INFO: Ajax ChatController index END  
+[2024-06-23 17:08:58] local.INFO: ChatController serch START  
+[2024-06-23 17:08:58] local.INFO: auth_user_info START  
+[2024-06-23 17:08:58] local.INFO: auth_user_info END  
+[2024-06-23 17:08:58] local.INFO: auth_customer_allrec START  
+[2024-06-23 17:08:58] local.INFO: auth_customer_findrec END  
+[2024-06-23 17:08:58] local.INFO: ChatController serch END  
+[2024-06-23 17:09:01] local.INFO: Ajax ChatController index START  
+[2024-06-23 17:09:01] local.INFO: auth_user_info START  
+[2024-06-23 17:09:01] local.INFO: auth_user_info END  
+[2024-06-23 17:09:01] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 17:09:01] local.INFO: Ajax ChatController index END  
+[2024-06-23 17:10:17] local.INFO: ChatController serch START  
+[2024-06-23 17:10:17] local.INFO: auth_user_info START  
+[2024-06-23 17:10:17] local.INFO: auth_user_info END  
+[2024-06-23 17:10:17] local.INFO: auth_customer_allrec START  
+[2024-06-23 17:10:17] local.INFO: auth_customer_findrec END  
+[2024-06-23 17:10:17] local.INFO: ChatController serch END  
+[2024-06-23 17:10:21] local.INFO: Ajax ChatController index START  
+[2024-06-23 17:10:21] local.INFO: auth_user_info START  
+[2024-06-23 17:10:21] local.INFO: auth_user_info END  
+[2024-06-23 17:10:21] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 17:10:21] local.INFO: Ajax ChatController index END  
+[2024-06-23 17:13:37] local.INFO: ChatController index START  
+[2024-06-23 17:13:37] local.INFO: auth_customer_allrec START  
+[2024-06-23 17:13:37] local.INFO: auth_customer_findrec END  
+[2024-06-23 17:13:37] local.INFO: ChatController index END  
+[2024-06-23 17:13:41] local.INFO: Ajax ChatController index START  
+[2024-06-23 17:13:41] local.INFO: auth_user_info START  
+[2024-06-23 17:13:41] local.INFO: auth_user_info END  
+[2024-06-23 17:13:41] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 17:13:41] local.INFO: Ajax ChatController index END  
+[2024-06-23 17:14:44] local.INFO: ChatController index START  
+[2024-06-23 17:14:45] local.INFO: auth_customer_allrec START  
+[2024-06-23 17:14:45] local.INFO: auth_customer_findrec END  
+[2024-06-23 17:14:45] local.INFO: ChatController index END  
+[2024-06-23 17:14:47] local.INFO: Ajax ChatController index START  
+[2024-06-23 17:14:47] local.INFO: auth_user_info START  
+[2024-06-23 17:14:47] local.INFO: auth_user_info END  
+[2024-06-23 17:14:47] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 17:14:47] local.INFO: Ajax ChatController index END  
+[2024-06-23 17:17:19] local.INFO: ChatController index START  
+[2024-06-23 17:17:19] local.INFO: auth_customer_allrec START  
+[2024-06-23 17:17:19] local.INFO: auth_customer_findrec END  
+[2024-06-23 17:17:19] local.INFO: ChatController index END  
+[2024-06-23 17:17:22] local.INFO: Ajax ChatController index START  
+[2024-06-23 17:17:22] local.INFO: auth_user_info START  
+[2024-06-23 17:17:22] local.INFO: auth_user_info END  
+[2024-06-23 17:17:22] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 17:17:22] local.INFO: Ajax ChatController index END  
+[2024-06-23 17:17:33] local.INFO: ChatController serch START  
+[2024-06-23 17:17:33] local.INFO: auth_user_info START  
+[2024-06-23 17:17:33] local.INFO: auth_user_info END  
+[2024-06-23 17:17:33] local.INFO: auth_customer_allrec START  
+[2024-06-23 17:17:34] local.INFO: auth_customer_findrec END  
+[2024-06-23 17:17:34] local.INFO: ChatController serch END  
+[2024-06-23 17:17:36] local.INFO: Ajax ChatController index START  
+[2024-06-23 17:17:36] local.INFO: auth_user_info START  
+[2024-06-23 17:17:36] local.INFO: auth_user_info END  
+[2024-06-23 17:17:36] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-06-23 17:17:36] local.INFO: Ajax ChatController index END  
+[2024-06-23 17:38:54] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-05-27T03:06:38.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 17:38:54] local.INFO: loginout operation update START  
+[2024-06-23 17:38:54] local.INFO: loginout operation update $id < 10 END  
+[2024-06-23 17:39:13] local.INFO: auth_user_info START  
+[2024-06-23 17:39:13] local.INFO: auth_user_info END  
+[2024-06-23 17:39:13] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => 田中 健太郎
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 11
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-06-22T22:46:05.000000Z
+    [deleted_at] => 
+)
+  
+[2024-06-23 17:39:13] local.INFO: loginout operation update START  
+[2024-06-23 17:39:13] local.INFO: beginTransaction - loginout operation update start  
+[2024-06-23 17:39:14] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-06-23 17:39:14] local.INFO: loginout operation update END  
+[2024-06-23 17:39:16] local.INFO: auth_user_info START  
+[2024-06-23 17:39:16] local.INFO: auth_user_info END  
+[2024-06-23 17:39:16] local.INFO: topclient index START $user->name = 田中 健太郎  
+[2024-06-23 17:39:16] local.INFO: topclient index END $user->name = 田中 健太郎  
+[2024-06-23 17:39:22] local.INFO: ChatClientController index START  
+[2024-06-23 17:39:22] local.INFO: auth_user_info START  
+[2024-06-23 17:39:22] local.INFO: auth_user_info END  
+[2024-06-23 17:39:22] local.INFO: auth_customer_allrec START  
+[2024-06-23 17:39:22] local.INFO: auth_customer_findrec END  
+[2024-06-23 17:54:15] local.INFO: ChatClientController index START  
+[2024-06-23 17:54:15] local.INFO: auth_user_info START  
+[2024-06-23 17:54:15] local.INFO: auth_user_info END  
+[2024-06-23 17:54:15] local.INFO: ChatClientController index END  
+[2024-06-23 17:54:18] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 17:54:18] local.INFO: auth_user_info START  
+[2024-06-23 17:54:18] local.INFO: auth_user_info END  
+[2024-06-23 17:54:18] local.DEBUG: Ajax ChatClientController index  $user_id = 11  
+[2024-06-23 17:54:18] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 17:55:10] local.INFO: ChatClientController index START  
+[2024-06-23 17:55:10] local.INFO: auth_user_info START  
+[2024-06-23 17:55:10] local.INFO: auth_user_info END  
+[2024-06-23 17:55:10] local.INFO: ChatClientController index END  
+[2024-06-23 17:55:13] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 17:55:13] local.INFO: auth_user_info START  
+[2024-06-23 17:55:13] local.INFO: auth_user_info END  
+[2024-06-23 17:55:13] local.DEBUG: Ajax ChatClientController index  $user_id = 11  
+[2024-06-23 17:55:13] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 17:56:27] local.INFO: ChatClientController index START  
+[2024-06-23 17:56:27] local.INFO: auth_user_info START  
+[2024-06-23 17:56:27] local.INFO: auth_user_info END  
+[2024-06-23 17:56:27] local.INFO: ChatClientController index END  
+[2024-06-23 17:56:29] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 17:56:29] local.INFO: auth_user_info START  
+[2024-06-23 17:56:29] local.INFO: auth_user_info END  
+[2024-06-23 17:56:29] local.DEBUG: Ajax ChatClientController index  $user_id = 11  
+[2024-06-23 17:56:29] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 17:59:52] local.INFO: ChatClientController index START  
+[2024-06-23 17:59:52] local.INFO: auth_user_info START  
+[2024-06-23 17:59:52] local.INFO: auth_user_info END  
+[2024-06-23 17:59:52] local.INFO: ChatClientController index END  
+[2024-06-23 17:59:56] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 17:59:56] local.INFO: auth_user_info START  
+[2024-06-23 17:59:56] local.INFO: auth_user_info END  
+[2024-06-23 17:59:56] local.DEBUG: Ajax ChatClientController index  $user_id = 11  
+[2024-06-23 17:59:56] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 18:00:09] local.INFO: ChatClientController serch START  
+[2024-06-23 18:00:09] local.INFO: auth_user_info START  
+[2024-06-23 18:00:09] local.INFO: auth_user_info END  
+[2024-06-23 18:00:09] local.INFO: ChatClientController serch END  
+[2024-06-23 18:00:12] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 18:00:12] local.INFO: auth_user_info START  
+[2024-06-23 18:00:12] local.INFO: auth_user_info END  
+[2024-06-23 18:00:12] local.DEBUG: Ajax ChatClientController index  $user_id = 11  
+[2024-06-23 18:00:12] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 18:05:22] local.INFO: ChatClientController serch START  
+[2024-06-23 18:05:22] local.INFO: auth_user_info START  
+[2024-06-23 18:05:22] local.INFO: auth_user_info END  
+[2024-06-23 18:05:22] local.INFO: ChatClientController serch END  
+[2024-06-23 18:05:25] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 18:05:25] local.INFO: auth_user_info START  
+[2024-06-23 18:05:25] local.INFO: auth_user_info END  
+[2024-06-23 18:05:25] local.DEBUG: Ajax ChatClientController index  $user_id = 11  
+[2024-06-23 18:05:25] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 18:05:40] local.INFO: ChatClientController serch START  
+[2024-06-23 18:05:40] local.INFO: auth_user_info START  
+[2024-06-23 18:05:40] local.INFO: auth_user_info END  
+[2024-06-23 18:05:40] local.INFO: ChatClientController serch END  
+[2024-06-23 18:05:43] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 18:05:43] local.INFO: auth_user_info START  
+[2024-06-23 18:05:43] local.INFO: auth_user_info END  
+[2024-06-23 18:05:43] local.DEBUG: Ajax ChatClientController index  $user_id = 11  
+[2024-06-23 18:05:43] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 18:07:14] local.INFO: ChatClientController index START  
+[2024-06-23 18:07:14] local.INFO: auth_user_info START  
+[2024-06-23 18:07:14] local.INFO: auth_user_info END  
+[2024-06-23 18:07:15] local.ERROR: Undefined variable $request {"userId":11,"exception":"[object] (ErrorException(code: 0): Undefined variable $request at /var/www/html/app/Http/Controllers/ChatClientController.php:65)
+[2024-06-23 18:08:02] local.INFO: ChatClientController index START  
+[2024-06-23 18:08:02] local.INFO: auth_user_info START  
+[2024-06-23 18:08:02] local.INFO: auth_user_info END  
+[2024-06-23 18:08:02] local.INFO: ChatClientController index END  
+[2024-06-23 18:08:05] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 18:08:05] local.INFO: auth_user_info START  
+[2024-06-23 18:08:05] local.INFO: auth_user_info END  
+[2024-06-23 18:08:05] local.DEBUG: Ajax ChatClientController index  $user_id = 11  
+[2024-06-23 18:08:05] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 18:08:59] local.INFO: ChatClientController index START  
+[2024-06-23 18:08:59] local.INFO: auth_user_info START  
+[2024-06-23 18:08:59] local.INFO: auth_user_info END  
+[2024-06-23 18:08:59] local.INFO: ChatClientController index END  
+[2024-06-23 18:09:02] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 18:09:02] local.INFO: auth_user_info START  
+[2024-06-23 18:09:02] local.INFO: auth_user_info END  
+[2024-06-23 18:09:02] local.DEBUG: Ajax ChatClientController index  $user_id = 11  
+[2024-06-23 18:09:02] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 18:09:39] local.INFO: Ajax ChatClientController create START  
+[2024-06-23 18:09:39] local.INFO: Ajax ChatClientController create END  
+[2024-06-23 18:10:08] local.INFO: ChatClientController index START  
+[2024-06-23 18:10:08] local.INFO: auth_user_info START  
+[2024-06-23 18:10:08] local.INFO: auth_user_info END  
+[2024-06-23 18:10:08] local.INFO: ChatClientController index END  
+[2024-06-23 18:10:11] local.INFO: Ajax ChatClientController index START  
+[2024-06-23 18:10:11] local.INFO: auth_user_info START  
+[2024-06-23 18:10:11] local.INFO: auth_user_info END  
+[2024-06-23 18:10:11] local.DEBUG: Ajax ChatClientController index  $user_id = 11  
+[2024-06-23 18:10:11] local.INFO: Ajax ChatClientController index END  
+[2024-06-23 18:15:49] local.INFO: Ajax ChatClientController create START  
+[2024-06-23 18:15:49] local.INFO: Ajax ChatClientController create END  

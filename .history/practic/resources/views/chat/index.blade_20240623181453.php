@@ -2,9 +2,17 @@
 
 @section('content')
     <h2>チャット</h2>
+    {{-- <div class="text-right"> --}}
+
+    {{-- </div> --}}
+
+    {{-- <div class="row"> --}}
+        <!-- 検索エリア -->
+    {{-- </div> --}}
 
     {{-- Line --}}
     <hr class="mb-4">
+
 
     <style>
         /** ５行ピッタシに調整 6行*/

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-// use DateTime;
+use DateTime;
 use App\Models\User;
-// use App\Models\Customer;
+use App\Models\Customer;
 use App\Models\Message;
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Auth;
-// use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class ChatClientController extends Controller
@@ -18,7 +18,7 @@ class ChatClientController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(Request $request) {
+    public function index() {
 
         Log::info('ChatClientController index START');
 
@@ -62,9 +62,7 @@ class ChatClientController extends Controller
         //-------------------------------------------------------------
         //- Request パラメータ
         //-------------------------------------------------------------
-        // $user_id = $request->Input('user_id');
-
-
+        $user_id = $request->Input('user_id');
         $common_no = '00_7';
         $compacts = compact( 'messages','common_no','users','customer_id','user_id' );
 

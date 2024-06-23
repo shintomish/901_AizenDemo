@@ -1,10 +1,20 @@
-@extends('layouts.api2_index')
+@extends('layouts.api3_index')
 
 @section('content')
     <h2>チャット</h2>
+    <div class="text-right">
+
+    </div>
+
+    <div class="row">
+        <!-- 検索エリア -->
+    </div>
 
     {{-- Line --}}
     <hr class="mb-4">
+
+    <style>
+    </style>
 
     <style>
         /** ５行ピッタシに調整 6行*/
@@ -28,11 +38,10 @@
 
     <script src="{{ asset('js/app.js')}}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue-moment@4.1.0/dist/vue-moment.min.js"></script>
     <body>
         <div id="chat">
 
-            <form  class="my-2 my-lg-0 ml-2" action="{{route('chatserch')}}" method="GET">
+            <form  class="my-2 my-lg-0 ml-2" action="{{route('chatclientserch')}}" method="GET">
                 @csrf
                 @method('get')
                 <style>
@@ -41,25 +50,20 @@
                     }
                 </style>
                 <div class="exright">
-                    <select style="margin-right:5px;width:200px;height:40px;" class="custom-select" id="customer_id" name="customer_id">
-                        @foreach ($customer_findrec as $customer_findrec2)
-                            @if ($customer_findrec2['id']==$customer_id)
-                        <option selected="selected" value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
-                            @else
-                                <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
-                            @endif
+                    <select style="margin-right:5px;width:150px;height:40px;" class="custom-select" id="user_id" name="user_id">
+                        @foreach ($users as $user)
+                            <option value="{{ $user['id'] }}">{{ $user['name'] }}</option>
                         @endforeach
                     </select>
                     <button style="margin-bottom:10px;" type="submit" class="btn btn-primary btn_sm">送信先</button>
                 </div>
             </form>
-
             <br>
-            <div class="col-50">
+            <div class="col-2">
                 <label for="comment">コメント</label>
             </div>
 
-            <textarea  class="row-5" v-model="message"></textarea>
+            <textarea  style="" class="row-5" v-model="message"></textarea>
 
             <br>
             <button class="btn btn-secondary btn-sm" @click="send()">送信</button>
@@ -67,40 +71,40 @@
             {{-- Line --}}
             <hr>
             @php
-                // $user_id = 1;
-                // $customer_id = 21;
+                // $user_id = 12;
             @endphp
             {{--  チャットルーム  --}}
             <div class="row-6" id="room">
                 <ul class="" v-for="(m, key) in messages" :key="key">
-                    {{-- 事務所はグリーン {!! nl2br(htmlspecialchars("m.body")) !!} --}}
+                    {{-- 事務所はグリーン --}}
                     <template v-if="m.to_flg === 1 && m.user_id === {{ $user_id }} && m.customer_id === {{ $customer_id }}">
-                        <div class="send" style="text-align: left">
-                        <span style="color: green" v-text="m.user.name"></span>
+                        <div class="recieve" style="text-align: right">
+                        <span style="color: green" v-text="m.created_at"></span>
                         <span style="color: green"> :</span>&nbsp;
-                        <span style="color: green" v-text="m.created_at" ></span>
+                        <span style="color: green" v-text="m.user.name"></span>
                         <span style="color: green">  </span>&nbsp;
                         <div><span class="u-pre-wrap" style="color: rgb(8, 81, 238)" v-text="m.body"></span></div>
                         </div>
                     </template >
                     <template v-else-if="m.to_flg === 2 && m.customer_id === {{ $customer_id }}">
-                        <div class="recieve" style="text-align: right">
-                        <span style="color: rgb(238, 104, 8)" v-text="m.created_at" ></span>
-                        <span style="color: rgb(238, 104, 8)"> :</span>&nbsp;
+                        <div class="send" style="text-align: left">
                         <span style="color: rgb(238, 104, 8)" v-text="m.user.name"></span>
+                        <span style="color: rgb(238, 104, 8)"> :</span>&nbsp;
+                        <span style="color: rgb(238, 104, 8)" v-text="m.created_at"></span>
                         <span style="color: rgb(238, 104, 8)">  </span>&nbsp;
                         <div><span class="u-pre-wrap" style="color: rgb(8, 81, 238)" v-text="m.body"></span></div>
                         </div>
                     </template >
                 </ul>
             </div>
+
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 
         <script>
-
             new Vue({
                 el: '#chat',
                 data: {
@@ -110,7 +114,7 @@
                 methods: {
                     getMessages() {
                         // const url = '/ajax/chat';
-                        const url = "{{ route('ajaxchatin') }}";
+                        const url = "{{ route('ajaxchatclientin') }}";
                         axios.get(url)
                         .then((response) => {
 
@@ -121,7 +125,7 @@
                     send() {
 
                         // const url = '/ajax/chat';
-                        const url = "{{ route('ajaxchatcr') }}";
+                        const url = "{{ route('ajaxchatclientcr') }}";
                         // const params = { message: this.message, user: this.user };
                         const params = { message: this.message};
                         axios.post(url, params)
@@ -153,7 +157,6 @@
                 margin-left: 0px;
             }
         </style>
-
     </body>
 
     {{-- Line --}}

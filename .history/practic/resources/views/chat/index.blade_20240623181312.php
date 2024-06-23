@@ -2,9 +2,80 @@
 
 @section('content')
     <h2>チャット</h2>
+    {{-- <div class="text-right"> --}}
+
+    {{-- </div> --}}
+
+    {{-- <div class="row"> --}}
+        <!-- 検索エリア -->
+    {{-- </div> --}}
 
     {{-- Line --}}
     <hr class="mb-4">
+
+    <style>
+        /* スクロールバーの実装 */
+        .table_sticky {
+            display: block;
+            overflow-y: scroll;
+            /* height: calc(100vh/2); */
+            height: 600px;
+            border:1px solid;
+            border-collapse: collapse;
+        }
+        .table_sticky thead th {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 0;
+            color: #fff;
+            background: rgb(180, 226, 11);
+            &:before{
+                content: "";
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #ccc;
+            }
+        }
+
+        table{
+            width: 200px;
+        }
+        th,td{
+            width: 100px;   /* 200->250 */
+            height: 10px;
+            vertical-align: middle;
+            padding: 0 15px;
+            border: 1px solid #ccc;
+        }
+        .fixed01,
+        .fixed02{
+            /* position: -webkit-sticky; */
+            position: sticky;
+            top: 0;
+            left: 0;
+            color: rgb(8, 8, 8);
+            background: #333;
+            &:before{
+                content: "";
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #ccc;
+            }
+        }
+        .fixed01{
+            z-index: 2;
+        }
+        .fixed02{
+            z-index: 1;
+        }
+    </style>
 
     <style>
         /** ５行ピッタシに調整 6行*/
@@ -97,6 +168,15 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        {{-- 2022/05/06 --}}
+        {{-- js/app.jsでは、本番環境でvueが表示されないので、cdnと併用した。 --}}
+        {{-- 本番：Uncaught TypeError: Vue is not a constructor --}}
+        {{-- UT環境：[Vue warn]: Cannot find element: #app --}}
+        {{-- <script src="{{ mix('js/app.js')}}" defer></script> --}}
+        {{-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script> --}}
+        {{-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> --}}
+        {{-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script> --}}
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 
         <script>

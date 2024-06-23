@@ -54,9 +54,9 @@ class ChatController extends Controller
         $customer_id = 11;
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
-            'to_flg'          => 1,
+            'to_flg'          => 12,
             'user_id'         => $user_id,
-            'customer_id'     => $customer_id,
+            'customer_id'     => 1,
             'organization_id' => $organization_id,
         ]);
 

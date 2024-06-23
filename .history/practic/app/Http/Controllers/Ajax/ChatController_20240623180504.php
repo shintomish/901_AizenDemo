@@ -51,12 +51,11 @@ class ChatController extends Controller
         // $customer_findrec = $this->auth_customer_findrec();
         // $customer_id = $customer_findrec[0]['id'];
 
-        $customer_id = 11;
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
-            'to_flg'          => 1,
+            'to_flg'          => 12,
             'user_id'         => $user_id,
-            'customer_id'     => $customer_id,
+            'customer_id'     => $request->input('customer_id'),
             'organization_id' => $organization_id,
         ]);
 

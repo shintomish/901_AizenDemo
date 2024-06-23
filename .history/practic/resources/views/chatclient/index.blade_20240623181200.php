@@ -2,9 +2,80 @@
 
 @section('content')
     <h2>チャット</h2>
+    <div class="text-right">
+
+    </div>
+
+    <div class="row">
+        <!-- 検索エリア -->
+    </div>
 
     {{-- Line --}}
     <hr class="mb-4">
+
+    <style>
+        /* スクロールバーの実装 */
+        .table_sticky {
+            display: block;
+            overflow-y: scroll;
+            /* height: calc(100vh/2); */
+            height: 600px;
+            border:1px solid;
+            border-collapse: collapse;
+        }
+        .table_sticky thead th {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 0;
+            color: #fff;
+            background: rgb(180, 226, 11);
+            &:before{
+                content: "";
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #ccc;
+            }
+        }
+
+        table{
+            width: 400px;
+        }
+        th,td{
+            width: 100px;   /* 200->250 */
+            height: 10px;
+            vertical-align: middle;
+            padding: 0 15px;
+            border: 1px solid #ccc;
+        }
+        .fixed01,
+        .fixed02{
+            /* position: -webkit-sticky; */
+            position: sticky;
+            top: 0;
+            left: 0;
+            color: rgb(8, 8, 8);
+            background: #333;
+            &:before{
+                content: "";
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #ccc;
+            }
+        }
+        .fixed01{
+            z-index: 2;
+        }
+        .fixed02{
+            z-index: 1;
+        }
+    </style>
 
     <style>
         /** ５行ピッタシに調整 6行*/
@@ -87,11 +158,72 @@
                     </template >
                 </ul>
             </div>
+            {{-- <table class="table table-striped table-borderd"> --}}
+                {{-- <table class="table table-striped table-borderd table_sticky"> --}}
+                {{-- <thead> --}}
+                    {{-- <tr>
+                        <th scope="col" class ="fixed01">日時</th>
+                        <th scope="col" class ="fixed01">@sortablelink('users_name', 'ユーザー名')</th>
+                        <th scope="col" class ="fixed01">メッセージ</th>
+                    </tr> --}}
+                {{-- </thead> --}}
 
+                {{-- <tbody>
+                    @if($messages->count())
+                        @foreach($messages as $message)
+                        <tr> --}}
+                            {{-- <td>{{ $message->id }}</td> --}}
+                            {{-- @php
+                                $str = "";
+                                $str = ( new DateTime($message->m_created_at))->format('Y-m-d H:i:s');
+                            @endphp
+                            <td>{{ $str }}</td>
+                            <td>
+                                @foreach ($users as $users2)
+                                    @if ($users2->id==$message->user_id)
+                                        {{$users2->name}}
+                                    @endif
+                                @endforeach
+                            </td> --}}
+                            {{-- <td>
+                                @foreach ($customers as $customers2)
+                                    @if ($customers2->id==$message->customer_id)
+                                        {{$customers2->business_name}}
+                                    @endif
+                                @endforeach
+                            </td> --}}
+
+                            {{-- <td>{{ $message->m_body }}</td>
+                        </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td><p>0件です。</p></td>
+                            <td><p> </p></td>
+                            <td><p> </p></td>
+                        </tr>
+                    @endif
+                </tbody>
+            </table> --}}
+
+            {{-- ページネーション / pagination）の表示 --}}
+            {{-- <ul class="pagination justify-content-center">
+                {{ $messages->appends(request()->query())->render() }}
+            </ul> --}}
         </div>
 
+        {{-- <script src="/js/app.js"></script> --}}
+        {{-- <script src="{{ asset('js/app.js')}}"></script> --}}
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+        {{-- 2022/05/06 --}}
+        {{-- js/app.jsでは、本番環境でvueが表示されないので、cdnと併用した。 --}}
+        {{-- 本番：Uncaught TypeError: Vue is not a constructor --}}
+        {{-- UT環境：[Vue warn]: Cannot find element: #app --}}
+        {{-- <script src="{{ mix('js/app.js')}}" defer></script> --}}
+        {{-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script> --}}
+        {{-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> --}}
+        {{-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script> --}}
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 
         <script>
@@ -109,8 +241,8 @@
                         .then((response) => {
 
                             this.messages = response.data;
-                            this.getMessages(); // メッセージを再読込
-                        });
+
+                       });
                     },
                     send() {
 
@@ -125,7 +257,6 @@
                             this.message = '';
 
                         });
-
                         console.log('send');
                     }
                 },
