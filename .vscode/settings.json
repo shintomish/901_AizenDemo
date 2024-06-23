@@ -1,12 +1,21 @@
 {
     "cSpell.words": [
         "allrec",
+        "autoloader",
+        "chatserch",
+        "clientserch",
         "closmonth",
         "exercisedata",
         "fromadr",
         "fromname",
         "Mailables",
+        "messagesent",
+        "realchat",
         "setpath",
-        "sockjs"
+        "sockjs",
+        "tophis",
+        "tophisserch",
+        "tophistory",
+        "topserch"
     ]
 }

@@ -44,12 +44,12 @@ Route::group(['middleware' => 'web'], function () {
 // Log出力 views/log
 Route::get('log/log', 'App\Http\Controllers\LogController@log');
 
-// //-----------------------------------------------------------------------------------------------
-// //- Chat 2024/06/23
-// //-----------------------------------------------------------------------------------------------
-// Route::get('/realchat', [ChatsController::class, 'index']);
-// Route::get('/messages', [ChatsController::class, 'fetchMessages']);
-// Route::post('/messages', [ChatsController::class, 'sendMessage']);
+//-----------------------------------------------------------------------------------------------
+//- Chat 2024/06/23
+//-----------------------------------------------------------------------------------------------
+Route::get('/realchat', [ChatsController::class, 'index']);
+Route::get('/messages', [ChatsController::class, 'fetchMessages']);
+Route::post('/messages', [ChatsController::class, 'sendMessage']);
 
 //-----------------------------------------------------------------------------------------------
 //- Actlog
