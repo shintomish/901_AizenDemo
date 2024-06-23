@@ -25,16 +25,18 @@ class ChatController extends Controller
 
         // ログインユーザーのユーザー情報を取得する
         $user  = $this->auth_user_info();
-        $user_id     = $user->id;
         $organization_id =  1;
 
         $customer_id = 2;     //customer_id 顧客は2から
+        $user_id     = $user->id;
 
         Log::debug('Ajax ChatClientController index  $user_id = ' . print_r($user_id,true));
         Log::info('Ajax ChatController index END');
 
         // return Message::orderBy('id', 'desc')->get();
         return Message::where('organization_id', $organization_id)
+                ->where('user_id', $user_id)
+                ->orWhere('customer_id', '>=',$customer_id)
                 ->with('user')
                 ->orderBy('id', 'desc')
                 ->get();

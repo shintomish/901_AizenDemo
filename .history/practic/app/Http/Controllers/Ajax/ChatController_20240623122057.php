@@ -25,10 +25,10 @@ class ChatController extends Controller
 
         // ログインユーザーのユーザー情報を取得する
         $user  = $this->auth_user_info();
-        $user_id     = $user->id;
         $organization_id =  1;
 
         $customer_id = 2;     //customer_id 顧客は2から
+
 
         Log::debug('Ajax ChatClientController index  $user_id = ' . print_r($user_id,true));
         Log::info('Ajax ChatController index END');
