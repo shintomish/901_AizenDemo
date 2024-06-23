@@ -3,17 +3,16 @@
 namespace App\Http\Controllers\Ajax;
 
 use App\Models\User;
-use App\Models\Customer;
 use App\Models\Message;
 use App\Events\MessageCreated;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class ChatClientController extends Controller
+class ChatController extends Controller
 {
     public function __construct()
     {
@@ -22,17 +21,17 @@ class ChatClientController extends Controller
 
     public function index() { // 新着順にメッセージ一覧を取得
 
-        Log::info('Ajax ChatClientController index START');
+        Log::info('Ajax ChatController index START');
 
         // ログインユーザーのユーザー情報を取得する
-        $user  = $this->auth_user_info();
-        $user_id         = $user->id;
+        $user      = $this->auth_user_info();
+        $user_id   = $user->id;
         $organization_id =  1;
 
         Log::debug('Ajax ChatClientController index  $user_id = ' . print_r($user_id,true));
+        Log::info('Ajax ChatController index END');
 
-        Log::info('Ajax ChatClientController index END');
-
+        // return Message::orderBy('id', 'desc')->get();
         return Message::where('organization_id', $organization_id)
                 ->with('user')
                 ->orderBy('id', 'desc')
@@ -42,29 +41,30 @@ class ChatClientController extends Controller
 
     public function create(Request $request) { // メッセージを登録
 
-        Log::info('Ajax ChatClientController create START');
+        Log::info('Ajax ChatController create START');
 
-        $user            = Auth::user();
-        $user_id         = $user->user_id;
+        $user      = Auth::user();
+        $user_id   = $user->id;
         $organization_id = 1;
 
         // Customer(複数レコード)情報を取得する
-        // $customer_findrec = $this->auth_customer_findrec();
-        // $customer_id = $customer_findrec[0]['id'];
+        $customer_findrec = $this->auth_customer_findrec();
+        $customer_id = $customer_findrec[0]['id'];
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
-            'to_flg'          => 2,
+            'to_flg'          => 12,
             'user_id'         => $user_id,
-            'customer_id'     => $user_id,
-            'organization_id' => 1,
+            'customer_id'     => $customer_id,
+            'organization_id' => $organization_id,
         ]);
 
-        Log::info('Ajax ChatClientController create END');
+        Log::info('Ajax ChatController create END');
+
         // broadcast(new MessageCreated($user, $message))->toOthers();
-        broadcast(new MessageCreated($user, $user_id, $organization_id, $message));
+        broadcast(new MessageCreated($user, $customer_id, $organization_id, $message));
 
         // return ['status' => 'Message Sent!'];
-
     }
+
 }
