@@ -51,15 +51,15 @@ class ChatClientController extends Controller
             ->orderBy('messages.customer_id', 'asc')
             ->get();
 
+
         // User情報(事務所社員)を取得する
-        $users = User::where('login_flg', 2)
+        $users = User::where('login_flg',2)
                 ->whereNull('deleted_at')
                 ->get();
 
         $customer_id = $u_id;
-        $user_id = 1;
         $common_no = '00_7';
-        $compacts = compact( 'messages','common_no','users','customer_id','user_id' );
+        $compacts = compact( 'messages','common_no','users','customer_id' );
 
         Log::info('ChatClientController index END');
 
@@ -79,12 +79,36 @@ class ChatClientController extends Controller
         //-------------------------------------------------------------
         //- Request パラメータ
         //-------------------------------------------------------------
-        $user_id = $request->Input('user_id');
+        $customer_id = $request->Input('customer_id');
 
         // ログインユーザーのユーザー情報を取得する
         $user  = $this->auth_user_info();
-        $u_id  = $user->id;
-        $organization_id =  1;
+        $u_id = $user->id;
+        $organization_id =  $user->organization_id;
+
+        $users = User::where('organization_id','=',$organization_id)
+                        ->where('login_flg','=', 1 )  //顧客
+                        ->whereNull('deleted_at')
+                        ->get();
+
+        // Customer(複数レコード)情報を取得する
+        $customer_findrec = $this->auth_customer_findrec();
+        // $customer_id = $customer_findrec[0]['id'];
+
+        // 2022/11/30
+        $customers = Customer::where('id',$customer_id)
+            ->orderBy('id', 'asc')
+            ->first();
+
+        // 2022/11/30
+        $indiv_class = $customers->individual_class;
+
+        //FileNameは「latestinformation.pdf」固定 2022/09/24
+        $books = DB::table('books')->first();
+        $str   = ( new DateTime($books->info_date))->format('Y-m-d');
+        $latestinfodate = '最新情報'.'('.$str.')';
+
+        $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
 
         $messages = Message::select(
             'messages.id              as id'
@@ -109,17 +133,10 @@ class ChatClientController extends Controller
         ->whereNull('customers.deleted_at')
         ->orderBy('messages.id', 'desc')
         ->orderBy('messages.customer_id', 'asc')
-        ->get();
-
-        // User情報(事務所社員)を取得する
-        $users = User::where('login_flg', 2)
-                ->whereNull('deleted_at')
-                ->get();
-
-        $customer_id = $u_id;
+        ->paginate(300);
 
         $common_no = '00_7';
-        $compacts = compact( 'messages','common_no','users','customer_id','user_id' );
+        $compacts = compact( 'indiv_class','messages','common_no','users','customers','customer_findrec','customer_id','jsonfile','latestinfodate' );
 
         Log::info('ChatClientController serch END');
 

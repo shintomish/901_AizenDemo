@@ -86,6 +86,11 @@ class ChatClientController extends Controller
         $u_id  = $user->id;
         $organization_id =  1;
 
+        // User情報(事務所社員)を取得する
+        $users = User::where('login_flg', 2)
+                ->whereNull('deleted_at')
+                ->get();
+
         $messages = Message::select(
             'messages.id              as id'
             // ,'messages.organization_id as organization_id'
@@ -109,15 +114,11 @@ class ChatClientController extends Controller
         ->whereNull('customers.deleted_at')
         ->orderBy('messages.id', 'desc')
         ->orderBy('messages.customer_id', 'asc')
-        ->get();
+        ->paginate(300);
 
-        // User情報(事務所社員)を取得する
-        $users = User::where('login_flg', 2)
-                ->whereNull('deleted_at')
-                ->get();
 
         $customer_id = $u_id;
-
+        $user_id = 1;
         $common_no = '00_7';
         $compacts = compact( 'messages','common_no','users','customer_id','user_id' );
 

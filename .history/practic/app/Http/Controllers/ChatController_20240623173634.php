@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use DateTime;
-use App\Models\User;
-use App\Models\Customer;
+// use DateTime;
+// use App\Models\User;
+// use App\Models\Customer;
 use App\Models\Message;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class ChatClientController extends Controller
+class ChatController extends Controller
 {
     public function __construct()
     {
@@ -20,11 +20,11 @@ class ChatClientController extends Controller
 
     public function index() {
 
-        Log::info('ChatClientController index START');
+        Log::info('ChatController index START');
 
         // ログインユーザーのユーザー情報を取得する
-        $user  = $this->auth_user_info();
-        $u_id  = $user->id;
+        $user     = $this->auth_user_info();
+        $user_id  = $user->id;
         $organization_id = 1;
 
         $messages = Message::select(
@@ -35,7 +35,6 @@ class ChatClientController extends Controller
                 ,'messages.body            as m_body'
                 ,'messages.created_at      as m_created_at'
                 ,'users.id                 as users_id'
-                ,'users.user_id            as users_custom_id'
                 ,'users.name               as users_name'
                 ,'customers.id             as customers_id'
                 ,'customers.business_name  as business_name'
@@ -47,44 +46,41 @@ class ChatClientController extends Controller
                 $join->on('messages.customer_id', '=', 'customers.id');
             })
             ->whereNull('customers.deleted_at')
+            ->whereNull('users.deleted_at')
             ->orderBy('messages.id', 'desc')
             ->orderBy('messages.customer_id', 'asc')
             ->get();
 
-        // User情報(事務所社員)を取得する
-        $users = User::where('login_flg', 2)
-                ->whereNull('deleted_at')
-                ->get();
+        // Customer(ALLレコード)情報を取得する
+        $customer_findrec = $this->auth_customer_allrec();
 
-        $customer_id = $u_id;
         $user_id = 1;
+        $customer_id = 11;
+
         $common_no = '00_7';
-        $compacts = compact( 'messages','common_no','users','customer_id','user_id' );
+        $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'customer_id', 'common_no');
 
-        Log::info('ChatClientController index END');
+        Log::info('ChatController index END');
 
-        return view('chatclient.index', $compacts );
-
+        return view('chat.index', $compacts );
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function serch(Request $request)
     {
-        Log::info('ChatClientController serch START');
+        Log::info('ChatController serch START');
 
         //-------------------------------------------------------------
         //- Request パラメータ
         //-------------------------------------------------------------
-        $user_id = $request->Input('user_id');
+        $customer_id = $request->Input('customer_id');
 
         // ログインユーザーのユーザー情報を取得する
-        $user  = $this->auth_user_info();
-        $u_id  = $user->id;
-        $organization_id =  1;
+        $user     = $this->auth_user_info();
+        $user_id  = $user->id;
+        $organization_id = 1;
+
+        // Customer(ALLレコード)情報を取得する
+        $customer_findrec = $this->auth_customer_allrec();
 
         $messages = Message::select(
             'messages.id              as id'
@@ -94,7 +90,6 @@ class ChatClientController extends Controller
             ,'messages.body            as m_body'
             ,'messages.created_at      as m_created_at'
             ,'users.id                 as users_id'
-            ,'users.user_id            as users_custom_id'
             ,'users.name               as users_name'
             ,'customers.id             as customers_id'
             ,'customers.business_name  as business_name'
@@ -105,26 +100,19 @@ class ChatClientController extends Controller
         ->leftJoin('customers', function ($join) {
             $join->on('messages.customer_id', '=', 'customers.id');
         })
-        ->where('customers.id','=','customer_id')
         ->whereNull('customers.deleted_at')
+        ->whereNull('users.deleted_at')
         ->orderBy('messages.id', 'desc')
         ->orderBy('messages.customer_id', 'asc')
         ->get();
 
-        // User情報(事務所社員)を取得する
-        $users = User::where('login_flg', 2)
-                ->whereNull('deleted_at')
-                ->get();
-
-        $customer_id = $u_id;
+        // $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
 
         $common_no = '00_7';
-        $compacts = compact( 'messages','common_no','users','customer_id','user_id' );
+        $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'customer_id', 'common_no');
 
-        Log::info('ChatClientController serch END');
-
-        return view('chatclient.index', $compacts );
-
+        Log::info('ChatController serch END');
+        return view( 'chat.index', $compacts );
     }
 
 }

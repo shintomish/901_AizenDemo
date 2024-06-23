@@ -102,7 +102,7 @@
     <body>
         <div id="chat">
 
-            <form  class="my-2 my-lg-0 ml-2" action="{{route('chatclientserch')}}" method="GET">
+            <form  class="my-2 my-lg-0 ml-2" action="{{route('chatserch')}}" method="GET">
                 @csrf
                 @method('get')
                 <style>
@@ -111,9 +111,9 @@
                     }
                 </style>
                 <div class="exright">
-                    <select style="margin-right:5px;width:150px;height:40px;" class="custom-select" id="user_id" name="user_id">
+                    <select style="margin-right:5px;width:200px;height:40px;" class="custom-select" id="user_id" name="user_id">
                         @foreach ($users as $user)
-                            <option value="{{ $user['id'] }}">{{ $user['name'] }}</option>
+                        <option value="{{ $user['id'] }}">{{ $user['name'] }}</option>
                         @endforeach
                     </select>
                     <button style="margin-bottom:10px;" type="submit" class="btn btn-primary btn_sm">送信先</button>
@@ -138,7 +138,7 @@
             <div class="row-6" id="room">
                 <ul class="" v-for="(m, key) in messages" :key="key">
                     {{-- 事務所はグリーン --}}
-                    <template v-if="m.to_flg === 1 && m.user_id === {{ $user_id }} && m.customer_id === {{ $customer_id }}">
+                    <template v-if="m.to_flg === 1 && m.customer_id === {{ $customer_id }}">
                         <div class="recieve" style="text-align: right">
                         <span style="color: green" v-text="m.created_at"></span>
                         <span style="color: green"> :</span>&nbsp;

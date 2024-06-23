@@ -102,7 +102,7 @@
     <body>
         <div id="chat">
 
-            <form  class="my-2 my-lg-0 ml-2" action="{{route('chatclientserch')}}" method="GET">
+            <form  class="my-2 my-lg-0 ml-2" action="{{route('chatserch')}}" method="GET">
                 @csrf
                 @method('get')
                 <style>
