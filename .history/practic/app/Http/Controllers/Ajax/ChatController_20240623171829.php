@@ -42,10 +42,16 @@ class ChatController extends Controller
     public function create(Request $request) { // メッセージを登録
 
         Log::info('Ajax ChatController create START');
+        // $message = Message::create([
+        //     'body' => $request->message
+        // ]);
 
-        $user      = Auth::user();
-        $user_id   = $user->id;
-        $organization_id = 1;
+        // event(new MessageCreated($message));
+        // broadcast(new MessageCreated($message))->toOthers();
+        // broadcast(new MessageCreated($message));
+
+        $user            = Auth::user();
+        $organization_id = $user->organization_id;
 
         // Customer(複数レコード)情報を取得する
         $customer_findrec = $this->auth_customer_findrec();
@@ -53,7 +59,6 @@ class ChatController extends Controller
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
-            'user_id'         => $user_id,
             'customer_id'     => $customer_id,
             'organization_id' => $organization_id,
         ]);

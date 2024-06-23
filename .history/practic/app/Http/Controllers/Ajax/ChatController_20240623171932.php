@@ -43,6 +43,7 @@ class ChatController extends Controller
 
         Log::info('Ajax ChatController create START');
 
+
         $user      = Auth::user();
         $user_id   = $user->id;
         $organization_id = 1;
@@ -53,7 +54,7 @@ class ChatController extends Controller
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
-            'user_id'         => $user_id,
+            'user_id'     => $user_id,
             'customer_id'     => $customer_id,
             'organization_id' => $organization_id,
         ]);

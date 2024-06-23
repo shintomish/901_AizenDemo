@@ -138,8 +138,8 @@
             {{-- Line --}}
             <hr>
             @php
-                // $user_id = 1;
-                // $customer_id = 21;
+                $user_id = 1;
+                $customer_id = 21;
             @endphp
             {{--  チャットルーム  --}}
             <div class="row-6" id="room">

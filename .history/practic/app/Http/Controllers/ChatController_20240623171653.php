@@ -50,7 +50,7 @@ class ChatController extends Controller
         $customer_findrec = $this->auth_customer_allrec();
 
         $user_id = 1;
-        $customer_id = 11;
+        $customer_id = 21;
 
         $common_no = '00_7';
         $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'customer_id', 'common_no');
@@ -70,7 +70,7 @@ class ChatController extends Controller
         $customer_id = $request->Input('customer_id');
 
         // ログインユーザーのユーザー情報を取得する
-        $user     = $this->auth_user_info();
+        $user  = $this->auth_user_info();
         $user_id  = $user->id;
         $organization_id = 1;
 

@@ -9,7 +9,7 @@ use App\Events\MessageCreated;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-// use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class ChatController extends Controller
@@ -24,9 +24,11 @@ class ChatController extends Controller
         Log::info('Ajax ChatController index START');
 
         // ログインユーザーのユーザー情報を取得する
-        $user      = $this->auth_user_info();
-        $user_id   = $user->id;
+        $user  = $this->auth_user_info();
+        $user_id     = $user->id;
         $organization_id =  1;
+
+        $customer_id = 2;     //customer_id 顧客は2から
 
         Log::debug('Ajax ChatClientController index  $user_id = ' . print_r($user_id,true));
         Log::info('Ajax ChatController index END');
@@ -42,10 +44,16 @@ class ChatController extends Controller
     public function create(Request $request) { // メッセージを登録
 
         Log::info('Ajax ChatController create START');
+        // $message = Message::create([
+        //     'body' => $request->message
+        // ]);
 
-        $user      = Auth::user();
-        $user_id   = $user->id;
-        $organization_id = 1;
+        // event(new MessageCreated($message));
+        // broadcast(new MessageCreated($message))->toOthers();
+        // broadcast(new MessageCreated($message));
+
+        $user            = Auth::user();
+        $organization_id = $user->organization_id;
 
         // Customer(複数レコード)情報を取得する
         $customer_findrec = $this->auth_customer_findrec();
@@ -53,7 +61,6 @@ class ChatController extends Controller
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
-            'user_id'         => $user_id,
             'customer_id'     => $customer_id,
             'organization_id' => $organization_id,
         ]);
@@ -65,5 +72,35 @@ class ChatController extends Controller
 
         // return ['status' => 'Message Sent!'];
     }
+
+    public function serch(Request $request)
+    {
+        Log::info('top serch START');
+
+        //-------------------------------------------------------------
+        //- Request パラメータ
+        //-------------------------------------------------------------
+        $customer_id = $request->Input('customer_id');
+
+        // ログインユーザーのユーザー情報を取得する
+        $user  = $this->auth_user_info();
+        $u_id = $user->id;
+        $organization_id =  $user->organization_id;
+
+        // Customer(ALLレコード)情報を取得する
+        $customer_findrec = $this->auth_customer_allrec();
+
+        $customers = Customer::where('id',$customer_id)
+                    ->orderBy('id', 'asc')
+                    ->first();
+
+        $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
+
+        $compacts = compact( 'customer_findrec','customer_id','jsonfile' );
+
+        Log::info('top serch END');
+        return view( 'top.index', $compacts );
+    }
+
 
 }

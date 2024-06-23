@@ -45,7 +45,6 @@ class ChatController extends Controller
 
         $user      = Auth::user();
         $user_id   = $user->id;
-        $organization_id = 1;
 
         // Customer(複数レコード)情報を取得する
         $customer_findrec = $this->auth_customer_findrec();

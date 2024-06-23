@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 // use DateTime;
-// use App\Models\User;
-// use App\Models\Customer;
+use App\Models\User;
+use App\Models\Customer;
 use App\Models\Message;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Auth;
 // use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -49,11 +49,8 @@ class ChatController extends Controller
         // Customer(ALLレコード)情報を取得する
         $customer_findrec = $this->auth_customer_allrec();
 
-        $user_id = 1;
-        $customer_id = 11;
-
         $common_no = '00_7';
-        $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'customer_id', 'common_no');
+        $compacts = compact( 'messages','common_no','customer_findrec' );
 
         Log::info('ChatController index END');
 
@@ -70,8 +67,8 @@ class ChatController extends Controller
         $customer_id = $request->Input('customer_id');
 
         // ログインユーザーのユーザー情報を取得する
-        $user     = $this->auth_user_info();
-        $user_id  = $user->id;
+        $user  = $this->auth_user_info();
+        $u_id  = $user->id;
         $organization_id = 1;
 
         // Customer(ALLレコード)情報を取得する
@@ -104,7 +101,7 @@ class ChatController extends Controller
         // $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
 
         $common_no = '00_7';
-        $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'customer_id', 'common_no');
+        $compacts = compact( 'customer_findrec','customer_id','common_no' );
 
         Log::info('ChatController serch END');
         return view( 'chat.index', $compacts );

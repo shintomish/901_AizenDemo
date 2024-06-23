@@ -43,6 +43,7 @@ class ChatController extends Controller
 
         Log::info('Ajax ChatController create START');
 
+
         $user      = Auth::user();
         $user_id   = $user->id;
         $organization_id = 1;
