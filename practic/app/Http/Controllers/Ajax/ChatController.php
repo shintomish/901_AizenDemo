@@ -47,11 +47,12 @@ class ChatController extends Controller
         $user_id   = $user->id;
         $organization_id = 1;
 
-        // Customer(複数レコード)情報を取得する
-        // $customer_findrec = $this->auth_customer_findrec();
-        // $customer_id = $customer_findrec[0]['id'];
+        /**
+         * chattopで選択されたcustomer_idを取得する
+         */
+        $retval = $this->chattop_json_get_info($user_id);
+        $customer_id = $retval['customer_id'];
 
-        $customer_id = 11;
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
             'to_flg'          => 1,

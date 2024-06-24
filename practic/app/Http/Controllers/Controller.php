@@ -141,7 +141,7 @@ class Controller extends BaseController
     }
 
     /**
-     * Customer(ALLレコード)情報を取得する
+     * Customer(個人ALLレコード)情報を取得する
      */
     public function auth_customer_allrec()
     {
@@ -161,6 +161,148 @@ class Controller extends BaseController
         Log::info('auth_customer_findrec END');
         return $ret_val;
 
+    }
+
+    /**
+     * chattopで選択されたcustomer_idを取得する
+     */
+    public function chattop_json_get_info($user_id)
+    {
+        Log::info('chattop_json_get_info START');
+
+        $jsonfile = storage_path() . "/tmp/chattop_info_". $user_id. ".json";
+
+        // Log::debug('ChatController json_get_info  jsonfile = ' . print_r($jsonfile,true));
+
+        // JSONファイルの場所とファイル名を記述
+        $jsonUrl = $jsonfile;
+        if (file_exists($jsonUrl)) {
+            $json = file_get_contents($jsonUrl);
+            $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+
+            $obj = [];
+
+            $obj = json_decode($json, true);
+
+            // 2023/09/20
+            if(empty($obj)){
+                Log::info('chattop_json_get_info empty');
+            } else {
+                $obj = $obj["res"]["info"];
+                Log::info('chattop_json_get_info not empty');
+            }
+
+            foreach($obj as $key => $val) {
+                $u_id          = $val["u_id"];
+                $o_id          = $val["o_id"];
+                $customer_id   = $val["customer_id"];
+            }
+            // Log::info('chattop_json_get_info  OK');
+        } else {
+            echo "データがありません";
+            Log::info('chattop_json_get_info NG');
+        }
+        $compacts = compact('u_id','o_id','customer_id' );
+
+        Log::info('chattop_json_get_info END');
+        return  $compacts;
+    }
+
+    /**
+     * chattopで選択されたcustomer_idをSetする
+     */
+    public function chattop_json_put_info_set($u_id, $o_id, $customer_id)
+    {
+        Log::info('chattop_json_put_info_set START');
+
+        $arr = array(
+            "res" => array(
+                "info" => array(
+                    [
+                        "u_id"           => $u_id,
+                        "o_id"           => $o_id,
+                        "customer_id"    => $customer_id
+                    ]
+                )
+            )
+        );
+
+        $arr = json_encode($arr);
+        $jsonfile = storage_path() . "/tmp/chattop_info_". $u_id. ".json";
+
+        file_put_contents($jsonfile , $arr);
+        Log::info('chattop_json_put_info_set END');
+    }
+
+    /**
+     * chatcliで選択されたuser_idを取得する
+     */
+    public function chatcli_json_get_info($user_id)
+    {
+        Log::info('chatcli_json_get_info START');
+
+        $jsonfile = storage_path() . "/tmp/chatcli_info_". $user_id. ".json";
+
+        // Log::debug('chatcli_json_get_info jsonfile = ' . print_r($jsonfile,true));
+
+        // JSONファイルの場所とファイル名を記述
+        $jsonUrl = $jsonfile;
+        if (file_exists($jsonUrl)) {
+            $json = file_get_contents($jsonUrl);
+            $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+
+            $obj = [];
+
+            $obj = json_decode($json, true);
+
+            // 2023/09/20
+            if(empty($obj)){
+                Log::info('chatcli_json_get_info empty');
+            } else {
+                $obj = $obj["res"]["info"];
+                Log::info('chatcli_json_get_info not empty');
+            }
+
+            foreach($obj as $key => $val) {
+                $u_id          = $val["u_id"];
+                $o_id          = $val["o_id"];
+                $customer_id   = $val["customer_id"];
+            }
+            // Log::info('chatcli_json_get_info OK');
+        } else {
+            echo "データがありません";
+            Log::info('chatcli_json_get_info NG');
+        }
+        $compacts = compact('u_id','o_id','customer_id' );
+
+        Log::info('chatcli_json_get_info END');
+        return  $compacts;
+    }
+
+    /**
+     * chatcliで選択されたuser_idをSetする
+     */
+    public function chatcli_json_put_info_set($u_id, $o_id, $customer_id)
+    {
+        Log::info('chatcli_json_put_info_set START');
+
+        $arr = array(
+            "res" => array(
+                "info" => array(
+                    [
+                        "u_id"           => $u_id,
+                        "o_id"           => $o_id,
+                        "customer_id"    => $customer_id
+                    ]
+                )
+            )
+        );
+
+        $arr = json_encode($arr);
+        $jsonfile = storage_path() . "/tmp/chatcli_info_". $u_id. ".json";
+
+        file_put_contents($jsonfile , $arr);
+        Log::info('chatcli_json_put_info_set END');
     }
 
     /**

@@ -25,6 +25,7 @@ class ChatClientController extends Controller
         // ログインユーザーのユーザー情報を取得する
         $user  = $this->auth_user_info();
         $u_id  = $user->id;
+        $customer_id     = $user->id;
         $organization_id = 1;
 
         $messages = Message::select(
@@ -56,14 +57,12 @@ class ChatClientController extends Controller
                 ->whereNull('deleted_at')
                 ->get();
 
-        $customer_id = $u_id;
         $user_id = 1;
 
-        //-------------------------------------------------------------
-        //- Request パラメータ
-        //-------------------------------------------------------------
-        // $user_id = $request->Input('user_id');
+        Log::debug('ChatClientController index  $user_id = ' . print_r($user_id,true));
 
+        // chatcliで選択されたuser_idをSetする
+        $this->chatcli_json_put_info_set($u_id, $organization_id, $user_id);
 
         $common_no = '00_7';
         $compacts = compact( 'messages','common_no','users','customer_id','user_id' );
@@ -91,7 +90,13 @@ class ChatClientController extends Controller
         // ログインユーザーのユーザー情報を取得する
         $user  = $this->auth_user_info();
         $u_id  = $user->id;
+        $customer_id = $user->id;
         $organization_id =  1;
+
+        /**
+         * chatcliで選択されたuser_idをSetする
+         */
+        $this->chatcli_json_put_info_set($u_id, $organization_id, $user_id);
 
         $messages = Message::select(
             'messages.id              as id'
@@ -124,6 +129,8 @@ class ChatClientController extends Controller
                 ->get();
 
         $customer_id = $u_id;
+
+        Log::debug('ChatClientController serch $user_id = ' . print_r($user_id,true));
 
         $common_no = '00_7';
         $compacts = compact( 'messages','common_no','users','customer_id','user_id' );

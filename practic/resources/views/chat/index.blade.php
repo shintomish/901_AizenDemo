@@ -119,19 +119,17 @@
                         });
                     },
                     send() {
-
                         // const url = '/ajax/chat';
                         const url = "{{ route('ajaxchatcr') }}";
                         // const params = { message: this.message, user: this.user };
                         const params = { message: this.message};
                         axios.post(url, params)
                         .then((response) => {
-
                             // 成功したらメッセージをクリア
                             this.message = '';
-
                         });
                         console.log('send');
+                        this.getMessages(); // メッセージを再読込 2024/0624 再表示
                     }
                 },
                 mounted() {
@@ -141,7 +139,6 @@
                     .listen('MessageCreated', (e) => {
                         this.getMessages(); // メッセージを再読込
                     });
-
                 }
             });
             // Vue.createApp(app).mount('#app')

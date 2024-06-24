@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Ajax;
 
-use App\Models\User;
-use App\Models\Customer;
+// use App\Models\User;
+// use App\Models\Customer;
 use App\Models\Message;
 use App\Events\MessageCreated;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class ChatClientController extends Controller
@@ -46,17 +46,20 @@ class ChatClientController extends Controller
 
         $user            = Auth::user();
         $user_id         = $user->user_id;
+        $customer_id     = $user->user_id;
         $organization_id = 1;
 
-        // Customer(複数レコード)情報を取得する
-        // $customer_findrec = $this->auth_customer_findrec();
-        // $customer_id = $customer_findrec[0]['id'];
+        /**
+         * chatcliで選択されたuser_idを取得する
+         */
+        $retval = $this->chatcli_json_get_info($user_id);
+        $u_id   = $retval['customer_id'];
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
             'to_flg'          => 2,
-            'user_id'         => $user_id,
-            'customer_id'     => $user_id,
+            'user_id'         => $u_id,
+            'customer_id'     => $customer_id,
             'organization_id' => 1,
         ]);
 

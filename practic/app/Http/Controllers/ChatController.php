@@ -56,6 +56,9 @@ class ChatController extends Controller
 
         $customer_id = 11;
 
+        // 選択されたcustomer_idをSetする
+        $this->chattop_json_put_info_set($user_id, $organization_id, $customer_id);
+
         $common_no = '00_7';
         $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'customer_id', 'common_no');
 
@@ -77,6 +80,9 @@ class ChatController extends Controller
         $user     = $this->auth_user_info();
         $user_id  = $user->id;
         $organization_id = 1;
+
+        // 選択されたcustomer_idをSetする
+        $this->chattop_json_put_info_set($user_id, $organization_id, $customer_id);
 
         // Customer(ALLレコード)情報を取得する
         $customer_findrec = $this->auth_customer_allrec();
@@ -105,13 +111,10 @@ class ChatController extends Controller
         ->orderBy('messages.customer_id', 'asc')
         ->get();
 
-        // $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
-
         $common_no = '00_7';
         $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'customer_id', 'common_no');
 
         Log::info('ChatController serch END');
         return view( 'chat.index', $compacts );
     }
-
 }

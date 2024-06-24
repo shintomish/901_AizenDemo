@@ -42,7 +42,11 @@
                 <div class="exright">
                     <select style="margin-right:5px;width:150px;height:40px;" class="custom-select" id="user_id" name="user_id">
                         @foreach ($users as $user)
-                            <option value="{{ $user['id'] }}">{{ $user['name'] }}</option>
+                            @if ($user['id']==$user_id)
+                            <option selected="selected" value="{{ $user['id'] }}">{{ $user['name'] }}</option>
+                            @else
+                            <option value="{{ $user['id'] }}">{{ $user['business_name'] }}</option>
+                            @endif
                         @endforeach
                     </select>
                     <button style="margin-bottom:10px;" type="submit" class="btn btn-primary btn_sm">送信先</button>
@@ -61,7 +65,7 @@
             {{-- Line --}}
             <hr>
             @php
-                // $user_id = 12;
+
             @endphp
             {{--  チャットルーム  --}}
             <div class="row-6" id="room">
@@ -107,26 +111,21 @@
                         const url = "{{ route('ajaxchatclientin') }}";
                         axios.get(url)
                         .then((response) => {
-
                             this.messages = response.data;
-                            this.getMessages(); // メッセージを再読込
                         });
                     },
                     send() {
-
                         // const url = '/ajax/chat';
                         const url = "{{ route('ajaxchatclientcr') }}";
                         // const params = { message: this.message, user: this.user };
                         const params = { message: this.message};
                         axios.post(url, params)
                         .then((response) => {
-
                             // 成功したらメッセージをクリア
                             this.message = '';
-
                         });
-
                         console.log('send');
+                        this.getMessages(); // メッセージを再読込 2024/0624 再表示
                     }
                 },
                 mounted() {
@@ -136,7 +135,6 @@
                     .listen('MessageCreated', (e) => {
                         this.getMessages(); // メッセージを再読込
                     });
-
                 }
             });
             // Vue.createApp(app).mount('#app')
