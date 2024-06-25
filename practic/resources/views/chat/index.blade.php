@@ -101,7 +101,8 @@
 
         <script>
 
-            new Vue({
+            var app = new Vue({
+            // new Vue({
                 el: '#chat',
                 data: {
                     message: '',
@@ -119,17 +120,16 @@
                         });
                     },
                     send() {
-                        // const url = '/ajax/chat';
                         const url = "{{ route('ajaxchatcr') }}";
-                        // const params = { message: this.message, user: this.user };
                         const params = { message: this.message};
                         axios.post(url, params)
                         .then((response) => {
                             // 成功したらメッセージをクリア
                             this.message = '';
+                            this.getMessages(); // メッセージを再読込 2024/06/25 再表示
                         });
                         console.log('send');
-                        this.getMessages(); // メッセージを再読込 2024/0624 再表示
+                        // this.getMessages(); // メッセージを再読込 2024/0624 再表示
                     }
                 },
                 mounted() {
@@ -141,7 +141,7 @@
                     });
                 }
             });
-            // Vue.createApp(app).mount('#app')
+
         </script>
         {{-- 2022/11/01 --}}
         <style lang=scss scoped>
