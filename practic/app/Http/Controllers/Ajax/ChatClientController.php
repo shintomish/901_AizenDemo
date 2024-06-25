@@ -29,7 +29,7 @@ class ChatClientController extends Controller
         $user_id         = $user->id;
         $organization_id =  1;
 
-        Log::debug('Ajax ChatClientController index  $user_id = ' . print_r($user_id,true));
+        Log::debug('Ajax ChatClientController index  ログインユーザーの$user_id = ' . print_r($user_id,true));
 
         Log::info('Ajax ChatClientController index END');
 
@@ -53,7 +53,7 @@ class ChatClientController extends Controller
          * chatcliで選択されたuser_idを取得する
          */
         $retval = $this->chatcli_json_get_info($user_id);
-        $u_id   = $retval['customer_id'];
+        $u_id   = $retval['user_id'];
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),

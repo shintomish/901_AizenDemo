@@ -82,7 +82,7 @@
                     </template >
                     <template v-else-if="m.to_flg === 2 && m.user_id === {{ $user_id }} && m.customer_id === {{ $customer_id }}">
                         <div class="send" style="text-align: left">
-                        <span style="color: rgb(238, 104, 8)" v-text="m.user.name"></span>
+                        <span style="color: rgb(238, 104, 8)" v-text="m.business_name"></span>
                         <span style="color: rgb(238, 104, 8)"> :</span>&nbsp;
                         <span style="color: rgb(238, 104, 8)" v-text="m.created_at"></span>
                         <span style="color: rgb(238, 104, 8)">  </span>&nbsp;

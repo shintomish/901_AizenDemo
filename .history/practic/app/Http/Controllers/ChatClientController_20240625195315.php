@@ -130,7 +130,7 @@ class ChatClientController extends Controller
 
         $customer_id = $u_id;
 
-        Log::debug('ChatClientController serch 選択した $user_id = ' . print_r($user_id,true));
+        Log::debug('ChatClientController serch 選択した$user_id = ' . print_r($user_id,true));
 
         $common_no = '00_7';
         $compacts = compact( 'messages','common_no','users','customer_id','user_id' );
