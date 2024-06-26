@@ -53,11 +53,13 @@ class ChatClientController extends Controller
          * chatcliで選択されたuser_idを取得する
          */
         $retval = $this->chatcli_json_get_info($user_id);
-        $u_id   = $retval['user_id'];
+        $u_id   = $retval['u_id'];
+        $to_user_id   = $retval['customer_id'];
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
             'to_flg'          => 2,
+            'to_user_id'      => $to_user_id,
             'user_id'         => $u_id,
             'customer_id'     => $customer_id,
             'organization_id' => 1,

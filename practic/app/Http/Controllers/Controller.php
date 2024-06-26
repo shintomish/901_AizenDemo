@@ -194,6 +194,7 @@ class Controller extends BaseController
 
             foreach($obj as $key => $val) {
                 $u_id          = $val["u_id"];
+                $t_u_id        = $val["t_u_id"];
                 $o_id          = $val["o_id"];
                 $customer_id   = $val["customer_id"];
             }
@@ -211,7 +212,7 @@ class Controller extends BaseController
     /**
      * chattopで選択されたcustomer_idをSetする
      */
-    public function chattop_json_put_info_set($u_id, $o_id, $customer_id)
+    public function chattop_json_put_info_set($u_id, $t_u_id, $o_id, $customer_id)
     {
         Log::info('chattop_json_put_info_set START');
 
@@ -220,6 +221,7 @@ class Controller extends BaseController
                 "info" => array(
                     [
                         "u_id"           => $u_id,
+                        "t_u_id"         => $t_u_id,
                         "o_id"           => $o_id,
                         "customer_id"    => $customer_id
                     ]
@@ -265,6 +267,7 @@ class Controller extends BaseController
 
             foreach($obj as $key => $val) {
                 $u_id          = $val["u_id"];
+                $t_u_id        = $val["t_u_id"];
                 $o_id          = $val["o_id"];
                 $customer_id   = $val["customer_id"];
             }
@@ -282,7 +285,7 @@ class Controller extends BaseController
     /**
      * chatcliで選択されたuser_idをSetする
      */
-    public function chatcli_json_put_info_set($u_id, $o_id, $customer_id)
+    public function chatcli_json_put_info_set($u_id, $t_u_id, $o_id, $customer_id)
     {
         Log::info('chatcli_json_put_info_set START');
 
@@ -291,6 +294,7 @@ class Controller extends BaseController
                 "info" => array(
                     [
                         "u_id"           => $u_id,
+                        "t_u_id"         => $t_u_id,
                         "o_id"           => $o_id,
                         "customer_id"    => $customer_id
                     ]

@@ -32,6 +32,7 @@ class ChatClientController extends Controller
                 'messages.id              as id'
                 // ,'messages.organization_id as organization_id'
                 ,'messages.user_id         as user_id'
+                ,'messages.to_user_id      as to_user_id'
                 ,'messages.customer_id     as customer_id'
                 ,'messages.body            as m_body'
                 ,'messages.created_at      as m_created_at'
@@ -58,14 +59,15 @@ class ChatClientController extends Controller
                 ->get();
 
         $user_id = 1;
+        $to_user_id = $user_id;
 
         Log::debug('ChatClientController index  $user_id = ' . print_r($user_id,true));
 
         // chatcliで選択されたuser_idをSetする
-        $this->chatcli_json_put_info_set($u_id, $organization_id, $user_id);
+        $this->chatcli_json_put_info_set($u_id, $to_user_id, $organization_id, $user_id);
 
         $common_no = '00_7';
-        $compacts = compact( 'messages','common_no','users','customer_id','user_id' );
+        $compacts = compact( 'messages','common_no','users','to_user_id','customer_id','user_id' );
 
         Log::info('ChatClientController index END');
 
@@ -86,7 +88,7 @@ class ChatClientController extends Controller
         //- Request パラメータ
         //-------------------------------------------------------------
         $user_id = $request->Input('user_id');
-
+        $to_user_id = $user_id;
         // ログインユーザーのユーザー情報を取得する
         $user  = $this->auth_user_info();
         $u_id  = $user->id;
@@ -96,12 +98,13 @@ class ChatClientController extends Controller
         /**
          * chatcliで選択されたuser_idをSetする
          */
-        $this->chatcli_json_put_info_set($u_id, $organization_id, $user_id);
+        $this->chatcli_json_put_info_set($u_id, $to_user_id,$organization_id, $user_id);
 
         $messages = Message::select(
             'messages.id              as id'
             // ,'messages.organization_id as organization_id'
             ,'messages.user_id         as user_id'
+            ,'messages.to_user_id      as to_user_id'
             ,'messages.customer_id     as customer_id'
             ,'messages.body            as m_body'
             ,'messages.created_at      as m_created_at'
@@ -133,7 +136,7 @@ class ChatClientController extends Controller
         Log::debug('ChatClientController serch 選択した $user_id = ' . print_r($user_id,true));
 
         $common_no = '00_7';
-        $compacts = compact( 'messages','common_no','users','customer_id','user_id' );
+        $compacts = compact( 'messages','common_no','users','to_user_id','customer_id','user_id' );
 
         Log::info('ChatClientController serch END');
 

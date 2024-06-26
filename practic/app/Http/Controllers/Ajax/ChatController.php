@@ -57,6 +57,7 @@ class ChatController extends Controller
             'body'            => $request->input('message'),
             'to_flg'          => 1,
             'user_id'         => $user_id,
+            'to_user_id'      => $customer_id,
             'customer_id'     => $customer_id,
             'organization_id' => $organization_id,
         ]);

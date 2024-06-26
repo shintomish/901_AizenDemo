@@ -31,6 +31,7 @@ class ChatController extends Controller
                 'messages.id              as id'
                 // ,'messages.organization_id as organization_id'
                 ,'messages.user_id         as user_id'
+                ,'messages.to_user_id      as to_user_id'
                 ,'messages.customer_id     as customer_id'
                 ,'messages.body            as m_body'
                 ,'messages.created_at      as m_created_at'
@@ -55,12 +56,13 @@ class ChatController extends Controller
         $customer_findrec = $this->auth_customer_allrec();
 
         $customer_id = 11;
+        $to_user_id  = 11;
 
         // 選択されたcustomer_idをSetする
-        $this->chattop_json_put_info_set($user_id, $organization_id, $customer_id);
+        $this->chattop_json_put_info_set($user_id, $to_user_id,$organization_id, $customer_id);
 
         $common_no = '00_7';
-        $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'customer_id', 'common_no');
+        $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'to_user_id','customer_id', 'common_no');
 
         Log::info('ChatController index END');
 
@@ -76,13 +78,15 @@ class ChatController extends Controller
         //-------------------------------------------------------------
         $customer_id = $request->Input('customer_id');
 
+        $to_user_id = $customer_id;
+
         // ログインユーザーのユーザー情報を取得する
         $user     = $this->auth_user_info();
         $user_id  = $user->id;
         $organization_id = 1;
 
         // 選択されたcustomer_idをSetする
-        $this->chattop_json_put_info_set($user_id, $organization_id, $customer_id);
+        $this->chattop_json_put_info_set($user_id, $to_user_id, $organization_id, $customer_id);
 
         // Customer(ALLレコード)情報を取得する
         $customer_findrec = $this->auth_customer_allrec();
@@ -91,6 +95,7 @@ class ChatController extends Controller
             'messages.id              as id'
             // ,'messages.organization_id as organization_id'
             ,'messages.user_id         as user_id'
+            ,'messages.to_user_id      as to_user_id'
             ,'messages.customer_id     as customer_id'
             ,'messages.body            as m_body'
             ,'messages.created_at      as m_created_at'
@@ -112,7 +117,7 @@ class ChatController extends Controller
         ->get();
 
         $common_no = '00_7';
-        $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'customer_id', 'common_no');
+        $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'to_user_id', 'customer_id', 'common_no');
 
         Log::info('ChatController serch END');
         return view( 'chat.index', $compacts );
