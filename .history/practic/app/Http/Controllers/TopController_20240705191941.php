@@ -46,7 +46,7 @@ class TopController extends Controller
                     ->whereNull('deleted_at')
                     ->get();
 
-        //  * Customer(個人のレコード)情報を取得する
+        // Customer(ALLレコード)情報を取得する
         $customer_findrec = $this->auth_customer_individual();
         $customer_id = $customer_findrec[0]['id'];
         Log::debug('office top index customer_id  = ' . print_r($customer_id ,true));

@@ -52,7 +52,7 @@ class ChatController extends Controller
             ->orderBy('messages.customer_id', 'asc')
             ->get();
 
-        // Customer(個人のレコード)情報を取得する
+        // Customer(ALLレコード)情報を取得する
         $customer_findrec = $this->auth_customer_individual();
 
         $customer_id = 11;

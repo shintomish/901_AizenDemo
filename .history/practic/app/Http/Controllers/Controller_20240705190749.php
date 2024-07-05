@@ -141,15 +141,15 @@ class Controller extends BaseController
     }
 
     /**
-     * Customer(個人のレコード)情報を取得する
+     * Customer(個人ALLレコード)情報を取得する
      */
-    public function auth_customer_individual()
+    public function auth_customer_Individual()
     {
-        Log::info('auth_customer_individual START');
+        Log::info('auth_customer_allrec START');
 
         $u_id = auth::user()->id;
 
-        // Log::info('auth_customer_individual START $u_id = ' . print_r($u_id ,true));
+        // Log::info('auth_customer_allrec START $u_id = ' . print_r($u_id ,true));
 
         $ret_val = Customer::whereNull('deleted_at')
                     // `active_cancel` 1:契約 2:SPOT 3:解約',
@@ -158,7 +158,7 @@ class Controller extends BaseController
                     ->where('individual_class','=', 2)
                     ->orderBy('customers.business_name', 'asc')
                     ->get();
-        Log::info('auth_customer_individual END');
+        Log::info('auth_customer_allrec END');
         return $ret_val;
 
     }

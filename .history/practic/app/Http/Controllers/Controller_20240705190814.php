@@ -158,7 +158,7 @@ class Controller extends BaseController
                     ->where('individual_class','=', 2)
                     ->orderBy('customers.business_name', 'asc')
                     ->get();
-        Log::info('auth_customer_individual END');
+        Log::info('auth_customer_allrec END');
         return $ret_val;
 
     }

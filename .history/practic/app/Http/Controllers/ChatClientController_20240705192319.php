@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 // use DateTime;
-// use App\Models\User;
+use App\Models\User;
 // use App\Models\Customer;
 use App\Models\Message;
 use Illuminate\Http\Request;
@@ -11,20 +11,21 @@ use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class ChatController extends Controller
+class ChatClientController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    public function index() {
+    public function index(Request $request) {
 
-        Log::info('ChatController index START');
+        Log::info('ChatClientController index START');
 
         // ログインユーザーのユーザー情報を取得する
-        $user     = $this->auth_user_info();
-        $user_id  = $user->id;
+        $user  = $this->auth_user_info();
+        $u_id  = $user->id;
+        $customer_id     = $user->id;
         $organization_id = 1;
 
         $messages = Message::select(
@@ -36,6 +37,7 @@ class ChatController extends Controller
                 ,'messages.body            as m_body'
                 ,'messages.created_at      as m_created_at'
                 ,'users.id                 as users_id'
+                ,'users.user_id            as users_custom_id'
                 ,'users.name               as users_name'
                 ,'customers.id             as customers_id'
                 ,'customers.business_name  as business_name'
@@ -47,49 +49,58 @@ class ChatController extends Controller
                 $join->on('messages.customer_id', '=', 'customers.id');
             })
             ->whereNull('customers.deleted_at')
-            ->whereNull('users.deleted_at')
             ->orderBy('messages.id', 'desc')
             ->orderBy('messages.customer_id', 'asc')
             ->get();
 
-        // Customer(個人のレコード)情報を取得する
-        $customer_findrec = $this->auth_customer_individual();
+        // User情報(事務所社員)を取得する
+        $users = User::where('login_flg', 2)
+                ->whereNull('deleted_at')
+                ->whereBetween('id',[8, 10])
+                ->get();
 
-        $customer_id = 11;
-        $to_user_id  = 11;
+        $user_id = 1;
+        $to_user_id = $user_id;
 
-        // 選択されたcustomer_idをSetする
-        $this->chattop_json_put_info_set($user_id, $to_user_id,$organization_id, $customer_id);
+        Log::debug('ChatClientController index  $users = ' . print_r($users,true));
+        Log::debug('ChatClientController index  $user_id = ' . print_r($user_id,true));
+
+        // chatcliで選択されたuser_idをSetする
+        $this->chatcli_json_put_info_set($u_id, $to_user_id, $organization_id, $user_id);
 
         $common_no = '00_7';
-        $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'to_user_id','customer_id', 'common_no');
+        $compacts = compact( 'messages','common_no','users','to_user_id','customer_id','user_id' );
 
-        Log::info('ChatController index END');
+        Log::info('ChatClientController index END');
 
-        return view('chat.index', $compacts );
+        return view('chatclient.index', $compacts );
+
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function serch(Request $request)
     {
-        Log::info('ChatController serch START');
+        Log::info('ChatClientController serch START');
 
         //-------------------------------------------------------------
         //- Request パラメータ
         //-------------------------------------------------------------
-        $customer_id = $request->Input('customer_id');
-
-        $to_user_id = $customer_id;
-
+        $user_id = $request->Input('user_id');
+        $to_user_id = $user_id;
         // ログインユーザーのユーザー情報を取得する
-        $user     = $this->auth_user_info();
-        $user_id  = $user->id;
-        $organization_id = 1;
+        $user  = $this->auth_user_info();
+        $u_id  = $user->id;
+        $customer_id = $user->id;
+        $organization_id =  1;
 
-        // 選択されたcustomer_idをSetする
-        $this->chattop_json_put_info_set($user_id, $to_user_id, $organization_id, $customer_id);
-
-        // Customer(ALLレコード)情報を取得する
-        $customer_findrec = $this->auth_customer_individual();
+        /**
+         * chatcliで選択されたuser_idをSetする
+         */
+        $this->chatcli_json_put_info_set($u_id, $to_user_id,$organization_id, $user_id);
 
         $messages = Message::select(
             'messages.id              as id'
@@ -100,6 +111,7 @@ class ChatController extends Controller
             ,'messages.body            as m_body'
             ,'messages.created_at      as m_created_at'
             ,'users.id                 as users_id'
+            ,'users.user_id            as users_custom_id'
             ,'users.name               as users_name'
             ,'customers.id             as customers_id'
             ,'customers.business_name  as business_name'
@@ -110,16 +122,29 @@ class ChatController extends Controller
         ->leftJoin('customers', function ($join) {
             $join->on('messages.customer_id', '=', 'customers.id');
         })
+        ->where('customers.id','=','customer_id')
         ->whereNull('customers.deleted_at')
-        ->whereNull('users.deleted_at')
         ->orderBy('messages.id', 'desc')
         ->orderBy('messages.customer_id', 'asc')
         ->get();
 
-        $common_no = '00_7';
-        $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'to_user_id', 'customer_id', 'common_no');
+        // User情報(事務所社員)を取得する
+        $users = User::where('login_flg', 2)
+                ->whereNull('deleted_at')
+                ->whereBetween('id',[8, 10])
+                ->get();
 
-        Log::info('ChatController serch END');
-        return view( 'chat.index', $compacts );
+        $customer_id = $u_id;
+
+        Log::debug('ChatClientController serch 選択した $user_id = ' . print_r($user_id,true));
+
+        $common_no = '00_7';
+        $compacts = compact( 'messages','common_no','users','to_user_id','customer_id','user_id' );
+
+        Log::info('ChatClientController serch END');
+
+        return view('chatclient.index', $compacts );
+
     }
+
 }
