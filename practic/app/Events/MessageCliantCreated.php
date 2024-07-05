@@ -13,7 +13,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class MessageCreated implements ShouldBroadcast
+class MessageCliantCreated implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -59,7 +59,7 @@ class MessageCreated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('chat');
+        return new Channel('chatcliant');
     }
 
     /**
@@ -86,6 +86,6 @@ class MessageCreated implements ShouldBroadcast
      */
     public function broadcastAs()
     {
-        return 'chat_event';
+        return 'chatcliant_event';
     }
 }

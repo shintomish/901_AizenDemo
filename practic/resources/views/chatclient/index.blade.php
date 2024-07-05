@@ -3,6 +3,11 @@
 @section('content')
     <h2>チャット</h2>
 
+    <!-- pusher -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+    <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
+
     {{-- Line --}}
     <hr class="mb-4">
 
@@ -38,6 +43,25 @@
                     .exright{
                         text-align: right;
                     }
+                    .other::before {
+                        content: "";
+                        position: absolute;
+                        top: 90%;
+                        left: -15px;
+                        margin-top: -30px;
+                        border: 5px solid transparent;
+                        border-right: 15px solid #c7deff;
+                    }
+
+                    .self::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 100%;
+                        margin-top: -15px;
+                        border: 3px solid transparent;
+                        border-left: 9px solid #c7deff;
+                    }
                 </style>
                 <div class="exright">
                     <select style="margin-right:5px;width:150px;height:40px;" class="custom-select" id="user_id" name="user_id">
@@ -57,10 +81,10 @@
                 <label for="comment">コメント</label>
             </div>
 
-            <textarea  style="" class="row-5" v-model="message"></textarea>
+            <textarea name="message" style="" class="row-5" v-model="message"></textarea>
 
             <br>
-            <button class="btn btn-secondary btn-sm" @click="send()">送信</button>
+            <button name="btn_send" class="btn btn-secondary btn-sm" @click="send()">送信</button>
 
             {{-- Line --}}
             <hr>
@@ -95,7 +119,6 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 
         <script>
@@ -115,7 +138,7 @@
                     },
                     send() {
                         const url = "{{ route('ajaxchatclientcr') }}";
-                            const params = { message: this.message};
+                        const params = { message: this.message};
                         axios.post(url, params)
                         .then((response) => {
                             // 成功したらメッセージをクリア
@@ -123,20 +146,40 @@
                             this.getMessages(); // メッセージを再読込 2024/06/25 再表示
                         });
                         console.log('send');
-                        // this.getMessages(); // メッセージを再読込 2024/0624 再表示
+
+                        //ログを有効にする
+                        Pusher.logToConsole = true;
+                    
+                        // XXXXにApp Keyを入れる。XXXにclusterを入れる。
+                        var pusher = new Pusher('0ff8809ccd70d39e96f8', {
+                            cluster: 'ap3',
+                            forceTLS: true
+                        });
+                    
+                        //購読するチャンネルを指定
+                        var pusherChannel = pusher.subscribe('chat');
+                        var pusherChanne2 = pusher.subscribe('chatcliant');
+
+                        pusher.subscribe('chat').bind('chat_event', function(data) {
+                            console.log('chat_event');
+                            $.notify(data.message, 'info');
+                        });
+                        console.log('send2');
                     }
                 },
                 mounted() {
                     console.log('mounted');
                     this.getMessages();
-                    Echo.channel('chat')
-                    .listen('MessageCreated', (e) => {
+                    Echo.channel('chatcliant')
+                    .listen('MessageCliantCreated', (e) => {
                         this.getMessages(); // メッセージを再読込
+                        console.log(e.message);
                     });
                 }
             });
 
         </script>
+
         {{-- 2022/11/01 --}}
         <style lang=scss scoped>
             .u-pre-wrap{

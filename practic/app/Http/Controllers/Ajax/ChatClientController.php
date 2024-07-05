@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Ajax;
 // use App\Models\User;
 // use App\Models\Customer;
 use App\Models\Message;
-use App\Events\MessageCreated;
+use App\Events\MessageCliantCreated;
+// use App\Events\HelloPusher;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -66,8 +67,13 @@ class ChatClientController extends Controller
         ]);
 
         Log::info('Ajax ChatClientController create END');
-        // broadcast(new MessageCreated($user, $message))->toOthers();
-        broadcast(new MessageCreated($user, $user_id, $organization_id, $message));
+
+        $to_flg = 2;
+
+        // イベント発火
+        event(new MessageCliantCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
+
+        // broadcast(new MessageCreated($user, $organization_id, $to_flg, $u_id, $to_user_id, $customer_id, $message));
 
         // return ['status' => 'Message Sent!'];
 

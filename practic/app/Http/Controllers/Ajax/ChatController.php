@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Ajax;
 
-use App\Models\User;
+// use App\Models\User;
 use App\Models\Message;
 use App\Events\MessageCreated;
+use App\Events\HelloPusher;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -29,6 +30,7 @@ class ChatController extends Controller
         $organization_id =  1;
 
         Log::debug('Ajax ChatClientController index  $user_id = ' . print_r($user_id,true));
+
         Log::info('Ajax ChatController index END');
 
         // return Message::orderBy('id', 'desc')->get();
@@ -64,8 +66,12 @@ class ChatController extends Controller
 
         Log::info('Ajax ChatController create END');
 
-        // broadcast(new MessageCreated($user, $message))->toOthers();
-        broadcast(new MessageCreated($user, $customer_id, $organization_id, $message));
+        $to_flg = 1;
+        $to_user_id = $customer_id;
+
+        // イベント発火
+        event(new MessageCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
+        // broadcast(new MessageCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
 
         // return ['status' => 'Message Sent!'];
     }

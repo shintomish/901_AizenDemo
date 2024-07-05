@@ -3,6 +3,11 @@
 @section('content')
     <h2>チャット</h2>
 
+    <!-- pusher -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+    <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
+    
     {{-- Line --}}
     <hr class="mb-4">
 
@@ -24,6 +29,26 @@
             /* background-color:#5bc6ed; */
             line-height:1.5em;
         }
+        .other::before {
+            content: "";
+            position: absolute;
+            top: 90%;
+            left: -15px;
+            margin-top: -30px;
+            border: 5px solid transparent;
+            border-right: 15px solid #c7deff;
+        }
+
+        .self::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            margin-top: -15px;
+            border: 3px solid transparent;
+            border-left: 9px solid #c7deff;
+        }
+
     </style>
 
     <script src="{{ asset('js/app.js')}}"></script>
@@ -39,6 +64,7 @@
                     .exright{
                         text-align: right;
                     }
+
                 </style>
                 <div class="exright">
                     <select style="margin-right:5px;width:200px;height:40px;" class="custom-select" id="customer_id" name="customer_id">
@@ -59,17 +85,14 @@
                 <label for="comment">コメント</label>
             </div>
 
-            <textarea  class="row-5" v-model="message"></textarea>
+            <textarea name="message" class="row-5" v-model="message"></textarea>
 
             <br>
-            <button class="btn btn-secondary btn-sm" @click="send()">送信</button>
+            <button name="btn_send" class="btn btn-secondary btn-sm" @click="send()">送信</button>
 
             {{-- Line --}}
             <hr>
-            @php
-                // $user_id = 1;
-                // $customer_id = 21;
-            @endphp
+
             {{--  チャットルーム  --}}
             <div class="row-6" id="room">
                 <ul class="" v-for="(m, key) in messages" :key="key">
@@ -80,7 +103,7 @@
                         <span style="color: green"> :</span>&nbsp;
                         <span style="color: green" v-text="m.created_at" ></span>
                         <span style="color: green">  </span>&nbsp;
-                        <div><span class="u-pre-wrap" style="color: rgb(8, 81, 238)" v-text="m.body"></span></div>
+                        <div><span class="w-max mb-3 p-2 rounded-lg bg-blue-200 relative self ml-auto " style="color: rgb(8, 81, 238)" v-text="m.body"></span></div>
                         </div>
                     </template >
                     <template v-else-if="m.to_flg === 2 && m.to_user_id === {{ $user_id }} && m.customer_id === {{ $customer_id }}">
@@ -89,20 +112,22 @@
                         <span style="color: rgb(238, 104, 8)"> :</span>&nbsp;
                         <span style="color: rgb(238, 104, 8)" v-text="m.user.name"></span>
                         <span style="color: rgb(238, 104, 8)">  </span>&nbsp;
-                        <div><span class="u-pre-wrap" style="color: rgb(8, 81, 238)" v-text="m.body"></span></div>
+                        <div><span class="w-max mb-3 p-2 rounded-lg bg-blue-200 relative other" style="color: rgb(8, 81, 238)" v-text="m.body"></span></div>
                         </div>
                     </template >
                 </ul>
             </div>
+            <input type="hidden" name="send" value="{{$user_id}}">
+            <input type="hidden" name="recieve" value="{{$to_user_id}}">
+            <input type="hidden" name="login" value="{{\Illuminate\Support\Facades\Auth::id()}}">
+        
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 
         <script>
-
             var app = new Vue({
-            // new Vue({
                 el: '#chat',
                 data: {
                     message: '',
@@ -110,13 +135,10 @@
                 },
                 methods: {
                     getMessages() {
-                        // const url = '/ajax/chat';
                         const url = "{{ route('ajaxchatin') }}";
                         axios.get(url)
                         .then((response) => {
-
                             this.messages = response.data;
-
                         });
                     },
                     send() {
@@ -129,7 +151,26 @@
                             this.getMessages(); // メッセージを再読込 2024/06/25 再表示
                         });
                         console.log('send');
-                        // this.getMessages(); // メッセージを再読込 2024/0624 再表示
+
+                        //ログを有効にする
+                        Pusher.logToConsole = true;
+                    
+                        // XXXXにApp Keyを入れる。XXXにclusterを入れる。
+                        var pusher = new Pusher('0ff8809ccd70d39e96f8', {
+                            cluster: 'ap3',
+                            forceTLS: true
+                        });
+                    
+                        //購読するチャンネルを指定
+                        var pusherChannel = pusher.subscribe('chat');
+                        var pusherChanne2 = pusher.subscribe('chatcliant');
+
+                        pusher.subscribe('chatcliant').bind('chatcliant_event', function(data) {
+                            console.log('chatcliant_event');
+                            $.notify(data.message, 'info');
+                        });
+
+                        console.log('send2');
                     }
                 },
                 mounted() {
@@ -138,11 +179,13 @@
                     Echo.channel('chat')
                     .listen('MessageCreated', (e) => {
                         this.getMessages(); // メッセージを再読込
+                        console.log(e.message);
                     });
+
                 }
             });
-
         </script>
+
         {{-- 2022/11/01 --}}
         <style lang=scss scoped>
             .u-pre-wrap{
@@ -158,9 +201,6 @@
 
 @endsection
 
-@section('part_javascript')
-{{-- ChangeSideBar("nav-item-system-user"); --}}
-    <script type="text/javascript">
+@section('script')
 
-    </script>
 @endsection
