@@ -151,6 +151,26 @@
                             this.getMessages(); // メッセージを再読込 2024/06/25 再表示
                         });
                         console.log('send');
+
+                        //ログを有効にする
+                        Pusher.logToConsole = true;
+
+                        // XXXXにApp Keyを入れる。XXXにclusterを入れる。
+                        var pusher = new Pusher('0ff8809ccd70d39e96f8', {
+                            cluster: 'ap3',
+                            forceTLS: true
+                        });
+
+                        //購読するチャンネルを指定
+                        // var pusherChannel = pusher.subscribe('chat');
+                        // var pusherChanne2 = pusher.subscribe('chatcliant');
+
+                        pusher.subscribe('ch').bind('', function(data) {
+                            console.log('chat_event');
+                            $.notify(data.message, 'info');
+                        });
+
+                        console.log('send2');
                     }
                 },
                 mounted() {
@@ -161,12 +181,11 @@
                         this.getMessages(); // メッセージを再読込
                         console.log(e.message);
                     });
-                    Echo.channel('chatcliant')
-                    .listen('MessageCliantCreated', (e) => {
+                    Echo.channel('chat')
+                    .listen('MessageCreated', (e) => {
                         this.getMessages(); // メッセージを再読込
                         console.log(e.message);
                     });
-                    console.log('mounted2');
                 }
             });
         </script>

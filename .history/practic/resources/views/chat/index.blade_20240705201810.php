@@ -151,6 +151,7 @@
                             this.getMessages(); // メッセージを再読込 2024/06/25 再表示
                         });
                         console.log('send');
+
                     }
                 },
                 mounted() {
@@ -166,7 +167,6 @@
                         this.getMessages(); // メッセージを再読込
                         console.log(e.message);
                     });
-                    console.log('mounted2');
                 }
             });
         </script>

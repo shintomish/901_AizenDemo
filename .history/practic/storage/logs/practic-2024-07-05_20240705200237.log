@@ -1,0 +1,2940 @@
+[2024-07-05 19:00:44] local.INFO: auth_user_info START  
+[2024-07-05 19:00:44] local.INFO: auth_user_info END  
+[2024-07-05 19:00:44] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-05-27T03:06:38.000000Z
+    [deleted_at] => 
+)
+  
+[2024-07-05 19:00:44] local.INFO: loginout operation update START  
+[2024-07-05 19:00:44] local.INFO: loginout operation update $id < 10 END  
+[2024-07-05 19:00:49] local.INFO: auth_user_info START  
+[2024-07-05 19:00:49] local.INFO: auth_user_info END  
+[2024-07-05 19:00:49] local.INFO: office top index START $user->name = 新冨泰明  
+[2024-07-05 19:00:49] local.INFO: auth_user_organization START  
+[2024-07-05 19:00:49] local.INFO: auth_user_organization END  
+[2024-07-05 19:00:50] local.INFO: auth_customer_allrec START  
+[2024-07-05 19:00:50] local.INFO: auth_customer_findrec END  
+[2024-07-05 19:00:50] local.DEBUG: office top index customer_id  = 19  
+[2024-07-05 19:00:50] local.INFO: office top index END $user->name = 新冨泰明  
+[2024-07-05 19:01:17] local.INFO: ChatController index START  
+[2024-07-05 19:01:17] local.INFO: auth_user_info START  
+[2024-07-05 19:01:17] local.INFO: auth_user_info END  
+[2024-07-05 19:01:17] local.INFO: auth_customer_allrec START  
+[2024-07-05 19:01:17] local.INFO: auth_customer_findrec END  
+[2024-07-05 19:01:17] local.INFO: chattop_json_put_info_set START  
+[2024-07-05 19:01:17] local.INFO: chattop_json_put_info_set END  
+[2024-07-05 19:01:17] local.INFO: ChatController index END  
+[2024-07-05 19:01:20] local.INFO: Ajax ChatController index START  
+[2024-07-05 19:01:20] local.INFO: auth_user_info START  
+[2024-07-05 19:01:20] local.INFO: auth_user_info END  
+[2024-07-05 19:01:20] local.DEBUG: Ajax ChatClientController index  $user_id = 1  
+[2024-07-05 19:01:20] local.INFO: Ajax ChatController index END  
+[2024-07-05 19:03:31] local.INFO: auth_user_info START  
+[2024-07-05 19:03:31] local.INFO: auth_user_info END  
+[2024-07-05 19:03:31] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => 田中 健太郎
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 11
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-06-22T22:46:05.000000Z
+    [deleted_at] => 
+)
+  
+[2024-07-05 19:03:31] local.INFO: loginout operation update START  
+[2024-07-05 19:03:31] local.INFO: beginTransaction - loginout operation update start  
+[2024-07-05 19:03:31] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-07-05 19:03:31] local.INFO: loginout operation update END  
+[2024-07-05 19:03:34] local.INFO: auth_user_info START  
+[2024-07-05 19:03:34] local.INFO: auth_user_info END  
+[2024-07-05 19:03:34] local.INFO: topclient index START $user->name = 田中 健太郎  
+[2024-07-05 19:03:34] local.INFO: topclient index END $user->name = 田中 健太郎  
+[2024-07-05 19:03:40] local.INFO: ChatClientController index START  
+[2024-07-05 19:03:40] local.INFO: auth_user_info START  
+[2024-07-05 19:03:40] local.INFO: auth_user_info END  
+[2024-07-05 19:03:40] local.DEBUG: ChatClientController index  $user_id = 1  
+[2024-07-05 19:03:40] local.INFO: chatcli_json_put_info_set START  
+[2024-07-05 19:03:40] local.INFO: chatcli_json_put_info_set END  
+[2024-07-05 19:03:40] local.INFO: ChatClientController index END  
+[2024-07-05 19:03:43] local.INFO: Ajax ChatClientController index START  
+[2024-07-05 19:03:43] local.INFO: auth_user_info START  
+[2024-07-05 19:03:43] local.INFO: auth_user_info END  
+[2024-07-05 19:03:43] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 11  
+[2024-07-05 19:03:43] local.INFO: Ajax ChatClientController index END  
+[2024-07-05 19:16:47] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => 田中 健太郎
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 11
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-06-22T22:46:05.000000Z
+    [deleted_at] => 
+)
+  
+[2024-07-05 19:16:47] local.INFO: loginout operation update START  
+[2024-07-05 19:16:47] local.INFO: beginTransaction - loginout operation update start  
+[2024-07-05 19:16:47] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-07-05 19:16:47] local.INFO: loginout operation update END  
+[2024-07-05 19:17:07] local.INFO: auth_user_info START  
+[2024-07-05 19:17:07] local.INFO: auth_user_info END  
+[2024-07-05 19:17:07] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => 田中 健太郎
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 11
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-06-22T22:46:05.000000Z
+    [deleted_at] => 
+)
+  
+[2024-07-05 19:17:07] local.INFO: loginout operation update START  
+[2024-07-05 19:17:07] local.INFO: beginTransaction - loginout operation update start  
+[2024-07-05 19:17:08] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-07-05 19:17:08] local.INFO: loginout operation update END  
+[2024-07-05 19:17:10] local.INFO: auth_user_info START  
+[2024-07-05 19:17:10] local.INFO: auth_user_info END  
+[2024-07-05 19:17:10] local.INFO: topclient index START $user->name = 田中 健太郎  
+[2024-07-05 19:17:10] local.INFO: topclient index END $user->name = 田中 健太郎  
+[2024-07-05 19:17:14] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2024-05-27T03:06:38.000000Z
+    [deleted_at] => 
+)
+  
+[2024-07-05 19:17:14] local.INFO: loginout operation update START  
+[2024-07-05 19:17:14] local.INFO: loginout operation update $id < 10 END  
+[2024-07-05 19:17:17] local.INFO: ChatClientController index START  
+[2024-07-05 19:17:17] local.INFO: auth_user_info START  
+[2024-07-05 19:17:17] local.INFO: auth_user_info END  
+[2024-07-05 19:17:17] local.DEBUG: ChatClientController index  $user_id = 1  
+[2024-07-05 19:17:17] local.INFO: chatcli_json_put_info_set START  
+[2024-07-05 19:17:17] local.INFO: chatcli_json_put_info_set END  
+[2024-07-05 19:17:17] local.INFO: ChatClientController index END  
+[2024-07-05 19:17:23] local.INFO: Ajax ChatClientController index START  
+[2024-07-05 19:17:23] local.INFO: auth_user_info START  
+[2024-07-05 19:17:23] local.INFO: auth_user_info END  
+[2024-07-05 19:17:23] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 11  
+[2024-07-05 19:17:23] local.INFO: Ajax ChatClientController index END  
+[2024-07-05 19:17:57] local.INFO: auth_user_info START  
+[2024-07-05 19:17:57] local.INFO: auth_user_info END  
+[2024-07-05 19:17:57] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 8
+    [name] => プール先生08
+    [email] => dummy08@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 3
+    [admin_flg] => 1
+    [created_at] => 2023-09-28T16:00:00.000000Z
+    [updated_at] => 2024-07-05T10:17:57.000000Z
+    [deleted_at] => 
+)
+  
+[2024-07-05 19:17:57] local.INFO: loginout operation update START  
+[2024-07-05 19:17:57] local.INFO: loginout operation update $id < 10 END  
+[2024-07-05 19:18:00] local.INFO: auth_user_info START  
+[2024-07-05 19:18:00] local.INFO: auth_user_info END  
+[2024-07-05 19:18:00] local.INFO: office top index START $user->name = プール先生08  
+[2024-07-05 19:18:00] local.INFO: auth_user_organization START  
+[2024-07-05 19:18:00] local.INFO: auth_user_organization END  
+[2024-07-05 19:18:00] local.ERROR: Method App\Http\Controllers\TopController::auth_customer_allrec does not exist. {"userId":8,"exception":"[object] (BadMethodCallException(code: 0): Method App\\Http\\Controllers\\TopController::auth_customer_allrec does not exist. at /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Controller.php:68)
+[2024-07-05 19:21:00] local.INFO: auth_user_info START  
+[2024-07-05 19:21:00] local.INFO: auth_user_info END  
+[2024-07-05 19:21:00] local.INFO: office top index START $user->name = プール先生08  
+[2024-07-05 19:21:00] local.INFO: auth_user_organization START  
+[2024-07-05 19:21:00] local.INFO: auth_user_organization END  
+[2024-07-05 19:21:00] local.INFO: auth_customer_individual START  
+[2024-07-05 19:21:00] local.INFO: auth_customer_individual END  
+[2024-07-05 19:21:00] local.DEBUG: office top index customer_id  = 19  
+[2024-07-05 19:21:00] local.INFO: office top index END $user->name = プール先生08  
+[2024-07-05 19:21:07] local.INFO: ChatController index START  
+[2024-07-05 19:21:07] local.INFO: auth_user_info START  
+[2024-07-05 19:21:07] local.INFO: auth_user_info END  
+[2024-07-05 19:21:07] local.INFO: auth_customer_individual START  
+[2024-07-05 19:21:07] local.INFO: auth_customer_individual END  
+[2024-07-05 19:21:07] local.INFO: chattop_json_put_info_set START  
+[2024-07-05 19:21:07] local.INFO: chattop_json_put_info_set END  
+[2024-07-05 19:21:07] local.INFO: ChatController index END  
+[2024-07-05 19:21:10] local.INFO: Ajax ChatController index START  
+[2024-07-05 19:21:10] local.INFO: auth_user_info START  
+[2024-07-05 19:21:10] local.INFO: auth_user_info END  
+[2024-07-05 19:21:10] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-07-05 19:21:10] local.INFO: Ajax ChatController index END  
+[2024-07-05 19:23:57] local.INFO: ChatClientController index START  
+[2024-07-05 19:23:57] local.INFO: auth_user_info START  
+[2024-07-05 19:23:57] local.INFO: auth_user_info END  
+[2024-07-05 19:23:57] local.DEBUG: ChatClientController index  $users = Illuminate\Database\Eloquent\Collection Object
+(
+    [items:protected] => Array
+        (
+        )
+
+    [escapeWhenCastingToString:protected] => 
+)
+  
+[2024-07-05 19:23:57] local.DEBUG: ChatClientController index  $user_id = 1  
+[2024-07-05 19:23:57] local.INFO: chatcli_json_put_info_set START  
+[2024-07-05 19:23:57] local.INFO: chatcli_json_put_info_set END  
+[2024-07-05 19:23:57] local.INFO: ChatClientController index END  
+[2024-07-05 19:24:00] local.INFO: Ajax ChatClientController index START  
+[2024-07-05 19:24:00] local.INFO: auth_user_info START  
+[2024-07-05 19:24:00] local.INFO: auth_user_info END  
+[2024-07-05 19:24:00] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 11  
+[2024-07-05 19:24:00] local.INFO: Ajax ChatClientController index END  
+[2024-07-05 19:26:01] local.INFO: ChatClientController index START  
+[2024-07-05 19:26:02] local.INFO: auth_user_info START  
+[2024-07-05 19:26:02] local.INFO: auth_user_info END  
+[2024-07-05 19:26:02] local.DEBUG: ChatClientController index  $users = Illuminate\Database\Eloquent\Collection Object
+(
+    [items:protected] => Array
+        (
+            [0] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 9
+                            [name] => プール先生09
+                            [email] => dummy09@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 9
+                            [name] => プール先生09
+                            [email] => dummy09@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [1] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 10
+                            [name] => プール先生10
+                            [email] => dummy10@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 10
+                            [name] => プール先生10
+                            [email] => dummy10@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+        )
+
+    [escapeWhenCastingToString:protected] => 
+)
+  
+[2024-07-05 19:26:02] local.DEBUG: ChatClientController index  $user_id = 1  
+[2024-07-05 19:26:02] local.INFO: chatcli_json_put_info_set START  
+[2024-07-05 19:26:02] local.INFO: chatcli_json_put_info_set END  
+[2024-07-05 19:26:02] local.INFO: ChatClientController index END  
+[2024-07-05 19:26:05] local.INFO: Ajax ChatClientController index START  
+[2024-07-05 19:26:05] local.INFO: auth_user_info START  
+[2024-07-05 19:26:05] local.INFO: auth_user_info END  
+[2024-07-05 19:26:05] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 11  
+[2024-07-05 19:26:05] local.INFO: Ajax ChatClientController index END  
+[2024-07-05 19:26:34] local.INFO: ChatClientController index START  
+[2024-07-05 19:26:34] local.INFO: auth_user_info START  
+[2024-07-05 19:26:34] local.INFO: auth_user_info END  
+[2024-07-05 19:26:34] local.DEBUG: ChatClientController index  $users = Illuminate\Database\Eloquent\Collection Object
+(
+    [items:protected] => Array
+        (
+            [0] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 1
+                            [name] => 新冨泰明
+                            [email] => shintomi.sh@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$12$Y.nsDrw3xjYoqnfUWdBMHuQjRYnV305kUjqinZzcfCa7PVfgr598.
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 2
+                            [admin_flg] => 2
+                            [created_at] => 2022-10-20 12:00:00
+                            [updated_at] => 2024-05-27 12:06:38
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 1
+                            [name] => 新冨泰明
+                            [email] => shintomi.sh@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$12$Y.nsDrw3xjYoqnfUWdBMHuQjRYnV305kUjqinZzcfCa7PVfgr598.
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 2
+                            [admin_flg] => 2
+                            [created_at] => 2022-10-20 12:00:00
+                            [updated_at] => 2024-05-27 12:06:38
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [1] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 2
+                            [name] => 関秀樹
+                            [email] => h-seki@aizen-sol.co.jp
+                            [email_verified_at] => 
+                            [password] => $2y$12$nFdIMHaUffcbyfx4jCNSuuCDCYwZn.QZf881YEmPtEe31eZEfhcV.
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 2
+                            [admin_flg] => 2
+                            [created_at] => 2022-10-20 12:00:00
+                            [updated_at] => 2024-06-23 08:30:03
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 2
+                            [name] => 関秀樹
+                            [email] => h-seki@aizen-sol.co.jp
+                            [email_verified_at] => 
+                            [password] => $2y$12$nFdIMHaUffcbyfx4jCNSuuCDCYwZn.QZf881YEmPtEe31eZEfhcV.
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 2
+                            [admin_flg] => 2
+                            [created_at] => 2022-10-20 12:00:00
+                            [updated_at] => 2024-06-23 08:30:03
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [2] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 3
+                            [name] => 石﨑啓
+                            [email] => h-ishizaki@aizen-sol.co.jp
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 2
+                            [admin_flg] => 2
+                            [created_at] => 2022-10-20 12:00:00
+                            [updated_at] => 2022-10-20 12:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 3
+                            [name] => 石﨑啓
+                            [email] => h-ishizaki@aizen-sol.co.jp
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 2
+                            [admin_flg] => 2
+                            [created_at] => 2022-10-20 12:00:00
+                            [updated_at] => 2022-10-20 12:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [3] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 4
+                            [name] => 榎本凌
+                            [email] => r-enomoto@aizen-sol.co.jp
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 2
+                            [admin_flg] => 1
+                            [created_at] => 2022-10-20 12:00:00
+                            [updated_at] => 2022-10-20 12:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 4
+                            [name] => 榎本凌
+                            [email] => r-enomoto@aizen-sol.co.jp
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 2
+                            [admin_flg] => 1
+                            [created_at] => 2022-10-20 12:00:00
+                            [updated_at] => 2022-10-20 12:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [4] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 5
+                            [name] => 藤崎翔平
+                            [email] => s-fujisaki@aizen-sol.co.jp
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 2
+                            [admin_flg] => 1
+                            [created_at] => 2022-10-20 12:00:00
+                            [updated_at] => 2022-10-20 12:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 5
+                            [name] => 藤崎翔平
+                            [email] => s-fujisaki@aizen-sol.co.jp
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 2
+                            [admin_flg] => 1
+                            [created_at] => 2022-10-20 12:00:00
+                            [updated_at] => 2022-10-20 12:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [5] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 6
+                            [name] => 末岡真衣
+                            [email] => m-sueoka@aizen-sol.co.jp
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 2
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 6
+                            [name] => 末岡真衣
+                            [email] => m-sueoka@aizen-sol.co.jp
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 2
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [6] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 7
+                            [name] => 新冨泰明(Aizen)
+                            [email] => y-shintomi@aizen-sol.co.jp
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 2
+                            [admin_flg] => 2
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 7
+                            [name] => 新冨泰明(Aizen)
+                            [email] => y-shintomi@aizen-sol.co.jp
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 2
+                            [admin_flg] => 2
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [7] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 8
+                            [name] => プール先生08
+                            [email] => dummy08@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$12$37PuohvlYUC2nStQQjUDhOEwIjG2xsbRNUUsDZgglE4LnFzT5P5e6
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2024-07-05 19:17:57
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 8
+                            [name] => プール先生08
+                            [email] => dummy08@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$12$37PuohvlYUC2nStQQjUDhOEwIjG2xsbRNUUsDZgglE4LnFzT5P5e6
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2024-07-05 19:17:57
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [8] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 9
+                            [name] => プール先生09
+                            [email] => dummy09@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 9
+                            [name] => プール先生09
+                            [email] => dummy09@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [9] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 10
+                            [name] => プール先生10
+                            [email] => dummy10@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 10
+                            [name] => プール先生10
+                            [email] => dummy10@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+        )
+
+    [escapeWhenCastingToString:protected] => 
+)
+  
+[2024-07-05 19:26:34] local.DEBUG: ChatClientController index  $user_id = 1  
+[2024-07-05 19:26:34] local.INFO: chatcli_json_put_info_set START  
+[2024-07-05 19:26:34] local.INFO: chatcli_json_put_info_set END  
+[2024-07-05 19:26:34] local.INFO: ChatClientController index END  
+[2024-07-05 19:26:36] local.INFO: Ajax ChatClientController index START  
+[2024-07-05 19:26:36] local.INFO: auth_user_info START  
+[2024-07-05 19:26:37] local.INFO: auth_user_info END  
+[2024-07-05 19:26:37] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 11  
+[2024-07-05 19:26:37] local.INFO: Ajax ChatClientController index END  
+[2024-07-05 19:29:22] local.INFO: ChatClientController index START  
+[2024-07-05 19:29:22] local.INFO: auth_user_info START  
+[2024-07-05 19:29:22] local.INFO: auth_user_info END  
+[2024-07-05 19:29:22] local.DEBUG: ChatClientController index  $users = Illuminate\Database\Eloquent\Collection Object
+(
+    [items:protected] => Array
+        (
+            [0] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 8
+                            [name] => プール先生08
+                            [email] => dummy08@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$12$37PuohvlYUC2nStQQjUDhOEwIjG2xsbRNUUsDZgglE4LnFzT5P5e6
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2024-07-05 19:17:57
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 8
+                            [name] => プール先生08
+                            [email] => dummy08@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$12$37PuohvlYUC2nStQQjUDhOEwIjG2xsbRNUUsDZgglE4LnFzT5P5e6
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2024-07-05 19:17:57
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [1] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 9
+                            [name] => プール先生09
+                            [email] => dummy09@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 9
+                            [name] => プール先生09
+                            [email] => dummy09@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [2] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 10
+                            [name] => プール先生10
+                            [email] => dummy10@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 10
+                            [name] => プール先生10
+                            [email] => dummy10@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+        )
+
+    [escapeWhenCastingToString:protected] => 
+)
+  
+[2024-07-05 19:29:22] local.DEBUG: ChatClientController index  $user_id = 1  
+[2024-07-05 19:29:22] local.INFO: chatcli_json_put_info_set START  
+[2024-07-05 19:29:22] local.INFO: chatcli_json_put_info_set END  
+[2024-07-05 19:29:22] local.INFO: ChatClientController index END  
+[2024-07-05 19:29:26] local.INFO: Ajax ChatClientController index START  
+[2024-07-05 19:29:26] local.INFO: auth_user_info START  
+[2024-07-05 19:29:26] local.INFO: auth_user_info END  
+[2024-07-05 19:29:26] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 11  
+[2024-07-05 19:29:26] local.INFO: Ajax ChatClientController index END  
+[2024-07-05 19:30:25] local.INFO: ChatClientController index START  
+[2024-07-05 19:30:25] local.INFO: auth_user_info START  
+[2024-07-05 19:30:25] local.INFO: auth_user_info END  
+[2024-07-05 19:30:25] local.DEBUG: ChatClientController index  $users = Illuminate\Database\Eloquent\Collection Object
+(
+    [items:protected] => Array
+        (
+            [0] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 8
+                            [name] => プール先生08
+                            [email] => dummy08@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$12$37PuohvlYUC2nStQQjUDhOEwIjG2xsbRNUUsDZgglE4LnFzT5P5e6
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2024-07-05 19:17:57
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 8
+                            [name] => プール先生08
+                            [email] => dummy08@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$12$37PuohvlYUC2nStQQjUDhOEwIjG2xsbRNUUsDZgglE4LnFzT5P5e6
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2024-07-05 19:17:57
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [1] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 9
+                            [name] => プール先生09
+                            [email] => dummy09@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 9
+                            [name] => プール先生09
+                            [email] => dummy09@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [2] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 10
+                            [name] => プール先生10
+                            [email] => dummy10@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 10
+                            [name] => プール先生10
+                            [email] => dummy10@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+        )
+
+    [escapeWhenCastingToString:protected] => 
+)
+  
+[2024-07-05 19:30:25] local.DEBUG: ChatClientController index  $user_id = 8  
+[2024-07-05 19:30:25] local.INFO: chatcli_json_put_info_set START  
+[2024-07-05 19:30:25] local.INFO: chatcli_json_put_info_set END  
+[2024-07-05 19:30:25] local.INFO: ChatClientController index END  
+[2024-07-05 19:30:31] local.INFO: Ajax ChatClientController index START  
+[2024-07-05 19:30:31] local.INFO: auth_user_info START  
+[2024-07-05 19:30:31] local.INFO: auth_user_info END  
+[2024-07-05 19:30:31] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 11  
+[2024-07-05 19:30:31] local.INFO: Ajax ChatClientController index END  
+[2024-07-05 19:30:52] local.INFO: ChatController index START  
+[2024-07-05 19:30:52] local.INFO: auth_user_info START  
+[2024-07-05 19:30:52] local.INFO: auth_user_info END  
+[2024-07-05 19:30:52] local.INFO: auth_customer_individual START  
+[2024-07-05 19:30:52] local.INFO: auth_customer_individual END  
+[2024-07-05 19:30:52] local.INFO: chattop_json_put_info_set START  
+[2024-07-05 19:30:52] local.INFO: chattop_json_put_info_set END  
+[2024-07-05 19:30:52] local.INFO: ChatController index END  
+[2024-07-05 19:30:56] local.INFO: Ajax ChatController index START  
+[2024-07-05 19:30:56] local.INFO: auth_user_info START  
+[2024-07-05 19:30:56] local.INFO: auth_user_info END  
+[2024-07-05 19:30:56] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-07-05 19:30:56] local.INFO: Ajax ChatController index END  
+[2024-07-05 19:31:36] local.INFO: Ajax ChatClientController create START  
+[2024-07-05 19:31:36] local.INFO: chatcli_json_get_info START  
+[2024-07-05 19:31:36] local.INFO: chatcli_json_get_info not empty  
+[2024-07-05 19:31:36] local.INFO: chatcli_json_get_info END  
+[2024-07-05 19:31:36] local.INFO: Ajax ChatClientController create END  
+[2024-07-05 19:31:39] local.INFO: Ajax ChatClientController index START  
+[2024-07-05 19:31:39] local.INFO: auth_user_info START  
+[2024-07-05 19:31:39] local.INFO: auth_user_info END  
+[2024-07-05 19:31:39] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 11  
+[2024-07-05 19:31:39] local.INFO: Ajax ChatClientController index END  
+[2024-07-05 19:31:47] local.INFO: ChatController index START  
+[2024-07-05 19:31:47] local.INFO: auth_user_info START  
+[2024-07-05 19:31:47] local.INFO: auth_user_info END  
+[2024-07-05 19:31:48] local.INFO: auth_customer_individual START  
+[2024-07-05 19:31:48] local.INFO: auth_customer_individual END  
+[2024-07-05 19:31:48] local.INFO: chattop_json_put_info_set START  
+[2024-07-05 19:31:48] local.INFO: chattop_json_put_info_set END  
+[2024-07-05 19:31:48] local.INFO: ChatController index END  
+[2024-07-05 19:31:50] local.INFO: Ajax ChatController index START  
+[2024-07-05 19:31:50] local.INFO: auth_user_info START  
+[2024-07-05 19:31:51] local.INFO: auth_user_info END  
+[2024-07-05 19:31:51] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-07-05 19:31:51] local.INFO: Ajax ChatController index END  
+[2024-07-05 19:33:05] local.INFO: Ajax ChatController create START  
+[2024-07-05 19:33:05] local.INFO: chattop_json_get_info START  
+[2024-07-05 19:33:05] local.INFO: chattop_json_get_info not empty  
+[2024-07-05 19:33:05] local.INFO: chattop_json_get_info END  
+[2024-07-05 19:33:05] local.INFO: Ajax ChatController create END  
+[2024-07-05 19:33:07] local.INFO: Ajax ChatController index START  
+[2024-07-05 19:33:07] local.INFO: auth_user_info START  
+[2024-07-05 19:33:07] local.INFO: auth_user_info END  
+[2024-07-05 19:33:07] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-07-05 19:33:07] local.INFO: Ajax ChatController index END  
+[2024-07-05 19:48:03] local.INFO: Ajax ChatController create START  
+[2024-07-05 19:48:03] local.INFO: chattop_json_get_info START  
+[2024-07-05 19:48:03] local.INFO: chattop_json_get_info not empty  
+[2024-07-05 19:48:03] local.INFO: chattop_json_get_info END  
+[2024-07-05 19:48:03] local.INFO: Ajax ChatController create END  
+[2024-07-05 19:48:06] local.INFO: Ajax ChatController index START  
+[2024-07-05 19:48:06] local.INFO: auth_user_info START  
+[2024-07-05 19:48:06] local.INFO: auth_user_info END  
+[2024-07-05 19:48:06] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-07-05 19:48:06] local.INFO: Ajax ChatController index END  
+[2024-07-05 19:56:44] local.INFO: ChatClientController index START  
+[2024-07-05 19:56:44] local.INFO: auth_user_info START  
+[2024-07-05 19:56:45] local.INFO: auth_user_info END  
+[2024-07-05 19:56:45] local.DEBUG: ChatClientController index  $users = Illuminate\Database\Eloquent\Collection Object
+(
+    [items:protected] => Array
+        (
+            [0] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 8
+                            [name] => プール先生08
+                            [email] => dummy08@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$12$37PuohvlYUC2nStQQjUDhOEwIjG2xsbRNUUsDZgglE4LnFzT5P5e6
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2024-07-05 19:17:57
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 8
+                            [name] => プール先生08
+                            [email] => dummy08@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$12$37PuohvlYUC2nStQQjUDhOEwIjG2xsbRNUUsDZgglE4LnFzT5P5e6
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2024-07-05 19:17:57
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [1] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 9
+                            [name] => プール先生09
+                            [email] => dummy09@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 9
+                            [name] => プール先生09
+                            [email] => dummy09@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+            [2] => App\Models\User Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => users
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 10
+                            [name] => プール先生10
+                            [email] => dummy10@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 10
+                            [name] => プール先生10
+                            [email] => dummy10@gmail.com
+                            [email_verified_at] => 
+                            [password] => $2y$10$8Gi2awK/8o6XD9l1TI0Ree7NoTOm6JzplJgl3dlzmO90Aljej62ve
+                            [remember_token] => 
+                            [organization_id] => 1
+                            [user_id] => 1
+                            [login_flg] => 3
+                            [admin_flg] => 1
+                            [created_at] => 2023-09-29 01:00:00
+                            [updated_at] => 2023-09-29 01:00:00
+                            [deleted_at] => 
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                            [email_verified_at] => datetime
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [usesUniqueIds] => 
+                    [hidden:protected] => Array
+                        (
+                            [0] => password
+                            [1] => remember_token
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => password
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                    [authPasswordName:protected] => password
+                    [rememberTokenName:protected] => remember_token
+                    [accessToken:protected] => 
+                )
+
+        )
+
+    [escapeWhenCastingToString:protected] => 
+)
+  
+[2024-07-05 19:56:45] local.DEBUG: ChatClientController index  $user_id = 8  
+[2024-07-05 19:56:45] local.INFO: chatcli_json_put_info_set START  
+[2024-07-05 19:56:45] local.INFO: chatcli_json_put_info_set END  
+[2024-07-05 19:56:45] local.INFO: ChatClientController index END  
+[2024-07-05 19:56:48] local.INFO: ChatController index START  
+[2024-07-05 19:56:48] local.INFO: auth_user_info START  
+[2024-07-05 19:56:48] local.INFO: auth_user_info END  
+[2024-07-05 19:56:48] local.INFO: auth_customer_individual START  
+[2024-07-05 19:56:48] local.INFO: auth_customer_individual END  
+[2024-07-05 19:56:48] local.INFO: chattop_json_put_info_set START  
+[2024-07-05 19:56:48] local.INFO: chattop_json_put_info_set END  
+[2024-07-05 19:56:48] local.INFO: ChatController index END  
+[2024-07-05 19:56:52] local.INFO: Ajax ChatClientController index START  
+[2024-07-05 19:56:52] local.INFO: auth_user_info START  
+[2024-07-05 19:56:52] local.INFO: auth_user_info END  
+[2024-07-05 19:56:52] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 11  
+[2024-07-05 19:56:52] local.INFO: Ajax ChatClientController index END  
+[2024-07-05 19:56:55] local.INFO: Ajax ChatController index START  
+[2024-07-05 19:56:55] local.INFO: auth_user_info START  
+[2024-07-05 19:56:55] local.INFO: auth_user_info END  
+[2024-07-05 19:56:55] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-07-05 19:56:55] local.INFO: Ajax ChatController index END  
+[2024-07-05 19:57:42] local.INFO: Ajax ChatClientController create START  
+[2024-07-05 19:57:42] local.INFO: chatcli_json_get_info START  
+[2024-07-05 19:57:42] local.INFO: chatcli_json_get_info not empty  
+[2024-07-05 19:57:42] local.INFO: chatcli_json_get_info END  
+[2024-07-05 19:57:42] local.INFO: Ajax ChatClientController create END  
+[2024-07-05 19:57:42] local.ERROR: Too few arguments to function App\Events\MessageCliantCreated::__construct(), 0 passed in /var/www/html/app/Http/Controllers/Ajax/ChatClientController.php on line 74 and exactly 7 expected {"userId":11,"exception":"[object] (ArgumentCountError(code: 0): Too few arguments to function App\\Events\\MessageCliantCreated::__construct(), 0 passed in /var/www/html/app/Http/Controllers/Ajax/ChatClientController.php on line 74 and exactly 7 expected at /var/www/html/app/Events/MessageCliantCreated.php:34)

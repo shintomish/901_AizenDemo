@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Ajax;
 
-use App\Models\User;
+// use App\Models\User;
 use App\Models\Message;
 use App\Events\MessageCreated;
+use App\Events\HelloPusher;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class ChatController extends Controller
@@ -24,19 +25,16 @@ class ChatController extends Controller
         Log::info('Ajax ChatController index START');
 
         // ログインユーザーのユーザー情報を取得する
-        $user  = $this->auth_user_info();
-        $organization_id =  $user->organization_id;
-
-        $customer_id = 2;     //customer_id 顧客は2から
-        $user_id     = $user->id;
+        $user      = $this->auth_user_info();
+        $user_id   = $user->id;
+        $organization_id =  1;
 
         Log::debug('Ajax ChatClientController index  $user_id = ' . print_r($user_id,true));
+
         Log::info('Ajax ChatController index END');
 
         // return Message::orderBy('id', 'desc')->get();
         return Message::where('organization_id', $organization_id)
-                ->where('user_id', $user_id)
-                ->orWhere('customer_id', '>=',$customer_id)
                 ->with('user')
                 ->orderBy('id', 'desc')
                 ->get();
@@ -46,33 +44,36 @@ class ChatController extends Controller
     public function create(Request $request) { // メッセージを登録
 
         Log::info('Ajax ChatController create START');
-        // $message = Message::create([
-        //     'body' => $request->message
-        // ]);
 
-        // event(new MessageCreated($message));
-        // broadcast(new MessageCreated($message))->toOthers();
-        // broadcast(new MessageCreated($message));
+        $user      = Auth::user();
+        $user_id   = $user->id;
+        $organization_id = 1;
 
-        $user            = Auth::user();
-        $organization_id = $user->organization_id;
-
-        // Customer(複数レコード)情報を取得する
-        $customer_findrec = $this->auth_customer_findrec();
-        $customer_id = $customer_findrec[0]['id'];
+        /**
+         * chattopで選択されたcustomer_idを取得する
+         */
+        $retval = $this->chattop_json_get_info($user_id);
+        $customer_id = $retval['customer_id'];
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
+            'to_flg'          => 1,
+            'user_id'         => $user_id,
+            'to_user_id'      => $customer_id,
             'customer_id'     => $customer_id,
             'organization_id' => $organization_id,
         ]);
 
         Log::info('Ajax ChatController create END');
 
-        // broadcast(new MessageCreated($user, $message))->toOthers();
-        broadcast(new MessageCreated($user, $customer_id, $organization_id, $message));
+        $to_flg = 1;
+        $to_user_id = $customer_id;
+
+        // イベント発火
+        event(new MessageCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
+        // broadcast(new MessageCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
 
         // return ['status' => 'Message Sent!'];
-
     }
+
 }

@@ -166,7 +166,6 @@
                         this.getMessages(); // メッセージを再読込
                         console.log(e.message);
                     });
-                    console.log('mounted2');
                 }
             });
         </script>

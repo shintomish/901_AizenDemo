@@ -73,7 +73,7 @@ class ChatClientController extends Controller
         // イベント発火
         // event(new MessageCliantCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
 
-        broadcast(new MessageCliantCreated($user, $organization_id, $to_flg, $u_id, $to_user_id, $customer_id, $message));
+        // broadcast(new MessageCreated($user, $organization_id, $to_flg, $u_id, $to_user_id, $customer_id, $message));
 
         // return ['status' => 'Message Sent!'];
 
