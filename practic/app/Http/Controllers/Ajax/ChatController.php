@@ -70,6 +70,8 @@ class ChatController extends Controller
         $to_user_id = $customer_id;
 
         // イベント発火
+        // event(new \App\Events\HelloPusher('テストメッセージaa'));
+
         // event(new MessageCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
         broadcast(new MessageCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
 

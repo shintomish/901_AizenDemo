@@ -32,6 +32,7 @@
     </style>
 
     <script src="{{ asset('js/app.js')}}"></script>
+    <script src="{{ asset('js/notify.js')}}"></script>
 
     <body>
         <div id="chat">
@@ -101,7 +102,7 @@
                         <span style="color: green"> :</span>&nbsp;
                         <span style="color: green" v-text="m.user.name"></span>
                         <span style="color: green">  </span>&nbsp;
-                        <div><span class="u-pre-wrap" style="color: rgb(8, 81, 238)" v-text="m.body"></span></div>
+                        <div><span class="u-pre-wrap w-max mb-3 p-2 rounded-lg relative self ml-auto" style="color: rgb(8, 81, 238)" v-text="m.body"></span></div>
                         </div>
                     </template >
                     <template v-else-if="m.to_flg === 2 && m.to_user_id === {{ $user_id }} && m.customer_id === {{ $customer_id }}">
@@ -110,7 +111,7 @@
                         <span style="color: rgb(238, 104, 8)"> :</span>&nbsp;
                         <span style="color: rgb(238, 104, 8)" v-text="m.created_at"></span>
                         <span style="color: rgb(238, 104, 8)">  </span>&nbsp;
-                        <div><span class="u-pre-wrap" style="color: rgb(8, 81, 238)" v-text="m.body"></span></div>
+                        <div><span class="u-pre-wrap w-max mb-3 p-2 rounded-lg relative other" style="color: rgb(8, 81, 238)" v-text="m.body"></span></div>
                         </div>
                     </template >
                 </ul>
@@ -120,6 +121,23 @@
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+
+        <script>
+
+            // // log出力設定（本番環境とかでは消してね）
+            // Pusher.logToConsole = true;
+        
+            // // XXXXにApp Keyを入れ XXXにclusterを入れ。
+            // var pusher = new Pusher('0ff8809ccd70d39e96f8', {
+            //     cluster: 'ap3',
+            //     forceTLS: true
+            // });
+        
+            // var channel = pusher.subscribe('my-channel');
+            // channel.bind('my-event', function(data) {
+            //     $.notify(data.message, 'info');
+            // });
+        </script>
 
         <script>
             new Vue({
@@ -156,12 +174,6 @@
                         this.getMessages(); // メッセージを再読込
                         console.log(e.message);
                     });
-                    Echo.channel('chat')
-                    .listen('MessageCreated', (e) => {
-                        this.getMessages(); // メッセージを再読込
-                        console.log(e.message);
-                    });
-                    console.log('mounted2');
                 }
             });
 
