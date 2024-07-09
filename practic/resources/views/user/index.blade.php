@@ -1,10 +1,10 @@
 {{-- @extends('layouts.app') --}}
-@extends('layouts.common_index')
+@extends('layouts.teach')
 
 @section('content')
     {{-- <h2>利用者一覧</h2> --}}
     <div class="text-right">
-        <a class="btn btn-success btn-sm mr-auto" href="{{route('user.create')}}">新規登録</a>
+        {{-- <a class="btn btn-success btn-sm mr-auto" href="{{route('user.create')}}">新規登録</a> --}}
     </div>
     {{-- Line --}}
     <hr class="mb-4">
@@ -136,15 +136,17 @@
                         <td>
                             <div class="btn-toolbar">
                                 <div class="btn-group me-2 mb-0">
-                                    <a class="btn btn-primary btn-sm" href="{{ route('user.edit',$user->id)}}">編集</a>
+                                    {{-- test --}}
+                                    {{-- <a class="btn btn-primary btn-sm" href="{{ route('user.edit',$user->id)}}">編集</a> --}}
                                 </div>
                                 <div class="btn-group me-2 mb-0">
-                                    <form action="{{ route('user.destroy', $user->id)}}" method="POST">
+                                    {{-- test --}}
+                                    {{-- <form action="{{ route('user.destroy', $user->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <input class="btn btn-danger btn-sm" type="submit" value="削除" id="btn_del"
                                             onclick='return confirm("削除しますか？");'>
-                                    </form>
+                                    </form> --}}
                                 </div>
                             </div>
                         </td>

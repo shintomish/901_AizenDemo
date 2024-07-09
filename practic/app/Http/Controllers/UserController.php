@@ -58,57 +58,33 @@ class UserController extends Controller
                 // ->sortable()
                 // ->paginate(300);
 
-        if($organization_id == 0) {
-            $users = User::select(
-                'users.id as id'
-                ,'users.user_id as user_id'
-                ,'users.name as name'
-                ,'users.email as email'
-                ,'users.organization_id as organization_id'
-                ,'users.login_flg as login_flg'
-                ,'users.admin_flg as admin_flg'
-                ,'customers.id as customers_id'
-                ,'customers.business_name as business_name'
-                )
-                ->leftJoin('customers', function ($join) {
-                    $join->on('customers.id', '=', 'users.user_id');
-                })
-                    // 組織の絞り込み
-                    // ->where('users.organization_id','=',$organization_id)
-                    // 削除されていない
-                    ->whereNull('users.deleted_at')
-                    ->whereNull('customers.deleted_at')
-                    // ($keyword)の絞り込み '%'.$keyword.'%'
-                    // sortable()を追加
-                    ->sortable('id','business_name')
-                    // ->orderBy('users.id', 'desc')
-                    ->paginate(300);
-        } else {
-            $users = User::select(
-                'users.id as id'
-                ,'users.user_id as user_id'
-                ,'users.name as name'
-                ,'users.email as email'
-                ,'users.organization_id as organization_id'
-                ,'users.login_flg as login_flg'
-                ,'users.admin_flg as admin_flg'
-                ,'customers.id as customers_id'
-                ,'customers.business_name as business_name'
-                )
-                ->leftJoin('customers', function ($join) {
-                    $join->on('customers.id', '=', 'users.user_id');
-                })
-                    // 組織の絞り込み
-                    ->where('users.organization_id','=',$organization_id)
-                    // 削除されていない
-                    ->whereNull('users.deleted_at')
-                    ->whereNull('customers.deleted_at')
-                    // ($keyword)の絞り込み '%'.$keyword.'%'
-                    // sortable()を追加
-                    ->sortable('id','business_name')
-                    // ->orderBy('users.id', 'desc')
-                    ->paginate(300);
-        }
+        // if($organization_id == 0) {
+        $users = User::select(
+            'users.id as id'
+            ,'users.user_id as user_id'
+            ,'users.name as name'
+            ,'users.email as email'
+            ,'users.organization_id as organization_id'
+            ,'users.login_flg as login_flg'
+            ,'users.admin_flg as admin_flg'
+            ,'customers.id as customers_id'
+            ,'customers.business_name as business_name'
+            )
+            ->leftJoin('customers', function ($join) {
+                $join->on('customers.id', '=', 'users.user_id');
+            })
+                // 組織の絞り込み
+                // ->where('users.organization_id','=',$organization_id)
+                // test
+                ->where('users.id','>=',11)
+                // 削除されていない
+                ->whereNull('users.deleted_at')
+                ->whereNull('customers.deleted_at')
+                // ($keyword)の絞り込み '%'.$keyword.'%'
+                // sortable()を追加
+                ->sortable('id','business_name')
+                // ->orderBy('users.id', 'desc')
+                ->paginate(300);
 
         // 一覧の組織IDを組織名にするため organizationsを取得
         $organizations = DB::table('organizations')

@@ -61,8 +61,10 @@ class TopHistoryController extends Controller
         Log::debug('office tophistory index customer_id  = ' . print_r($customer_id ,true));
 
         // Customer(ALLレコード)情報を取得する
-        $customer_findrec = $this->auth_customer_allrec();
+        // $customer_findrec = $this->auth_customer_allrec();
         // $customer_id = $customer_findrec[0]['id'];
+        //  * Customer(個人のレコード)情報を取得する
+        $customer_findrec = $this->auth_customer_individual();
 
         $exercises = Exercisedata::where('organization_id','>=',$organization_id)
                     ->where('customer_id','=',$customer_id)
@@ -129,7 +131,9 @@ class TopHistoryController extends Controller
         $organization_id =  $user->organization_id;
 
         // Customer(ALLレコード)情報を取得する
-        $customer_findrec = $this->auth_customer_allrec();
+        // $customer_findrec = $this->auth_customer_allrec();
+        //  * Customer(個人のレコード)情報を取得する
+        $customer_findrec = $this->auth_customer_individual();
 
         $exercises = Exercisedata::where('organization_id','>=',$organization_id)
                     ->where('customer_id','=',$customer_id)

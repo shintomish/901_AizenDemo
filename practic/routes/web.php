@@ -134,6 +134,12 @@ Route::resource('tophistory',         'App\Http\Controllers\TopHistoryController
 Route::resource('organization', 'App\Http\Controllers\OrganizationController');
 
 //-----------------------------------------------------------------------------------------------
+//- 事務所 exelevalname スポーツレベル
+//-----------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------
+Route::resource('exelevelname', 'App\Http\Controllers\ExelevelNameController');
+
+//-----------------------------------------------------------------------------------------------
 //- 事務所 Operation ログイン情報 00_ope 2023/09/04
 //-----------------------------------------------------------------------------------------------
 Route::get('operationperserch', 'App\Http\Controllers\OperationController@periodsearch')->name('operationperiodsearch');

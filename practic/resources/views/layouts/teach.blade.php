@@ -142,7 +142,7 @@
                             </h3>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="">
+                                <a class="nav-link" href="{{route('user.index')}}">
                                     {{-- <span data-feather="users"></span> --}}
                                     <i class="fas fa-user-friends"></i>
                                     利用者管理
@@ -150,7 +150,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="">
+                                <a class="nav-link" href="{{route('exelevelname.index')}}">
                                     {{-- <span data-feather="users"></span> --}}
                                     <i class="fas fa-user-alt"></i>
                                     スポーツレベル

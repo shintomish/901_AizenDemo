@@ -122,7 +122,7 @@
                             </h3>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="">
+                                <a class="nav-link" href="{{route('user.index')}}">
                                     {{-- <span data-feather="users"></span> --}}
                                     <i class="fas fa-user-friends"></i>
                                     利用者管理
@@ -130,7 +130,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="">
+                                <a class="nav-link" href="{{route('exelevelname.index')}}">
                                     {{-- <span data-feather="users"></span> --}}
                                     <i class="fas fa-user-alt"></i>
                                     スポーツレベル
@@ -181,6 +181,8 @@
                                 <!-- タイトル -->
                                 <h3>利用者管理</h3>
                                 <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('userserch')}}" method="GET">
+                                @break;
+                            @case ('90_1')
                                 @break;
                             @case ('00_2')
                                 @break;
