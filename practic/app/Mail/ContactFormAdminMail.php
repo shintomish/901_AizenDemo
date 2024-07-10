@@ -35,7 +35,9 @@ class ContactFormAdminMail extends Mailable
         //     subject: 'Contact Form Admin Mail',
         // );
 
-        $from = new Address($this->form_data['email'], $this->form_data['name']);
+        // $from = new Address($this->form_data['email'], $this->form_data['name']);
+        $from    = new Address(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
+        
         // $subject = '【' . env('APP_NAME') . '】お問い合せがありました';
         $subject = '【トレーニングメニュー提供サービス】お問い合せがありました';
 

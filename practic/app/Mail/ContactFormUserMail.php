@@ -32,7 +32,7 @@ class ContactFormUserMail extends Mailable
         // );
         $from    = new Address(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
         // $subject = '【' . env('APP_NAME') . '】お問い合せありがとうございます';
-        $subject = '【トレーニングメニュー提供サービス】】お問い合せありがとうございます';
+        $subject = '【トレーニングメニュー提供サービス】お問い合せありがとうございます';
 
         return new Envelope(
             from: $from,
