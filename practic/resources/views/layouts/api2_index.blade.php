@@ -261,13 +261,17 @@
                         </div>
                         </form>
                     </div>
+                    
+                    <div id="page">
+                        <div id="contents">
+                            @yield('content')
+                        </div><!-- / #contents -->
+                    </div><!-- #page -->
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" ></script>
+                    @yield('scripts')
 
                     <!-- フラッシュメッセージ -->
-                    {{-- @include('components.toastr') --}}
-
-                    <div class="container">
-                        @yield('content')
-                    </div>
+                    @include('components.toastr')
 
                 </main>
             </div>

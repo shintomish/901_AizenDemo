@@ -142,6 +142,11 @@
             // channel.bind('my-event', function(data) {
             //     $.notify(data.message, 'info');
             // });
+            window.Echo.channel('chatcliant').listen('chatcliant_event', (e) =>
+            {
+                console.log(e.message);
+                // メッセージをレンダリング
+            });
         </script>
 
         <script>

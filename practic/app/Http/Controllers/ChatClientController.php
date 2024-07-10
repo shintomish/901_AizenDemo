@@ -54,7 +54,8 @@ class ChatClientController extends Controller
             ->get();
 
         // User情報(8-10)を取得する
-        $users = User::whereBetween('id', [8, 10])->get();
+        // User情報(8-8)を取得する
+        $users = User::whereBetween('id', [8, 8])->get();
 
         $user_id = 8;
         $to_user_id = $user_id;

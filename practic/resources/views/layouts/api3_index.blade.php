@@ -125,10 +125,10 @@
                                 </li>
                             </ul>
                             <li class="nav-item">
-                                {{-- <a class="nav-link" href="{{route('chatclientin')}}">
+                                <a class="nav-link" href="{{route('chatclientin')}}">
                                     <i class="fas fa-wifi"></i>
                                     チャット
-                                </a> --}}
+                                </a>
                             </li>
                         </ul>
                     </div>

@@ -123,8 +123,14 @@ class FormController extends Controller
                 Log::info('FormController send $form_data = ' . print_r($form_data, true));
                 // Log::info('FormController send $email_name = ' . print_r($email_name, true));
 
+                // ------ トレーナー宛メール
+                $email_traner = 'yshintomi12@gmail.com';
+                Mail::to($email_traner)->send(new ContactFormAdminMail($form_data));
+                // ------
+
                 // 管理者宛メール
                 Mail::to($email_admin)->send(new ContactFormAdminMail($form_data));
+
                 // ユーザー宛メール
                 Mail::to($email_user)->send(new ContactFormUserMail($form_data));
 
