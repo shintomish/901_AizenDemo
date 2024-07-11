@@ -62,6 +62,14 @@ Route::post('actlog/download', 'App\Http\Controllers\ActlogController@download')
 //-----------------------------------------------------------------------------------------------
 Route::get('/excel/exp',  'App\Http\Controllers\ExcelMakeController@excel')->name('excelexp');
 
+
+//-----------------------------------------------------------------------------------------------
+//- Notification 通知を既読にする
+//-----------------------------------------------------------------------------------------------
+// Route::controller(NotificationController::class)->group(function () {
+//     Route::get('/notifications/mark-as-read', 'markAsRead')->name('mark-as-read');
+// });
+
 //-----------------------------------------------------------------------------------------------
 //- Chat
 //-----------------------------------------------------------------------------------------------

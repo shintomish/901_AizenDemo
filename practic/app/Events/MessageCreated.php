@@ -52,7 +52,8 @@ class MessageCreated implements ShouldBroadcast
     //     return new Channel('chat');         // Public
     //     // return new PrivateChannel('chat');  // Privateでは、更新されないのでPublicにした
     // }
-        /**
+    
+    /**
      * イベントをブロードキャストすべき、チャンネルの取得
      *
      * @return Channel|Channel[]
@@ -84,8 +85,8 @@ class MessageCreated implements ShouldBroadcast
      *
      * @return string
      */
-    public function broadcastAs()
-    {
-        return 'chat_event';
-    }
+    // public function broadcastAs()
+    // {
+    //     return 'chat_event';
+    // }
 }

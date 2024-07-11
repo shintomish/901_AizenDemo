@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Ajax;
 // use App\Models\User;
 use App\Models\Message;
 use App\Events\MessageCreated;
-use App\Events\HelloPusher;
+// use App\Events\HelloPusher;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -68,9 +68,6 @@ class ChatController extends Controller
 
         $to_flg = 1;
         $to_user_id = $customer_id;
-
-        // イベント発火
-        // event(new \App\Events\HelloPusher('テストメッセージaa'));
 
         // event(new MessageCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
         broadcast(new MessageCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));

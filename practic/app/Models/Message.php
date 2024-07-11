@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable;
+// use Illuminate\Notifications\Notifiable;
 
 class Message extends Model
 {
@@ -24,5 +24,10 @@ class Message extends Model
     public function user()
     {
         return $this->belongsTo('App\Models\User');
+    }
+
+    public function broadcastOn(string $event): array
+    {
+        return ['messages'];
     }
 }

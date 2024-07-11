@@ -132,11 +132,11 @@
             //     cluster: 'ap3',
             //     forceTLS: true
             // });
-            window.Echo.channel('chatcliant').listen('chatcliant_event', (e) =>
-            {
-                console.log(e.message);
-                // メッセージをレンダリング
-            });
+            // window.Echo.channel('chatcliant').listen('chatcliant_event', (e) =>
+            // {
+            //     console.log(e.message);
+            //     // メッセージをレンダリング
+            // });
             // var channel = pusher.subscribe('my-channel');
             // channel.bind('my-event', function(data) {
             //     $.notify(data.message, 'info');
