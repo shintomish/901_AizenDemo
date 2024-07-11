@@ -68,8 +68,7 @@
                                 <slot name="footer"></slot>
                             </footer>
                         </div>
-                    </li>
-                `
+                    </li>`
             };
 
             Vue.createApp({

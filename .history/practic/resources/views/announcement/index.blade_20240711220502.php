@@ -51,7 +51,7 @@
 
                     }
                 },
-                template: `
+        template: `
                     <li class="nav-item dropdown" v-if="hasItem">
                         <a style="position:relative;min-width:40px;" class="nav-link" data-toggle="dropdown" href="#">
                             <slot>
@@ -69,7 +69,7 @@
                             </footer>
                         </div>
                     </li>
-                `
+         `
             };
 
             Vue.createApp({

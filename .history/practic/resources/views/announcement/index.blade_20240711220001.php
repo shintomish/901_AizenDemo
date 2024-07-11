@@ -51,8 +51,8 @@
 
                     }
                 },
-                template: `
-                    <li class="nav-item dropdown" v-if="hasItem">
+                template:
+                    <ul class="nav-item dropdown" v-if="hasItem">
                         <a style="position:relative;min-width:40px;" class="nav-link" data-toggle="dropdown" href="#">
                             <slot>
                                 <i class="far fa-bell"></i>
@@ -69,7 +69,6 @@
                             </footer>
                         </div>
                     </li>
-                `
             };
 
             Vue.createApp({

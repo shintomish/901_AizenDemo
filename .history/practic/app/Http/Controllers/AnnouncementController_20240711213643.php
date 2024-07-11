@@ -15,7 +15,7 @@ class AnnouncementController extends Controller
     }
 
     //ここでは、表示したお知らせの「未読」を「既読」に変更しています。
-    //このようにすることで、一度表示したお知らせデータが次回から未読には含まれなくなるということです
+    //
     public function show(Request $request, Announcement $announcement) {
 
         $user = $request->user();

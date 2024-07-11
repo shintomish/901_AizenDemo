@@ -64,7 +64,9 @@ Route::get('/excel/exp',  'App\Http\Controllers\ExcelMakeController@excel')->nam
 
 
 //-----------------------------------------------------------------------------------------------
-//- Announcement お知らせ機能 ※ なお、authミドルウェアをつけて、ログインを必須
+//- Announcement お知らせ機能 ※ なお、authミドルウェアをつけて、ログインを必須にしています。
+
+
 //-----------------------------------------------------------------------------------------------
 Route::prefix('announcement')->middleware('auth')->group(function(){
 

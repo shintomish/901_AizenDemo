@@ -51,26 +51,9 @@
 
                     }
                 },
-                template: `
-                    <li class="nav-item dropdown" v-if="hasItem">
-                        <a style="position:relative;min-width:40px;" class="nav-link" data-toggle="dropdown" href="#">
-                            <slot>
-                                <i class="far fa-bell"></i>
-                            </slot>
-                            <span style="position:absolute;top:0;left:16px;" class="badge badge-danger" v-text="items.total"></span>
-                        </a>
-                        <div style="width:300px;" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a style="overflow: hidden;text-overflow:ellipsis;" class="dropdown-item" :href="item.url" v-for="item in items.data">
-                                <small class="float-right text-muted pl-3" v-text="item.date"></small>
-                                <small v-text="item.title"></small>
-                            </a>
-                            <footer>
-                                <slot name="footer"></slot>
-                            </footer>
-                        </div>
-                    </li>
-                `
-            };
+                template:
+
+            },
 
             Vue.createApp({
                 data() {
@@ -90,7 +73,7 @@
 
                 }
             })
-            .component('v-dropdown-nav-item', dropdownNavItemComponent) // ② コンポーネントをセット
+            .component('v-dropdown-nav-item', dropdownNavItemComponent); // ② コンポーネントをセット
             .mount('#app');
 
         </script>

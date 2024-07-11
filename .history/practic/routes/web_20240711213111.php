@@ -64,19 +64,15 @@ Route::get('/excel/exp',  'App\Http\Controllers\ExcelMakeController@excel')->nam
 
 
 //-----------------------------------------------------------------------------------------------
-//- Announcement お知らせ機能 ※ なお、authミドルウェアをつけて、ログインを必須
+//- Notification お知らせ機能
 //-----------------------------------------------------------------------------------------------
 Route::prefix('announcement')->middleware('auth')->group(function(){
 
-    //ページ上部にお知らせを表示するページ
     Route::get('/', [AnnouncementController::class, 'index'])->name('announcement.index');
-    //未読のお知らせデータを取得するためのもの Ajaxでの取得を想定
     Route::get('/list', [AnnouncementController::class, 'list'])->name('announcement.list');
-    //お知らせの詳細ページ
     Route::get('/{announcement}', [AnnouncementController::class, 'show'])->name('announcement.show');
 
 });
-
 //-----------------------------------------------------------------------------------------------
 //- Chat
 //-----------------------------------------------------------------------------------------------

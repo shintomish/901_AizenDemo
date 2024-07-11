@@ -51,8 +51,8 @@
 
                     }
                 },
-                template: `
-                    <li class="nav-item dropdown" v-if="hasItem">
+                template:
+                <li class="nav-item dropdown" v-if="hasItem">
                         <a style="position:relative;min-width:40px;" class="nav-link" data-toggle="dropdown" href="#">
                             <slot>
                                 <i class="far fa-bell"></i>
@@ -67,9 +67,7 @@
                             <footer>
                                 <slot name="footer"></slot>
                             </footer>
-                        </div>
-                    </li>
-                `
+                        </div></li>
             };
 
             Vue.createApp({
@@ -90,7 +88,7 @@
 
                 }
             })
-            .component('v-dropdown-nav-item', dropdownNavItemComponent) // ② コンポーネントをセット
+            .component('v-dropdown-nav-item', dropdownNavItemComponent); // ② コンポーネントをセット
             .mount('#app');
 
         </script>

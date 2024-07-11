@@ -69,7 +69,8 @@
                             </footer>
                         </div>
                     </li>
-                `
+
+                    `
             };
 
             Vue.createApp({

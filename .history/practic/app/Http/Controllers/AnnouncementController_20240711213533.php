@@ -14,8 +14,6 @@ class AnnouncementController extends Controller
 
     }
 
-    //ここでは、表示したお知らせの「未読」を「既読」に変更しています。
-    //このようにすることで、一度表示したお知らせデータが次回から未読には含まれなくなるということです
     public function show(Request $request, Announcement $announcement) {
 
         $user = $request->user();
@@ -35,8 +33,8 @@ class AnnouncementController extends Controller
     }
 
     //なお、list()の中で重要なのがwhereHas()の部分です。
-    //意味としては、「リレーションシップ先で絞り込みをしたデータだけを取得する」となります。
-    //つまり、「各ユーザーの announcement_reads が未読になっているものだけ」をデータ取得
+
+意味としては、「リレーションシップ先で絞り込みをしたデータだけを取得する」となります。つまり、「各ユーザーの announcement_reads が未読になっているものだけ」をデータ取得
     public function list(Request $request) {
 
         $user = $request->user();
