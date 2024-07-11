@@ -96,6 +96,7 @@
             <div class="row-6" id="room">
                 <ul class="" v-for="(m, key) in messages" :key="key">
                     {{-- 事務所はグリーン --}}
+                    {{-- <template v-if="m.to_flg === 1 && m.user_id === {{ $user_id }} && m.customer_id === {{ $customer_id }}"> --}}
                     <template v-if="m.to_flg === 1 && m.user_id === {{ $user_id }} && m.customer_id === {{ $customer_id }}">
                         <div class="recieve" style="text-align: right">
                         <span style="color: green" v-text="m.created_at"></span>
