@@ -143,7 +143,7 @@
                                 <span style="position:absolute;top:0;left:16px;" class="badge badge-danger" v-text="items.total"></span>
                             </a>
                             <div style="width:300px;" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a style="overflow: hidden;text-overflow:ellipsis;" class="dropdown-item" :href="" v-for="item in items.data">
+                                <a style="overflow: hidden;text-overflow:ellipsis;" class="dropdown-item" :href="item.url" v-for="item in items.data">
                                     <small class="float-right text-muted pl-3" v-text="item.date"></small>
                                     <small v-text="item.title"></small>
                                 </a>

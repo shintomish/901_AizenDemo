@@ -73,7 +73,7 @@
 
     <div class="container">
         {{-- <h6 class="jumbotron" >ファイルアップロード</h6> --}}
-        <h6 class="" >ファイルアップロード</h6>
+        <h6 class="jumbotron" >ファイルアップロード</h6>
 
         {{-- <form action="{{ route('postUpload', $customer_id )}}" id="file-upload" method="POST" enctype="multipart/form-data"> --}}
         <form action="" id="file-upload" method="POST" enctype="multipart/form-data">

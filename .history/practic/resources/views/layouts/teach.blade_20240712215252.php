@@ -36,7 +36,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
         <!-- Bootstrap core CSS -->
-        {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"> --}}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 
         {{-- @yield('styles') --}}
 
@@ -73,14 +73,12 @@
                 }
             }
         </style>
-    </head>
-
-    <body>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    </head>
 
+    <body>
         <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="{{ route('topclient') }}">{{ config('app.name', 'Laravel') }}</a>
 
@@ -143,7 +141,7 @@
                                 <span style="position:absolute;top:0;left:16px;" class="badge badge-danger" v-text="items.total"></span>
                             </a>
                             <div style="width:300px;" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a style="overflow: hidden;text-overflow:ellipsis;" class="dropdown-item" :href="" v-for="item in items.data">
+                                <a style="overflow: hidden;text-overflow:ellipsis;" class="dropdown-item" :href="item.url" v-for="item in items.data">
                                     <small class="float-right text-muted pl-3" v-text="item.date"></small>
                                     <small v-text="item.title"></small>
                                 </a>

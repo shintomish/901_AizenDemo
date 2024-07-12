@@ -112,7 +112,8 @@
 
             <div class="flow-drop mb10" ondragenter="jQuery(this).addClass('flow-dragover');" ondragend="jQuery(this).
             removeClass('flow-dragover');" ondrop="jQuery(this).removeClass('flow-dragover');">
-            <a class="ml10 flow-browse btn btn-primary">ファイル選択</a>　または、ここにファイルをドロップしてください
+            {{-- <a class="ml10 flow-browse btn btn-primary">ファイル選択</a>　または、ここにファイルをドロップしてください --}}
+            <a class="ml10 btn btn-primary">ファイル選択</a>　または、ここにファイルをドロップしてください
             </div>
 
             <div class="progress flow-progress" style="margin-top:10px; height: 30px;" >
