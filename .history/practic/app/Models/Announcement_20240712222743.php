@@ -27,7 +27,7 @@ class Announcement extends Model
 
     public function getDateAttribute() {
 
-        return $this->created_at->format('m月d日 h時m分');
+        return $this->created_at->format('m月d日 h時');
 
     }
 }
