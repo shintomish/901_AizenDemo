@@ -83,16 +83,16 @@ class ChatClientController extends Controller
 
         $descrip = $user_name . 'さん から通知がありました';
 
-        $announcement = new Announcement();
-        $announcement->from_user_id = $u_id;
-        $announcement->title        = $descrip;
-        $announcement->description  = $message['body'];
-        $announcement->save();               //  Inserts description
+        $Announcement = new Announcement();
+        $Announcement->from_user_id = $u_id;
+        $Announcement->title        = $descrip;
+        $Announcement->description  = $message['body'];
+        $Announcement->save();               //  Inserts description
+
 
         $announcement_read = new AnnouncementRead();
-        $announcement_read->user_id         = $to_user_id;
-        $announcement_read->announcement_id = $announcement->id;
-        $announcement_read->read            = false;
+        $announcement_read->user_id = $to_user_id;
+        $announcement_read->read    = false;
         $announcement_read->save();               //  Inserts
 
 

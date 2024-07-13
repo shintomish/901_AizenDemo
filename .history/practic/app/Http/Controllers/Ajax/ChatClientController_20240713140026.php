@@ -81,7 +81,7 @@ class ChatClientController extends Controller
 
         broadcast(new MessageCreated($user, $organization_id, $to_flg, $u_id, $to_user_id, $customer_id, $message));
 
-        $descrip = $user_name . 'さん から通知がありました';
+        $descrip = $user_name . 'さん から通知です';
 
         $announcement = new Announcement();
         $announcement->from_user_id = $u_id;
@@ -91,7 +91,7 @@ class ChatClientController extends Controller
 
         $announcement_read = new AnnouncementRead();
         $announcement_read->user_id         = $to_user_id;
-        $announcement_read->announcement_id = $announcement->id;
+        $announcement_read->announcement_id = $to_user_id;
         $announcement_read->read            = false;
         $announcement_read->save();               //  Inserts
 

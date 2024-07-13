@@ -81,7 +81,7 @@ class ChatClientController extends Controller
 
         broadcast(new MessageCreated($user, $organization_id, $to_flg, $u_id, $to_user_id, $customer_id, $message));
 
-        $descrip = $user_name . 'さん から通知がありました';
+        $descrip = $user_name . 'さん から通';
 
         $announcement = new Announcement();
         $announcement->from_user_id = $u_id;

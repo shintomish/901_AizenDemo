@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Ajax;
 
 // use App\Models\User;
 // use App\Models\Customer;
+
 use App\Models\Announcement;
 use App\Models\AnnouncementRead;
-
 use App\Models\Message;
 use App\Events\MessageCreated;
 // use App\Events\HelloPusher;
@@ -52,7 +52,6 @@ class ChatClientController extends Controller
         $user_id         = $user->user_id;
         $customer_id     = $user->user_id;
         $organization_id = 1;
-        $user_name       = $user->name;
 
         /**
          * chatcliで選択されたuser_idを取得する
@@ -80,21 +79,6 @@ class ChatClientController extends Controller
         // event(new MessageCliantCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
 
         broadcast(new MessageCreated($user, $organization_id, $to_flg, $u_id, $to_user_id, $customer_id, $message));
-
-        $descrip = $user_name . 'さん から通知がありました';
-
-        $announcement = new Announcement();
-        $announcement->from_user_id = $u_id;
-        $announcement->title        = $descrip;
-        $announcement->description  = $message['body'];
-        $announcement->save();               //  Inserts description
-
-        $announcement_read = new AnnouncementRead();
-        $announcement_read->user_id         = $to_user_id;
-        $announcement_read->announcement_id = $announcement->id;
-        $announcement_read->read            = false;
-        $announcement_read->save();               //  Inserts
-
 
         // return ['status' => 'Message Sent!'];
 
