@@ -92,7 +92,7 @@ class ChatClientController extends Controller
         $announcement_read = new AnnouncementRead();
         $announcement_read->user_id         = $to_user_id;
         $announcement_read->announcement_id = $announcement->id;
-        $announcement_read->from_user_id    = $u_id;
+        $announcement->from_user_id = $u_id;
         $announcement_read->read            = false;
         $announcement_read->save();               //  Inserts
 

@@ -83,6 +83,7 @@ class ChatController extends Controller
             $announcement_read->save();
         }
 
+
         Log::info('ChatController index END');
 
         return view('chat.index', $compacts );

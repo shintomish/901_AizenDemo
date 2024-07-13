@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 // use DateTime;
 // use App\Models\User;
 // use App\Models\Customer;
-use App\Models\Announcement;
 use App\Models\AnnouncementRead;
 use App\Models\Message;
 use Illuminate\Http\Request;
@@ -66,21 +65,19 @@ class ChatController extends Controller
         $common_no = '00_7';
         $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'to_user_id','customer_id', 'common_no');
 
-        $announcement_id = 0;
         $announcement = Announcement::where('from_user_id', $to_user_id)
+            ->where('announcement_id', $announcement->id)
             ->first();
 
-        if(!is_null($announcement)) {
-            $announcement_id = $announcement->id;
-        }
-
         $announcement_read = AnnouncementRead::where('from_user_id', $to_user_id)
-            ->where('announcement_id', $announcement_id)
+            ->where('announcement_id', $announcement->id)
             ->first();
 
         if(!is_null($announcement_read)) {
+
             $announcement_read->read = true;
             $announcement_read->save();
+
         }
 
         Log::info('ChatController index END');
@@ -138,21 +135,20 @@ class ChatController extends Controller
         $common_no = '00_7';
         $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'to_user_id', 'customer_id', 'common_no');
 
-        $announcement_id = 0;
+
         $announcement = Announcement::where('from_user_id', $to_user_id)
+            ->where('announcement_id', $announcement->id)
             ->first();
 
-        if(!is_null($announcement)) {
-            $announcement_id = $announcement->id;
-        }
-
         $announcement_read = AnnouncementRead::where('from_user_id', $to_user_id)
-            ->where('announcement_id', $announcement_id)
+            ->where('announcement_id', $announcement->id)
             ->first();
 
         if(!is_null($announcement_read)) {
+
             $announcement_read->read = true;
             $announcement_read->save();
+
         }
 
         Log::info('ChatController serch END');
