@@ -117,14 +117,15 @@ class FormController extends Controller
                 break;
             case 'complete':
                 // 送信先メールアドレス
-                $email_admin = env('MAIL_FROM_ADDRESS');
-                $email_user  = $form_data['email'];
+                $email_admin  = env('MAIL_FROM_ADDRESS');
+                $email_user   = $form_data['email'];
+                $email_traner = env('MAIL_FROM_ADR_TRANER');
 
                 Log::info('FormController send $form_data = ' . print_r($form_data, true));
                 // Log::info('FormController send $email_name = ' . print_r($email_name, true));
 
                 // ------ トレーナー宛メール
-                $email_traner = 'yshintomi12@gmail.com';
+                // $email_traner = 'yshintomi12@gmail.com';
                 Mail::to($email_traner)->send(new ContactFormAdminMail($form_data));
                 // ------
 

@@ -8,7 +8,8 @@
             <div class='panel-heading text-center panel-relative'>
                 <h1 class="h3 mb-3 fw-normal"><i class="fas fa-landmark"></i></h1>
                 {{-- <h1 class="h3 mb-3 fw-normal"> {{ config('app.name', 'Laravel') }} </h1> --}}
-                <h1 class="h3 mb-3 fw-normal">トレーニングメニュー提供サービス</h1>
+                {{-- <h1 class="h3 mb-3 fw-normal">トレーニングメニュー提供サービス</h1> --}}
+                <h1 class="h3 mb-3 fw-normal"> {{ config('app.name', 'Laravel') }} </h1>
             </div>
         </div>
     </div>
