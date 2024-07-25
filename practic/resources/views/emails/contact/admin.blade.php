@@ -11,27 +11,27 @@
 
     @if( $form_data['level_id'] ==1)
         @php
-            $level = 'S トップアスリート(世界レベル)';
+            $level = 'S-トップアスリート(世界レベル)';
         @endphp
     @endif
     @if( $form_data['level_id'] ==2)
         @php
-            $level = 'A アスリート(国内レベル)';
+            $level = 'A-アスリート(国内レベル)';
         @endphp
     @endif
     @if( $form_data['level_id'] ==3)
         @php
-            $level = '>B アスリート(都道府県レベル)';
+            $level = 'B-アスリート(都道府県レベル)';
         @endphp
     @endif
     @if( $form_data['level_id'] ==4)
         @php
-            $level = 'C マスターズ(国際レベル))';
+            $level = 'C-マスターズ(国際レベル))';
         @endphp
     @endif
     @if( $form_data['level_id'] ==5)
         @php
-            $level = 'D マスターズ(国内レベル)';
+            $level = 'D-マスターズ(国内レベル)';
         @endphp
     @endif
 
