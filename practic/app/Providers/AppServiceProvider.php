@@ -37,6 +37,17 @@ class AppServiceProvider extends ServiceProvider
         );
         view()->share('loop_sex_flg', $loop_sex_flg);
 
+        // contact
+        // ` 'レベル',
+        $loop_level_flg = array(
+            '01' => array ( 'no'=> 1,  'name'=>'S-トップアスリート(世界レベル)', ),
+            '02' => array ( 'no'=> 2,  'name'=>'A-アスリート(国内レベル)', ),
+            '03' => array ( 'no'=> 3,  'name'=>'B-アスリート(都道府県レベル)', ),
+            '04' => array ( 'no'=> 4,  'name'=>'C-マスターズ(国際レベル)', ),
+            '05' => array ( 'no'=> 5,  'name'=>'D-マスターズ(国内レベル)', ),
+        );
+        view()->share('loop_level_flg', $loop_level_flg);
+
         // user
         // `login_flg` int(11) NOT NULL DEFAULT 1  COMMENT '顧客(1):社員(2):所属(3)',
         $loop_login_flg = array(

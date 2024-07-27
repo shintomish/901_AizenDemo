@@ -1,41 +1,21 @@
-    @if( $form_data['sex_id'] ==1)
-        @php
-            $sex = '男性';
-        @endphp
-    @endif
-    @if( $form_data['sex_id'] ==2)
-        @php
-            $sex = '女性';
-        @endphp
-    @endif
+@php
+    // 性別
+    foreach ($loop_sex_flg as $loop_sex_flg2) {
+        if($loop_sex_flg2['no'] == $form_data['sex_id']) {
+            $sex = $loop_sex_flg2['name'];
+        }
+    }
 
-    @if( $form_data['level_id'] ==1)
-        @php
-            $level = 'S-トップアスリート(世界レベル)';
-        @endphp
-    @endif
-    @if( $form_data['level_id'] ==2)
-        @php
-            $level = 'A-アスリート(国内レベル)';
-        @endphp
-    @endif
-    @if( $form_data['level_id'] ==3)
-        @php
-            $level = 'B-アスリート(都道府県レベル)';
-        @endphp
-    @endif
-    @if( $form_data['level_id'] ==4)
-        @php
-            $level = 'C-マスターズ(国際レベル))';
-        @endphp
-    @endif
-    @if( $form_data['level_id'] ==5)
-        @php
-            $level = 'D-マスターズ(国内レベル)';
-        @endphp
-    @endif
+    // レベル
+    foreach ($loop_level_flg as $loop_level_flg2) {
+        if($loop_level_flg2['no'] == $form_data['level_id']) {
+            $level = $loop_level_flg2['name'];
+        }
+    }
 
-{{ $form_data['name'] }} 様より下記の内容のお問い合わせがありました
+@endphp
+
+    {{ $form_data['name'] }} 様より下記の内容のお問い合わせがありました
 
 ==============================
 お問い合わせ内容
@@ -57,4 +37,5 @@
 
 ■お問い合わせ内容:
 {{ $form_data['body'] }}
+
 ------------------------------
