@@ -44,9 +44,9 @@
                                     </div>
 
                                     <!-- Team Settings -->
-                                    <x-dropdown-link href="{{ route('teams.show', Auth::user()->id) }}">
+                                    {{-- <x-dropdown-link href="{{ route('teams.show', Auth::user()->id) }}">
                                         {{ __('Team Settings') }}
-                                    </x-dropdown-link>
+                                    </x-dropdown-link> --}}
 
                                     @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
                                         <x-dropdown-link href="{{ route('teams.create') }}">
