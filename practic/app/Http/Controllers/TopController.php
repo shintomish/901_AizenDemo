@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 
 // use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use League\CommonMark\Extension\CommonMark\Renderer\Block\ThematicBreakRenderer;
 
 class TopController extends Controller
 {
@@ -46,9 +47,18 @@ class TopController extends Controller
                     ->whereNull('deleted_at')
                     ->get();
 
+        //  * Customer(個人のレコード)件数を取得する
+        $customer_count = $this->auth_customer_individual_count();                    
         //  * Customer(個人のレコード)情報を取得する
         $customer_findrec = $this->auth_customer_individual();
-        $customer_id = $customer_findrec[0]['id'];
+        if($customer_count <> 0){
+            $customer_id = $customer_findrec[0]['id'];
+        } else {
+            $customer_id = 0;
+        }
+        Log::debug('office top index customer_count  = ' . print_r($customer_count ,true));
+
+
         Log::debug('office top index customer_id  = ' . print_r($customer_id ,true));
 
         $exercises = Exercisedata::where('organization_id','>=',$organization_id)
@@ -62,7 +72,8 @@ class TopController extends Controller
         // $nowyear = $this->get_now_year();
         $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
 
-        $compacts = compact( 'userid','users','customer_findrec','customer_id','exercises','common_no','jsonfile' );
+        $customer_count = $this->auth_customer_individual_count();                    
+        $compacts = compact( 'userid','users','customer_count','customer_findrec','customer_id','exercises','common_no','jsonfile' );
 
         Log::info('office top index END $user->name = ' . print_r($user->name ,true));
         return view( 'top.index', $compacts);

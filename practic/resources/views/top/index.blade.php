@@ -56,15 +56,18 @@
                         <option value="{{ $user['id'] }}">{{ $user['name'] }}</option>
                     @endforeach
                 </select> --}}
-                <select style="margin-right:5px;width:200px;height:40px;" class="custom-select" id="customer_id" name="customer_id">
-                    @foreach ($customer_findrec as $customer_findrec2)
-                        @if ($customer_findrec2['id']==$customer_id)
-                    <option selected="selected" value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
-                        @else
-                            <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
-                        @endif
 
-                    @endforeach
+                <select style="margin-right:5px;width:200px;height:40px;" class="custom-select" id="customer_id" name="customer_id">
+                    @if($customer_count <> 0)
+                        @foreach ($customer_findrec as $customer_findrec2)
+                            @if ($customer_findrec2['id']==$customer_id)
+                        <option selected="selected" value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                            @else
+                                <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                            @endif
+
+                        @endforeach
+                    @endif
                 </select>
                 <button style="margin-bottom:10px;" type="submit" class="btn btn-primary btn_sm">送信先</button>
             </div>
@@ -82,26 +85,33 @@
             {{-- ユーザー --}}
             <h6>
                 <a style="color:blue">To: </a>
-                <select style="margin-bottom:5px; width:200px;height:40px;background-color:rgb(214, 209, 209)" class="custom-select" id="customer_id" name="customer_id">
-                    @foreach ($customer_findrec as $customer_findrec2)
-                        @if ($customer_findrec2['id']==$customer_id)
-                    <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
-                        @else
-                        <option disabled value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                    <select style="margin-bottom:5px; width:200px;height:40px;background-color:rgb(214, 209, 209)" class="custom-select" id="customer_id" name="customer_id">
+                        @if($customer_count <> 0)
+                            @foreach ($customer_findrec as $customer_findrec2)
+                                @if ($customer_findrec2['id']==$customer_id)
+                            <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                                @else
+                                <option disabled value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                                @endif
+                            @endforeach
                         @endif
-                    @endforeach
-                </select>
+                    </select>
                 {{-- <select style="margin-bottom:5px; background-color:rgb(214, 209, 209); width:200px;height:40px;" class="custom-select" id="user_id" name="user_id">
                     @foreach ($users as $user)
                         <option value="{{ $user['id'] }}">{{ $user['name'] }}</option>
                     @endforeach
                 </select> --}}
-
-                <a >
-                    <span style="color:red"> アップロード後は、左の </span>
-                    <span style="color:blue">「データ送信確認ページ」</span>
-                    <span style="color:red"> からファイルが送信できているか確認してください。</span>
-                </a>
+                @if($customer_count <> 0)
+                    <a>
+                        <span style="color:red"> アップロード後は、左の </span>
+                        <span style="color:blue">「データ送信確認ページ」</span>
+                        <span style="color:red"> からファイルが送信できているか確認してください。</span>
+                    </a>
+                @else
+                    <a>
+                        <span style="color:red"> アップロードできません。 </span>
+                    </a>
+                @endif
             </h6>
             <div class="flow-error">
                 <div class="alert alert-danger">

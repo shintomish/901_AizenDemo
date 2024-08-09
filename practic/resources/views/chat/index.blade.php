@@ -68,15 +68,19 @@
 
                 </style>
                 <div class="exright">
+
                     <select style="margin-right:5px;width:200px;height:40px;" class="custom-select" id="customer_id" name="customer_id">
-                        @foreach ($customer_findrec as $customer_findrec2)
-                            @if ($customer_findrec2['id']==$customer_id)
-                        <option selected="selected" value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
-                            @else
-                                <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
-                            @endif
-                        @endforeach
+                        @if($customer_count <> 0)
+                            @foreach ($customer_findrec as $customer_findrec2)
+                                @if ($customer_findrec2['id']==$customer_id)
+                            <option selected="selected" value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                                @else
+                                    <option value="{{ $customer_findrec2['id'] }}">{{ $customer_findrec2['business_name'] }}</option>
+                                @endif
+                            @endforeach
+                        @endif
                     </select>
+
                     <button style="margin-bottom:10px;" type="submit" class="btn btn-primary btn_sm">送信先</button>
                 </div>
             </form>

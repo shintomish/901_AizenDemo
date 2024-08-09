@@ -60,9 +60,9 @@ class TopHistoryController extends Controller
 
         Log::debug('office tophistory index customer_id  = ' . print_r($customer_id ,true));
 
-        // Customer(ALLレコード)情報を取得する
-        // $customer_findrec = $this->auth_customer_allrec();
-        // $customer_id = $customer_findrec[0]['id'];
+        //  * Customer(個人のレコード)件数を取得する
+        $customer_count = $this->auth_customer_individual_count();   
+
         //  * Customer(個人のレコード)情報を取得する
         $customer_findrec = $this->auth_customer_individual();
 
@@ -78,7 +78,7 @@ class TopHistoryController extends Controller
         // * 今年の年を取得
         // $nowyear = $this->get_now_year();
 
-        $compacts = compact( 'userid','users','exercises','customer_findrec','customer_id','common_no' );
+        $compacts = compact( 'userid','users','exercises','customer_count','customer_findrec','customer_id','common_no' );
 
         Log::info('office tophistory index END $user->name = ' . print_r($user->name ,true));
         return view( 'tophistory.index', $compacts);
