@@ -113,7 +113,7 @@ class ChatController extends Controller
         // 選択されたcustomer_idをSetする
         $this->chattop_json_put_info_set($user_id, $to_user_id, $organization_id, $customer_id);
         //  * Customer(個人のレコード)件数を取得する
-        $customer_count = $this->auth_customer_individual_count();
+        $customer_count = $this->auth_customer_individual_count();  
         // Customer(ALLレコード)情報を取得する
         $customer_findrec = $this->auth_customer_individual();
 
@@ -143,7 +143,7 @@ class ChatController extends Controller
         ->get();
 
         $common_no = '00_7';
-        $compacts = compact( 'messages', 'customer_count', 'customer_findrec', 'user_id', 'to_user_id', 'customer_id', 'common_no');
+        $compacts = compact( 'messages', 'customer_findrec', 'user_id', 'to_user_id', 'customer_id', 'common_no');
 
         $announcement_id = 0;
         $announcement = Announcement::where('from_user_id', $to_user_id)

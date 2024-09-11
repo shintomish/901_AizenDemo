@@ -104,8 +104,10 @@
             <button type="submit" style="margin-top:10px;" class="w-50 btn btn-sm btn-primary" name="submitBtnVal" value="complete">送信</button>
 
             <div>
+                {{-- <label for="body"></label> --}}
+                <textarea id="body"  style="margin-top:10px;" placeholder="仮登録後、ログインIDと仮パスワードをメールにて発行します。" class="form-control" type="text" name="body"></textarea>
                 <h6>
-                    <ul for="inp" style="margin-top:10px;" class="text-primary">仮登録後、ログインIDと仮パスワードをメールにて発行します</ul>
+                    <ul for="inp" style="margin-bottom:10px;" class="text-primary">以下を入力してください</ul>
                 </h6>
             </div>
         <!-- ５行にしたいテキストエリア 未使用 -->

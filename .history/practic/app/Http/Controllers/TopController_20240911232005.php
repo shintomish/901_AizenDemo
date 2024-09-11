@@ -136,7 +136,7 @@ class TopController extends Controller
 
         $jsonfile = storage_path() . "/tmp/customer_info_status_". $customer_id. ".json";
 
-        $compacts = compact( 'customer_findrec','customer_count','customer_id','jsonfile' );
+        $compacts = compact( 'customer_findrec','customer_id','jsonfile' );
 
         Log::info('top serch END');
         return view( 'top.index', $compacts );

@@ -105,7 +105,7 @@
 
             <div>
                 <h6>
-                    <ul for="inp" style="margin-top:10px;" class="text-primary">仮登録後、ログインIDと仮パスワードをメールにて発行します</ul>
+                    <ul for="inp" style="margin-top:10px;" class="text-secondary">仮登録後、ログインIDと仮パスワードをメールにて発行します</ul>
                 </h6>
             </div>
         <!-- ５行にしたいテキストエリア 未使用 -->

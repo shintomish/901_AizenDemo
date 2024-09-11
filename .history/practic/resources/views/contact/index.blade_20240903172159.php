@@ -104,9 +104,13 @@
             <button type="submit" style="margin-top:10px;" class="w-50 btn btn-sm btn-primary" name="submitBtnVal" value="complete">送信</button>
 
             <div>
-                <h6>
-                    <ul for="inp" style="margin-top:10px;" class="text-primary">仮登録後、ログインIDと仮パスワードをメールにて発行します</ul>
-                </h6>
+                {{-- <label for="body"></label> --}}
+                <textarea id="body"  style="margin-top:10px;" placeholder="仮お問い合わせ内容 必須" class="form-control" type="text" name="body"></textarea>
+                {{-- <textarea id="body" style="margin-top:10px;" placeholder="お問い合わせ内容 必須" type="text" class="form-control" @error('body') is-invalid @enderror name="body" value="{{ old('body') }}" required autocomplete="body" autofocus></textarea> --}}
+
+                {{-- @if($errors->has('body'))
+                <p>{{ $errors->first('body') }}</p>
+                @endif --}}
             </div>
         <!-- ５行にしたいテキストエリア 未使用 -->
         <style>
