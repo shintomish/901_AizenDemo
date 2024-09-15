@@ -101,7 +101,7 @@ class ChatController extends Controller
                 ->where('user_id', $user_id)
                 ->where('read', false)
                 ->update([
-                    'read'  =>  true,
+                    'read'  =>  $true,
                 ]);
         }
 
@@ -190,7 +190,7 @@ class ChatController extends Controller
                 ->where('user_id', $user_id)
                 ->where('read', false)
                 ->update([
-                    'read'  =>  true,
+                    'read'  =>  $true,
                 ]);
         }
 

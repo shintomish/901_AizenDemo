@@ -1,13 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <script>
-            history.pushState(null, null, location.href);
-            window.addEventListener('popstate', (e) => {
-                history.go(1);
-            });
-        </script>
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
@@ -24,40 +17,43 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Scripts -->
-        <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
-
-        <!-- Flow Scripts -->
-        <script src="{{ asset('js/flow.js') }}" type="text/javascript"></script>
-
-        <!-- upload Scripts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/resumable.js/1.1.0/resumable.min.js"></script>
+        {{-- <script src="{{ asset('js/jquery-3.6.0.min.js') }}" defer></script> --}}
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
         <!-- Bootstrap core CSS -->
-        {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"> --}}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-        {{-- @yield('styles') --}}
+        {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script> --}}
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" ></script>
+        <!-- datetimepicker CSS -->
+        {{-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
 
         <!-- Custom styles for this template -->
         <link href="{{ asset('css/back/dashboard.css') }}" rel="stylesheet">
 
+        <!-- jQuery -->
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+        <!-- My js -->
+        <script src="{{asset('js/back/common.js')}}"></script>
+
+        {{-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> --}}
+
         <!-- flash_message -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-        <!-- Place your kit's code here -->
-        <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script>
-        {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> --}}
-
-        {{-- 2021/11/21  --}}
+        {{-- プラグイン(pace.min.js center-atom.css) loading-bar.css center-circle.css--}}
         <script type="text/javascript" src="{{ asset('js/back/pace.min.js') }}"></script>
         <link href="{{ asset('css/back/center-circle_d.css') }}" rel="stylesheet">
-        {{-- 2021/11/21  --}}
-        {{-- <link href="{{ asset('css/back/loading-circle.css') }}" rel="stylesheet"> --}}
+
+        <!-- Place your kit's code here -->
+        {{-- <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script> --}}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
         <style>
             .bd-placeholder-img {
@@ -73,6 +69,7 @@
                 }
             }
         </style>
+
     </head>
 
     <body>

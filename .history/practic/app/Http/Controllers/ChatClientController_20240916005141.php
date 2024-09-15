@@ -63,13 +63,13 @@ class ChatClientController extends Controller
         $to_user_id = $user_id;
 
         // Log::debug('ChatClientController index  $users = ' . print_r($users,true));
+        Log::debug('ChatClientController index  $user_id = ' . print_r($user_id,true));
 
         // chatcliで選択されたuser_idをSetする
         $this->chatcli_json_put_info_set($u_id, $to_user_id, $organization_id, $user_id);
 
         $common_no = '00_7';
         $compacts = compact( 'messages','common_no','users','to_user_id','customer_id','user_id' );
-
         $announcement_id = 0;
         $announcement = Announcement::where('from_user_id', $to_user_id)
             ->first();
@@ -78,30 +78,15 @@ class ChatClientController extends Controller
             $announcement_id = $announcement->id;
         }
 
-        Log::debug('ChatClientController index  $announcement_id = ' . print_r($announcement_id,true));
-
-        // $announcement_read = AnnouncementRead::where('from_user_id', $to_user_id)
-        //     ->where('announcement_id', $announcement_id)
-        //     ->first();
         $announcement_read = AnnouncementRead::where('from_user_id', $to_user_id)
-            ->where('user_id', $customer_id)
-            ->where('read', false)
-            ->get();
+            ->where('announcement_id', $announcement_id)
+            ->first();
 
-        // if(!is_null($announcement_read)) {
-        //     $announcement_read->read = true;
-        //     $announcement_read->update();
-        // }
-
-        //更新
         if(!is_null($announcement_read)) {
-            $announcement_read_write = AnnouncementRead::where('from_user_id', $to_user_id)
-                ->where('user_id', $customer_id)
-                ->where('read', false)
-                ->update([
-                    'read'  =>  true,
-                ]);
+            $announcement_read->read = true;
+            $announcement_read->save();
         }
+
 
         Log::info('ChatClientController index END');
 

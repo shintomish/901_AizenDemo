@@ -1,0 +1,501 @@
+[2024-09-16 00:27:49] local.INFO: auth_user_info START  
+[2024-09-16 00:27:49] local.INFO: auth_user_info END  
+[2024-09-16 00:27:49] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 8
+    [name] => 髙橋 淳一郎
+    [email] => jun1ro@sgk.ac.jp
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 3
+    [admin_flg] => 1
+    [created_at] => 2024-07-08T03:00:00.000000Z
+    [updated_at] => 2024-07-08T19:36:22.000000Z
+    [deleted_at] => 
+)
+  
+[2024-09-16 00:27:49] local.INFO: loginout operation update START  
+[2024-09-16 00:27:49] local.INFO: loginout operation update $id < 10 END  
+[2024-09-16 00:27:56] local.INFO: auth_user_info START  
+[2024-09-16 00:27:56] local.INFO: auth_user_info END  
+[2024-09-16 00:27:56] local.INFO: office top index START $user->name = 髙橋 淳一郎  
+[2024-09-16 00:27:56] local.INFO: auth_user_organization START  
+[2024-09-16 00:27:56] local.INFO: auth_user_organization END  
+[2024-09-16 00:27:56] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:27:56] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:27:56] local.INFO: auth_customer_individual START  
+[2024-09-16 00:27:56] local.INFO: auth_customer_individual END  
+[2024-09-16 00:27:56] local.DEBUG: office top index customer_count  = 3  
+[2024-09-16 00:27:56] local.DEBUG: office top index customer_id  = 13  
+[2024-09-16 00:27:56] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:27:56] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:27:56] local.INFO: office top index END $user->name = 髙橋 淳一郎  
+[2024-09-16 00:28:03] local.INFO: ChatController index START  
+[2024-09-16 00:28:03] local.INFO: auth_user_info START  
+[2024-09-16 00:28:03] local.INFO: auth_user_info END  
+[2024-09-16 00:28:03] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:28:03] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:28:03] local.INFO: auth_customer_individual START  
+[2024-09-16 00:28:03] local.INFO: auth_customer_individual END  
+[2024-09-16 00:28:03] local.INFO: chattop_json_put_info_set START  
+[2024-09-16 00:28:03] local.INFO: chattop_json_put_info_set END  
+[2024-09-16 00:28:04] local.INFO: ChatController index END  
+[2024-09-16 00:28:06] local.INFO: Ajax ChatController index START  
+[2024-09-16 00:28:06] local.INFO: auth_user_info START  
+[2024-09-16 00:28:07] local.INFO: auth_user_info END  
+[2024-09-16 00:28:07] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-09-16 00:28:07] local.INFO: Ajax ChatController index END  
+[2024-09-16 00:28:44] local.INFO: Ajax ChatController create START  
+[2024-09-16 00:28:44] local.INFO: chattop_json_get_info START  
+[2024-09-16 00:28:44] local.INFO: chattop_json_get_info not empty  
+[2024-09-16 00:28:44] local.INFO: chattop_json_get_info END  
+[2024-09-16 00:28:45] local.INFO: Ajax ChatController create END  
+[2024-09-16 00:30:34] local.INFO: auth_user_info START  
+[2024-09-16 00:30:34] local.INFO: auth_user_info END  
+[2024-09-16 00:30:34] local.INFO: office top index START $user->name = 髙橋 淳一郎  
+[2024-09-16 00:30:34] local.INFO: auth_user_organization START  
+[2024-09-16 00:30:34] local.INFO: auth_user_organization END  
+[2024-09-16 00:30:34] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:30:34] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:30:34] local.INFO: auth_customer_individual START  
+[2024-09-16 00:30:34] local.INFO: auth_customer_individual END  
+[2024-09-16 00:30:34] local.DEBUG: office top index customer_count  = 3  
+[2024-09-16 00:30:34] local.DEBUG: office top index customer_id  = 13  
+[2024-09-16 00:30:34] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:30:34] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:30:34] local.INFO: office top index END $user->name = 髙橋 淳一郎  
+[2024-09-16 00:30:42] local.INFO: ChatController index START  
+[2024-09-16 00:30:42] local.INFO: auth_user_info START  
+[2024-09-16 00:30:42] local.INFO: auth_user_info END  
+[2024-09-16 00:30:42] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:30:42] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:30:42] local.INFO: auth_customer_individual START  
+[2024-09-16 00:30:42] local.INFO: auth_customer_individual END  
+[2024-09-16 00:30:42] local.INFO: chattop_json_put_info_set START  
+[2024-09-16 00:30:42] local.INFO: chattop_json_put_info_set END  
+[2024-09-16 00:30:42] local.INFO: ChatController index END  
+[2024-09-16 00:30:46] local.INFO: Ajax ChatController index START  
+[2024-09-16 00:30:46] local.INFO: auth_user_info START  
+[2024-09-16 00:30:46] local.INFO: auth_user_info END  
+[2024-09-16 00:30:46] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-09-16 00:30:46] local.INFO: Ajax ChatController index END  
+[2024-09-16 00:30:56] local.INFO: ChatController serch START  
+[2024-09-16 00:30:56] local.INFO: auth_user_info START  
+[2024-09-16 00:30:56] local.INFO: auth_user_info END  
+[2024-09-16 00:30:56] local.INFO: chattop_json_put_info_set START  
+[2024-09-16 00:30:56] local.INFO: chattop_json_put_info_set END  
+[2024-09-16 00:30:56] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:30:56] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:30:56] local.INFO: auth_customer_individual START  
+[2024-09-16 00:30:56] local.INFO: auth_customer_individual END  
+[2024-09-16 00:30:56] local.INFO: ChatController serch END  
+[2024-09-16 00:30:59] local.INFO: Ajax ChatController index START  
+[2024-09-16 00:30:59] local.INFO: auth_user_info START  
+[2024-09-16 00:30:59] local.INFO: auth_user_info END  
+[2024-09-16 00:30:59] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-09-16 00:30:59] local.INFO: Ajax ChatController index END  
+[2024-09-16 00:31:18] local.INFO: ChatController serch START  
+[2024-09-16 00:31:18] local.INFO: auth_user_info START  
+[2024-09-16 00:31:18] local.INFO: auth_user_info END  
+[2024-09-16 00:31:18] local.INFO: chattop_json_put_info_set START  
+[2024-09-16 00:31:18] local.INFO: chattop_json_put_info_set END  
+[2024-09-16 00:31:18] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:31:18] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:31:18] local.INFO: auth_customer_individual START  
+[2024-09-16 00:31:18] local.INFO: auth_customer_individual END  
+[2024-09-16 00:31:18] local.INFO: ChatController serch END  
+[2024-09-16 00:31:21] local.INFO: Ajax ChatController index START  
+[2024-09-16 00:31:21] local.INFO: auth_user_info START  
+[2024-09-16 00:31:21] local.INFO: auth_user_info END  
+[2024-09-16 00:31:21] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-09-16 00:31:21] local.INFO: Ajax ChatController index END  
+[2024-09-16 00:34:04] local.INFO: Ajax ChatController create START  
+[2024-09-16 00:34:04] local.INFO: chattop_json_get_info START  
+[2024-09-16 00:34:04] local.INFO: chattop_json_get_info not empty  
+[2024-09-16 00:34:04] local.INFO: chattop_json_get_info END  
+[2024-09-16 00:35:24] local.INFO: ChatController serch START  
+[2024-09-16 00:35:24] local.INFO: auth_user_info START  
+[2024-09-16 00:35:24] local.INFO: auth_user_info END  
+[2024-09-16 00:35:24] local.INFO: chattop_json_put_info_set START  
+[2024-09-16 00:35:24] local.INFO: chattop_json_put_info_set END  
+[2024-09-16 00:35:24] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:35:24] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:35:24] local.INFO: auth_customer_individual START  
+[2024-09-16 00:35:24] local.INFO: auth_customer_individual END  
+[2024-09-16 00:35:25] local.INFO: ChatController serch END  
+[2024-09-16 00:35:28] local.INFO: Ajax ChatController index START  
+[2024-09-16 00:35:28] local.INFO: auth_user_info START  
+[2024-09-16 00:35:28] local.INFO: auth_user_info END  
+[2024-09-16 00:35:28] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-09-16 00:35:28] local.INFO: Ajax ChatController index END  
+[2024-09-16 00:35:44] local.INFO: Ajax ChatController create START  
+[2024-09-16 00:35:44] local.INFO: chattop_json_get_info START  
+[2024-09-16 00:35:44] local.INFO: chattop_json_get_info not empty  
+[2024-09-16 00:35:44] local.INFO: chattop_json_get_info END  
+[2024-09-16 00:38:49] local.INFO: ChatController serch START  
+[2024-09-16 00:38:49] local.INFO: auth_user_info START  
+[2024-09-16 00:38:49] local.INFO: auth_user_info END  
+[2024-09-16 00:38:49] local.INFO: chattop_json_put_info_set START  
+[2024-09-16 00:38:49] local.INFO: chattop_json_put_info_set END  
+[2024-09-16 00:38:49] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:38:49] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:38:49] local.INFO: auth_customer_individual START  
+[2024-09-16 00:38:49] local.INFO: auth_customer_individual END  
+[2024-09-16 00:38:49] local.INFO: ChatController serch END  
+[2024-09-16 00:38:53] local.INFO: Ajax ChatController index START  
+[2024-09-16 00:38:53] local.INFO: auth_user_info START  
+[2024-09-16 00:38:53] local.INFO: auth_user_info END  
+[2024-09-16 00:38:53] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-09-16 00:38:53] local.INFO: Ajax ChatController index END  
+[2024-09-16 00:41:06] local.INFO: auth_user_info START  
+[2024-09-16 00:41:06] local.INFO: auth_user_info END  
+[2024-09-16 00:41:06] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 8
+    [name] => 髙橋 淳一郎
+    [email] => jun1ro@sgk.ac.jp
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 3
+    [admin_flg] => 1
+    [created_at] => 2024-07-08T03:00:00.000000Z
+    [updated_at] => 2024-07-08T19:36:22.000000Z
+    [deleted_at] => 
+)
+  
+[2024-09-16 00:41:06] local.INFO: loginout operation update START  
+[2024-09-16 00:41:06] local.INFO: loginout operation update $id < 10 END  
+[2024-09-16 00:41:09] local.INFO: ChatController serch START  
+[2024-09-16 00:41:09] local.INFO: auth_user_info START  
+[2024-09-16 00:41:09] local.INFO: auth_user_info END  
+[2024-09-16 00:41:09] local.INFO: chattop_json_put_info_set START  
+[2024-09-16 00:41:09] local.INFO: chattop_json_put_info_set END  
+[2024-09-16 00:41:09] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:41:09] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:41:09] local.INFO: auth_customer_individual START  
+[2024-09-16 00:41:09] local.INFO: auth_customer_individual END  
+[2024-09-16 00:41:10] local.INFO: ChatController serch END  
+[2024-09-16 00:41:12] local.INFO: Ajax ChatController index START  
+[2024-09-16 00:41:12] local.INFO: auth_user_info START  
+[2024-09-16 00:41:12] local.INFO: auth_user_info END  
+[2024-09-16 00:41:12] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-09-16 00:41:12] local.INFO: Ajax ChatController index END  
+[2024-09-16 00:41:32] local.INFO: ChatController serch START  
+[2024-09-16 00:41:32] local.INFO: auth_user_info START  
+[2024-09-16 00:41:32] local.INFO: auth_user_info END  
+[2024-09-16 00:41:32] local.INFO: chattop_json_put_info_set START  
+[2024-09-16 00:41:32] local.INFO: chattop_json_put_info_set END  
+[2024-09-16 00:41:32] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:41:33] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:41:33] local.INFO: auth_customer_individual START  
+[2024-09-16 00:41:33] local.INFO: auth_customer_individual END  
+[2024-09-16 00:41:33] local.INFO: ChatController serch END  
+[2024-09-16 00:41:36] local.INFO: Ajax ChatController index START  
+[2024-09-16 00:41:36] local.INFO: auth_user_info START  
+[2024-09-16 00:41:36] local.INFO: auth_user_info END  
+[2024-09-16 00:41:36] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-09-16 00:41:36] local.INFO: Ajax ChatController index END  
+[2024-09-16 00:45:13] local.INFO: ChatController serch START  
+[2024-09-16 00:45:13] local.INFO: auth_user_info START  
+[2024-09-16 00:45:13] local.INFO: auth_user_info END  
+[2024-09-16 00:45:13] local.INFO: chattop_json_put_info_set START  
+[2024-09-16 00:45:13] local.INFO: chattop_json_put_info_set END  
+[2024-09-16 00:45:13] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:45:13] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:45:13] local.INFO: auth_customer_individual START  
+[2024-09-16 00:45:13] local.INFO: auth_customer_individual END  
+[2024-09-16 00:45:13] local.INFO: ChatController serch END  
+[2024-09-16 00:45:17] local.INFO: Ajax ChatController index START  
+[2024-09-16 00:45:17] local.INFO: auth_user_info START  
+[2024-09-16 00:45:17] local.INFO: auth_user_info END  
+[2024-09-16 00:45:17] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-09-16 00:45:17] local.INFO: Ajax ChatController index END  
+[2024-09-16 00:45:56] local.INFO: Ajax ChatController create START  
+[2024-09-16 00:45:56] local.INFO: chattop_json_get_info START  
+[2024-09-16 00:45:56] local.INFO: chattop_json_get_info not empty  
+[2024-09-16 00:45:56] local.INFO: chattop_json_get_info END  
+[2024-09-16 00:45:57] local.INFO: Ajax ChatController create END  
+[2024-09-16 00:46:00] local.INFO: Ajax ChatController index START  
+[2024-09-16 00:46:00] local.INFO: auth_user_info START  
+[2024-09-16 00:46:00] local.INFO: auth_user_info END  
+[2024-09-16 00:46:00] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-09-16 00:46:00] local.INFO: Ajax ChatController index END  
+[2024-09-16 00:47:02] local.INFO: auth_user_info START  
+[2024-09-16 00:47:02] local.INFO: auth_user_info END  
+[2024-09-16 00:47:02] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => 平子 勝之進
+    [email] => hirakokatsunoshin@nifty.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 11
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2024-07-08T03:00:00.000000Z
+    [updated_at] => 2024-09-03T15:30:00.000000Z
+    [deleted_at] => 
+)
+  
+[2024-09-16 00:47:02] local.INFO: loginout operation update START  
+[2024-09-16 00:47:02] local.INFO: beginTransaction - loginout operation update start  
+[2024-09-16 00:47:02] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-09-16 00:47:02] local.INFO: loginout operation update END  
+[2024-09-16 00:47:05] local.INFO: auth_user_info START  
+[2024-09-16 00:47:05] local.INFO: auth_user_info END  
+[2024-09-16 00:47:05] local.INFO: topclient index START $user->name = 平子 勝之進  
+[2024-09-16 00:47:05] local.INFO: topclient index END $user->name = 平子 勝之進  
+[2024-09-16 00:47:27] local.INFO: ChatClientController index START  
+[2024-09-16 00:47:27] local.INFO: auth_user_info START  
+[2024-09-16 00:47:27] local.INFO: auth_user_info END  
+[2024-09-16 00:47:27] local.DEBUG: ChatClientController index  $user_id = 8  
+[2024-09-16 00:47:27] local.INFO: chatcli_json_put_info_set START  
+[2024-09-16 00:47:27] local.INFO: chatcli_json_put_info_set END  
+[2024-09-16 00:47:27] local.INFO: ChatClientController index END  
+[2024-09-16 00:47:30] local.INFO: Ajax ChatClientController index START  
+[2024-09-16 00:47:30] local.INFO: auth_user_info START  
+[2024-09-16 00:47:30] local.INFO: auth_user_info END  
+[2024-09-16 00:47:30] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 11  
+[2024-09-16 00:47:30] local.INFO: Ajax ChatClientController index END  
+[2024-09-16 00:47:57] local.INFO: Ajax ChatClientController create START  
+[2024-09-16 00:47:57] local.INFO: chatcli_json_get_info START  
+[2024-09-16 00:47:57] local.INFO: chatcli_json_get_info not empty  
+[2024-09-16 00:47:57] local.INFO: chatcli_json_get_info END  
+[2024-09-16 00:47:57] local.INFO: Ajax ChatClientController create END  
+[2024-09-16 00:48:01] local.INFO: Ajax ChatClientController index START  
+[2024-09-16 00:48:01] local.INFO: auth_user_info START  
+[2024-09-16 00:48:01] local.INFO: auth_user_info END  
+[2024-09-16 00:48:01] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 11  
+[2024-09-16 00:48:01] local.INFO: Ajax ChatClientController index END  
+[2024-09-16 00:48:04] local.INFO: auth_user_info START  
+[2024-09-16 00:48:04] local.INFO: auth_user_info END  
+[2024-09-16 00:48:04] local.INFO: office top index START $user->name = 髙橋 淳一郎  
+[2024-09-16 00:48:04] local.INFO: auth_user_organization START  
+[2024-09-16 00:48:04] local.INFO: auth_user_organization END  
+[2024-09-16 00:48:04] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:48:04] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:48:04] local.INFO: auth_customer_individual START  
+[2024-09-16 00:48:04] local.INFO: auth_customer_individual END  
+[2024-09-16 00:48:04] local.DEBUG: office top index customer_count  = 3  
+[2024-09-16 00:48:04] local.DEBUG: office top index customer_id  = 13  
+[2024-09-16 00:48:04] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:48:04] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:48:04] local.INFO: office top index END $user->name = 髙橋 淳一郎  
+[2024-09-16 00:48:19] local.INFO: auth_user_info START  
+[2024-09-16 00:48:19] local.INFO: auth_user_info END  
+[2024-09-16 00:48:19] local.INFO: topclient index START $user->name = 平子 勝之進  
+[2024-09-16 00:48:19] local.INFO: topclient index END $user->name = 平子 勝之進  
+[2024-09-16 00:55:35] local.INFO: auth_user_info START  
+[2024-09-16 00:55:35] local.INFO: auth_user_info END  
+[2024-09-16 00:55:35] local.INFO: topclient index START $user->name = 平子 勝之進  
+[2024-09-16 00:55:35] local.INFO: topclient index END $user->name = 平子 勝之進  
+[2024-09-16 00:55:50] local.INFO: ChatClientController index START  
+[2024-09-16 00:55:50] local.INFO: auth_user_info START  
+[2024-09-16 00:55:50] local.INFO: auth_user_info END  
+[2024-09-16 00:55:50] local.DEBUG: ChatClientController index  $user_id = 8  
+[2024-09-16 00:55:50] local.INFO: chatcli_json_put_info_set START  
+[2024-09-16 00:55:50] local.INFO: chatcli_json_put_info_set END  
+[2024-09-16 00:55:51] local.INFO: ChatClientController index END  
+[2024-09-16 00:55:54] local.INFO: Ajax ChatClientController index START  
+[2024-09-16 00:55:54] local.INFO: auth_user_info START  
+[2024-09-16 00:55:54] local.INFO: auth_user_info END  
+[2024-09-16 00:55:54] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 11  
+[2024-09-16 00:55:54] local.INFO: Ajax ChatClientController index END  
+[2024-09-16 00:56:10] local.INFO: ChatController index START  
+[2024-09-16 00:56:10] local.INFO: auth_user_info START  
+[2024-09-16 00:56:10] local.INFO: auth_user_info END  
+[2024-09-16 00:56:10] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:56:11] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:56:11] local.INFO: auth_customer_individual START  
+[2024-09-16 00:56:11] local.INFO: auth_customer_individual END  
+[2024-09-16 00:56:11] local.INFO: chattop_json_put_info_set START  
+[2024-09-16 00:56:11] local.INFO: chattop_json_put_info_set END  
+[2024-09-16 00:56:11] local.INFO: ChatController index END  
+[2024-09-16 00:56:14] local.INFO: Ajax ChatController index START  
+[2024-09-16 00:56:14] local.INFO: auth_user_info START  
+[2024-09-16 00:56:14] local.INFO: auth_user_info END  
+[2024-09-16 00:56:14] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-09-16 00:56:14] local.INFO: Ajax ChatController index END  
+[2024-09-16 00:56:22] local.INFO: auth_user_info START  
+[2024-09-16 00:56:22] local.INFO: auth_user_info END  
+[2024-09-16 00:56:22] local.INFO: office top index START $user->name = 髙橋 淳一郎  
+[2024-09-16 00:56:22] local.INFO: auth_user_organization START  
+[2024-09-16 00:56:22] local.INFO: auth_user_organization END  
+[2024-09-16 00:56:22] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:56:22] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:56:22] local.INFO: auth_customer_individual START  
+[2024-09-16 00:56:22] local.INFO: auth_customer_individual END  
+[2024-09-16 00:56:22] local.DEBUG: office top index customer_count  = 3  
+[2024-09-16 00:56:22] local.DEBUG: office top index customer_id  = 13  
+[2024-09-16 00:56:22] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:56:22] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:56:22] local.INFO: office top index END $user->name = 髙橋 淳一郎  
+[2024-09-16 00:56:33] local.INFO: auth_user_info START  
+[2024-09-16 00:56:33] local.INFO: auth_user_info END  
+[2024-09-16 00:56:33] local.INFO: topclient index START $user->name = 平子 勝之進  
+[2024-09-16 00:56:33] local.INFO: topclient index END $user->name = 平子 勝之進  
+[2024-09-16 00:56:42] local.INFO: ChatController index START  
+[2024-09-16 00:56:42] local.INFO: auth_user_info START  
+[2024-09-16 00:56:42] local.INFO: auth_user_info END  
+[2024-09-16 00:56:42] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:56:42] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:56:42] local.INFO: auth_customer_individual START  
+[2024-09-16 00:56:42] local.INFO: auth_customer_individual END  
+[2024-09-16 00:56:42] local.INFO: chattop_json_put_info_set START  
+[2024-09-16 00:56:42] local.INFO: chattop_json_put_info_set END  
+[2024-09-16 00:56:43] local.INFO: ChatController index END  
+[2024-09-16 00:56:45] local.INFO: Ajax ChatController index START  
+[2024-09-16 00:56:45] local.INFO: auth_user_info START  
+[2024-09-16 00:56:45] local.INFO: auth_user_info END  
+[2024-09-16 00:56:45] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-09-16 00:56:45] local.INFO: Ajax ChatController index END  
+[2024-09-16 00:57:01] local.INFO: ChatController serch START  
+[2024-09-16 00:57:01] local.INFO: auth_user_info START  
+[2024-09-16 00:57:01] local.INFO: auth_user_info END  
+[2024-09-16 00:57:01] local.INFO: chattop_json_put_info_set START  
+[2024-09-16 00:57:01] local.INFO: chattop_json_put_info_set END  
+[2024-09-16 00:57:01] local.INFO: auth_customer_individual_count START  
+[2024-09-16 00:57:01] local.INFO: auth_customer_individual_count END  
+[2024-09-16 00:57:01] local.INFO: auth_customer_individual START  
+[2024-09-16 00:57:01] local.INFO: auth_customer_individual END  
+[2024-09-16 00:57:02] local.INFO: ChatController serch END  
+[2024-09-16 00:57:05] local.INFO: Ajax ChatController index START  
+[2024-09-16 00:57:05] local.INFO: auth_user_info START  
+[2024-09-16 00:57:05] local.INFO: auth_user_info END  
+[2024-09-16 00:57:05] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-09-16 00:57:05] local.INFO: Ajax ChatController index END  
+[2024-09-16 00:57:33] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => 平子 勝之進
+    [email] => hirakokatsunoshin@nifty.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 11
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2024-07-08T03:00:00.000000Z
+    [updated_at] => 2024-09-03T15:30:00.000000Z
+    [deleted_at] => 
+)
+  
+[2024-09-16 00:57:33] local.INFO: loginout operation update START  
+[2024-09-16 00:57:33] local.INFO: beginTransaction - loginout operation update start  
+[2024-09-16 00:57:33] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-09-16 00:57:33] local.INFO: loginout operation update END  
+[2024-09-16 00:57:42] local.INFO: Ajax ChatController create START  
+[2024-09-16 00:57:42] local.INFO: chattop_json_get_info START  
+[2024-09-16 00:57:42] local.INFO: chattop_json_get_info not empty  
+[2024-09-16 00:57:42] local.INFO: chattop_json_get_info END  
+[2024-09-16 00:57:44] local.INFO: Ajax ChatController create END  
+[2024-09-16 00:57:46] local.INFO: Ajax ChatController index START  
+[2024-09-16 00:57:46] local.INFO: auth_user_info START  
+[2024-09-16 00:57:46] local.INFO: auth_user_info END  
+[2024-09-16 00:57:46] local.DEBUG: Ajax ChatClientController index  $user_id = 8  
+[2024-09-16 00:57:46] local.INFO: Ajax ChatController index END  
+[2024-09-16 00:58:16] local.INFO: auth_user_info START  
+[2024-09-16 00:58:16] local.INFO: auth_user_info END  
+[2024-09-16 00:58:16] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 13
+    [name] => 今井 亮介
+    [email] => ryosukeimai@w-years.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 13
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2024-07-08T03:00:00.000000Z
+    [updated_at] => 2024-09-11T04:30:00.000000Z
+    [deleted_at] => 
+)
+  
+[2024-09-16 00:58:16] local.INFO: loginout operation update START  
+[2024-09-16 00:58:17] local.INFO: beginTransaction - loginout operation update start  
+[2024-09-16 00:58:17] local.INFO: beginTransaction - loginout operation update end(commit)  
+[2024-09-16 00:58:17] local.INFO: loginout operation update END  
+[2024-09-16 00:58:19] local.INFO: auth_user_info START  
+[2024-09-16 00:58:19] local.INFO: auth_user_info END  
+[2024-09-16 00:58:19] local.INFO: topclient index START $user->name = 今井 亮介  
+[2024-09-16 00:58:20] local.INFO: topclient index END $user->name = 今井 亮介  
+[2024-09-16 00:59:04] local.INFO: ChatClientController index START  
+[2024-09-16 00:59:04] local.INFO: auth_user_info START  
+[2024-09-16 00:59:04] local.INFO: auth_user_info END  
+[2024-09-16 00:59:04] local.DEBUG: ChatClientController index  $user_id = 8  
+[2024-09-16 00:59:04] local.INFO: chatcli_json_put_info_set START  
+[2024-09-16 00:59:04] local.INFO: chatcli_json_put_info_set END  
+[2024-09-16 00:59:04] local.INFO: ChatClientController index END  
+[2024-09-16 00:59:07] local.INFO: Ajax ChatClientController index START  
+[2024-09-16 00:59:07] local.INFO: auth_user_info START  
+[2024-09-16 00:59:07] local.INFO: auth_user_info END  
+[2024-09-16 00:59:07] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 13  
+[2024-09-16 00:59:07] local.INFO: Ajax ChatClientController index END  
+[2024-09-16 00:59:29] local.INFO: auth_user_info START  
+[2024-09-16 00:59:29] local.INFO: auth_user_info END  
+[2024-09-16 00:59:29] local.INFO: topclient index START $user->name = 今井 亮介  
+[2024-09-16 00:59:29] local.INFO: topclient index END $user->name = 今井 亮介  
+[2024-09-16 00:59:43] local.INFO: ChatClientController index START  
+[2024-09-16 00:59:43] local.INFO: auth_user_info START  
+[2024-09-16 00:59:43] local.INFO: auth_user_info END  
+[2024-09-16 00:59:43] local.DEBUG: ChatClientController index  $user_id = 8  
+[2024-09-16 00:59:43] local.INFO: chatcli_json_put_info_set START  
+[2024-09-16 00:59:43] local.INFO: chatcli_json_put_info_set END  
+[2024-09-16 00:59:43] local.INFO: ChatClientController index END  
+[2024-09-16 00:59:46] local.INFO: Ajax ChatClientController index START  
+[2024-09-16 00:59:46] local.INFO: auth_user_info START  
+[2024-09-16 00:59:46] local.INFO: auth_user_info END  
+[2024-09-16 00:59:46] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 13  
+[2024-09-16 00:59:46] local.INFO: Ajax ChatClientController index END  
+[2024-09-16 01:00:24] local.INFO: auth_user_info START  
+[2024-09-16 01:00:24] local.INFO: auth_user_info END  
+[2024-09-16 01:00:24] local.INFO: topclient index START $user->name = 今井 亮介  
+[2024-09-16 01:00:24] local.INFO: topclient index END $user->name = 今井 亮介  
+[2024-09-16 01:00:43] local.INFO: auth_user_info START  
+[2024-09-16 01:00:43] local.INFO: auth_user_info END  
+[2024-09-16 01:00:43] local.INFO: topclient index START $user->name = 今井 亮介  
+[2024-09-16 01:00:43] local.INFO: topclient index END $user->name = 今井 亮介  
+[2024-09-16 01:01:03] local.INFO: auth_user_info START  
+[2024-09-16 01:01:03] local.INFO: auth_user_info END  
+[2024-09-16 01:01:03] local.INFO: topclient index START $user->name = 今井 亮介  
+[2024-09-16 01:01:03] local.INFO: topclient index END $user->name = 今井 亮介  
+[2024-09-16 01:05:56] local.INFO: ChatClientController index START  
+[2024-09-16 01:05:56] local.INFO: auth_user_info START  
+[2024-09-16 01:05:57] local.INFO: auth_user_info END  
+[2024-09-16 01:05:57] local.INFO: chatcli_json_put_info_set START  
+[2024-09-16 01:05:57] local.INFO: chatcli_json_put_info_set END  
+[2024-09-16 01:05:57] local.DEBUG: ChatClientController index  $announcement_id = 3  
+[2024-09-16 01:05:57] local.INFO: ChatClientController index END  
+[2024-09-16 01:06:00] local.INFO: Ajax ChatClientController index START  
+[2024-09-16 01:06:00] local.INFO: auth_user_info START  
+[2024-09-16 01:06:00] local.INFO: auth_user_info END  
+[2024-09-16 01:06:00] local.DEBUG: Ajax ChatClientController index  ログインユーザーの$user_id = 13  
+[2024-09-16 01:06:00] local.INFO: Ajax ChatClientController index END  
+[2024-09-16 01:23:45] local.INFO: Ajax ChatClientController create START  
+[2024-09-16 01:23:45] local.INFO: chatcli_json_get_info START  
+[2024-09-16 01:23:45] local.INFO: chatcli_json_get_info not empty  
+[2024-09-16 01:23:45] local.INFO: chatcli_json_get_info END  
+[2024-09-16 01:23:46] local.INFO: Ajax ChatClientController create END  
+
+#45 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#46 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#47 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#48 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#49 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#50 /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#51 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\ValidatePostSize->handle()
+#52 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#53 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#54 /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#55 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#56 /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#57 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#58 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#59 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#60 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#61 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1172): Illuminate\\Foundation\\Http\\Kernel->handle()
+#62 /var/www/html/public/index.php(17): Illuminate\\Foundation\\Application->handleRequest()
+#63 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('...')
+#64 {main}
+"} 

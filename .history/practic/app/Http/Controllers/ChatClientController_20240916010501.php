@@ -78,29 +78,13 @@ class ChatClientController extends Controller
             $announcement_id = $announcement->id;
         }
 
-        Log::debug('ChatClientController index  $announcement_id = ' . print_r($announcement_id,true));
-
-        // $announcement_read = AnnouncementRead::where('from_user_id', $to_user_id)
-        //     ->where('announcement_id', $announcement_id)
-        //     ->first();
         $announcement_read = AnnouncementRead::where('from_user_id', $to_user_id)
-            ->where('user_id', $customer_id)
-            ->where('read', false)
-            ->get();
+            ->where('announcement_id', $announcement_id)
+            ->first();
 
-        // if(!is_null($announcement_read)) {
-        //     $announcement_read->read = true;
-        //     $announcement_read->update();
-        // }
-
-        //更新
         if(!is_null($announcement_read)) {
-            $announcement_read_write = AnnouncementRead::where('from_user_id', $to_user_id)
-                ->where('user_id', $customer_id)
-                ->where('read', false)
-                ->update([
-                    'read'  =>  true,
-                ]);
+            $announcement_read->read = true;
+            $announcement_read->save();
         }
 
         Log::info('ChatClientController index END');

@@ -90,18 +90,13 @@ class ChatController extends Controller
             ->where('read', false)
             ->get();
 
-        // if(!is_null($announcement_read)) {
-        //     $announcement_read->read = true;
-        //     $announcement_read->update();
-        // }
-
         //更新
         if(!is_null($announcement_read)) {
             $announcement_read_write = AnnouncementRead::where('from_user_id', $to_user_id)
                 ->where('user_id', $user_id)
                 ->where('read', false)
                 ->update([
-                    'read'  =>  true,
+                    'read'  =>  $true,
                 ]);
         }
 
@@ -179,19 +174,9 @@ class ChatController extends Controller
             ->where('read', false)
             ->get();
 
-        // if(!is_null($announcement_read)) {
-        //     $announcement_read->read = true;
-        //     $announcement_read->update();
-        // }
-
-        //更新
         if(!is_null($announcement_read)) {
-            $announcement_read_write = AnnouncementRead::where('from_user_id', $to_user_id)
-                ->where('user_id', $user_id)
-                ->where('read', false)
-                ->update([
-                    'read'  =>  true,
-                ]);
+            $announcement_read->read = true;
+            $announcement_read->update();
         }
 
         Log::info('ChatController serch END');

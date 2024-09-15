@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers\Ajax;
 
-use App\Models\Announcement;
-use App\Models\AnnouncementRead;
-
 // use App\Models\User;
 use App\Models\Message;
 use App\Events\MessageCreated;
@@ -51,7 +48,6 @@ class ChatController extends Controller
         $user      = Auth::user();
         $user_id   = $user->id;
         $organization_id = 1;
-        $user_name       = $user->name;
 
         /**
          * chattopで選択されたcustomer_idを取得する
@@ -62,13 +58,13 @@ class ChatController extends Controller
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
             'to_flg'          => 1,
-            'to_user_id'      => $customer_id,
             'user_id'         => $user_id,
+            'to_user_id'      => $customer_id,
             'customer_id'     => $customer_id,
             'organization_id' => $organization_id,
         ]);
 
-        // Log::info('Ajax ChatController create END');
+        Log::info('Ajax ChatController create END');
 
         $to_flg = 1;
         $to_user_id = $customer_id;
@@ -76,23 +72,7 @@ class ChatController extends Controller
         // event(new MessageCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
         broadcast(new MessageCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
 
-        $descrip = $user_name . 'さん から通知がありました';
-
-        $announcement = new Announcement();
-        $announcement->from_user_id = $user_id;
-        $announcement->to_user_id   = $to_user_id;
-        $announcement->title        = $descrip;
-        $announcement->description  = $message['body'];
-        $announcement->save();               //  Inserts description
-
-        $announcement_read = new AnnouncementRead();
-        $announcement_read->user_id         = $to_user_id;
-        $announcement_read->announcement_id = $announcement->id;
-        $announcement_read->from_user_id    = $user_id;
-        $announcement_read->read            = false;
-        $announcement_read->save();               //  Inserts
-
-        Log::info('Ajax ChatController create END');
+        
         // return ['status' => 'Message Sent!'];
     }
 

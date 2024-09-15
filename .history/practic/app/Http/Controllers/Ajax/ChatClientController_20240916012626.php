@@ -85,8 +85,8 @@ class ChatClientController extends Controller
 
         $announcement = new Announcement();
         $announcement->from_user_id = $u_id;
-        $announcement->to_user_id   = $to_user_id;
-        $announcement->title        = $descrip;
+
+        $announcement->user_id      = $to_user_id;        $announcement->title        = $descrip;
         $announcement->description  = $message['body'];
         $announcement->save();               //  Inserts description
 

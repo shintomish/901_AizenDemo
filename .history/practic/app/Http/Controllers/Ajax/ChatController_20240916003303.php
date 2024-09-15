@@ -3,10 +3,6 @@
 namespace App\Http\Controllers\Ajax;
 
 // use App\Models\User;
-// use App\Models\Customer;
-use App\Models\Announcement;
-use App\Models\AnnouncementRead;
-
 use App\Models\Message;
 use App\Events\MessageCreated;
 // use App\Events\HelloPusher;
@@ -17,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 // use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class ChatClientController extends Controller
+class ChatController extends Controller
 {
     public function __construct()
     {
@@ -26,17 +22,18 @@ class ChatClientController extends Controller
 
     public function index() { // 新着順にメッセージ一覧を取得
 
-        Log::info('Ajax ChatClientController index START');
+        Log::info('Ajax ChatController index START');
 
         // ログインユーザーのユーザー情報を取得する
-        $user  = $this->auth_user_info();
-        $user_id         = $user->id;
+        $user      = $this->auth_user_info();
+        $user_id   = $user->id;
         $organization_id =  1;
 
-        Log::debug('Ajax ChatClientController index  ログインユーザーの$user_id = ' . print_r($user_id,true));
+        Log::debug('Ajax ChatClientController index  $user_id = ' . print_r($user_id,true));
 
-        Log::info('Ajax ChatClientController index END');
+        Log::info('Ajax ChatController index END');
 
+        // return Message::orderBy('id', 'desc')->get();
         return Message::where('organization_id', $organization_id)
                 ->with('user')
                 ->orderBy('id', 'desc')
@@ -46,46 +43,40 @@ class ChatClientController extends Controller
 
     public function create(Request $request) { // メッセージを登録
 
-        Log::info('Ajax ChatClientController create START');
+        Log::info('Ajax ChatController create START');
 
-        $user            = Auth::user();
-        $user_id         = $user->user_id;
-        $customer_id     = $user->user_id;
+        $user      = Auth::user();
+        $user_id   = $user->id;
         $organization_id = 1;
         $user_name       = $user->name;
 
         /**
-         * chatcliで選択されたuser_idを取得する
+         * chattopで選択されたcustomer_idを取得する
          */
-        $retval = $this->chatcli_json_get_info($user_id);
-        $u_id   = $retval['u_id'];
-        $to_user_id   = $retval['customer_id'];
+        $retval = $this->chattop_json_get_info($user_id);
+        $customer_id = $retval['customer_id'];
 
         $message = $user->messages()->create([
             'body'            => $request->input('message'),
-            'to_flg'          => 2,
-            'to_user_id'      => $to_user_id,
-            'user_id'         => $u_id,
+            'to_flg'          => 1,
+            'user_id'         => $user_id,
+            'to_user_id'      => $customer_id,
             'customer_id'     => $customer_id,
-            'organization_id' => 1,
+            'organization_id' => $organization_id,
         ]);
 
-        Log::info('Ajax ChatClientController create END');
+        // Log::info('Ajax ChatController create END');
 
-        $to_flg = 2;
+        $to_flg = 1;
+        $to_user_id = $customer_id;
 
-        // イベント発火
-        // event(new \App\Events\HelloPusher('テストメッセージbb'));
-
-        // event(new MessageCliantCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
-
-        broadcast(new MessageCreated($user, $organization_id, $to_flg, $u_id, $to_user_id, $customer_id, $message));
+        // event(new MessageCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
+        broadcast(new MessageCreated($user, $organization_id, $to_flg, $user_id, $to_user_id, $customer_id, $message));
 
         $descrip = $user_name . 'さん から通知がありました';
 
         $announcement = new Announcement();
         $announcement->from_user_id = $u_id;
-        $announcement->to_user_id   = $to_user_id;
         $announcement->title        = $descrip;
         $announcement->description  = $message['body'];
         $announcement->save();               //  Inserts description
@@ -99,6 +90,6 @@ class ChatClientController extends Controller
 
 
         // return ['status' => 'Message Sent!'];
-
     }
+
 }

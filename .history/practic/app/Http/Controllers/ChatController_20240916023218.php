@@ -72,10 +72,10 @@ class ChatController extends Controller
         $common_no = '00_7';
         $compacts = compact( 'messages', 'customer_count','customer_findrec', 'user_id', 'to_user_id','customer_id', 'common_no');
 
-        //使わない 2024/09/16
         $announcement_id = 0;
         $announcement = Announcement::where('from_user_id', $to_user_id)
             ->first();
+
         if(!is_null($announcement)) {
             $announcement_id = $announcement->id;
         }
@@ -90,20 +90,14 @@ class ChatController extends Controller
             ->where('read', false)
             ->get();
 
-        // if(!is_null($announcement_read)) {
-        //     $announcement_read->read = true;
-        //     $announcement_read->update();
-        // }
+        if(!is_null($announcement_read)) {
+            $announcement_read->read = true;
+            $announcement_read->update();
+
+        }
 
         //更新
-        if(!is_null($announcement_read)) {
-            $announcement_read_write = AnnouncementRead::where('from_user_id', $to_user_id)
-                ->where('user_id', $user_id)
-                ->where('read', false)
-                ->update([
-                    'read'  =>  true,
-                ]);
-        }
+
 
         Log::info('ChatController index END');
 
@@ -179,19 +173,9 @@ class ChatController extends Controller
             ->where('read', false)
             ->get();
 
-        // if(!is_null($announcement_read)) {
-        //     $announcement_read->read = true;
-        //     $announcement_read->update();
-        // }
-
-        //更新
         if(!is_null($announcement_read)) {
-            $announcement_read_write = AnnouncementRead::where('from_user_id', $to_user_id)
-                ->where('user_id', $user_id)
-                ->where('read', false)
-                ->update([
-                    'read'  =>  true,
-                ]);
+            $announcement_read->read = true;
+            $announcement_read->update();
         }
 
         Log::info('ChatController serch END');
