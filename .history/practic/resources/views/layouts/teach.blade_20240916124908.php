@@ -40,12 +40,12 @@
 
         {{-- @yield('styles') --}}
 
-        {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" ></script> --}}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" ></script>
 
         <!-- Custom styles for this template -->
         <link href="{{ asset('css/back/dashboard.css') }}" rel="stylesheet">
 
-        <!-- flash_message headerに移動 2024/09/16 -->
+        <!-- flash_message -->
         {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"> --}}
         {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> --}}
 
@@ -76,16 +76,16 @@
     </head>
 
     <body>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 
-        <!-- flash_message headerから移動 2024/09/16 -->
-        <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+        <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="{{ route('topclient') }}">{{ config('app.name', 'Laravel') }}</a>
 
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -220,12 +220,14 @@
                             <li class="nav-item">
                                 <a class="nav-link active">
                                     <i class="fas fa-address-card"></i>
+                                    {{-- {{ $user->name }} --}}
                                     <?php $user = Auth::user(); ?>{{ $user->name }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">
-                                    <a class="nav-link" href="{{route('topclient')}}">
+                                    <a class="nav-link" href="{{route('top')}}">
+                                    {{-- <a class="nav-link" href="{{route('media-library')}}"> --}}
                                     <i class="fas fa-laptop-house"></i>
                                     ホーム
                                 </a>
@@ -238,20 +240,53 @@
                                 </a>
                             </h3>
 
-                            <ul class="nav flex-column mb-2">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{route('topclient')}}">
-                                        <i class="fas fa-file-download"></i>
-                                        データダウンロード
-                                    </a>
-                                </li>
-                            </ul>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('chatclientin')}}">
+                                <a class="nav-link" href="{{route('user.index')}}">
+                                    {{-- <span data-feather="users"></span> --}}
+                                    <i class="fas fa-user-friends"></i>
+                                    利用者管理
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('exelevelname.index')}}">
+                                    {{-- <span data-feather="users"></span> --}}
+                                    <i class="fas fa-user-alt"></i>
+                                    スポーツレベル
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('chatin')}}">
                                     <i class="fas fa-wifi"></i>
                                     チャット
                                 </a>
                             </li>
+
+
+                            <h3 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                                <span>運動データ</span>
+                                <a class="link-secondary" href="#" aria-label="Add a new report">
+                                    <span data-feather="plus-circle"></span>
+                                </a>
+                            </h3>
+
+                            <ul class="nav flex-column mb-2">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('top')}}">
+                                        <i class="fas fa-file-upload"></i>
+                                        データアップロード
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column mb-2">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('tophis')}}">
+                                        <i class="fas fa-file-upload"></i>
+                                        データ送信確認
+                                    </a>
+                                </li>
+                            </ul>
                         </ul>
                     </div>
                 </nav>
@@ -259,9 +294,7 @@
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1 class="h2">
-                            <!--button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButtonLG" data-bs-toggle="dropdown" aria-expanded="false">
-                            ALLUSER
-                            </button-->
+
                         </h1>
 
                         <div class="btn-toolbar mb-2 mb-md-0">
@@ -271,6 +304,7 @@
                             <div class="btn-group me-2">
                                 <!--button type="button" class="w-100 btn btn-lg btn-primary" >Delete</button-->
                             </div>
+
                         </div>
                     </div>
 
@@ -292,16 +326,5 @@
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
 
     </body>
-
-    {{-- datetimepicker --}}
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-
-    <script type="text/javascript">
-
-    </script>
 
 </html>
