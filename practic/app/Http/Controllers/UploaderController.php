@@ -158,6 +158,25 @@ class UploaderController extends Controller
 
         $uploadFile = $request->getFile();
 
+        //---- 2024/09/30 Failed to open stream: File name too long 対応
+        $length_strlen  = strlen($uploadFile['name']);
+        $maxtatallength = 255;
+        if ($length_strlen > $maxtatallength)
+        {
+            $errormsg = 'ファイル名が長過ぎます。アップロード可能なファイル名長は '. $maxtatallength. ' 文字までです。';
+            Log::info('client postUpload  failesize to big ');
+            Log::debug('client postUpload $length_strlen error = ' . print_r($length_strlen ,true));
+            Log::debug('client postUpload $uploadFile[name] = ' . print_r($uploadFile['name'] ,true));
+            
+            // Statusを変える
+            $status = false;
+            $this->json_put_status($status,$customer_id);
+            //400 Bad Request	一般的なクライアントエラー
+            return \Response::json(['error'=>$errormsg,'status'=>'BG'],400);
+
+        }
+        Log::debug('client postUpload $length_strlen = ' . print_r($length_strlen ,true));
+
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             if ($file->checkChunk()) {
                 header("HTTP/1.1 200 Ok");

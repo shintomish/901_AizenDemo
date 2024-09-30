@@ -15,6 +15,7 @@
         "fromadr",
         "fromname",
         "Mailables",
+        "maxtatallength",
         "messagesent",
         "realchat",
         "setpath",
