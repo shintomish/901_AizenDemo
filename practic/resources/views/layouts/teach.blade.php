@@ -92,7 +92,7 @@
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="form-control bg-dark w-100" type="text" placeholder="" aria-label="Search"></div>
+            {{-- <div class="form-control bg-dark w-100" type="text" placeholder="" aria-label="Search"></div> --}}
             <div id="app">
                 <nav class="navbar navbar-expand-sm bg-dark w-100">
                     {{-- お知らせ --}}

@@ -23,41 +23,42 @@
         <!-- Tytle -->
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <!-- Bootstrap core CSS -->
+        {{-- <link href="{{ asset('css/back/bootstrap.min.css') }}" rel="stylesheet"> --}}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
         <!-- Scripts -->
-        <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
-
-        <!-- Flow Scripts -->
-        <script src="{{ asset('js/flow.js') }}" type="text/javascript"></script>
-
-        <!-- upload Scripts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/resumable.js/1.1.0/resumable.min.js"></script>
+        {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+        {{-- <script src="{{ asset('js/jquery-3.6.0.min.js') }}" defer></script> --}}
 
         <!-- Fonts -->
+        {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com"> --}}
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-        <!-- Bootstrap core CSS -->
-        {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"> --}}
-
-        {{-- @yield('styles') --}}
-
-        {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" ></script> --}}
 
         <!-- Custom styles for this template -->
         <link href="{{ asset('css/back/dashboard.css') }}" rel="stylesheet">
 
-        <!-- flash_message headerに移動 2024/09/16 -->
-        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"> --}}
-        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> --}}
+        <!-- jQuery -->
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-        <!-- Place your kit's code here -->
-        <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script>
-        {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> --}}
+        <!-- My js -->
+        <script src="{{asset('js/back/common.js')}}"></script>
 
-        {{-- 2021/11/21  --}}
+        {{-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> --}}
+
+        <!-- flash_message -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+        {{-- プラグイン(pace.min.js center-atom.css) loading-bar.css center-circle.css--}}
         <script type="text/javascript" src="{{ asset('js/back/pace.min.js') }}"></script>
         <link href="{{ asset('css/back/center-circle_d.css') }}" rel="stylesheet">
-        {{-- 2021/11/21  --}}
-        {{-- <link href="{{ asset('css/back/loading-circle.css') }}" rel="stylesheet"> --}}
+
+        <!-- Place your kit's code here -->
+        {{-- <script src="https://kit.fontawesome.com/376cff10ff.js" crossorigin="anonymous"></script> --}}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
         <style>
             .bd-placeholder-img {
@@ -76,22 +77,23 @@
     </head>
 
     <body>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 
         <!-- flash_message headerから移動 2024/09/16 -->
-        <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+        <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="{{ route('topclient') }}">{{ config('app.name', 'Laravel') }}</a>
 
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="form-control bg-dark w-100" type="text" placeholder="" aria-label="Search"></div>
+            {{-- <div class="form-control bg-dark w-100" type="text" placeholder="" aria-label="Search"></div> --}}
             <div id="app">
                 <nav class="navbar navbar-expand-sm bg-dark w-100">
                     {{-- お知らせ --}}
@@ -220,6 +222,7 @@
                             <li class="nav-item">
                                 <a class="nav-link active">
                                     <i class="fas fa-address-card"></i>
+                                    {{-- {{ $user->name }} --}}
                                     <?php $user = Auth::user(); ?>{{ $user->name }}
                                 </a>
                             </li>
@@ -292,16 +295,5 @@
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
 
     </body>
-
-    {{-- datetimepicker --}}
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-
-    <script type="text/javascript">
-
-    </script>
 
 </html>
