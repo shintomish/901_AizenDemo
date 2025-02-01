@@ -1,0 +1,1 @@
+[2025-02-01 13:26:00] local.ERROR: Debugbar exception: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'practic.sessions' doesn't exist (Connection: mysql, SQL: select * from `sessions` where `id` = DjXfW4ECJC7BJltB01VHtJsjdrYaKmn1qvy4tzfm limit 1)  
